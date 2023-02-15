@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 微信实时下单
+   /// 微信实时支付
    /// <summary>
    public class CreateWxpayOrderRequest : IAopRequest<CreateWxpayOrderResponse>
    {

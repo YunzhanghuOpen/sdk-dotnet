@@ -10,12 +10,12 @@ using Aop.Api.Domain;
 namespace Aop.Api.Response
 {
    /// <summary>
-   /// 获取余额日账单
+   /// 查询余额日账单数据
    /// <summary>
    public class ListBalanceDailyStatementResponse : AopResponse
    {
       /// <summary>
-      /// 获取余额日账单
+      /// 查询余额日账单数据
       /// <summary>
       [JsonProperty("data")]
       public ListBalanceDailyStatementResponseModel Data { get; set; }

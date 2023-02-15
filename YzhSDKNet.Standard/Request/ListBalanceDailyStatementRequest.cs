@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 获取余额日账单
+   /// 查询余额日账单数据
    /// <summary>
    public class ListBalanceDailyStatementRequest : IAopRequest<ListBalanceDailyStatementResponse>
    {

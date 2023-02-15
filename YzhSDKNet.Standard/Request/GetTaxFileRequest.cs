@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 下载个税扣缴明细表
+   /// 下载个人所得税扣缴明细表
    /// <summary>
    public class GetTaxFileRequest : IAopRequest<GetTaxFileResponse>
    {

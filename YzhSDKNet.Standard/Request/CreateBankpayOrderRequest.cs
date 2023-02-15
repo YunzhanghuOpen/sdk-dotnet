@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 银行卡实时下单
+   /// 银行卡实时支付
    /// <summary>
    public class CreateBankpayOrderRequest : IAopRequest<CreateBankpayOrderResponse>
    {

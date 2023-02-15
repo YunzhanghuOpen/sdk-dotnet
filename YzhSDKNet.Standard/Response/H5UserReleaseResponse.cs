@@ -10,12 +10,12 @@ using Aop.Api.Domain;
 namespace Aop.Api.Response
 {
    /// <summary>
-   /// H5 对接测试解约接口
+   /// 用户解约（测试账号专用接口）
    /// <summary>
    public class H5UserReleaseResponse : AopResponse
    {
       /// <summary>
-      /// H5 对接测试解约接口
+      /// 用户解约（测试账号专用接口）
       /// <summary>
       [JsonProperty("data")]
       public H5UserReleaseResponseModel Data { get; set; }

@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// H5 对接测试解约接口
+   /// 用户解约（测试账号专用接口）
    /// <summary>
    public class H5UserReleaseRequest : IAopRequest<H5UserReleaseResponse>
    {

@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 查询可开票额度和开票信息
+   /// 查询可开具发票额度和发票开具信息
    /// <summary>
    public class GetInvoiceAmountRequest : IAopRequest<GetInvoiceAmountResponse>
    {

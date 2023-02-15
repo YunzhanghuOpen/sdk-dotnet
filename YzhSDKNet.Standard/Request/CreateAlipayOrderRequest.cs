@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 支付宝实时下单
+   /// 支付宝实时支付
    /// <summary>
    public class CreateAlipayOrderRequest : IAopRequest<CreateAlipayOrderResponse>
    {

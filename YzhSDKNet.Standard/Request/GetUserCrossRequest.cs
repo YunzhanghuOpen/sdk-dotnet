@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// GetUserCross 查询纳税人是否为跨集团用户
+   /// 查询纳税人是否为跨集团用户
    /// <summary>
    public class GetUserCrossRequest : IAopRequest<GetUserCrossResponse>
    {

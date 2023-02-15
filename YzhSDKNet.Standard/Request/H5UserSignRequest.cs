@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// H5 签约接口
+   /// 申请签约
    /// <summary>
    public class H5UserSignRequest : IAopRequest<H5UserSignResponse>
    {

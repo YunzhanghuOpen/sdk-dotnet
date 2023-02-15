@@ -10,7 +10,7 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 查询开票申请状态
+   /// 查询发票开具申请状态
    /// <summary>
    public class GetInvoiceStatusRequest : IAopRequest<GetInvoiceStatusResponse>
    {
