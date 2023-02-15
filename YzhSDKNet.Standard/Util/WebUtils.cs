@@ -106,7 +106,7 @@ namespace Aop.Api.Util
         /// <returns></returns>
         public static string BuildQuery(IDictionary<string, string> parameters)
         {
-            return string.Join("&", parameters.Select(p => $"{p.Key}={Uri.EscapeDataString(p.Value)}"));
+            return string.Join("&", parameters.Select(p => $"{HttpUtility.UrlEncode(p.Key)}={HttpUtility.UrlEncode(p.Value)}"));
         }
 
         /// <summary>
