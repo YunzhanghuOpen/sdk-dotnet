@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 银行卡四要素确认鉴权请求
+   /// 银行卡四要素确认请求（上传短信验证码）请求
    /// <summary>
    public class BankCardFourAuthConfirmRequestModel : AopObject
    {

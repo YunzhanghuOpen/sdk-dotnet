@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 查询日订单返回
+   /// 查询日订单数据返回
    /// <summary>
    public class ListDailyOrderResponseModel : AopObject
    {
@@ -23,7 +23,7 @@ namespace Aop.Api.Domain
       /// 条目信息
       /// <summary>
       [JsonProperty("list")]
-      public List<DealerOrderInfo> List { get; set; }
+      public DealerOrderInfo[] List { get; set; }
       
    }
 }

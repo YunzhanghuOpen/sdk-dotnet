@@ -80,6 +80,12 @@ namespace Aop.Api.Domain
       public string Status { get; set; }
       
       /// <summary>
+      /// 订单状态码描述
+      /// <summary>
+      [JsonProperty("status_message")]
+      public string StatusMessage { get; set; }
+      
+      /// <summary>
       /// 订单详情
       /// <summary>
       [JsonProperty("status_detail")]

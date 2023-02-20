@@ -23,7 +23,7 @@ namespace Aop.Api.Domain
       /// 订单结果列表
       /// <summary>
       [JsonProperty("result_list")]
-      public List<BatchOrderResult> ResultList { get; set; }
+      public BatchOrderResult[] ResultList { get; set; }
       
    }
 }

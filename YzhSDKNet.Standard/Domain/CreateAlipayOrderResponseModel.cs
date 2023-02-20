@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 支付宝实时下单返回
+   /// 支付宝实时支付返回
    /// <summary>
    public class CreateAlipayOrderResponseModel : AopObject
    {

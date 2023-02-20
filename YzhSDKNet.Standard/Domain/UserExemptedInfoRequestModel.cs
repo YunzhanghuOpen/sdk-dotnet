@@ -53,7 +53,7 @@ namespace Aop.Api.Domain
       /// 人员信息图片
       /// <summary>
       [JsonProperty("user_images")]
-      public List<string> UserImages { get; set; }
+      public string[] UserImages { get; set; }
       
       /// <summary>
       /// 国别（地区）代码

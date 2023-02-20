@@ -17,7 +17,7 @@ namespace Aop.Api.Domain
       /// dealer_infos
       /// <summary>
       [JsonProperty("dealer_infos")]
-      public List<AccountInfo> DealerInfos { get; set; }
+      public AccountInfo[] DealerInfos { get; set; }
       
    }
 }

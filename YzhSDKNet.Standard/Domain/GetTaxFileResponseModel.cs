@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 下载个税扣缴明细表返回
+   /// 下载个人所得税扣缴明细表返回
    /// <summary>
    public class GetTaxFileResponseModel : AopObject
    {
@@ -17,7 +17,7 @@ namespace Aop.Api.Domain
       /// 文件详情
       /// <summary>
       [JsonProperty("file_info")]
-      public List<FileInfo> FileInfo { get; set; }
+      public FileInfo[] FileInfo { get; set; }
       
    }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 账单信息详情
+   /// 余额账单信息详情
    /// <summary>
    public class StatementDetail : AopObject
    {

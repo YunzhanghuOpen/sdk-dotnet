@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// H5 预申请签约接口请求
+   /// 预申请签约请求
    /// <summary>
    public class H5UserPresignRequestModel : AopObject
    {

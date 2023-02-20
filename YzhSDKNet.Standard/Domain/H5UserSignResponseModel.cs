@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// H5 签约接口返回
+   /// 申请签约返回
    /// <summary>
    public class H5UserSignResponseModel : AopObject
    {

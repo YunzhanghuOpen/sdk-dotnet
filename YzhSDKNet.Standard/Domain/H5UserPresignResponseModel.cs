@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// H5 预申请签约接口返回
+   /// 预申请签约返回
    /// <summary>
    public class H5UserPresignResponseModel : AopObject
    {
@@ -24,6 +24,12 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("token")]
       public string Token { get; set; }
+      
+      /// <summary>
+      /// 签约状态
+      /// <summary>
+      [JsonProperty("status")]
+      public int Status { get; set; }
       
    }
 }

@@ -23,7 +23,7 @@ namespace Aop.Api.Domain
       /// 用户签约状态
       /// <summary>
       [JsonProperty("status")]
-      public int Status { get; set; }
+      public string Status { get; set; }
       
    }
 }

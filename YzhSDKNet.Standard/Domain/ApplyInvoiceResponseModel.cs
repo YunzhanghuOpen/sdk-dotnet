@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 开票申请返回
+   /// 发票开具申请返回
    /// <summary>
    public class ApplyInvoiceResponseModel : AopObject
    {

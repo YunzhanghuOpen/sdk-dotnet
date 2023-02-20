@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 开票完成通知
+   /// 发票开具完成通知
    /// <summary>
    public class NotifyInvoiceDoneRequestModel : AopObject
    {
       /// <summary>
-      /// 发票申请编号
+      /// 发票申请单 ID
       /// <summary>
       [JsonProperty("application_id")]
       public string ApplicationID { get; set; }
@@ -35,7 +35,7 @@ namespace Aop.Api.Domain
       /// 发票张数
       /// <summary>
       [JsonProperty("count")]
-      public long Count { get; set; }
+      public int Count { get; set; }
       
       /// <summary>
       /// 价税合计
@@ -107,7 +107,7 @@ namespace Aop.Api.Domain
       /// 快递单号
       /// <summary>
       [JsonProperty("waybill_number")]
-      public List<string> WaybillNumber { get; set; }
+      public string[] WaybillNumber { get; set; }
       
       /// <summary>
       /// 驳回原因

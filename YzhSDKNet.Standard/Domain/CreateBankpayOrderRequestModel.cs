@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 银行卡实时下单请求
+   /// 银行卡实时支付请求
    /// <summary>
    public class CreateBankpayOrderRequestModel : AopObject
    {

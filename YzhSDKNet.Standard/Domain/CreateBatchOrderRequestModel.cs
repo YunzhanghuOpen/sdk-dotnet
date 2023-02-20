@@ -59,7 +59,7 @@ namespace Aop.Api.Domain
       /// 订单列表
       /// <summary>
       [JsonProperty("order_list")]
-      public List<BatchOrderInfo> OrderList { get; set; }
+      public BatchOrderInfo[] OrderList { get; set; }
       
    }
 }

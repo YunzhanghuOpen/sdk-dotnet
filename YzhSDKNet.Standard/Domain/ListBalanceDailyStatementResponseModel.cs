@@ -17,7 +17,7 @@ namespace Aop.Api.Domain
       /// 条目信息
       /// <summary>
       [JsonProperty("list")]
-      public List<StatementDetail> List { get; set; }
+      public StatementDetail[] List { get; set; }
       
    }
 }

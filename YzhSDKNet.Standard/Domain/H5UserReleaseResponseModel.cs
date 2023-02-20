@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 用户解约返回
+   /// 用户解约（测试账号专用接口）返回
    /// <summary>
    public class H5UserReleaseResponseModel : AopObject
    {

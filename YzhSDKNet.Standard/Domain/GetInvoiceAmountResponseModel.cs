@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 查询可开票额度和开票信息返回
+   /// 查询可开具发票额度和发票开具信息返回
    /// <summary>
    public class GetInvoiceAmountResponseModel : AopObject
    {
@@ -23,13 +23,13 @@ namespace Aop.Api.Domain
       /// 系统支持的开户行及账号
       /// <summary>
       [JsonProperty("bank_name_account")]
-      public List<BankNameAccount> BankNameAccount { get; set; }
+      public BankNameAccount[] BankNameAccount { get; set; }
       
       /// <summary>
       /// 系统支持的货物或应税劳务、服务名称
       /// <summary>
       [JsonProperty("goods_services_name")]
-      public List<GoodsServicesName> GoodsServicesName { get; set; }
+      public GoodsServicesName[] GoodsServicesName { get; set; }
       
    }
 }

@@ -32,6 +32,12 @@ namespace Aop.Api.Domain
       public string Invoiced { get; set; }
       
       /// <summary>
+      /// 开票中发票金额
+      /// <summary>
+      [JsonProperty("invoicing")]
+      public string Invoicing { get; set; }
+      
+      /// <summary>
       /// 待开具发票金额
       /// <summary>
       [JsonProperty("not_invoiced")]

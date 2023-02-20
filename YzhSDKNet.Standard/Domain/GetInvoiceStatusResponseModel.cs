@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 查询开票申请状态返回
+   /// 查询发票开具申请状态返回
    /// <summary>
    public class GetInvoiceStatusResponseModel : AopObject
    {
@@ -95,7 +95,7 @@ namespace Aop.Api.Domain
       /// 快递单号
       /// <summary>
       [JsonProperty("waybill_number")]
-      public List<string> WaybillNumber { get; set; }
+      public string[] WaybillNumber { get; set; }
       
    }
 }

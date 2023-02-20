@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 下载个税扣缴明细表请求
+   /// 下载个人所得税扣缴明细表请求
    /// <summary>
    public class GetTaxFileRequestModel : AopObject
    {

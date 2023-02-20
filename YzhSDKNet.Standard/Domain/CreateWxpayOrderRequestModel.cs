@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 微信实时下单请求
+   /// 微信实时支付请求
    /// <summary>
    public class CreateWxpayOrderRequestModel : AopObject
    {

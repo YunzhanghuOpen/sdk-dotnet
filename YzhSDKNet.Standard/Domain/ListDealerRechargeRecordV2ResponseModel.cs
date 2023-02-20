@@ -17,7 +17,7 @@ namespace Aop.Api.Domain
       /// 预付业务服务费记录
       /// <summary>
       [JsonProperty("data")]
-      public List<RechargeRecordInfo> Data { get; set; }
+      public RechargeRecordInfo[] Data { get; set; }
       
    }
 }

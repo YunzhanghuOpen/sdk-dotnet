@@ -22,8 +22,8 @@ namespace Aop.Api.Domain
       /// <summary>
       /// 条目信息
       /// <summary>
-      [JsonProperty("bills")]
-      public List<DealerBillInfo> Bills { get; set; }
+      [JsonProperty("list")]
+      public DealerBillInfo[] List { get; set; }
       
    }
 }
