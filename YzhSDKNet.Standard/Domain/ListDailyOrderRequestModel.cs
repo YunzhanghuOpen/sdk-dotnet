@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 查询日订单请求
+   /// 查询日订单数据请求
    /// <summary>
    public class ListDailyOrderRequestModel : AopObject
    {

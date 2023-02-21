@@ -26,7 +26,7 @@ namespace Aop.Api.Domain
       public string BrokerID { get; set; }
       
       /// <summary>
-      /// 已开具发票金额
+      /// 已开发票金额
       /// <summary>
       [JsonProperty("invoiced")]
       public string Invoiced { get; set; }
@@ -38,7 +38,7 @@ namespace Aop.Api.Domain
       public string Invoicing { get; set; }
       
       /// <summary>
-      /// 待开具发票金额
+      /// 待开发票金额
       /// <summary>
       [JsonProperty("not_invoiced")]
       public string NotInvoiced { get; set; }
