@@ -14,6 +14,7 @@ namespace Aop.Api.Util.Encryption
         /// 计算指定内容的签名
         /// </summary>
         /// <param name="content">待签名的原文</param>
+        /// <param name="appKey">云账户分配的 App Key</param>
         /// <param name="key">私钥</param>
         /// <returns>签名字符串</returns>
         public string Sign(string content, string appKey, string privateKey)
@@ -32,8 +33,8 @@ namespace Aop.Api.Util.Encryption
         /// </summary>
         /// <param name="content">待校验的原文</param>
         /// <param name="sign">签名字符串</param>
-        /// <param name="appKey">云账户分配的AppKey</param>
-        /// <param name="publicKey">私钥</param>
+        /// <param name="appKey">云账户分配的 App Key</param>
+        /// <param name="publicKey">公钥</param>
         /// <returns>true：验证通过；false：验证不通过</returns>
         public bool Verify(string content, string sign, string appKey, string publicKey)
         {
@@ -46,11 +47,12 @@ namespace Aop.Api.Util.Encryption
             }
         }
 
+        //加载公钥
         private RSAParameters ConvertFromPemPublicKey(string pemPublickKey)
         {
             if (string.IsNullOrEmpty(pemPublickKey))
             {
-                throw new AopException("PEM格式公钥不可为空。");
+                throw new AopException("PEM 格式公钥，不可为空。");
             }
 
             // 移除干扰文本
@@ -62,7 +64,7 @@ namespace Aop.Api.Util.Encryption
             bool keySize2048 = keyData.Length == 294;
             if (!(keySize1024 || keySize2048))
             {
-                throw new AopException("公钥长度只支持1024和2048。");
+                throw new AopException("公钥长度只支持 1024 和 2048。");
             }
             byte[] pemModulus = keySize1024 ? new byte[128] : new byte[256];
             byte[] pemPublicExponent = new byte[3];
@@ -74,6 +76,7 @@ namespace Aop.Api.Util.Encryption
             return para;
         }
 
+        //加载私钥
         private RSACryptoServiceProvider BuildRSAServiceProvider(string privateKey)
         {
             privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", "")
@@ -86,20 +89,17 @@ namespace Aop.Api.Util.Encryption
             ushort twobytes = 0;
             int elems = 0;
 
-            //set up stream to decode the asn.1 encoded RSA private key
-            //wrap Memory Stream with BinaryReader for easy reading
+            
             using (BinaryReader binaryReader = new BinaryReader(new MemoryStream(keyData)))
             {
                 twobytes = binaryReader.ReadUInt16();
-                //data read as little endian order (actual data order for Sequence is 30 81)
+                
                 if (twobytes == 0x8130)
                 {
-                    //advance 1 byte
                     binaryReader.ReadByte();
                 }
                 else if (twobytes == 0x8230)
                 {
-                    //advance 2 bytes
                     binaryReader.ReadInt16();
                 }
                 else
@@ -108,7 +108,7 @@ namespace Aop.Api.Util.Encryption
                 }
 
                 twobytes = binaryReader.ReadUInt16();
-                //version number
+                
                 if (twobytes != 0x0102)
                 {
                     return null;
@@ -119,7 +119,6 @@ namespace Aop.Api.Util.Encryption
                     return null;
                 }
 
-                //all private key components are Integer sequences
                 elems = GetIntegerSize(binaryReader);
                 MODULUS = binaryReader.ReadBytes(elems);
 
@@ -144,7 +143,7 @@ namespace Aop.Api.Util.Encryption
                 elems = GetIntegerSize(binaryReader);
                 IQ = binaryReader.ReadBytes(elems);
 
-                //create RSACryptoServiceProvider instance and initialize with public key
+                
                 RSACryptoServiceProvider rsaService = new RSACryptoServiceProvider();
                 RSAParameters rsaParams = new RSAParameters
                 {
@@ -171,7 +170,6 @@ namespace Aop.Api.Util.Encryption
 
             bt = binaryReader.ReadByte();
 
-            //expect integer
             if (bt != 0x02)
             {
                 return 0;
@@ -180,12 +178,10 @@ namespace Aop.Api.Util.Encryption
 
             if (bt == 0x81)
             {
-                //data size in next byte
                 count = binaryReader.ReadByte();
             }
             else if (bt == 0x82)
             {
-                //data size in next 2 bytes
                 highbyte = binaryReader.ReadByte();
                 lowbyte = binaryReader.ReadByte();
                 byte[] modint = { lowbyte, highbyte, 0x00, 0x00 };
@@ -193,14 +189,13 @@ namespace Aop.Api.Util.Encryption
             }
             else
             {
-                //we already have the data size
                 count = bt;
             }
             while (binaryReader.ReadByte() == 0x00)
-            {   //remove high order zeros in data
+            {   
                 count -= 1;
             }
-            //last ReadByte wasn't a removed zero, so back up a byte
+
             binaryReader.BaseStream.Seek(-1, SeekOrigin.Current);
             return count;
         }

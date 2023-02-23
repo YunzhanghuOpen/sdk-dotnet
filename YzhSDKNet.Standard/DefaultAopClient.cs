@@ -156,7 +156,7 @@ namespace Aop.Api
         /// 对密文数据进行解密
         /// </summary>
         /// <param name="body">原始响应数据</param>
-        /// <param name="des3Key">DES3 KEY</param>
+        /// <param name="des3Key">3DES Key</param>
         /// <returns></returns>
         private string Parese(string body, string des3Key)
         {

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "wzvVo9JsAXKfYrmg7F2JnWQmHUY+PZdFRFQT7Yoid/gnt1Pxz3/Lqh23XwYAzMxtgiXOSeD7IZDp351FxfQtFA==",
+  "dgSpecHash": "3jUnCuseJy5wHShfoSa6LnHRD0Fet4BcZPavBfhtbnSBne2xK4U8II6TOae7iNoWjXKTYnsJActNPC4qei/f0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yunzhanghu_bj576\\source\\repos\\YzhSDKNet.Standard\\YzhSDKNet.Standard.csproj",
+  "projectFilePath": "/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/YzhSDKNet.Standard.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\yunzhanghu_bj576\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\yunzhanghu_bj576\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\yunzhanghu_bj576\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "/Users/yunzhanghu_bj851/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/yunzhanghu_bj851/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/yunzhanghu_bj851/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512"
   ],
   "logs": []
 }

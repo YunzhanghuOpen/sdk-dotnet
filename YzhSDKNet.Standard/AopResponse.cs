@@ -34,7 +34,7 @@ namespace Aop.Api
         }
 
         /// <summary>
-        /// 请求ID
+        /// 请求 ID
         /// </summary>
         [JsonProperty("request_id")]
         public string RequestID

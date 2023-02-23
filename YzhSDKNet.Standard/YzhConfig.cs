@@ -13,6 +13,7 @@ namespace Aop.Api
         /// 请求地址
         /// 线上：https://api-service.yunzhanghu.com
         /// 沙箱：https://api-service.yunzhanghu.com/sandbox
+        /// 个体户注册：https://api-aic.yunzhanghu.com
         /// </summary>
         public string ServerUrl { get; set; } = "https://api-service.yunzhanghu.com";
 
@@ -22,12 +23,17 @@ namespace Aop.Api
         public string DealerID { get; set; }
 
         /// <summary>
-        /// 云账户分配的 APP KEY，必填
+        /// 综合服务主体 ID，必填
+        /// </summary>
+        public string BrokerID { get; set; }
+
+        /// <summary>
+        /// 云账户分配的 App Key，必填
         /// </summary>
         public string AppKey { get; set; }
 
         /// <summary>
-        /// 云账户分配的 DES3 KEY，必填
+        /// 云账户分配的 3DES Key，必填
         /// </summary>
         public string Des3Key { get; set; }
 
@@ -49,7 +55,7 @@ namespace Aop.Api
         /// <summary>
         /// 签名类型 RSA OR SHA256
         /// 云账户支持两种签名类型，RSA 或者 HMAC，其中HAMC签名传SHA256，RSA签名类型传RSA
-        /// 新开通的平台企业默认使用 RSA 签名类型，如果需要切换请联系对应云账户支持
+        /// 新开通的平台企业默认使用 RSA 签名类型，如果需要切换可登录【云账户综合服务平台-业务中心-业务管理-对接信息】进行切换
         /// </summary>
         public string SignType { get; set; } = "RSA";
 

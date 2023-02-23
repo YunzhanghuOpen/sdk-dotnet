@@ -12,8 +12,8 @@ namespace Aop.Api.Util.Encryption
         /// <summary>
         /// 根据算法名称（RSA、SHA256）实例化具体的算法加密器
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">签名类型</param>
+        /// <returns>类型对应签名实例</returns>
         /// <exception cref="AopException"></exception>
         public static IEncryptor GetByName(string type)
         {

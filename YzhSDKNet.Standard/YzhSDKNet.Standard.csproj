@@ -12,4 +12,34 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="YzhTest\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="YzhTest\Program.cs" />
+    <Compile Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhSDKNet.Standard.dll" />
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.dll" />
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.pdb" />
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.runtimeconfig.dev.json" />
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhSDKNet.Standard.pdb" />
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll" />
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.runtimeconfig.json" />
+    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.deps.json" />
+    <None Remove="YzhTest\obj\YzhTest.csproj.nuget.dgspec.json" />
+    <None Remove="YzhTest\obj\YzhTest.csproj.nuget.g.props" />
+    <None Remove="YzhTest\obj\project.nuget.cache" />
+    <None Remove="YzhTest\obj\YzhTest.csproj.nuget.g.targets" />
+    <None Remove="YzhTest\obj\project.assets.json" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.genruntimeconfig.cache" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.dll" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.FileListAbsolute.txt" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.pdb" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.CoreCompileInputs.cache" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.AssemblyInfoInputs.cache" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.AssemblyReference.cache" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.CopyComplete" />
+    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.assets.cache" />
+  </ItemGroup>
 </Project>

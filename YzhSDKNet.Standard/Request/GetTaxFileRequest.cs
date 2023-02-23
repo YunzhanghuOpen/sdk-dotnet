@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,9 +79,9 @@ namespace Aop.Api.Request
       }
 
       /// <summary>
-      /// 获取请求ID
+      /// 获取请求 ID
       /// </summary>
-      /// <returns>请求ID，未设置时返回默认</returns>
+      /// <returns>请求 ID，未设置时返回默认</returns>
       public string GetRequestID()
       {
           if (string.IsNullOrEmpty(this.requestID))
@@ -92,9 +92,9 @@ namespace Aop.Api.Request
       }
 
       /// <summary>
-      /// 设置请求ID
+      /// 设置请求 ID
       /// </summary>
-      /// <param name="requestID">请求ID</param>
+      /// <param name="requestID">请求 ID</param>
       public void SetRequestID(string requestID)
       {
           this.requestID = requestID;

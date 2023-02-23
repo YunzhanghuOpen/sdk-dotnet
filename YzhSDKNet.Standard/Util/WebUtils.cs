@@ -106,7 +106,7 @@ namespace Aop.Api.Util
         /// <returns></returns>
         public static string BuildQuery(IDictionary<string, string> parameters)
         {
-            return string.Join("&", parameters.Select(p => $"{p.Key}={Uri.EscapeDataString(p.Value)}"));
+            return string.Join("&", parameters.Select(p => $"{HttpUtility.UrlEncode(p.Key)}={HttpUtility.UrlEncode(p.Value)}"));
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Aop.Api.Util
             StreamReader reader = null;
             try
             {
-                // 以字符流的方式读取Http响应
+                // 以字符流的方式读取 Http 响应
                 stream = response.GetResponseStream();
                 reader = new StreamReader(stream, Encoding.GetEncoding(response.CharacterSet));
 
