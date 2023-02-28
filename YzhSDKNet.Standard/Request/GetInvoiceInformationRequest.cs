@@ -10,9 +10,9 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 查询个体工商户状态
+   /// 查询发票信息
    /// <summary>
-   public class H5EcoCityAicStatusRequest : IAopRequest<H5EcoCityAicStatusResponse>
+   public class GetInvoiceInformationRequest : IAopRequest<GetInvoiceInformationResponse>
    {
       #region IAopRequest Members
       private string mess;
@@ -44,7 +44,7 @@ namespace Aop.Api.Request
       /// <returns>响应接口请求类型</returns>
       public string GetMethod()
       {
-          return "GET";
+          return "POST";
       }
 
       /// <summary>
@@ -53,7 +53,7 @@ namespace Aop.Api.Request
       /// <returns>响应接口请求路由</returns>
       public string GetApiPath()
       {
-          return "/api/aic/new-economy/h5/v1/status";
+          return "/api/invoice/v2/invoice-information";
       }
 
       /// <summary>

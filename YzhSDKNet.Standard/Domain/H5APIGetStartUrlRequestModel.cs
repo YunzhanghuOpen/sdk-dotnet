@@ -58,8 +58,8 @@ namespace Aop.Api.Domain
       /// <summary>
       /// H5 页面 Title
       /// <summary>
-      [JsonProperty("custom_title")]
-      public int CustomTitle { get; set; }
+      [JsonProperty("customer_title")]
+      public int CustomerTitle { get; set; }
       
    }
 }
