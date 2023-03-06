@@ -6,36 +6,21 @@ namespace Aop.Api.Example
 {
     public class Payment
     {
-        //获取基础配置信息
-        public static YzhConfig GetConfig()
-        {
-            YzhConfig config = new YzhConfig();
-            config.ServerUrl = ""; //设置接口基础地址
-            config.DealerID = ""; //设置平台企业 ID
-            config.BrokerID = ""; //设置综合服务主体 ID
-            config.AppKey = ""; //设置 App Key
-            config.PrivateKey = ""; //设置平台企业私钥
-            config.YzhPublicKey = ""; //设置云账户公钥
-            config.Des3Key = ""; //设置 3DES Key
-            config.SignType = ""; //设置签名方式，RSA 或 SHA256
+        // 获取基础配置信息
+        static YzhConfig config = GetConfig();
+        // 客户端实现
+        static DefaultAopClient client = new DefaultAopClient(config);
+        // 设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // client.SetTimeout(30000); 
 
-            return config;
+        // 银行卡实时支付
+        public static void CreateBankpayOrder_Example()
+        { 
 
-        }
-
-        //银行卡实时支付
-        public void CreateBankpayOrder_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
-
-            //实例化具体 API 对应的 request 类
-            var request = new CreateBankpayOrderRequest();
-            //加载接口参数
-            var model = new CreateBankpayOrderRequestModel
+            // 实例化具体 API 对应的 request 类
+            CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
+            // 加载接口参数
+            CreateBankpayOrderRequestModel model = new CreateBankpayOrderRequestModel
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
@@ -49,30 +34,31 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            CreateBankpayOrderResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //支付宝实时支付
-        public void CreateAlipayOrder_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 支付宝实时支付
+        public static void CreateAlipayOrder_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new CreateAlipayOrderRequest();
-            //加载接口参数
-            var model = new CreateAlipayOrderRequestModel
+            // 实例化具体 API 对应的 request 类
+            CreateAlipayOrderRequest request = new CreateAlipayOrderRequest();
+            // 加载接口参数
+            CreateAlipayOrderRequestModel model = new CreateAlipayOrderRequestModel
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
@@ -86,30 +72,31 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            CreateAlipayOrderResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //微信实时支付
-        public void CreateWxpayOrder_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 微信实时支付
+        public static void CreateWxpayOrder_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new CreateWxpayOrderRequest();
-            //加载接口参数
-            var model = new CreateWxpayOrderRequestModel
+            // 实例化具体 API 对应的 request 类
+            CreateWxpayOrderRequest request = new CreateWxpayOrderRequest();
+            // 加载接口参数
+            CreateWxpayOrderRequestModel model = new CreateWxpayOrderRequestModel
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
@@ -124,30 +111,31 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            CreateWxpayOrderResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //批次下单
-        public void CreateBatchOrder_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 批次下单
+        public static void CreateBatchOrder_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new CreateBatchOrderRequest();
-            //加载接口参数
-            var model = new CreateBatchOrderRequestModel
+            // 实例化具体 API 对应的 request 类
+            CreateBatchOrderRequest request = new CreateBatchOrderRequest();
+            // 加载接口参数
+            CreateBatchOrderRequestModel model = new CreateBatchOrderRequestModel
             {
                 BatchID = "test12321332",
                 DealerID = config.DealerID,
@@ -155,7 +143,7 @@ namespace Aop.Api.Example
                 Channel = "银行卡",
                 TotalPay = "100.00",
                 TotalCount = "3",
-                OrderList= new BatchOrderInfo[] {new BatchOrderInfo{
+                OrderList = new BatchOrderInfo[] {new BatchOrderInfo{
                     OrderID = "test1234567890",
                     RealName = "张三",
                     IDCard = "110101198012021002",
@@ -186,148 +174,153 @@ namespace Aop.Api.Example
                 }
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            CreateBatchOrderResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //批次确认
-        public void ConfirmBatchOrder_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 批次确认
+        public static void ConfirmBatchOrder_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new ConfirmBatchOrderRequest();
-            //加载接口参数
-            var model = new ConfirmBatchOrderRequestModel
+            // 实例化具体 API 对应的 request 类
+            ConfirmBatchOrderRequest request = new ConfirmBatchOrderRequest();
+            // 加载接口参数
+            ConfirmBatchOrderRequestModel model = new ConfirmBatchOrderRequestModel
             {
-                BatchID = "test12321332",
+                BatchID = "b2321ewfada",
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
-                Channel = "银行卡"
+                Channel = "支付宝"
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            ConfirmBatchOrderResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //查询单笔订单信息
-        public void GetOrder_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 查询单笔订单信息
+        public static void GetOrder_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new GetOrderRequest();
-            //加载接口参数
-            var model = new GetOrderRequestModel
+            // 实例化具体 API 对应的 request 类
+            GetOrderRequest request = new GetOrderRequest();
+            // 加载接口参数
+            GetOrderRequestModel model = new GetOrderRequestModel
             {
                 OrderID = "123123142718321",
                 Channel = "银行卡",
                 DataType = "encryption"
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            GetOrderResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //查询平台企业余额
-        public void ListAccount_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 查询平台企业余额
+        public static void ListAccount_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new ListAccountRequest();
-            //加载接口参数
-            var model = new ListAccountRequestModel
+            // 实例化具体 API 对应的 request 类
+            ListAccountRequest request = new ListAccountRequest();
+            // 加载接口参数
+            ListAccountRequestModel model = new ListAccountRequestModel
             {
                 DealerID = config.DealerID
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            ListAccountResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //查询电子回单
-        public void GetEleReceiptFile_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 查询电子回单
+        public static void GetEleReceiptFile_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new GetEleReceiptFileRequest();
-            //加载接口参数
-            var model = new GetEleReceiptFileRequestModel
+            // 实例化具体 API 对应的 request 类
+            GetEleReceiptFileRequest request = new GetEleReceiptFileRequest();
+            // 加载接口参数
+            GetEleReceiptFileRequestModel model = new GetEleReceiptFileRequestModel
             {
                 OrderID = "12312312421321",
                 Ref = ""
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            GetEleReceiptFileResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //取消待支付订单
-        public void CancelOrder_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 取消待支付订单
+        public static void CancelOrder_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new CancelOrderRequest();
-            //加载接口参数
-            var model = new CancelOrderRequestModel
+            // 实例化具体 API 对应的 request 类
+            CancelOrderRequest request = new CancelOrderRequest();
+            // 加载接口参数
+            CancelOrderRequestModel model = new CancelOrderRequestModel
             {
                 DealerID = config.DealerID,
                 OrderID = "12312312421321",
@@ -335,44 +328,75 @@ namespace Aop.Api.Example
                 Channel = "银行卡"
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            CancelOrderResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
+            }
+            else
+            {
+                // 处理返回异常情况
             }
         }
 
-        //查询平台企业汇款信息
-        public void GetDealerVARechargeAccount_Example()
-        {
-            //获取基础配置信息
-            YzhConfig config = GetConfig();
-            //客户端实现
-            var client = new DefaultAopClient(config);
-            //client.SetTimeout(30000); //设置接口超时时间，单位毫秒，SDK 中默认设置超时时间为 30 秒
+        // 查询平台企业汇款信息
+        public static void GetDealerVARechargeAccount_Example()
+        { 
 
-            //实例化具体 API 对应的 request 类
-            var request = new GetDealerVARechargeAccountRequest();
-            //加载接口参数
-            var model = new GetDealerVARechargeAccountRequestModel
+            // 实例化具体 API 对应的 request 类
+            GetDealerVARechargeAccountRequest request = new GetDealerVARechargeAccountRequest();
+            // 加载接口参数
+            GetDealerVARechargeAccountRequestModel model = new GetDealerVARechargeAccountRequestModel
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID
             };
             request.SetBizModel(model);
-            //request.SetRequestID(""); //设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID(""); 
 
-            //发起请求
-            var res = client.Execute(request);
-            Console.WriteLine(res.Code + "\n" + res.Message + "\n" + res.Body);
-            if (res.Code == "0000")
+            // 发起请求
+            GetDealerVARechargeAccountResponse res = client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
             {
-                //根据响应码进行业务处理
+                // 根据响应码进行业务处理
             }
+            else
+            {
+                // 处理返回异常情况
+            }
+        }
+
+        // 获取基础配置信息
+        public static YzhConfig GetConfig()
+        {
+            YzhConfig config = new YzhConfig();
+            // 设置接口基础地址
+            config.ServerUrl = "";
+            // 设置平台企业 ID
+            config.DealerID = "";
+            // 设置综合服务主体 ID
+            config.BrokerID = "";
+            //设置 App Key
+            config.AppKey = "";
+            //设置平台企业私钥
+            config.PrivateKey = "";
+            //设置云账户公钥
+            config.YzhPublicKey = "";
+            //设置 3DES Key
+            config.Des3Key = "";
+            //设置签名方式，rsa 或 sha256
+            config.SignType = "";
+
+            return config;
         }
     }
 }

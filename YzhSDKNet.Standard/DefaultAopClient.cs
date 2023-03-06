@@ -80,13 +80,13 @@ namespace Aop.Api
             }
 
             // 检查 sign_type 是否符合要求
-            if (!this.config.SignType.Equals("SHA256") && !this.config.SignType.Equals("RSA"))
+            if (!this.config.SignType.ToLower().Equals("sha256") && !this.config.SignType.Equals("rsa"))
             {
                 throw new AopException("sign_type only support sha256 or rsa");
             }
 
-            // 检查 RSA 签名类型下 private_key 是否为空
-            if (this.config.SignType.Equals("RSA") && string.IsNullOrEmpty(this.config.PrivateKey))
+            // 检查 rsa 签名类型下 private_key 是否为空
+            if (this.config.SignType.ToLower().Equals("rsa") && string.IsNullOrEmpty(this.config.PrivateKey))
             {
                 throw new AopException("private_key is null or empty");
             }

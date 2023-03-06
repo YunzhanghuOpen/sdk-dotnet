@@ -6,7 +6,7 @@ using System.Text;
 namespace Aop.Api.Util.Encryption
 {
     /// <summary>
-    /// RSA 签名实现
+    /// rsa 签名实现
     /// </summary>
     public class RSAEncryptor : IEncryptor
     {
