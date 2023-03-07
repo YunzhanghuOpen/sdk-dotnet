@@ -19,12 +19,12 @@ namespace Aop.Api.Util
         /// <summary>
         /// 发起请求到服务端首次返回数据的超时时长，单位毫秒
         /// </summary>
-        public int Timeout { get; set; } = 30000;
+        public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
         /// 服务端首次返回数据后，等待后续数据的超时时长，单位毫秒
         /// </summary>
-        public int ReadWritTimeout { get; set; } = 15000;
+        public int ReadWritTimeout { get; set; } = 15 * 1000;
 
         /// <summary>
         /// 自定义 HTTP 请求 Header
