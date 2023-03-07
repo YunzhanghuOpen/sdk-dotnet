@@ -1,6 +1,8 @@
 ﻿using System;
+using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
+using Aop.Api.Response;
 
 namespace Aop.Api.Example
 {
