@@ -13,11 +13,9 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-
         // 身份实名验证
         public static void IDCardVerify_Example()
         { 
-
             // 实例化具体 API 对应的 request 类
             IDCardVerifyRequest request = new IDCardVerifyRequest();
             // 加载接口参数
@@ -47,7 +45,6 @@ namespace Aop.Api.Example
         // 银行卡信息查询
         public static void GetBankCardInfo_Example()
         { 
-
             // 实例化具体 API 对应的 request 类
             GetBankCardInfoRequest request = new GetBankCardInfoRequest();
             // 加载接口参数

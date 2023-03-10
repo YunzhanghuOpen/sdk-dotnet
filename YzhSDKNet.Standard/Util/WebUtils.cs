@@ -12,7 +12,7 @@ using System.Web;
 namespace Aop.Api.Util
 {
     /// <summary>
-    /// 网络工具类
+    /// HTTP 请求工具类
     /// </summary>
     public sealed class WebUtils
     {
@@ -85,7 +85,7 @@ namespace Aop.Api.Util
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
             req.Method = method;
             req.KeepAlive = true;
-            req.UserAgent = "yunzhanghu-sdk-net";
+            req.UserAgent = "yunzhanghu-sdk-net-1.0";
             req.Timeout = Timeout;
             req.ReadWriteTimeout = ReadWritTimeout;
             req.ContentType = "application/x-www-form-urlencoded";
@@ -102,7 +102,7 @@ namespace Aop.Api.Util
         /// <summary>
         /// 组装普通文本请求
         /// </summary>
-        /// <param name="parameters">Key-Value格式请求参数</param>
+        /// <param name="parameters">请求参数</param>
         /// <returns></returns>
         public static string BuildQuery(IDictionary<string, string> parameters)
         {
@@ -121,7 +121,7 @@ namespace Aop.Api.Util
             StreamReader reader = null;
             try
             {
-                // 以字符流的方式读取 Http 响应
+                // 以字符流的方式读取响应
                 stream = response.GetResponseStream();
                 reader = new StreamReader(stream, Encoding.GetEncoding(response.CharacterSet));
 

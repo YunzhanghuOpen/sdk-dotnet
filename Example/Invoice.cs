@@ -13,11 +13,9 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-
         // 查询平台企业已开具和待开具发票金额
         public static void GetInvoiceStat_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatRequest request = new GetInvoiceStatRequest();
             // 加载接口参数
@@ -47,8 +45,7 @@ namespace Aop.Api.Example
 
         // 查询可开具发票额度和发票开具信息
         public static void GetInvoiceAmount_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetInvoiceAmountRequest request = new GetInvoiceAmountRequest();
             // 加载接口参数
@@ -77,8 +74,7 @@ namespace Aop.Api.Example
 
         // 发票开具申请
         public static void ApplyInvoice_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             ApplyInvoiceRequest request = new ApplyInvoiceRequest();
             // 加载接口参数
@@ -113,8 +109,7 @@ namespace Aop.Api.Example
 
         // 查询发票开具申请状态
         public static void GetInvoiceStatus_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatusRequest request = new GetInvoiceStatusRequest();
             // 加载接口参数
@@ -143,8 +138,7 @@ namespace Aop.Api.Example
 
         // 下载 PDF 版发票
         public static void GetInvoiceFile_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetInvoiceFileRequest request = new GetInvoiceFileRequest();
             // 加载接口参数
@@ -173,8 +167,7 @@ namespace Aop.Api.Example
 
         // 发送发票扫描件压缩包下载链接邮件
         public static void SendReminderEmail_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             SendReminderEmailRequest request = new SendReminderEmailRequest();
             // 加载接口参数

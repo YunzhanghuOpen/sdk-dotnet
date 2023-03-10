@@ -95,7 +95,8 @@ namespace Aop.Api.Example
             request.SetBizModel(model);
             // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
-
+            // 设置超时时间，不设置时默认 30 秒
+            // client.SetTimeout(30 * 1000);
             // 发起请求
             CreateBankpayOrderResponse res = client.Execute(request);
 

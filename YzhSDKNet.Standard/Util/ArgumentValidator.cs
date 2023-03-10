@@ -18,17 +18,9 @@ namespace Aop.Api.Util
             }
         }
 
-        public static void CheckNotNull(object value, string errorMessage)
+        public static void CheckNotNull(string value, string errorMessage)
         {
-            if (value == null)
-            {
-                throw new AopException(errorMessage);
-            }
-        }
-
-        public static void EnsureNull(object value, string errorMessage)
-        {
-            if (value != null)
+            if (string.IsNullOrEmpty(value))
             {
                 throw new AopException(errorMessage);
             }

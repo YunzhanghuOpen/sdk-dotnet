@@ -13,11 +13,9 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-
         // 银行卡实时支付
         public static void CreateBankpayOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
             // 加载接口参数
@@ -54,8 +52,7 @@ namespace Aop.Api.Example
 
         // 支付宝实时支付
         public static void CreateAlipayOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             CreateAlipayOrderRequest request = new CreateAlipayOrderRequest();
             // 加载接口参数
@@ -92,8 +89,7 @@ namespace Aop.Api.Example
 
         // 微信实时支付
         public static void CreateWxpayOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             CreateWxpayOrderRequest request = new CreateWxpayOrderRequest();
             // 加载接口参数
@@ -131,8 +127,7 @@ namespace Aop.Api.Example
 
         // 批次下单
         public static void CreateBatchOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             CreateBatchOrderRequest request = new CreateBatchOrderRequest();
             // 加载接口参数
@@ -194,8 +189,7 @@ namespace Aop.Api.Example
 
         // 批次确认
         public static void ConfirmBatchOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             ConfirmBatchOrderRequest request = new ConfirmBatchOrderRequest();
             // 加载接口参数
@@ -226,8 +220,7 @@ namespace Aop.Api.Example
 
         // 查询单笔订单信息
         public static void GetOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetOrderRequest request = new GetOrderRequest();
             // 加载接口参数
@@ -257,8 +250,7 @@ namespace Aop.Api.Example
 
         // 查询平台企业余额
         public static void ListAccount_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             ListAccountRequest request = new ListAccountRequest();
             // 加载接口参数
@@ -286,8 +278,7 @@ namespace Aop.Api.Example
 
         // 查询电子回单
         public static void GetEleReceiptFile_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetEleReceiptFileRequest request = new GetEleReceiptFileRequest();
             // 加载接口参数
@@ -316,8 +307,7 @@ namespace Aop.Api.Example
 
         // 取消待支付订单
         public static void CancelOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             CancelOrderRequest request = new CancelOrderRequest();
             // 加载接口参数
@@ -348,8 +338,7 @@ namespace Aop.Api.Example
 
         // 查询平台企业汇款信息
         public static void GetDealerVARechargeAccount_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetDealerVARechargeAccountRequest request = new GetDealerVARechargeAccountRequest();
             // 加载接口参数

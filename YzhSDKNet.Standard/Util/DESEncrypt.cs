@@ -6,7 +6,7 @@ using System.Text;
 namespace Aop.Api.Util
 {
     /// <summary>
-    /// DES 加解密
+    /// 3DES 加解密
     /// </summary>
     public static class DESEncrypt
     {

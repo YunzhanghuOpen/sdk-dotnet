@@ -13,11 +13,9 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-
         // 预启动
         public static void H5GetStartUrl_Example()
         { 
-
             // 实例化具体 API 对应的 request 类
             H5GetStartUrlRequest request = new H5GetStartUrlRequest();
             // 加载接口参数
@@ -53,7 +51,6 @@ namespace Aop.Api.Example
         // 查询个体工商户状态
         public static void H5EcoCityAicStatus_Example()
         { 
-
             // 实例化具体 API 对应的 request 类
             H5EcoCityAicStatusRequest request = new H5EcoCityAicStatusRequest();
             // 加载接口参数

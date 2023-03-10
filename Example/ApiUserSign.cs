@@ -13,8 +13,6 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-        
-
         // 获取协议预览 URL
         public static void ApiUseSignContract_Example()
         {

@@ -6,7 +6,7 @@ using System.Text;
 namespace Aop.Api.Util.Encryption
 {
     /// <summary>
-    /// rsa 签名实现
+    /// RSA 签名实现
     /// </summary>
     public class RSAEncryptor : IEncryptor
     {
@@ -14,9 +14,9 @@ namespace Aop.Api.Util.Encryption
         /// 计算指定内容的签名
         /// </summary>
         /// <param name="content">待签名的原文</param>
-        /// <param name="appKey">云账户分配的 App Key</param>
-        /// <param name="key">私钥</param>
-        /// <returns>签名字符串</returns>
+        /// <param name="appKey">云账户 App Key</param>
+        /// <param name="key">平台企业私钥</param>
+        /// <returns>签名结果</returns>
         public string Sign(string content, string appKey, string privateKey)
         {
             using (RSACryptoServiceProvider rsaService = BuildRSAServiceProvider(privateKey))
@@ -31,9 +31,9 @@ namespace Aop.Api.Util.Encryption
         /// <summary>
         /// 验证指定内容的签名是否正确
         /// </summary>
-        /// <param name="content">待校验的原文</param>
-        /// <param name="sign">签名字符串</param>
-        /// <param name="appKey">云账户分配的 App Key</param>
+        /// <param name="content">待验签的原文</param>
+        /// <param name="sign">签名结果</param>
+        /// <param name="appKey">云账户 App Key</param>
         /// <param name="publicKey">公钥</param>
         /// <returns>true：验证通过；false：验证不通过</returns>
         public bool Verify(string content, string sign, string appKey, string publicKey)
@@ -47,24 +47,24 @@ namespace Aop.Api.Util.Encryption
             }
         }
 
-        //加载公钥
-        private RSAParameters ConvertFromPemPublicKey(string pemPublickKey)
+        // 加载公钥
+        private RSAParameters ConvertFromPemPublicKey(string pemPublicKey)
         {
-            if (string.IsNullOrEmpty(pemPublickKey))
+            if (string.IsNullOrEmpty(pemPublicKey))
             {
-                throw new AopException("PEM 格式公钥，不可为空。");
+                throw new AopException("云账户公钥，不可为空。");
             }
 
             // 移除干扰文本
-            pemPublickKey = pemPublickKey.Replace("-----BEGIN PUBLIC KEY-----", "")
-                .Replace("-----END PUBLIC KEY-----", "").Replace("\n", "").Replace("\r", "");
+            pemPublicKey = pemPublicKey.Replace("-----BEGIN PUBLIC KEY-----", "")
+                .Replace("-----END PUBLIC KEY-----", "").Replace("\n", "").Replace("\r", "").Trim();
 
-            byte[] keyData = Convert.FromBase64String(pemPublickKey);
+            byte[] keyData = Convert.FromBase64String(pemPublicKey);
             bool keySize1024 = keyData.Length == 162;
             bool keySize2048 = keyData.Length == 294;
             if (!(keySize1024 || keySize2048))
             {
-                throw new AopException("公钥长度只支持 1024 和 2048。");
+                throw new AopException("公钥长度只支持 1024 或 2048。");
             }
             byte[] pemModulus = keySize1024 ? new byte[128] : new byte[256];
             byte[] pemPublicExponent = new byte[3];
@@ -76,7 +76,7 @@ namespace Aop.Api.Util.Encryption
             return para;
         }
 
-        //加载私钥
+        // 加载私钥
         private RSACryptoServiceProvider BuildRSAServiceProvider(string privateKey)
         {
             privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", "")

@@ -15,14 +15,12 @@ namespace Aop.Api.Util
         /// <param name="type">签名类型（rsa 或 sha256）</param>
         /// <param name="appKey">App Key</param>
         /// <param name="privateKey">私钥</param>
-        /// <returns>签名字符串</returns>
+        /// <returns>签名结果</returns>
         public static string Sign(string content, string type, string appKey, string privateKey)
         {
             try
             {
                 ArgumentValidator.CheckNotNull(content, "待签名内容不可为 null");
-                ArgumentValidator.CheckArgument(string.IsNullOrEmpty(appKey) && string.IsNullOrEmpty(privateKey), "签名密钥不可为空");
-
                 IEncryptor encryptor = EncryptorManager.GetByName(type);
                 return encryptor.Sign(content, appKey, privateKey);
             }

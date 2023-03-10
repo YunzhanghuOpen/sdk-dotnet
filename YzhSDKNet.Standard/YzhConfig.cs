@@ -53,9 +53,8 @@ namespace Aop.Api
         public string YzhPublicKey { get; set; }
 
         /// <summary>
-        /// 签名类型：rsa 或 sha256
-        /// 云账户支持两种签名类型，rsa 或者 HMAC，其中HAMC签名传 sha256，rsa 签名类型传 rsa
-        /// 新开通的平台企业默认使用 rsa 签名类型，如果需要切换可登录【云账户综合服务平台-业务中心-业务管理-对接信息】进行切换
+        /// 签名方式，登录云账户综合服务平台，选择“业务中心 > 业务管理 > 对接信息”获取，默认为 RSA 签名
+        /// RSA 签名：rsa | HMAC 签名：sha256
         /// </summary>
         public string SignType { get; set; } = "rsa";
 

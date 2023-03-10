@@ -13,11 +13,9 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-
         // 下载个人所得税扣缴明细表
         public static void GetTaxFile_Example()
         {
-
             // 实例化具体 API 对应的 request 类
             GetTaxFileRequest request = new GetTaxFileRequest();
             // 加载接口参数
@@ -47,8 +45,7 @@ namespace Aop.Api.Example
 
         // 查询纳税人是否为跨集团用户
         public static void GetUserCross_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetUserCrossRequest request = new GetUserCrossRequest();
             // 加载接口参数

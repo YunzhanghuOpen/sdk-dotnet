@@ -13,11 +13,9 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-
         // 查询日订单文件
         public static void GetOrderDownloadsUrl_Example()
         { 
-
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileRequest request = new GetDailyOrderFileRequest();
             // 加载接口参数
@@ -45,8 +43,7 @@ namespace Aop.Api.Example
 
         // 查询日流水文件
         public static void GetDailyBillFileV2_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetDailyBillFileV2Request request = new GetDailyBillFileV2Request();
             // 加载接口参数
@@ -74,8 +71,7 @@ namespace Aop.Api.Example
 
         // 查询平台企业预付业务服务费记录
         public static void ListDealerRechargeRecordV2_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             ListDealerRechargeRecordV2Request request = new ListDealerRechargeRecordV2Request();
             // 加载接口参数
@@ -104,8 +100,7 @@ namespace Aop.Api.Example
 
         // 查询日订单数据
         public static void ListDailyOrder_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             ListDailyOrderRequest request = new ListDailyOrderRequest();
             // 加载接口参数
@@ -137,8 +132,7 @@ namespace Aop.Api.Example
 
         // 查询日流水数据
         public static void ListDailyBill_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             ListDailyBillRequest request = new ListDailyBillRequest();
             // 加载接口参数
@@ -169,8 +163,7 @@ namespace Aop.Api.Example
 
         // 查询日订单文件（支付和退款订单）
         public static void GetDailyOrderFileV2_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileV2Request request = new GetDailyOrderFileV2Request();
             // 加载接口参数
@@ -198,8 +191,7 @@ namespace Aop.Api.Example
 
         // 查询余额日账单数据
         public static void ListBalanceDailyStatement_Example()
-        { 
-
+        {
             // 实例化具体 API 对应的 request 类
             ListBalanceDailyStatementRequest request = new ListBalanceDailyStatementRequest();
             // 加载接口参数
