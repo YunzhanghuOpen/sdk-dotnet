@@ -52,43 +52,43 @@ namespace Aop.Api
             // 检查配置是否为空
             if (this.config == null)
             {
-                throw new AopException("config is null");
+                throw new AopException("Config is null");
             }
 
-            // 检查 dealer_id 是否为空
+            // 检查 DealerID 是否为空
             if (string.IsNullOrEmpty(this.config.DealerID))
             {
-                throw new AopException("dealer_id is null or empty");
+                throw new AopException("DealerID is null or empty");
             }
 
-            // 检查 app_key 是否为空
+            // 检查 AppKey 是否为空
             if (string.IsNullOrEmpty(this.config.AppKey))
             {
-                throw new AopException("app_key is null or empty");
+                throw new AopException("AppKey is null or empty");
             }
 
-            // 检查 des3_key 是否为空
+            // 检查 Des3Key 是否为空
             if (string.IsNullOrEmpty(this.config.Des3Key))
             {
-                throw new AopException("des3_key is null or empty");
+                throw new AopException("Des3Key is null or empty");
             }
 
-            // 检查 sign_type 是否为空
+            // 检查 SignType 是否为空
             if (string.IsNullOrEmpty(this.config.SignType))
             {
-                throw new AopException("sign_type is null or empty");
+                throw new AopException("SignType is null or empty");
             }
 
-            // 检查 sign_type 是否符合要求
+            // 检查 SignType 是否符合要求
             if (!this.config.SignType.ToLower().Equals("sha256") && !this.config.SignType.Equals("rsa"))
             {
-                throw new AopException("sign_type only support sha256 or rsa");
+                throw new AopException("SignType only support sha256 or rsa");
             }
 
-            // 检查 rsa 签名类型下 private_key 是否为空
+            // 检查 RSA 签名类型下 PrivateKey 是否为空
             if (this.config.SignType.ToLower().Equals("rsa") && string.IsNullOrEmpty(this.config.PrivateKey))
             {
-                throw new AopException("private_key is null or empty");
+                throw new AopException("PrivateKey is null or empty");
             }
 
             // 获取业务参数
@@ -101,7 +101,7 @@ namespace Aop.Api
             string plaintext = JsonConvert.SerializeObject(bizModel);
             // 对业务明文信息进行加密，生成密文数据
             string data = DESEncrypt.Encrypt(plaintext, this.config.Des3Key);
-            // 获取随机数字段
+            // 获取随机字符串
             string mess = request.GetMess();
             // 获取当前时间戳
             string timestamp = request.GetTimestamp();
@@ -109,7 +109,7 @@ namespace Aop.Api
             string message = $"data={data}&mess={mess}&timestamp={timestamp}&key={this.config.AppKey}";
             string sign = Signature.Sign(message, this.config.SignType, this.config.AppKey, this.config.PrivateKey);
 
-            // 封装相关请求参数
+            // 封装请求体
             Dictionary<string, string> parameters = new Dictionary<string, string>
             {
                 { YzhConstants.Data,data},
