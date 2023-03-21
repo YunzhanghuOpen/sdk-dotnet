@@ -11,7 +11,7 @@ namespace Aop.Api.Domain
    /// <summary>
    /// 获取协议预览 URL 返回
    /// <summary>
-   public class ApiUseSignContractResponseModel : AopObject
+   public class ApiUserSignContractResponseModel : AopObject
    {
       /// <summary>
       /// 预览跳转 URL

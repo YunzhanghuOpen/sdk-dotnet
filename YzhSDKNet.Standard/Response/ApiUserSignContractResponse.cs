@@ -12,13 +12,13 @@ namespace Aop.Api.Response
    /// <summary>
    /// 获取协议预览 URL
    /// <summary>
-   public class ApiUseSignContractResponse : AopResponse
+   public class ApiUserSignContractResponse : AopResponse
    {
       /// <summary>
       /// 获取协议预览 URL
       /// <summary>
       [JsonProperty("data")]
-      public ApiUseSignContractResponseModel Data { get; set; }
+      public ApiUserSignContractResponseModel Data { get; set; }
 
    }
 }
