@@ -1,0 +1,37 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{2F750D39-277A-4C2E-B1AA-6CF6D123308C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="config/ConfigUtil.cs">
+    <Files>
+      <File FileName="YzhTest/Program.cs" Line="10" Column="14" />
+      <File FileName="config/ConfigUtil.cs" Line="5" Column="2" />
+      <File FileName="Request/BizLicXjjH5/H5EcoCityAicStatusRequest.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="YzhSDKNet.Standard" expanded="True">
+            <Node name="YzhSDKNet.Standard" expanded="True">
+              <Node name="config" expanded="True">
+                <Node name="ConfigUtil.cs" selected="True" />
+              </Node>
+              <Node name="Request" expanded="True">
+                <Node name="BizLicXjjH5" expanded="True" />
+                <Node name="Payment" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="YzhTest" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.YzhTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/YzhTest/Program.cs" relfile="YzhTest/Program.cs" line="315" column="1" />
+      <Breakpoint file="/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/YzhTest/Program.cs" relfile="YzhTest/Program.cs" line="128" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

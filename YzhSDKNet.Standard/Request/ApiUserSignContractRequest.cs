@@ -10,9 +10,9 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
    /// <summary>
-   /// 查询发票信息
+   /// 获取协议预览 URL
    /// <summary>
-   public class GetInvoiceInformationRequest : IAopRequest<GetInvoiceInformationResponse>
+   public class ApiUserSignContractRequest : IAopRequest<ApiUserSignContractResponse>
    {
       #region IAopRequest Members
       private string mess;
@@ -44,7 +44,7 @@ namespace Aop.Api.Request
       /// <returns>响应接口请求类型</returns>
       public string GetMethod()
       {
-          return "POST";
+          return "GET";
       }
 
       /// <summary>
@@ -53,7 +53,7 @@ namespace Aop.Api.Request
       /// <returns>响应接口请求路由</returns>
       public string GetApiPath()
       {
-          return "/api/invoice/v2/invoice-face-information";
+          return "/api/sign/v1/user/contract";
       }
 
       /// <summary>
@@ -79,9 +79,9 @@ namespace Aop.Api.Request
       }
 
       /// <summary>
-      /// 获取请求 ID
+      /// 获取请求ID
       /// </summary>
-      /// <returns>请求 ID，未设置时返回默认</returns>
+      /// <returns>请求ID，未设置时返回默认</returns>
       public string GetRequestID()
       {
           if (string.IsNullOrEmpty(this.requestID))
@@ -92,9 +92,9 @@ namespace Aop.Api.Request
       }
 
       /// <summary>
-      /// 设置请求 ID
+      /// 设置请求ID
       /// </summary>
-      /// <param name="requestID">请求 ID</param>
+      /// <param name="requestID">请求ID</param>
       public void SetRequestID(string requestID)
       {
           this.requestID = requestID;

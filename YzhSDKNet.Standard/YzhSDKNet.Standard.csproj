@@ -41,5 +41,9 @@
     <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.AssemblyReference.cache" />
     <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.CopyComplete" />
     <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.assets.cache" />
+    <None Remove="config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
   </ItemGroup>
 </Project>

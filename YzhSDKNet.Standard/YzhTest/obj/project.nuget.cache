@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hClIMofLrcHPOdz+YSZVTGxw9WN7VxALdAqC/jN0wxRECUcuBjYuDRWMbHIs2Wc2Vq6xp+T3tNgsxhymZXZBBg==",
+  "success": true,
+  "projectFilePath": "/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/YzhTest/YzhTest.csproj",
+  "expectedPackageFiles": [
+    "/Users/yunzhanghu_bj851/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

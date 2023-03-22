@@ -10,15 +10,15 @@ using Aop.Api.Domain;
 namespace Aop.Api.Response
 {
    /// <summary>
-   /// 获取协议预览 URL
+   /// 查询发票信息
    /// <summary>
-   public class ApiUserSignContractResponse : AopResponse
+   public class GetInvoiceInformationResponse : AopResponse
    {
       /// <summary>
-      /// 获取协议预览 URL
+      /// 查询发票信息
       /// <summary>
       [JsonProperty("data")]
-      public ApiUserSignContractResponseModel Data { get; set; }
+      public GetInvoiceInformationResponseModel Data { get; set; }
 
    }
 }

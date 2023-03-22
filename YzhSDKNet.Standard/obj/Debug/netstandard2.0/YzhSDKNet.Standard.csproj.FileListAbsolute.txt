@@ -8,13 +8,13 @@ C:/Users/yunzhanghu_bj576/source/repos/YzhSDKNet.Standard/obj/Debug/netstandard2
 C:/Users/yunzhanghu_bj576/source/repos/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.csproj.CoreCompileInputs.cache
 C:/Users/yunzhanghu_bj576/source/repos/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.dll
 C:/Users/yunzhanghu_bj576/source/repos/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.pdb
-/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/bin/Debug/netstandard2.0/YzhSDKNet.Standard.deps.json
-/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/bin/Debug/netstandard2.0/YzhSDKNet.Standard.dll
-/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/bin/Debug/netstandard2.0/YzhSDKNet.Standard.pdb
-/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.csproj.AssemblyReference.cache
 /Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.GeneratedMSBuildEditorConfig.editorconfig
 /Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.AssemblyInfoInputs.cache
 /Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.AssemblyInfo.cs
 /Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.csproj.CoreCompileInputs.cache
+/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/bin/Debug/netstandard2.0/YzhSDKNet.Standard.deps.json
+/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/bin/Debug/netstandard2.0/YzhSDKNet.Standard.dll
+/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/bin/Debug/netstandard2.0/YzhSDKNet.Standard.pdb
+/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.csproj.AssemblyReference.cache
 /Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.dll
 /Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/obj/Debug/netstandard2.0/YzhSDKNet.Standard.pdb
