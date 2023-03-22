@@ -52,31 +52,31 @@ namespace Aop.Api
             // 检查配置是否为空
             if (this.config == null)
             {
-                throw new AopException("Config is null");
+                throw new AopException("Config can't be null");
             }
 
             // 检查 DealerID 是否为空
             if (string.IsNullOrEmpty(this.config.DealerID))
             {
-                throw new AopException("DealerID is null or empty");
+                throw new AopException("DealerID can't be null or empty");
             }
 
             // 检查 AppKey 是否为空
             if (string.IsNullOrEmpty(this.config.AppKey))
             {
-                throw new AopException("AppKey is null or empty");
+                throw new AopException("AppKey can't be null or empty");
             }
 
             // 检查 Des3Key 是否为空
             if (string.IsNullOrEmpty(this.config.Des3Key))
             {
-                throw new AopException("Des3Key is null or empty");
+                throw new AopException("Des3Key can't be null or empty");
             }
 
             // 检查 SignType 是否为空
             if (string.IsNullOrEmpty(this.config.SignType))
             {
-                throw new AopException("SignType is null or empty");
+                throw new AopException("SignType can't be null or empty");
             }
 
             // 检查 SignType 是否符合要求
@@ -88,7 +88,7 @@ namespace Aop.Api
             // 检查 RSA 签名类型下 PrivateKey 是否为空
             if (this.config.SignType.ToLower().Equals("rsa") && string.IsNullOrEmpty(this.config.PrivateKey))
             {
-                throw new AopException("PrivateKey is null or empty");
+                throw new AopException("PrivateKey can't be null or empty");
             }
 
             // 获取业务参数
@@ -96,7 +96,7 @@ namespace Aop.Api
             // 验证业务参数是否为空
             if (bizModel == null)
             {
-                throw new AopException("biz_model is null");
+                throw new AopException("biz_model can't be null");
             }
             string plaintext = JsonConvert.SerializeObject(bizModel);
             // 对业务明文信息进行加密，生成密文数据

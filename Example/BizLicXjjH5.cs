@@ -3,13 +3,17 @@ using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
+using Aop.Api.Example.config;
 
 namespace Aop.Api.Example
 {
+    /// <summary>
+    /// 云账户新经济（H5）个体工商户注册
+    /// </summary>
     public class BizLicXjjH5
     {
         // 获取基础配置信息
-        static YzhConfig config = GetConfig();
+        static YzhConfig config = ConfigUtil.GetConfig();
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
@@ -79,30 +83,6 @@ namespace Aop.Api.Example
             {
                 // 处理返回异常情况
             }
-        }
-
-        // 获取基础配置信息
-        public static YzhConfig GetConfig()
-        {
-            YzhConfig config = new YzhConfig();
-            // 设置接口基础地址
-            config.ServerUrl = "";
-            // 设置平台企业 ID
-            config.DealerID = "";
-            // 设置综合服务主体 ID
-            config.BrokerID = "";
-            // 设置 App Key
-            config.AppKey = "";
-            // 设置平台企业私钥
-            config.PrivateKey = "";
-            // 设置云账户公钥
-            config.YzhPublicKey = "";
-            // 设置 3DES Key
-            config.Des3Key = "";
-            // 设置签名方式，rsa 或 sha256
-            config.SignType = "";
-
-            return config;
         }
     }
 }
