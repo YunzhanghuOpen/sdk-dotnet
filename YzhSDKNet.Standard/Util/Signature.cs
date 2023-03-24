@@ -20,7 +20,10 @@ namespace Aop.Api.Util
         {
             try
             {
-                ArgumentValidator.CheckNotNull(content, "待签名内容不可为 null");
+                if(string.IsNullOrEmpty(content))
+                {
+                    throw new AopException("待签名内容不可为 null");
+                }
                 IEncryptor encryptor = EncryptorManager.GetByName(type);
                 return encryptor.Sign(content, appKey, privateKey);
             }
@@ -44,10 +47,20 @@ namespace Aop.Api.Util
         {
             try
             {
-                ArgumentValidator.CheckNotNull(content, "待签名内容不可为 null");
-                ArgumentValidator.CheckNotNull(sign, "签名串内容不可为 null");
-                ArgumentValidator.CheckArgument(string.IsNullOrEmpty(appKey) && string.IsNullOrEmpty(publicKey), "签名密钥不可为空");
+                if(string.IsNullOrEmpty(content))
+                {
+                    throw new AopException("待签名内容不可为 null");
+                }
 
+                if (string.IsNullOrEmpty(sign))
+                {
+                    throw new AopException("签名串内容不可为 null");
+                }
+
+                if (string.IsNullOrEmpty(appKey) && string.IsNullOrEmpty(publicKey))
+                {
+                    throw new AopException("签名密钥不可为空");
+                }
 
                 IEncryptor encryptor = EncryptorManager.GetByName(type);
                 return encryptor.Verify(content, sign, appKey, publicKey);
