@@ -4,6 +4,7 @@ using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
 using Aop.Api.Example.config;
+using System.Collections.Generic;
 
 namespace Aop.Api.Example
 {
@@ -37,11 +38,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                GetDailyOrderFileResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -65,11 +68,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                GetDailyBillFileV2ResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -94,11 +99,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                List<RechargeRecordInfo> data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -126,11 +133,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                ListDailyOrderResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -157,11 +166,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                ListDailyBillResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -185,11 +196,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                GetDailyOrderFileV2ResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -213,11 +226,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                ListBalanceDailyStatementResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
     }

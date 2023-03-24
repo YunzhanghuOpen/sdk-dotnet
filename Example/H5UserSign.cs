@@ -41,11 +41,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                H5UserPresignResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -72,11 +74,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                H5UserSignResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -103,11 +107,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                GetH5UserSignStatusResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -135,11 +141,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                H5UserReleaseResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
     }

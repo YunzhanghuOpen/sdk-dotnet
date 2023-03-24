@@ -47,11 +47,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                H5PreCollectBizlicMsgResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -82,11 +84,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                H5APIGetStartUrlResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -115,11 +119,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                H5APIEcoCityAicStatusResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
     }

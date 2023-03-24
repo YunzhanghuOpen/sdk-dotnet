@@ -21,9 +21,9 @@ namespace Aop.Api.Example
         public static void ApiUseSignContract_Example()
         {
             // 实例化具体 API 对应的 request 类
-            ApiUseSignContractRequest request = new ApiUseSignContractRequest();
+            ApiUserSignContractRequest request = new ApiUserSignContractRequest();
             // 加载接口参数
-            ApiUseSignContractRequestModel model = new ApiUseSignContractRequestModel
+            ApiUserSignContractRequestModel model = new ApiUserSignContractRequestModel
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID
@@ -33,16 +33,18 @@ namespace Aop.Api.Example
             // request.SetRequestID(""); 
 
             // 发起请求
-            ApiUseSignContractResponse res = client.Execute(request);
+            ApiUserSignContractResponse res = client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                ApiUserSignContractResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -70,11 +72,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                ApiUserSignResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -101,11 +105,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                GetApiUserSignStatusResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -133,11 +139,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                ApiUserSignReleaseResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
     }

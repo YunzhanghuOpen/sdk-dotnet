@@ -38,11 +38,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                IDCardVerifyResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -67,11 +69,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                GetBankCardInfoResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -98,11 +102,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                BankCardThreeVerifyResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -130,11 +136,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                BankCardFourVerifyResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -162,11 +170,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                BankCardFourAuthVerifyResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -196,11 +206,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                BankCardFourAuthConfirmResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -248,11 +260,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                UserExemptedInfoResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -278,11 +292,13 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                // 对数据进行处理
+                UserWhiteCheckResponseModel data = res.Data;
             }
             else
             {
                 // 处理返回异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
     }
