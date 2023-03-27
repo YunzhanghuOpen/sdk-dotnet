@@ -44,7 +44,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 H5GetStartUrlResponseModel data = res.Data;
             }
             else
@@ -79,7 +78,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 H5EcoCityAicStatusResponseModel data = res.Data;
             }
             else

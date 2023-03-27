@@ -41,7 +41,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 H5UserPresignResponseModel data = res.Data;
             }
             else
@@ -74,7 +73,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 H5UserSignResponseModel data = res.Data;
             }
             else
@@ -107,7 +105,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetH5UserSignStatusResponseModel data = res.Data;
             }
             else
@@ -141,7 +138,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 H5UserReleaseResponseModel data = res.Data;
             }
             else

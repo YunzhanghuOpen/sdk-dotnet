@@ -38,7 +38,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 IDCardVerifyResponseModel data = res.Data;
             }
             else
@@ -69,7 +68,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetBankCardInfoResponseModel data = res.Data;
             }
             else
@@ -102,7 +100,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 BankCardThreeVerifyResponseModel data = res.Data;
             }
             else
@@ -136,7 +133,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 BankCardFourVerifyResponseModel data = res.Data;
             }
             else
@@ -170,7 +166,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 BankCardFourAuthVerifyResponseModel data = res.Data;
             }
             else
@@ -206,7 +201,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 BankCardFourAuthConfirmResponseModel data = res.Data;
             }
             else
@@ -260,7 +254,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 UserExemptedInfoResponseModel data = res.Data;
             }
             else
@@ -292,7 +285,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 UserWhiteCheckResponseModel data = res.Data;
             }
             else

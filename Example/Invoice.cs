@@ -39,7 +39,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetInvoiceStatResponseModel data = res.Data;
             }
             else
@@ -70,7 +69,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetInvoiceAmountResponseModel data = res.Data;
             }
             else
@@ -107,7 +105,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 ApplyInvoiceResponseModel data = res.Data;
             }
             else
@@ -138,7 +135,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetInvoiceStatusResponseModel data = res.Data;
             }
             else
@@ -169,7 +165,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetInvoiceFileResponseModel data = res.Data;
             }
             else
@@ -200,7 +195,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 SendReminderEmailResponseModel data = res.Data;
             }
             else

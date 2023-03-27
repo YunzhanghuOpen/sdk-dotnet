@@ -103,7 +103,7 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
+                CreateBankpayOrderResponseModel data = res.Data;
             }
             else
             {

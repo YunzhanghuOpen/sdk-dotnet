@@ -38,7 +38,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetDailyOrderFileResponseModel data = res.Data;
             }
             else
@@ -68,7 +67,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetDailyBillFileV2ResponseModel data = res.Data;
             }
             else
@@ -99,7 +97,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 List<RechargeRecordInfo> data = res.Data;
             }
             else
@@ -133,7 +130,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 ListDailyOrderResponseModel data = res.Data;
             }
             else
@@ -166,7 +162,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 ListDailyBillResponseModel data = res.Data;
             }
             else
@@ -196,7 +191,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetDailyOrderFileV2ResponseModel data = res.Data;
             }
             else
@@ -226,7 +220,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 ListBalanceDailyStatementResponseModel data = res.Data;
             }
             else

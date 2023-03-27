@@ -38,7 +38,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 ApiUserSignContractResponseModel data = res.Data;
             }
             else
@@ -72,7 +71,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 ApiUserSignResponseModel data = res.Data;
             }
             else
@@ -105,7 +103,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 GetApiUserSignStatusResponseModel data = res.Data;
             }
             else
@@ -139,7 +136,6 @@ namespace Aop.Api.Example
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 对数据进行处理
                 ApiUserSignReleaseResponseModel data = res.Data;
             }
             else

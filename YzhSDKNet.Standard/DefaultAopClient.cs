@@ -1,4 +1,5 @@
-﻿using Aop.Api.Util;
+﻿using Aop.Api.Request;
+using Aop.Api.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -151,12 +152,121 @@ namespace Aop.Api
             response.Body = body;
             return response;
         }
+        
+        /// <summary>
+        /// 处理云账户回调请求
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        /// <exception cref="AopException"></exception>
+        public T CallBackExecute<T>(YzhCallbackRequest<T> request) where T : AopObject
+        {
+            // 检查配置是否为空
+            if (this.config == null)
+            {
+                throw new AopException("config can't be null");
+            }
+
+            // 检查 DealerID 是否为空
+            if (string.IsNullOrEmpty(this.config.DealerID))
+            {
+                throw new AopException("dealer_id can't be null or empty");
+            }
+
+            // 检查 AppKey 是否为空
+            if (string.IsNullOrEmpty(this.config.AppKey))
+            {
+                throw new AopException("app_key can't be null or empty");
+            }
+
+            // 检查 DES3Key 是否为空
+            if (string.IsNullOrEmpty(this.config.Des3Key))
+            {
+                throw new AopException("des3_key can't be null or empty");
+            }
+
+            // 检查 SignType 是否为空
+            if (string.IsNullOrEmpty(this.config.SignType))
+            {
+                throw new AopException("sign_type can't be null or empty");
+            }
+
+            // 检查 SignType 是否符合要求
+            if (!this.config.SignType.Equals("sha256") && !this.config.SignType.Equals("rsa"))
+            {
+                throw new AopException("sign_type only support sha256 or rsa");
+            }
+
+            // 检查 RSA 签名类型下云账户公钥是否为空
+            if (this.config.SignType.Equals("rsa") && string.IsNullOrEmpty(this.config.YzhPublicKey))
+            {
+                throw new AopException("yzh_public_key can't be null or empty");
+            }
+
+            // 检查回调内容是否为 null
+            if (request == null)
+            {
+                throw new AopException("request can't be null");
+            }
+
+            // 检查 data 是否为空
+            if (string.IsNullOrEmpty(request.Data))
+            {
+                throw new AopException("data can't be empty");
+            }
+
+            // 检查 mess 是否为空
+            if (string.IsNullOrEmpty(request.Mess))
+            {
+                throw new AopException("mess can't be empty");
+            }
+
+            // 检查 timestamp 是否为空
+            if (string.IsNullOrEmpty(request.Timestamp))
+            {
+                throw new AopException("timestamp can't be empty");
+            }
+
+            // 检查 sign 是否为空
+            if (string.IsNullOrEmpty(request.Sign))
+            {
+                throw new AopException("sign can't be empty");
+            }
+
+            // 检查 sign_type 是否为空
+            if (string.IsNullOrEmpty(request.SignType))
+            {
+                throw new AopException("sign_type can't be empty");
+            }
+
+            // 检查 sign_type 是否一致
+            if (!this.config.SignType.Equals(request.SignType))
+            {
+                throw new AopException("sign_type not equal");
+            }
+
+            // 封装待签名字符串
+            string message = $"data={request.Data}&mess={request.Mess}&timestamp={request.Timestamp}&key={this.config.AppKey}";
+            // 验证回调请求签名是否正确
+            if (!Signature.Verify(message, request.Sign, request.SignType, this.config.AppKey, this.config.YzhPublicKey))
+            {
+                throw new AopException("sign verify failed");
+            }
+
+            // 解密数据
+            string data = DESEncrypt.Decrypt(request.Data, this.config.Des3Key);
+
+            T response = JsonConvert.DeserializeObject<T>(data);
+            response.Body = data;
+            return response;
+        }
 
         /// <summary>
         /// 对密文数据进行解密
         /// </summary>
         /// <param name="body">原始响应数据</param>
-        /// <param name="des3Key">3DES Key</param>
+        /// <param name="des3Key">DES3 KEY</param>
         /// <returns></returns>
         private string Parese(string body, string des3Key)
         {
