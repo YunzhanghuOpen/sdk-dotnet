@@ -38,9 +38,14 @@ uAZghReHK1iphlMaukF2R9CuctPESEfwzSqhMg5FGRvYgIY/l5BxQb+w4H3BT/LZ
 EPmAUAcCgYB4jNVz2L1zz1vyxyRNS0fsH6DMWKfevz7F238TsHuX2h7fkA3hTsdq
 EjhluP2ggw2n+KA1aqq+oxKq7M2WdGnXu5mJVuudrXf3/b8SMz1LKHgBFfA+ZYMJ
 3Sis9oLP7Re27j/3a5gMdzSmLz9hFUm7lohs0V/5zVLIPv0SgkeepA=="; // 设置平台企业私钥
-            config.YzhPublicKey = "1"; // 设置云账户公钥
+            config.YzhPublicKey = @"-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDM8TIYAVN+xwvTyNOttvt+rVGo
+Ky0L34nVq4mPouOmRD8UyqpZvXq/bE+Fdl07jvn4u7hRkOk8V1q+zDwCei1rs0T3
+FcAhRlzk00vuE/BxE+KvoIyor9epZjn+3/0Y/u+tp1WJHXFF/6K/DpxThbmoTR5s
+bSPGVxNMgAMmu6PVLQIDAQAB
+-----END PUBLIC KEY-----"; // 设置云账户公钥
             config.Des3Key = "Isg2WsfdbyM4Dt6sJ1yzx6iP"; // 设置 3DES Key
-            config.SignType = "sha256"; // 设置签名方式，rsa 或 sha256
+            config.SignType = "rsa"; // 设置签名方式，rsa 或 sha256
 
             return config;
 

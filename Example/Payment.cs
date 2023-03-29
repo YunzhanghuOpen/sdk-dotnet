@@ -37,7 +37,7 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -50,7 +50,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -75,7 +75,7 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -88,7 +88,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -114,7 +114,7 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -127,7 +127,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -177,7 +177,7 @@ namespace Aop.Api.Example
                 }
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -190,7 +190,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -209,7 +209,7 @@ namespace Aop.Api.Example
                 Channel = "支付宝"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -222,7 +222,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -240,7 +240,7 @@ namespace Aop.Api.Example
                 DataType = "encryption"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -277,7 +277,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -293,7 +293,7 @@ namespace Aop.Api.Example
                 DealerID = config.DealerID
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -306,7 +306,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -323,7 +323,7 @@ namespace Aop.Api.Example
                 Ref = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -336,7 +336,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -355,7 +355,7 @@ namespace Aop.Api.Example
                 Channel = "银行卡"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -368,7 +368,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -385,7 +385,7 @@ namespace Aop.Api.Example
                 BrokerID = config.BrokerID
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -398,7 +398,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }

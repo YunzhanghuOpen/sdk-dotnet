@@ -29,7 +29,7 @@ namespace Aop.Api.Example
                 RealName = "张三"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -42,7 +42,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -59,7 +59,7 @@ namespace Aop.Api.Example
                 BankName = "招商银行"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -72,7 +72,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -91,7 +91,7 @@ namespace Aop.Api.Example
                 CardNo = "1234568987645212321"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -104,7 +104,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -124,7 +124,7 @@ namespace Aop.Api.Example
                 Mobile = "18888888888"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -137,7 +137,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -157,7 +157,7 @@ namespace Aop.Api.Example
                 Mobile = "18888888888"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -170,7 +170,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -192,7 +192,7 @@ namespace Aop.Api.Example
                 Ref = "1234567890"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -205,7 +205,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -245,7 +245,7 @@ namespace Aop.Api.Example
                 Ref = "1234567890"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -258,7 +258,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
@@ -276,7 +276,7 @@ namespace Aop.Api.Example
                 IDCard = "M101198001201232",
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -289,7 +289,7 @@ namespace Aop.Api.Example
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
                 Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }

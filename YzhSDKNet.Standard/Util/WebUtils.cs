@@ -31,6 +31,12 @@ namespace Aop.Api.Util
         /// </summary>
         public Dictionary<string, string> CustomHeaders { get; set; }
 
+        public string DoHttpClient(string method,string url,IDictionary<string,string> parameters)
+        {
+
+            return method == HttpMethod.Post.Method ? DoPost(url, parameters) : DoGet(url, parameters);
+        }
+
         /// <summary>
         /// 执行 HTTP POST 请求
         /// </summary>

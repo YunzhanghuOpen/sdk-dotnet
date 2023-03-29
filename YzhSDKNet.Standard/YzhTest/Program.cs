@@ -4,6 +4,7 @@ using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
 using Aop.Api.config;
+using System.Collections.Generic;
 
 namespace YzhTest
 {
@@ -16,13 +17,166 @@ namespace YzhTest
         
 
         static void Main(string[] args){
-            CreateAlipayOrder_Example();
+            NotifyH5EcoCityAic_Example();
             //GetOrder_Example();
+        }
+
+        // 发票开局完成回调
+        public static void NotifyInvoiceDone_Example()
+        {
+
+            // 实例化解密验签对应的 request 类
+            YzhCallbackRequest<NotifyInvoiceDoneRequestModel> request = new YzhCallbackRequest<NotifyInvoiceDoneRequestModel>()
+            {
+                Data = "7fvB7MGlR23JNwL4EUEEkdttfvFMGMlNNlIRiyHfopWa0H4tWor4zJdR6QGd6LqJZaD/2WeU0m/GI4rCIgYwnFL3AdNoSmAnLQ2uKyVfOm3iey96o55a00mnqex8/kFwuvo7Vi6rTRUZDD4mfOm4eY4JCVfH/i7/6ltPdtIWZCM=",
+                Mess = "2489",
+                Timestamp = "1679986064",
+                Sign = "x6bDf/MSd3Nahc+0V/OuY1QGzzVirs3ZfHmAQY0jlAIpxm1CcI5kL6bAhm9L3wROGwrKTh8kC5YBFcUm8gxVBfFCR5XQYAkhaSeAmdE+ARBN9UxU6GpeAT+ZZOe4lSgCsMAGRRMtwdIYIAerw+PFU+la96L4pnE7cxfJZVt24zc=",
+                SignType = "rsa"
+            };
+
+            // 发起解密验签
+            NotifyInvoiceDoneRequestModel res = client.CallBackExecute(request);
+
+            // 根据接收到的数据进行后续业务处理
+            if (res.Status == "3")
+            {
+                // 发票已邮寄，处理后续业务
+            }
+            else
+            {
+                // 发票驳回
+                Console.WriteLine("发票驳回原因：" + res.RejectReason);
+            }
+        }
+
+        // 个体工商户注册结果回调
+        public static void NotifyH5EcoCityAic_Example()
+        {
+
+            // 实例化解密验签对应的 request 类
+            YzhCallbackRequest<NotifyH5EcoCityAicRequestModel> request = new YzhCallbackRequest<NotifyH5EcoCityAicRequestModel>()
+            {
+                Data = "7fvB7MGlR23JNwL4EUEEkdttfvFMGMlNNlIRiyHfopWa0H4tWor4zJdR6QGd6LqJZaD/2WeU0m/GI4rCIgYwnFL3AdNoSmAnLQ2uKyVfOm3iey96o55a00mnqex8/kFwuvo7Vi6rTRUZDD4mfOm4eY4JCVfH/i7/6ltPdtIWZCM=",
+                Mess = "2489",
+                Timestamp = "1679986064",
+                Sign = "x6bDf/MSd3Nahc+0V/OuY1QGzzVirs3ZfHmAQY0jlAIpxm1CcI5kL6bAhm9L3wROGwrKTh8kC5YBFcUm8gxVBfFCR5XQYAkhaSeAmdE+ARBN9UxU6GpeAT+ZZOe4lSgCsMAGRRMtwdIYIAerw+PFU+la96L4pnE7cxfJZVt24zc=",
+                SignType = "rsa"
+            };
+
+            // 发起解密验签
+            NotifyH5EcoCityAicRequestModel res = client.CallBackExecute(request);
+
+            // 根据接收到的数据进行后续业务处理
+            if (res.Status == 6)
+            {
+                // 税务登记成功，可向用户进行支付
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("用户姓名：" + res.RealName + "\n个体户注册状态码：" + res.Status + "\n个体户注册状态吗描述：" + res.StatusMessage);
+            }
+        }
+
+        // H5 签约回调
+        public static void NotifyH5UserSign_Example()
+        {
+
+            // 实例化解密验签对应的 request 类
+            YzhCallbackRequest<NotifyH5UserSignRequestModel> request = new YzhCallbackRequest<NotifyH5UserSignRequestModel>()
+            {
+                Data = "7fvB7MGlR23JNwL4EUEEkdttfvFMGMlNNlIRiyHfopWa0H4tWor4zJdR6QGd6LqJZaD/2WeU0m/GI4rCIgYwnFL3AdNoSmAnLQ2uKyVfOm3iey96o55a00mnqex8/kFwuvo7Vi6rTRUZDD4mfOm4eY4JCVfH/i7/6ltPdtIWZCM=",
+                Mess = "2489",
+                Timestamp = "1679986064",
+                Sign = "x6bDf/MSd3Nahc+0V/OuY1QGzzVirs3ZfHmAQY0jlAIpxm1CcI5kL6bAhm9L3wROGwrKTh8kC5YBFcUm8gxVBfFCR5XQYAkhaSeAmdE+ARBN9UxU6GpeAT+ZZOe4lSgCsMAGRRMtwdIYIAerw+PFU+la96L4pnE7cxfJZVt24zc=",
+                SignType = "rsa"
+            };
+
+            // 发起解密验签
+            NotifyH5UserSignRequestModel res = client.CallBackExecute(request);
+
+            // 根据回调信息处理
+            Console.WriteLine("用户姓名：" + res.RealName + "\n证件号：" + res.IDCard);
+        }
+
+        // 免验证名单审核结果回调通知
+        public static void NotifyUserExemptedInfo_Example()
+        {
+
+            // 实例化解密验签对应的 request 类
+            YzhCallbackRequest<NotifyUserExemptedInfoRequestModel> request = new YzhCallbackRequest<NotifyUserExemptedInfoRequestModel>()
+            {
+                Data = "7fvB7MGlR23JNwL4EUEEkdttfvFMGMlNNlIRiyHfopWa0H4tWor4zJdR6QGd6LqJZaD/2WeU0m+X/RIj0Ic2dg5eCWCTJarLf9xIZerZpFuNnFbcl8gRdXKOB4aRrKUBThgAsLgD8a5fEN/BA9xPotdAUBhmVQfKMbijkaObWac31ogsTiAfZ7dY5VIfbov6gRBvVDHGCkU=",
+                Mess = "839427091",
+                Timestamp = "1676446701",
+                Sign = "mn63bWcBXdDbCFDSWAXKt86HVuXQd4Gat3q4bAHyJFG5abnfi5GAUDHsXTs03nCX1QFEsC/DwIoKuJGfgnS7DeLGepV87u0YSxZhgsSsJmj95Hmo2YtjsmP8qvMapDWh0U/p/jskU7P7K9/Yc93qvk04PyUNjYqfebckM4o0vIo=",
+                SignType = "rsa"
+            };
+
+            // 发起解密验签
+            NotifyUserExemptedInfoRequestModel res = client.CallBackExecute(request);
+            
+            // 根据接收到的数据进行后续业务处理
+            if (res.Status == "pass")
+            {
+                // 审核通过，进行后续业务处理
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("用户姓名：" + res.RealName + "\n审核信息：" + res.Comment);
+            }
+        }
+
+        // 订单回调验签解密
+        public static void NotifyOrderData_Example()
+        {
+
+            // 实例化解密验签对应的 request 类
+            YzhCallbackRequest<NotifyOrderRequestModel> request = new YzhCallbackRequest<NotifyOrderRequestModel>()
+            {
+                Data = "9i1F/I3xHanUcgXgPpZyd2YfLiTtpqtJArOFKdeG4J3vQmoGl5HjcSW7x2drsh7t95I7oRmpQAZdFsOeyxKIc7hT+lRqMo1drlDf3/mjunw0BO+ZB+6Vb1eiTA0IyKzHVSbhX/nXw6hDpMkvLOSGpnkcYnO/gYRAZu+xBZllUoezUzizLnLp3Jl1dYFRuG/Rplm1vJlo7DGnrwPWuDGRtLAKrprQk1jebpaYRRHJO7/hNquLeLctUNx3JpaQQEHgRYZgifq35Drm4yof20117WnB0NLtJYCiHRGAyJYjTGpPoVpLxMIrDVxYSFqnGykjXQdvbiF0e2TlVQEMgagbxSuStxMvwlMtcEE98OiEq44fW4uzDIa3G5Pq5L9ByBLtJDucw0ME34YV1g1Y0+to2SYAYAJtdICWNK7CMD1H58R9yHFwt/AaWBmWHOLsPQBMzNMDDQDDeHA8YCMYBz3wELwfcQ46RP0klomkq6SBOGgzBNsTxPKPG7ETpTdJO56rWkwhU0VGQ1szfwwK7+vFaAHACNpLO+u3SqJLq06yPxJ/z0KEoQeZQ4bqiMiN7QNFpvZ4Gp/4feW11019Mu015fHn7XUjiFNrGz/hsdOFwc7fTw0fxkIsWMRDhkPy4by7hPucJmC1S83iItd3VwMGDaV6NlBOQx3atYXpDM5SZv9e7bcPK+cVAeA6HvxuW9P22GwDrUvKRqdmAh/bmnAqpOKR/GAmcg3G9uFCnZyKSTV82YYvmVN/VCusVp+l147AfNCEjgU0iPLZbGf7qADYgm7P0SxJTXSzAc59hrlTuHOTlZaX5wpLQNti9roUCN2QzR8EpamnqF5zhK8QXspeY/YFKwRfTPbwZoFO1KbwzEvVG1Ch2FX7tvhpyQ82QY9O8r6N2woo4DG/wQlKjylwQFcue7r17BOX9xl0BpD8lMBOrTyaPK94vnRWum1xpqd4R90sf5c7l3w0U+z2wDwEBuxeSNi8XFWC",
+                Mess = "806879843",
+                Timestamp = "1679645656",
+                Sign = "OUrizZJJKNrO7WUM+hmu9wlNGlCzK5A3uqxeHXnEZ0mefypWrYu+uBUHqQlUcsBMZMj/aoO0wUZ+maU66BQEPY5BIlkxfqmHdqx0qeK3OMFjYHtyX/zwMbdSLxb0BBZvHrytu2igxEHVgH4FidheakaN7rDplelWFGaWOep5neI=",
+                SignType = "rsa"
+            };
+
+            // 发起解密验签
+            NotifyOrderRequestModel res = client.CallBackExecute(request);
+
+            NotifyOrderData data = res.Data;
+
+            // 根据接收到的数据进行后续业务处理
+            switch (data.Status)
+            {
+                case "1":
+                    // 已支付（对于支付宝和微信支付是最终状态，对于银行卡大部分情况是终态，小概率会出现“退汇现象”，状态由“成功”变为“退汇”）
+                    // TODO 更新业务订单状态,提示用户提现成功
+                    break;
+                case "2":
+                    // 失败（最终状态）
+                    // TODO 更新业务订单状态,提示用户提现失败，若有用户钱包体系，则需将提现金额退回至用户钱包
+                    break;
+                case "4":
+                    // 订单挂起（中间状态，挂起原因会在订单详细状态信息返回）
+                    // TODO 提示用户提现中，其他逻辑如：若因余额不足导致的订单挂起，可通知财务及时预付业务服务费，72 小时内补足余额后可自动继续支付，切勿将订单挂起当做失败处理
+                    break;
+                case "9":
+                    // 退汇失败（最终状态，银行卡支付路径特有现象，收到“成功”回调后，再收到“退汇”的回调，一般与成功状态间隔 24 小时以上）
+                    // TODO 更新业务订单状态为“退汇”（失败），通知用户提现失败，建议用户更换其他银行卡提现，若有用户钱包体系，则需将提现金额退回至用户钱包
+                    break;
+                case "15":
+                    // 订单取消（最终状态，只有订单挂起的订单才可以取消）
+                    // TODO 更新业务订单状态为“取消”（失败，通知用户提现失败，若有用户钱包体系，则需将提现金额退回至用户钱包
+                    break;
+            }
         }
 
         // 下载个人所得税扣缴明细表
         public static void GetTaxFile_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetTaxFileRequest request = new GetTaxFileRequest();
@@ -34,7 +188,7 @@ namespace YzhTest
                 YearMonth = "2023-01"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -43,17 +197,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetTaxFileResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询纳税人是否为跨集团用户
         public static void GetUserCross_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetUserCrossRequest request = new GetUserCrossRequest();
@@ -66,7 +221,7 @@ namespace YzhTest
                 IDCard = "110101198010021201"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -75,17 +230,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetUserCrossResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 银行卡实时支付
         public static void CreateBankpayOrder_Example()
-        { 
+        {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
             // 加载接口参数
@@ -93,7 +249,7 @@ namespace YzhTest
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
-                OrderID = "test20230307003",
+                OrderID = "test20230323001",
                 RealName = "高斯寒",
                 IDCard = "210921199003101415",
                 CardNo = "6214830180870857",
@@ -103,7 +259,7 @@ namespace YzhTest
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -112,17 +268,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                CreateBankpayOrderResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 支付宝实时支付
         public static void CreateAlipayOrder_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             CreateAlipayOrderRequest request = new CreateAlipayOrderRequest();
@@ -131,7 +288,7 @@ namespace YzhTest
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
-                OrderID = "test20230307008",
+                OrderID = "test20230324001",
                 RealName = "高斯寒",
                 IDCard = "210921199003101415",
                 CardNo = "17600957177",
@@ -141,7 +298,7 @@ namespace YzhTest
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -150,17 +307,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                CreateAlipayOrderResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 微信实时支付
         public static void CreateWxpayOrder_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             CreateWxpayOrderRequest request = new CreateWxpayOrderRequest();
@@ -180,7 +338,7 @@ namespace YzhTest
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -189,17 +347,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                CreateWxpayOrderResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 批次下单
         public static void CreateBatchOrder_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             CreateBatchOrderRequest request = new CreateBatchOrderRequest();
@@ -243,7 +402,7 @@ namespace YzhTest
                 }
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -252,17 +411,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                CreateBatchOrderResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 批次确认
         public static void ConfirmBatchOrder_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             ConfirmBatchOrderRequest request = new ConfirmBatchOrderRequest();
@@ -275,7 +435,7 @@ namespace YzhTest
                 Channel = "支付宝"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -284,17 +444,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ConfirmBatchOrderResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询单笔订单信息
         public static void GetOrder_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetOrderRequest request = new GetOrderRequest();
@@ -306,7 +467,7 @@ namespace YzhTest
                 DataType = "encryption"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -315,17 +476,42 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetOrderResponseModel data = res.Data;
+                //根据接收到的数据进行后续业务处理
+                switch (data.Status)
+                {
+                    case "1":
+                        // 已支付（对于支付宝和微信支付是最终状态，对于银行卡大部分情况是终态，小概率会出现“退汇现象”，状态由“成功”变为“退汇”）
+                        // TODO 更新业务订单状态,提示用户提现成功
+                        break;
+                    case "2":
+                        // 失败（最终状态）
+                        // TODO 更新业务订单状态,提示用户提现失败，若有用户钱包体系，则需将提现金额退回至用户钱包
+                        break;
+                    case "4":
+                        // 订单挂起（中间状态，挂起原因会在订单详细状态信息返回）
+                        // TODO 提示用户提现中，其他逻辑如：若因余额不足导致的订单挂起，可通知财务及时预付业务服务费，72 小时内补足余额后可自动继续支付，切勿将订单挂起当做失败处理
+                        break;
+                    case "9":
+                        // 退汇失败（最终状态，银行卡支付路径特有现象，收到“成功”回调后，再收到“退汇”的回调，一般与成功状态间隔 24 小时以上）
+                        // TODO 更新业务订单状态为“退汇”（失败），通知用户提现失败，建议用户更换其他银行卡提现，若有用户钱包体系，则需将提现金额退回至用户钱包
+                        break;
+                    case "15":
+                        // 订单取消（最终状态，只有订单挂起的订单才可以取消）
+                        // TODO 更新业务订单状态为“取消”（失败，通知用户提现失败，若有用户钱包体系，则需将提现金额退回至用户钱包
+                        break;
+                }
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询平台企业余额
         public static void ListAccount_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             ListAccountRequest request = new ListAccountRequest();
@@ -335,7 +521,7 @@ namespace YzhTest
                 DealerID = config.DealerID
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -344,17 +530,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ListAccountResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询电子回单
         public static void GetEleReceiptFile_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetEleReceiptFileRequest request = new GetEleReceiptFileRequest();
@@ -365,7 +552,7 @@ namespace YzhTest
                 Ref = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -374,17 +561,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetEleReceiptFileResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 取消待支付订单
         public static void CancelOrder_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             CancelOrderRequest request = new CancelOrderRequest();
@@ -397,7 +585,7 @@ namespace YzhTest
                 Channel = "银行卡"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -406,17 +594,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                CancelOrderResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询平台企业汇款信息
         public static void GetDealerVARechargeAccount_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetDealerVARechargeAccountRequest request = new GetDealerVARechargeAccountRequest();
@@ -427,7 +616,7 @@ namespace YzhTest
                 BrokerID = config.BrokerID
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -436,17 +625,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetDealerVARechargeAccountResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询平台企业已开具和待开具发票金额
         public static void GetInvoiceStat_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatRequest request = new GetInvoiceStatRequest();
@@ -458,7 +648,7 @@ namespace YzhTest
                 Year = 2023
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -467,17 +657,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetInvoiceStatResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询可开具发票额度和发票开具信息
         public static void GetInvoiceAmount_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetInvoiceAmountRequest request = new GetInvoiceAmountRequest();
@@ -488,7 +679,7 @@ namespace YzhTest
                 BrokerID = config.BrokerID
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -497,17 +688,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetInvoiceAmountResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 发票开具申请
         public static void ApplyInvoice_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             ApplyInvoiceRequest request = new ApplyInvoiceRequest();
@@ -524,7 +716,7 @@ namespace YzhTest
                 Remark = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -533,17 +725,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ApplyInvoiceResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询发票开具申请状态
         public static void GetInvoiceStatus_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatusRequest request = new GetInvoiceStatusRequest();
@@ -554,7 +747,7 @@ namespace YzhTest
                 ApplicationID = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -563,17 +756,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetInvoiceStatusResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 下载 PDF 版发票
         public static void GetInvoiceFile_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetInvoiceFileRequest request = new GetInvoiceFileRequest();
@@ -584,7 +778,7 @@ namespace YzhTest
                 ApplicationID = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -593,17 +787,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetInvoiceFileResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 发送发票扫描件压缩包下载链接邮件
         public static void SendReminderEmail_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             SendReminderEmailRequest request = new SendReminderEmailRequest();
@@ -614,7 +809,7 @@ namespace YzhTest
                 ApplicationID = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -623,17 +818,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                SendReminderEmailResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // H5 预申请签约
         public static void H5UserPresign_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             H5UserPresignRequest request = new H5UserPresignRequest();
@@ -642,12 +838,12 @@ namespace YzhTest
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
-                RealName = "张三",
-                IDCard = "1102321742183272",
+                RealName = "高斯寒",
+                IDCard = "210921199003101415",
                 CertificateType = 0
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -656,30 +852,31 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5UserPresignResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // H5 申请签约
         public static void H5UserSign_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             H5UserSignRequest request = new H5UserSignRequest();
             // 加载接口参数
             H5UserSignRequestModel model = new H5UserSignRequestModel
             {
-                Token = "1231231jdfalrejia",
+                Token = "55a405a1-4f16-48d0-b573-110331274679",
                 Color = "#8171ff",
                 URL = "http://www.abcdef.com/api/notify",
                 RedirectURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -688,17 +885,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5UserSignResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 获取用户签约状态
         public static void GeH5UserSignStatus_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetH5UserSignStatusRequest request = new GetH5UserSignStatusRequest();
@@ -711,7 +909,7 @@ namespace YzhTest
                 IDCard = "1233984756231232"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -720,17 +918,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetH5UserSignStatusResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // H5 对接测试解约接口
         public static void GetInvoiceStat_ExampleH5UserRelease_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             H5UserReleaseRequest request = new H5UserReleaseRequest();
@@ -739,12 +938,12 @@ namespace YzhTest
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID,
-                RealName = "张三",
-                IDCard = "1233984756231232",
+                RealName = "高斯寒",
+                IDCard = "210921199003101415",
                 CertificateType = 0
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -753,17 +952,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5UserReleaseResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询日订单文件
         public static void GetOrderDownloadsUrl_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileRequest request = new GetDailyOrderFileRequest();
@@ -773,7 +973,7 @@ namespace YzhTest
                 OrderDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -782,17 +982,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetDailyOrderFileResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询日流水文件
         public static void GetDailyBillFileV2_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetDailyBillFileV2Request request = new GetDailyBillFileV2Request();
@@ -802,7 +1003,7 @@ namespace YzhTest
                 BillDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -811,17 +1012,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetDailyBillFileV2ResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询平台企业预付业务服务费记录
         public static void ListDealerRechargeRecordV2_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             ListDealerRechargeRecordV2Request request = new ListDealerRechargeRecordV2Request();
@@ -832,7 +1034,7 @@ namespace YzhTest
                 EndAt = "2022-03-30"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -841,17 +1043,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                List<RechargeRecordInfo> data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询日订单数据
         public static void ListDailyOrder_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             ListDailyOrderRequest request = new ListDailyOrderRequest();
@@ -865,7 +1068,7 @@ namespace YzhTest
                 DataType = "encryption"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -874,17 +1077,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ListDailyOrderResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询日流水数据
         public static void ListDailyBill_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             ListDailyBillRequest request = new ListDailyBillRequest();
@@ -897,7 +1101,7 @@ namespace YzhTest
                 DataType = "encryption"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -906,17 +1110,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ListDailyBillResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询日订单文件（支付和退款订单）
         public static void GetDailyOrderFileV2_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileV2Request request = new GetDailyOrderFileV2Request();
@@ -926,7 +1131,7 @@ namespace YzhTest
                 OrderDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -935,17 +1140,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetDailyOrderFileV2ResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 查询余额日账单数据
         public static void ListBalanceDailyStatement_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             ListBalanceDailyStatementRequest request = new ListBalanceDailyStatementRequest();
@@ -955,7 +1161,7 @@ namespace YzhTest
                 StatementDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -964,17 +1170,18 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ListBalanceDailyStatementResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
         // 工商实名信息录入
         public static void H5PreCollectBizlicMsg_Example()
-        { 
+        {
 
             // 实例化具体 API 对应的 request 类
             H5PreCollectBizlicMsgRequest request = new H5PreCollectBizlicMsgRequest();
@@ -994,7 +1201,7 @@ namespace YzhTest
                 IDCardValidityEnd = "2040-10-01"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1003,11 +1210,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5PreCollectBizlicMsgResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1029,7 +1237,7 @@ namespace YzhTest
                 CustomerTitle = 1
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1038,11 +1246,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5APIGetStartUrlResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1063,7 +1272,7 @@ namespace YzhTest
                 OpenID = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1072,11 +1281,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5APIEcoCityAicStatusResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1099,7 +1309,7 @@ namespace YzhTest
                 CustomerTitle = 1
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1108,11 +1318,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5GetStartUrlResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1133,7 +1344,7 @@ namespace YzhTest
                 OpenID = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1142,11 +1353,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                H5EcoCityAicStatusResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1163,7 +1375,7 @@ namespace YzhTest
                 RealName = "张三"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1172,11 +1384,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                IDCardVerifyResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1193,7 +1406,7 @@ namespace YzhTest
                 BankName = "招商银行"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1202,11 +1415,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetBankCardInfoResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1224,7 +1438,7 @@ namespace YzhTest
                 CardNo = "1234568987645212321"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1233,11 +1447,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                BankCardThreeVerifyResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1256,7 +1471,7 @@ namespace YzhTest
                 Mobile = "18888888888"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1265,11 +1480,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                BankCardFourVerifyResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1288,7 +1504,7 @@ namespace YzhTest
                 Mobile = "18888888888"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1297,11 +1513,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                BankCardFourAuthVerifyResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1322,7 +1539,7 @@ namespace YzhTest
                 Ref = "1234567890"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1331,11 +1548,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                BankCardFourAuthConfirmResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1349,7 +1567,7 @@ namespace YzhTest
             UserExemptedInfoRequestModel model = new UserExemptedInfoRequestModel
             {
                 // 姓名
-                RealName = "张三",
+                RealName = "李四",
                 // 证件号码
                 IDCard = "M101198001201232",
                 // 证件类型
@@ -1371,10 +1589,10 @@ namespace YzhTest
                 // 审核完成后，接收异步通知的地址
                 NotifyURL = "http://www.abcdef.com/api/notify",
                 // 唯一流水号，回调时会附带
-                Ref = "1234567890"
+                Ref = "1234567890112"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1383,11 +1601,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                UserExemptedInfoResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1404,7 +1623,7 @@ namespace YzhTest
                 IDCard = "M101198001201232",
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1413,11 +1632,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                UserWhiteCheckResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1425,27 +1645,28 @@ namespace YzhTest
         public static void ApiUseSignContract_Example()
         {
             // 实例化具体 API 对应的 request 类
-            ApiUseSignContractRequest request = new ApiUseSignContractRequest();
+            ApiUserSignContractRequest request = new ApiUserSignContractRequest();
             // 加载接口参数
-            ApiUseSignContractRequestModel model = new ApiUseSignContractRequestModel
+            ApiUserSignContractRequestModel model = new ApiUserSignContractRequestModel
             {
                 DealerID = config.DealerID,
                 BrokerID = config.BrokerID
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
-            ApiUseSignContractResponse res = client.Execute(request);
+            ApiUserSignContractResponse res = client.Execute(request);
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ApiUserSignContractResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1464,7 +1685,7 @@ namespace YzhTest
                 CardType = "idcard"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1472,11 +1693,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ApiUserSignResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1494,7 +1716,7 @@ namespace YzhTest
                 IDCard = "210110199001011212"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -1503,11 +1725,12 @@ namespace YzhTest
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                GetApiUserSignStatusResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
@@ -1526,23 +1749,23 @@ namespace YzhTest
                 CardType = "idcard"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业设置并保存，如未进行设置则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
-            
+
             // 发起请求
             ApiUserSignReleaseResponse res = client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
             {
-                // 根据响应码进行业务处理
+                ApiUserSignReleaseResponseModel data = res.Data;
             }
             else
             {
-                // 处理返回异常情况
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
             }
         }
 
-        
     }
 }

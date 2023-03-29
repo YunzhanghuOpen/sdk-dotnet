@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 上传免验证用户名单信息审核结果通知
+   /// 上传免验证用户名单信息审核结果回调通知
    /// <summary>
    public class NotifyUserExemptedInfoRequestModel : AopObject
    {
