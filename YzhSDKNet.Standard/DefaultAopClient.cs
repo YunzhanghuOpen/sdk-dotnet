@@ -45,9 +45,9 @@ namespace Aop.Api
         /// <summary>
         /// 发送请求
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">响应实体</typeparam>
+        /// <param name="request">请求实体</param>
+        /// <returns>响应实体</returns>
         public T Execute<T>(IAopRequest<T> request) where T : AopResponse
         {
             // 校验基础参数是否为空
@@ -105,14 +105,14 @@ namespace Aop.Api
             response.Body = body;
             return response;
         }
-        
+
         /// <summary>
         /// 处理云账户回调请求
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        /// <exception cref="AopException"></exception>
+        /// <typeparam name="T">回调明文实体</typeparam>
+        /// <param name="request">回调输入内容</param>
+        /// <returns>回调明文实体</returns>
+        /// <exception cref="AopException">错误信息</exception>
         public T CallBackExecute<T>(YzhCallbackRequest<T> request) where T : AopObject
         {
             // 校验基础参数是否为空
@@ -140,7 +140,7 @@ namespace Aop.Api
         /// </summary>
         /// <param name="body">原始响应数据</param>
         /// <param name="des3Key">DES3 KEY</param>
-        /// <returns></returns>
+        /// <returns>响应数据解密结果</returns>
         private string Parese(string body, string des3Key)
         {
             IDictionary<string, string> json;
@@ -224,8 +224,8 @@ namespace Aop.Api
         /// <summary>
         /// 校验回调参数是否为空
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="request"></param>
+        /// <typeparam name="T">回调明文实体</typeparam>
+        /// <param name="request">回调输入内容</param>
         private void VerifyNotifyIsEmpty<T>(YzhCallbackRequest<T> request) where T : AopObject
         {
             // 检查 RSA 签名类型下云账户公钥是否为空

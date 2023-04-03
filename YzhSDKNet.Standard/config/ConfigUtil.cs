@@ -9,7 +9,7 @@ namespace Aop.Api.config
         public static YzhConfig GetConfig()
         {
             YzhConfig config = new YzhConfig();
-            config.ServerUrl = "https://api-aic.yunzhanghu.com"; // 设置接口基础地址
+            config.ServerUrl = "https://api-aic.yunzhanghu.com"; // 设置基础接口地址
             config.DealerID = "25331815"; // 设置平台企业 ID
             config.BrokerID = "27532644"; // 设置综合服务主体 ID
             config.AppKey = "0gyU31LaiFfZRrfqq3UZiUl7JVk516ES"; // 设置 App Key

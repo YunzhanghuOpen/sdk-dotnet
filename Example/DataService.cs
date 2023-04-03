@@ -29,7 +29,7 @@ namespace Aop.Api.Example
                 OrderDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -58,7 +58,7 @@ namespace Aop.Api.Example
                 BillDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -88,7 +88,7 @@ namespace Aop.Api.Example
                 EndAt = "2022-03-30"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -121,7 +121,7 @@ namespace Aop.Api.Example
                 DataType = "encryption"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -153,7 +153,7 @@ namespace Aop.Api.Example
                 DataType = "encryption"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -182,7 +182,7 @@ namespace Aop.Api.Example
                 OrderDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -211,7 +211,7 @@ namespace Aop.Api.Example
                 StatementDate = "2022-03-23"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求

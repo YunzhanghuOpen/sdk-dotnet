@@ -17,7 +17,7 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-        // 身份实名验证
+        // 身份证实名验证
         public static void IDCardVerify_Example()
         { 
             // 实例化具体 API 对应的 request 类
@@ -29,7 +29,7 @@ namespace Aop.Api.Example
                 RealName = "张三"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -59,7 +59,7 @@ namespace Aop.Api.Example
                 BankName = "招商银行"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -91,7 +91,7 @@ namespace Aop.Api.Example
                 CardNo = "1234568987645212321"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -124,7 +124,7 @@ namespace Aop.Api.Example
                 Mobile = "18888888888"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -157,7 +157,7 @@ namespace Aop.Api.Example
                 Mobile = "18888888888"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -192,7 +192,7 @@ namespace Aop.Api.Example
                 Ref = "1234567890"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -219,33 +219,21 @@ namespace Aop.Api.Example
             // 加载接口参数
             UserExemptedInfoRequestModel model = new UserExemptedInfoRequestModel
             {
-                // 姓名
                 RealName = "张三",
-                // 证件号码
                 IDCard = "M101198001201232",
-                // 证件类型
                 CardType = "passport",
-                // 申请备注
                 CommentApply = "申请免验证名单",
-                // 平台企业 ID
                 DealerID = config.DealerID,
-                // 综合服务主体 ID
                 BrokerID = config.BrokerID,
-                // 证件照图片进行 Base64 编码后的字符串
                 UserImages = new string[] { "igngudaere", "dfafdaea" },
-                // 国别（地区）代码
                 Country = "NOR",
-                // 出生日期
                 Birthday = "20010809",
-                // 性别
                 Gender = "男",
-                // 审核完成后，接收异步通知的地址
                 NotifyURL = "http://www.abcdef.com/api/notify",
-                // 唯一流水号，回调时会附带
                 Ref = "1234567890"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -276,7 +264,7 @@ namespace Aop.Api.Example
                 IDCard = "M101198001201232",
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求

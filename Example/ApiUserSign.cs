@@ -29,7 +29,7 @@ namespace Aop.Api.Example
                 BrokerID = config.BrokerID
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -62,7 +62,7 @@ namespace Aop.Api.Example
                 CardType = "idcard"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -94,7 +94,7 @@ namespace Aop.Api.Example
                 IDCard = "210110199001011212"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -127,7 +127,7 @@ namespace Aop.Api.Example
                 CardType = "idcard"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求

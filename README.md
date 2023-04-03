@@ -93,7 +93,7 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
             // 设置超时时间，不设置时默认 30 秒
             // client.SetTimeout(30 * 1000);
@@ -116,7 +116,7 @@ namespace Aop.Api.Example
         public static YzhConfig GetConfig()
         {
             YzhConfig config = new YzhConfig();
-            // 设置接口基础地址
+            // 设置基础接口地址
             config.ServerUrl = "";
             // 设置平台企业 ID
             config.DealerID = "";

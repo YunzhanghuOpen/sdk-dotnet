@@ -11,8 +11,8 @@ namespace Aop.Api
     {
         /// <summary>
         /// 请求地址
-        /// 线上：https://api-service.yunzhanghu.com
-        /// 沙箱：https://api-service.yunzhanghu.com/sandbox
+        /// 生产环境：https://api-service.yunzhanghu.com
+        /// 沙箱沙箱：https://api-service.yunzhanghu.com/sandbox
         /// 个体户注册：https://api-aic.yunzhanghu.com
         /// </summary>
         public string ServerUrl { get; set; } = "https://api-service.yunzhanghu.com";

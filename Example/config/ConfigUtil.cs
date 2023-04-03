@@ -9,11 +9,11 @@ namespace Aop.Api.Example.config
         /// <summary>
         /// 设置基础信息配置
         /// </summary>
-        /// <returns></returns>
+        /// <returns>基础配置信息</returns>
         public static YzhConfig GetConfig()
         {
             YzhConfig config = new YzhConfig();
-            // 接口基础地址
+            // 基础接口地址
             config.ServerUrl = "";
             // 平台企业 ID
             config.DealerID = "";

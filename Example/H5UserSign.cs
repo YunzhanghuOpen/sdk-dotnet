@@ -17,7 +17,7 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
         
-        // H5 预申请签约
+        // 预申请签约
         public static void H5UserPresign_Example()
         {
             // 实例化具体 API 对应的 request 类
@@ -32,7 +32,7 @@ namespace Aop.Api.Example
                 CertificateType = 0
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -50,7 +50,7 @@ namespace Aop.Api.Example
             }
         }
 
-        // H5 申请签约
+        // 申请签约
         public static void H5UserSign_Example()
         {
             // 实例化具体 API 对应的 request 类
@@ -64,7 +64,7 @@ namespace Aop.Api.Example
                 RedirectURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -96,7 +96,7 @@ namespace Aop.Api.Example
                 IDCard = "1233984756231232"
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求
@@ -114,7 +114,7 @@ namespace Aop.Api.Example
             }
         }
 
-        // H5 对接测试解约接口
+        // 用户解约
         public static void H5UserRelease_Example()
         {
             // 实例化具体 API 对应的 request 类
@@ -129,7 +129,7 @@ namespace Aop.Api.Example
                 CertificateType = 0
             };
             request.SetBizModel(model);
-            // 设置 request-id，建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID(""); 
 
             // 发起请求

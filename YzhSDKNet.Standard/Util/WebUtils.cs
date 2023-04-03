@@ -85,7 +85,7 @@ namespace Aop.Api.Util
         /// </summary>
         /// <param name="url">请求地址</param>
         /// <param name="method">请求方式</param>
-        /// <returns></returns>
+        /// <returns>请求信息</returns>
         public HttpWebRequest GetWebRequest(string url, string method)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
@@ -110,7 +110,7 @@ namespace Aop.Api.Util
         /// 组装普通文本请求
         /// </summary>
         /// <param name="parameters">请求参数</param>
-        /// <returns></returns>
+        /// <returns>请求文本</returns>
         public static string BuildQuery(IDictionary<string, string> parameters)
         {
             return string.Join("&", parameters.Select(p => $"{HttpUtility.UrlEncode(p.Key)}={HttpUtility.UrlEncode(p.Value)}"));
@@ -120,7 +120,7 @@ namespace Aop.Api.Util
         /// 把响应流转换为文本
         /// </summary>
         /// <param name="response">响应流对象</param>
-        /// <returns></returns>
+        /// <returns>响应文本</returns>
         public string GetResponseAsString(HttpWebResponse response)
         {
             StringBuilder result = new StringBuilder();
