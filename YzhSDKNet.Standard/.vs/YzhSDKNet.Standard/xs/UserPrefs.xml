@@ -1,27 +1,20 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{2F750D39-277A-4C2E-B1AA-6CF6D123308C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="YzhTest/Program.cs">
-    <Files>
-      <File FileName="YzhTest/Program.cs" Line="195" Column="58" />
-    </Files>
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="YzhSDKNet.Standard" expanded="True">
-            <Node name="YzhSDKNet.Standard" expanded="True">
-              <Node name="config" expanded="True" />
-            </Node>
-            <Node name="YzhTest" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Program.cs" selected="True" />
-            </Node>
+          <Node name="YzhSDKNet.Standard" expanded="True" selected="True">
+            <Node name="YzhSDKNet.Standard" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.YzhTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <DisabledProjects>
+    <String>YzhTest/YzhTest.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/YzhTest/Program.cs" relfile="YzhTest/Program.cs" line="476" column="1" />
