@@ -114,7 +114,7 @@ namespace Aop.Api.Example
             }
         }
 
-        // 用户解约
+        // 用户解约（测试账号专用）
         public static void H5UserRelease_Example()
         {
             // 实例化具体 API 对应的 request 类
