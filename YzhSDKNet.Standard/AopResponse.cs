@@ -34,7 +34,7 @@ namespace Aop.Api
         }
 
         /// <summary>
-        /// 请求ID
+        /// 请求 ID
         /// </summary>
         [JsonProperty("request_id")]
         public string RequestID
@@ -55,7 +55,7 @@ namespace Aop.Api
         /// <summary>
         /// 响应结果是否报错
         /// </summary>
-        public bool IsError
+        public bool IsSuccess
         {
             get
             {

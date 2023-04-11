@@ -11,15 +11,15 @@ namespace Aop.Api
     public interface IAopRequest<T> where T : AopResponse
     {
         /// <summary>
-        /// 设置请求ID
+        /// 设置请求 ID
         /// </summary>
-        /// <param name="requestID">请求ID</param>
+        /// <param name="requestID">请求 ID</param>
         void SetRequestID(string requestID);
 
         /// <summary>
-        /// 获取请求ID
+        /// 获取请求 ID
         /// </summary>
-        /// <returns>响应请求ID</returns>
+        /// <returns>响应请求 ID</returns>
         string GetRequestID();
 
         /// <summary>

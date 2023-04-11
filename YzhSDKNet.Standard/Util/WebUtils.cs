@@ -12,24 +12,40 @@ using System.Web;
 namespace Aop.Api.Util
 {
     /// <summary>
-    /// 网络工具类
+    /// HTTP 请求工具类
     /// </summary>
     public sealed class WebUtils
     {
         /// <summary>
         /// 发起请求到服务端首次返回数据的超时时长，单位毫秒
         /// </summary>
-        public int Timeout { get; set; } = 30000;
+        public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
         /// 服务端首次返回数据后，等待后续数据的超时时长，单位毫秒
         /// </summary>
-        public int ReadWritTimeout { get; set; } = 15000;
+        public int ReadWritTimeout { get; set; } = 15 * 1000;
+
+        /// <summary>
+        /// 获取当前时间戳
+        /// </summary>
+        /// <returns>时间戳，精确到秒</returns>
+        public static string GetTimestamp()
+        {
+            var st = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(st.TotalSeconds).ToString();
+        }
 
         /// <summary>
         /// 自定义 HTTP 请求 Header
         /// </summary>
         public Dictionary<string, string> CustomHeaders { get; set; }
+
+        public string DoHttpClient(string method,string url,IDictionary<string,string> parameters)
+        {
+
+            return method == HttpMethod.Post.Method ? DoPost(url, parameters) : DoGet(url, parameters);
+        }
 
         /// <summary>
         /// 执行 HTTP POST 请求
@@ -79,13 +95,14 @@ namespace Aop.Api.Util
         /// </summary>
         /// <param name="url">请求地址</param>
         /// <param name="method">请求方式</param>
-        /// <returns></returns>
+        /// <returns>请求信息</returns>
         public HttpWebRequest GetWebRequest(string url, string method)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
             req.Method = method;
             req.KeepAlive = true;
-            req.UserAgent = "yunzhanghu-sdk-net";
+            req.UserAgent = string.Format("yunzhanghu-sdk-net/1.0.0/{0}/{1}/1.0.0",Environment.OSVersion.VersionString,Environment.Version);
+            Console.WriteLine(req.UserAgent);
             req.Timeout = Timeout;
             req.ReadWriteTimeout = ReadWritTimeout;
             req.ContentType = "application/x-www-form-urlencoded";
@@ -102,8 +119,8 @@ namespace Aop.Api.Util
         /// <summary>
         /// 组装普通文本请求
         /// </summary>
-        /// <param name="parameters">Key-Value格式请求参数</param>
-        /// <returns></returns>
+        /// <param name="parameters">请求参数</param>
+        /// <returns>请求文本</returns>
         public static string BuildQuery(IDictionary<string, string> parameters)
         {
             return string.Join("&", parameters.Select(p => $"{HttpUtility.UrlEncode(p.Key)}={HttpUtility.UrlEncode(p.Value)}"));
@@ -113,7 +130,7 @@ namespace Aop.Api.Util
         /// 把响应流转换为文本
         /// </summary>
         /// <param name="response">响应流对象</param>
-        /// <returns></returns>
+        /// <returns>响应文本</returns>
         public string GetResponseAsString(HttpWebResponse response)
         {
             StringBuilder result = new StringBuilder();
@@ -121,7 +138,7 @@ namespace Aop.Api.Util
             StreamReader reader = null;
             try
             {
-                // 以字符流的方式读取Http响应
+                // 以字符流的方式读取响应
                 stream = response.GetResponseStream();
                 reader = new StreamReader(stream, Encoding.GetEncoding(response.CharacterSet));
 

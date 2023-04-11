@@ -1,0 +1,35 @@
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AopObject.cs">
+    <Files>
+      <File FileName="AopObject.cs" Line="14" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="YzhSDKNet.Standard" expanded="True">
+            <Node name="YzhSDKNet.Standard" expanded="True">
+              <Node name="Request" expanded="True">
+                <Node name="ApiUserSign" expanded="True" />
+              </Node>
+              <Node name="Util" expanded="True">
+                <Node name="Encryption" expanded="True" />
+              </Node>
+              <Node name="AopObject.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>YzhTest/YzhTest.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/yunzhanghu_bj851/Documents/demo/云账户综合服务平台对接demo(C#-rsa)/sdk-dotnet/YzhSDKNet.Standard/YzhTest/Program.cs" relfile="YzhTest/Program.cs" line="476" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
