@@ -27,6 +27,16 @@ namespace Aop.Api.Util
         public int ReadWritTimeout { get; set; } = 15 * 1000;
 
         /// <summary>
+        /// 获取当前时间戳
+        /// </summary>
+        /// <returns>时间戳，精确到秒</returns>
+        public static string GetTimestamp()
+        {
+            var st = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(st.TotalSeconds).ToString();
+        }
+
+        /// <summary>
         /// 自定义 HTTP 请求 Header
         /// </summary>
         public Dictionary<string, string> CustomHeaders { get; set; }

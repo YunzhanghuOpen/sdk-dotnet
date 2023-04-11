@@ -1,11 +1,11 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Aop.Api.Response;
-
+using Aop.Api.Util;
 
 namespace Aop.Api.Request
 {
@@ -106,8 +106,7 @@ namespace Aop.Api.Request
       /// <returns>时间戳，精确到秒</returns>
       public string GetTimestamp()
       {
-          var st = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
-          return Convert.ToInt64(st.TotalSeconds).ToString();
+          return WebUtils.GetTimestamp();
       }
 
       #endregion

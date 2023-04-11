@@ -29,7 +29,7 @@ namespace Aop.Api.Util
             }
             catch (Exception ex)
             {
-                string errorMsg = $"{type} 签名遭遇异常，请检查相关密钥是否正确。exMessage={ex.Message}, content={content}";
+                string errorMsg = $"{type} 签名异常，请检查相关密钥是否正确。exMessage={ex.Message}, content={content}";
                 throw new AopException(errorMsg, ex);
             }
         }
@@ -67,7 +67,7 @@ namespace Aop.Api.Util
             }
             catch (Exception ex)
             {
-                string errorMsg = $"{type} 验签遭遇异常，请检查相关密钥是否正确。exMessage={ex.Message}, content={content}";
+                string errorMsg = $"{type} 验签异常，请检查相关密钥是否正确。exMessage={ex.Message}, content={content}";
                 throw new AopException(errorMsg, ex);
             }
         }

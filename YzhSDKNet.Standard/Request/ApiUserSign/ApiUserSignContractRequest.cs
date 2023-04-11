@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Aop.Api.Response;
+using Aop.Api.Util;
 
 
 namespace Aop.Api.Request
@@ -84,11 +85,11 @@ namespace Aop.Api.Request
       /// <returns>请求ID，未设置时返回默认</returns>
       public string GetRequestID()
       {
-          if (string.IsNullOrEmpty(this.requestID))
-          {
-              return Guid.NewGuid().ToString();
-          }
-          return this.requestID;
+            if (string.IsNullOrEmpty(this.requestID))
+            {
+                return Guid.NewGuid().ToString();
+            }
+            return this.requestID;
       }
 
       /// <summary>
@@ -97,7 +98,7 @@ namespace Aop.Api.Request
       /// <param name="requestID">请求ID</param>
       public void SetRequestID(string requestID)
       {
-          this.requestID = requestID;
+            this.requestID = requestID;
       }
 
       /// <summary>
@@ -106,8 +107,7 @@ namespace Aop.Api.Request
       /// <returns>时间戳，精确到秒</returns>
       public string GetTimestamp()
       {
-          var st = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
-          return Convert.ToInt64(st.TotalSeconds).ToString();
+            return WebUtils.GetTimestamp();
       }
 
       #endregion
