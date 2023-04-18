@@ -22,6 +22,7 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignContractRequest request = new ApiUserSignContractRequest();
+            
             // 加载接口参数
             ApiUserSignContractRequestModel model = new ApiUserSignContractRequestModel
             {
