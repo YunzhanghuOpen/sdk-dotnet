@@ -1,14 +1,11 @@
-using System;
-using Aop.Api;
-
 namespace Aop.Api.Example.config
 {
     public class ConfigUtil
     {
         /// <summary>
-        /// 设置基础信息配置
+        /// 配置基础信息
         /// </summary>
-        /// <returns>基础配置信息</returns>
+        /// <returns>配置基础信息</returns>
         public static YzhConfig GetConfig()
         {
             YzhConfig config = new YzhConfig();
