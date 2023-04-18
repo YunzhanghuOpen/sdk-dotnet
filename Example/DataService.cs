@@ -19,7 +19,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 查询日订单文件
-        public static void GetOrderDownloadsUrl_Example()
+        public static void GetOrderDownloadsUrl()
         {
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileRequest request = new GetDailyOrderFileRequest();
@@ -50,7 +50,7 @@ namespace Aop.Api.Example
         }
 
         // 查询日流水文件
-        public static void GetDailyBillFileV2_Example()
+        public static void GetDailyBillFileV2()
         {
             // 实例化具体 API 对应的 request 类
             GetDailyBillFileV2Request request = new GetDailyBillFileV2Request();
@@ -81,7 +81,7 @@ namespace Aop.Api.Example
         }
 
         // 查询平台企业预付业务服务费记录
-        public static void ListDealerRechargeRecordV2_Example()
+        public static void ListDealerRechargeRecordV2
         {
             // 实例化具体 API 对应的 request 类
             ListDealerRechargeRecordV2Request request = new ListDealerRechargeRecordV2Request();
@@ -113,7 +113,7 @@ namespace Aop.Api.Example
         }
 
         // 查询日订单数据
-        public static void ListDailyOrder_Example()
+        public static void ListDailyOrder()
         {
             // 实例化具体 API 对应的 request 类
             ListDailyOrderRequest request = new ListDailyOrderRequest();
@@ -148,7 +148,7 @@ namespace Aop.Api.Example
         }
 
         // 查询日流水数据
-        public static void ListDailyBill_Example()
+        public static void ListDailyBill()
         {
             // 实例化具体 API 对应的 request 类
             ListDailyBillRequest request = new ListDailyBillRequest();
@@ -182,7 +182,7 @@ namespace Aop.Api.Example
         }
 
         // 查询日订单文件（支付和退款订单）
-        public static void GetDailyOrderFileV2_Example()
+        public static void GetDailyOrderFileV2()
         {
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileV2Request request = new GetDailyOrderFileV2Request();
@@ -213,7 +213,7 @@ namespace Aop.Api.Example
         }
 
         // 查询余额日账单数据
-        public static void ListBalanceDailyStatement_Example()
+        public static void ListBalanceDailyStatement()
         {
             // 实例化具体 API 对应的 request 类
             ListBalanceDailyStatementRequest request = new ListBalanceDailyStatementRequest();

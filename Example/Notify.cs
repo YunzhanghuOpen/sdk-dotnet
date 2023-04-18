@@ -17,7 +17,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 订单支付状态回调通知
-        public static void NotifyOrderData_Example()
+        public static void NotifyOrderData()
         {
             // 实例化解密验签对应的 request 类
             YzhCallbackRequest<NotifyOrderRequestModel> request = new YzhCallbackRequest<NotifyOrderRequestModel>()
@@ -38,7 +38,7 @@ namespace Aop.Api.Example
         }
 
         // 发票开具完成通知
-        public static void NotifyInvoiceDone_Example()
+        public static void NotifyInvoiceDone()
         {
             // 实例化解密验签对应的 request 类
             YzhCallbackRequest<NotifyInvoiceDoneRequestModel> request = new YzhCallbackRequest<NotifyInvoiceDoneRequestModel>()
@@ -66,7 +66,7 @@ namespace Aop.Api.Example
         }
 
         // 个体工商户注册结果回调
-        public static void NotifyH5EcoCityAic_Example()
+        public static void NotifyH5EcoCityAic()
         {
             // 实例化解密验签对应的 request 类
             YzhCallbackRequest<NotifyH5EcoCityAicRequestModel> request = new YzhCallbackRequest<NotifyH5EcoCityAicRequestModel>()
@@ -94,7 +94,7 @@ namespace Aop.Api.Example
         }
 
         // H5 签约回调
-        public static void NotifyH5UserSign_Example()
+        public static void NotifyH5UserSign()
         {
             // 实例化解密验签对应的 request 类
             YzhCallbackRequest<NotifyH5UserSignRequestModel> request = new YzhCallbackRequest<NotifyH5UserSignRequestModel>()
@@ -114,7 +114,7 @@ namespace Aop.Api.Example
         }
 
         // 免验证名单审核结果回调通知
-        public static void NotifyUserExemptedInfo_Example()
+        public static void NotifyUserExemptedInfo()
         {
             // 实例化解密验签对应的 request 类
             YzhCallbackRequest<NotifyUserExemptedInfoRequestModel> request = new YzhCallbackRequest<NotifyUserExemptedInfoRequestModel>()

@@ -18,7 +18,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 获取协议预览 URL
-        public static void ApiUseSignContract_Example()
+        public static void ApiUseSignContract()
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignContractRequest request = new ApiUserSignContractRequest();
@@ -50,7 +50,7 @@ namespace Aop.Api.Example
         }
 
         // 用户签约
-        public static void ApiUserSign_Example()
+        public static void ApiUserSign()
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignRequest request = new ApiUserSignRequest();
@@ -85,7 +85,7 @@ namespace Aop.Api.Example
         }
 
         // 获取用户签约状态
-        public static void GetApiUserSignStatus_Example()
+        public static void GetApiUserSignStatus()
         {
             // 实例化具体 API 对应的 request 类
             GetApiUserSignStatusRequest request = new GetApiUserSignStatusRequest();
@@ -119,7 +119,7 @@ namespace Aop.Api.Example
         }
 
         // 用户解约（测试账号专用）
-        public static void ApiUserSignRelease_Example()
+        public static void ApiUserSignRelease()
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignReleaseRequest request = new ApiUserSignReleaseRequest();

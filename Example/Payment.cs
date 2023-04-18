@@ -18,7 +18,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 银行卡实时支付
-        public static void CreateBankpayOrder_Example()
+        public static void CreateBankpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
@@ -58,7 +58,7 @@ namespace Aop.Api.Example
         }
 
         // 支付宝实时支付
-        public static void CreateAlipayOrder_Example()
+        public static void CreateAlipayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateAlipayOrderRequest request = new CreateAlipayOrderRequest();
@@ -98,7 +98,7 @@ namespace Aop.Api.Example
         }
 
         // 微信实时支付
-        public static void CreateWxpayOrder_Example()
+        public static void CreateWxpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateWxpayOrderRequest request = new CreateWxpayOrderRequest();
@@ -139,7 +139,7 @@ namespace Aop.Api.Example
         }
 
         // 批次下单
-        public static void CreateBatchOrder_Example()
+        public static void CreateBatchOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBatchOrderRequest request = new CreateBatchOrderRequest();
@@ -209,7 +209,7 @@ namespace Aop.Api.Example
         }
 
         // 批次确认
-        public static void ConfirmBatchOrder_Example()
+        public static void ConfirmBatchOrder()
         {
             // 实例化具体 API 对应的 request 类
             ConfirmBatchOrderRequest request = new ConfirmBatchOrderRequest();
@@ -243,7 +243,7 @@ namespace Aop.Api.Example
         }
 
         // 查询单笔订单信息
-        public static void GetOrder_Example()
+        public static void GetOrder()
         {
             // 实例化具体 API 对应的 request 类
             GetOrderRequest request = new GetOrderRequest();
@@ -275,7 +275,7 @@ namespace Aop.Api.Example
         }
 
         // 查询平台企业余额
-        public static void ListAccount_Example()
+        public static void ListAccount()
         {
             // 实例化具体 API 对应的 request 类
             ListAccountRequest request = new ListAccountRequest();
@@ -306,7 +306,7 @@ namespace Aop.Api.Example
         }
 
         // 查询电子回单
-        public static void GetEleReceiptFile_Example()
+        public static void GetEleReceiptFile()
         {
             // 实例化具体 API 对应的 request 类
             GetEleReceiptFileRequest request = new GetEleReceiptFileRequest();
@@ -338,7 +338,7 @@ namespace Aop.Api.Example
         }
 
         // 取消待支付订单
-        public static void CancelOrder_Example()
+        public static void CancelOrder()
         {
             // 实例化具体 API 对应的 request 类
             CancelOrderRequest request = new CancelOrderRequest();
@@ -372,7 +372,7 @@ namespace Aop.Api.Example
         }
 
         // 查询平台企业汇款信息
-        public static void GetDealerVARechargeAccount_Example()
+        public static void GetDealerVARechargeAccount()
         {
             // 实例化具体 API 对应的 request 类
             GetDealerVARechargeAccountRequest request = new GetDealerVARechargeAccountRequest();

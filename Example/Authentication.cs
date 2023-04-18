@@ -18,7 +18,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 身份证实名验证
-        public static void IDCardVerify_Example()
+        public static void IDCardVerify()
         {
             // 实例化具体 API 对应的 request 类
             IDCardVerifyRequest request = new IDCardVerifyRequest();
@@ -50,7 +50,7 @@ namespace Aop.Api.Example
         }
 
         // 银行卡信息查询
-        public static void GetBankCardInfo_Example()
+        public static void GetBankCardInfo()
         {
             // 实例化具体 API 对应的 request 类
             GetBankCardInfoRequest request = new GetBankCardInfoRequest();
@@ -82,7 +82,7 @@ namespace Aop.Api.Example
         }
 
         // 银行卡三要素验证
-        public static void BankCardThreeVerify_Example()
+        public static void BankCardThreeVerify()
         {
             // 实例化具体 API 对应的 request 类
             BankCardThreeVerifyRequest request = new BankCardThreeVerifyRequest();
@@ -115,7 +115,7 @@ namespace Aop.Api.Example
         }
 
         // 银行卡四要素验证
-        public static void BankCardFourVerify_Example()
+        public static void BankCardFourVerify()
         {
             // 实例化具体 API 对应的 request 类
             BankCardFourVerifyRequest request = new BankCardFourVerifyRequest();
@@ -149,7 +149,7 @@ namespace Aop.Api.Example
         }
 
         // 银行卡四要素鉴权请求（下发短信验证码）
-        public static void BankCardFourAuthVerify_Example()
+        public static void BankCardFourAuthVerify()
         {
             // 实例化具体 API 对应的 request 类
             BankCardFourAuthVerifyRequest request = new BankCardFourAuthVerifyRequest();
@@ -183,7 +183,7 @@ namespace Aop.Api.Example
         }
 
         // 银行卡四要素确认请求（上传短信验证码）
-        public static void BankCardFourAuthConfirm_Example()
+        public static void BankCardFourAuthConfirm()
         {
             // 实例化具体 API 对应的 request 类
             BankCardFourAuthConfirmRequest request = new BankCardFourAuthConfirmRequest();
@@ -219,7 +219,7 @@ namespace Aop.Api.Example
         }
 
         // 上传免验证用户名单信息
-        public static void UserExemptedInfo_Example()
+        public static void UserExemptedInfo()
         {
             // 实例化具体 API 对应的 request 类
             UserExemptedInfoRequest request = new UserExemptedInfoRequest();
@@ -261,7 +261,7 @@ namespace Aop.Api.Example
         }
 
         // 查看免验证用户名单是否存在
-        public static void UserWhiteCheck_Example()
+        public static void UserWhiteCheck()
         {
             // 实例化具体 API 对应的 request 类
             UserWhiteCheckRequest request = new UserWhiteCheckRequest();

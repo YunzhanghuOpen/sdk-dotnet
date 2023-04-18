@@ -72,7 +72,7 @@ namespace Aop.Api.Example
         static DefaultAopClient client = new DefaultAopClient(config);
 
         // 银行卡实时支付
-        public static void CreateBankpayOrder_Example()
+        public static void CreateBankpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();

@@ -18,7 +18,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 预申请签约
-        public static void H5UserPresign_Example()
+        public static void H5UserPresign()
         {
             // 实例化具体 API 对应的 request 类
             H5UserPresignRequest request = new H5UserPresignRequest();
@@ -53,7 +53,7 @@ namespace Aop.Api.Example
         }
 
         // 申请签约
-        public static void H5UserSign_Example()
+        public static void H5UserSign()
         {
             // 实例化具体 API 对应的 request 类
             H5UserSignRequest request = new H5UserSignRequest();
@@ -87,7 +87,7 @@ namespace Aop.Api.Example
         }
 
         // 获取用户签约状态
-        public static void GeH5UserSignStatus_Example()
+        public static void GeH5UserSignStatus()
         {
             // 实例化具体 API 对应的 request 类
             GetH5UserSignStatusRequest request = new GetH5UserSignStatusRequest();
@@ -121,7 +121,7 @@ namespace Aop.Api.Example
         }
 
         // 用户解约
-        public static void H5UserRelease_Example()
+        public static void H5UserRelease()
         {
             // 实例化具体 API 对应的 request 类
             H5UserReleaseRequest request = new H5UserReleaseRequest();

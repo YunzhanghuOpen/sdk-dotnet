@@ -18,7 +18,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 工商实名信息录入
-        public static void H5PreCollectBizlicMsg_Example()
+        public static void H5PreCollectBizlicMsg()
         {
             // 实例化具体 API 对应的 request 类
             H5PreCollectBizlicMsgRequest request = new H5PreCollectBizlicMsgRequest();
@@ -59,7 +59,7 @@ namespace Aop.Api.Example
         }
 
         // 预启动
-        public static void H5APIGetStartUrl_Example()
+        public static void H5APIGetStartUrl()
         {
             // 实例化具体 API 对应的 request 类
             H5APIGetStartUrlRequest request = new H5APIGetStartUrlRequest();
@@ -97,7 +97,7 @@ namespace Aop.Api.Example
         }
 
         // 查询个体工商户状态
-        public static void H5APIEcoCityAicStatus_Example()
+        public static void H5APIEcoCityAicStatus()
         {
             // 实例化具体 API 对应的 request 类
             H5APIEcoCityAicStatusRequest request = new H5APIEcoCityAicStatusRequest();

@@ -18,7 +18,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         // 预启动
-        public static void H5GetStartUrl_Example()
+        public static void H5GetStartUrl()
         {
             // 实例化具体 API 对应的 request 类
             H5GetStartUrlRequest request = new H5GetStartUrlRequest();
@@ -56,7 +56,7 @@ namespace Aop.Api.Example
         }
 
         // 查询个体工商户状态
-        public static void H5EcoCityAicStatus_Example()
+        public static void H5EcoCityAicStatus()
         {
             // 实例化具体 API 对应的 request 类
             H5EcoCityAicStatusRequest request = new H5EcoCityAicStatusRequest();
