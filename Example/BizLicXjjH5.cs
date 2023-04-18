@@ -1,9 +1,8 @@
 ﻿using System;
-using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Aop.Api.Example.config;
+using Aop.Api.Example.Config;
 
 namespace Aop.Api.Example
 {
@@ -13,33 +12,36 @@ namespace Aop.Api.Example
     public class BizLicXjjH5
     {
         // 获取基础配置信息
-        static YzhConfig config = ConfigUtil.GetConfig();
+        private static readonly YzhConfig Config = ConfigUtil.GetConfig();
+
         // 客户端实现
-        static DefaultAopClient client = new DefaultAopClient(config);
-        
+        private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
+
         // 预启动
         public static void H5GetStartUrl_Example()
-        { 
+        {
             // 实例化具体 API 对应的 request 类
             H5GetStartUrlRequest request = new H5GetStartUrlRequest();
+
             // 加载接口参数
             H5GetStartUrlRequestModel model = new H5GetStartUrlRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 ClientType = 1,
                 NotifyURL = "http://www.abcdef.com/api/notify",
                 Color = "#007AFF",
-                ReturnURL = "",
-                CustomerTitle = 1
+                ReturnURL = "http://www.abcdef.com/api/returnurl",
+                CustomerTitle = 1,
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            H5GetStartUrlResponse res = client.Execute(request);
+            H5GetStartUrlResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -55,25 +57,27 @@ namespace Aop.Api.Example
 
         // 查询个体工商户状态
         public static void H5EcoCityAicStatus_Example()
-        { 
+        {
             // 实例化具体 API 对应的 request 类
             H5EcoCityAicStatusRequest request = new H5EcoCityAicStatusRequest();
+
             // 加载接口参数
             H5EcoCityAicStatusRequestModel model = new H5EcoCityAicStatusRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 RealName = "张三",
                 IDCard = "110101198010211242",
-                OpenID = ""
+                OpenID = "",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            H5EcoCityAicStatusResponse res = client.Execute(request);
+            H5EcoCityAicStatusResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)

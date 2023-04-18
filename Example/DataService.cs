@@ -1,9 +1,8 @@
 ﻿using System;
-using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Aop.Api.Example.config;
+using Aop.Api.Example.Config;
 using System.Collections.Generic;
 
 namespace Aop.Api.Example
@@ -14,26 +13,29 @@ namespace Aop.Api.Example
     public class DataService
     {
         // 获取基础配置信息
-        static YzhConfig config = ConfigUtil.GetConfig();
+        private static readonly YzhConfig Config = ConfigUtil.GetConfig();
+
         // 客户端实现
-        static DefaultAopClient client = new DefaultAopClient(config);
-        
+        private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
+
         // 查询日订单文件
         public static void GetOrderDownloadsUrl_Example()
-        { 
+        {
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileRequest request = new GetDailyOrderFileRequest();
+
             // 加载接口参数
             GetDailyOrderFileRequestModel model = new GetDailyOrderFileRequestModel
             {
-                OrderDate = "2022-03-23"
+                OrderDate = "2022-03-23",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetDailyOrderFileResponse res = client.Execute(request);
+            GetDailyOrderFileResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -52,17 +54,19 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             GetDailyBillFileV2Request request = new GetDailyBillFileV2Request();
+
             // 加载接口参数
             GetDailyBillFileV2RequestModel model = new GetDailyBillFileV2RequestModel
             {
-                BillDate = "2022-03-23"
+                BillDate = "2022-03-23",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetDailyBillFileV2Response res = client.Execute(request);
+            GetDailyBillFileV2Response res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -81,18 +85,20 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ListDealerRechargeRecordV2Request request = new ListDealerRechargeRecordV2Request();
+
             // 加载接口参数
             ListDealerRechargeRecordV2RequestModel model = new ListDealerRechargeRecordV2RequestModel
             {
                 BeginAt = "2022-03-23",
-                EndAt = "2022-03-30"
+                EndAt = "2022-03-30",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ListDealerRechargeRecordV2Response res = client.Execute(request);
+            ListDealerRechargeRecordV2Response res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -111,6 +117,7 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ListDailyOrderRequest request = new ListDailyOrderRequest();
+
             // 加载接口参数
             ListDailyOrderRequestModel model = new ListDailyOrderRequestModel
             {
@@ -118,14 +125,15 @@ namespace Aop.Api.Example
                 Offset = 0,
                 Length = 100,
                 Channel = "银行卡",
-                DataType = "encryption"
+                DataType = "encryption",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ListDailyOrderResponse res = client.Execute(request);
+            ListDailyOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -144,20 +152,22 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ListDailyBillRequest request = new ListDailyBillRequest();
+
             // 加载接口参数
             ListDailyBillRequestModel model = new ListDailyBillRequestModel
             {
                 BillDate = "2022-03-23",
                 Offset = 0,
                 Length = 100,
-                DataType = "encryption"
+                DataType = "encryption",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ListDailyBillResponse res = client.Execute(request);
+            ListDailyBillResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -176,17 +186,19 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileV2Request request = new GetDailyOrderFileV2Request();
+
             // 加载接口参数
             GetDailyOrderFileV2RequestModel model = new GetDailyOrderFileV2RequestModel
             {
-                OrderDate = "2022-03-23"
+                OrderDate = "2022-03-23",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetDailyOrderFileV2Response res = client.Execute(request);
+            GetDailyOrderFileV2Response res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -205,17 +217,19 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ListBalanceDailyStatementRequest request = new ListBalanceDailyStatementRequest();
+
             // 加载接口参数
             ListBalanceDailyStatementRequestModel model = new ListBalanceDailyStatementRequestModel
             {
-                StatementDate = "2022-03-23"
+                StatementDate = "2022-03-23",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ListBalanceDailyStatementResponse res = client.Execute(request);
+            ListBalanceDailyStatementResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)

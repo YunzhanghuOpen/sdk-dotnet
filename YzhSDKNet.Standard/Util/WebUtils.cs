@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -41,10 +39,16 @@ namespace Aop.Api.Util
         /// </summary>
         public Dictionary<string, string> CustomHeaders { get; set; }
 
-        public string DoHttpClient(string method,string url,IDictionary<string,string> parameters)
+        /// <summary>
+        /// 获取 Http 请求方法
+        /// </summary>
+        /// <param name="method">请求方式</param>
+        /// <param name="url">请求地址</param>
+        /// <param name="parameters">请求参数</param>
+        /// <returns>Http 请求方法</returns>
+        public string DoHttpClient(string method, string url, IDictionary<string, string> parameters)
         {
-
-            return method == HttpMethod.Post.Method ? DoPost(url, parameters) : DoGet(url, parameters);
+            return method == HttpMethod.Post.Method ? this.DoPost(url, parameters) : this.DoGet(url, parameters);
         }
 
         /// <summary>
@@ -55,14 +59,14 @@ namespace Aop.Api.Util
         /// <returns>HTTP 响应</returns>
         public string DoPost(string url, IDictionary<string, string> parameters)
         {
-            HttpWebRequest request = GetWebRequest(url, "POST");
+            HttpWebRequest request = this.GetWebRequest(url, "POST");
             byte[] postData = Encoding.GetEncoding("UTF-8").GetBytes(BuildQuery(parameters));
             Stream reqStream = request.GetRequestStream();
             reqStream.Write(postData, 0, postData.Length);
             reqStream.Close();
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            return GetResponseAsString(response);
+            return this.GetResponseAsString(response);
         }
 
         /// <summary>
@@ -85,9 +89,9 @@ namespace Aop.Api.Util
                 }
             }
 
-            HttpWebRequest request = GetWebRequest(url, "GET");
+            HttpWebRequest request = this.GetWebRequest(url, "GET");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            return GetResponseAsString(response);
+            return this.GetResponseAsString(response);
         }
 
         /// <summary>
@@ -103,12 +107,12 @@ namespace Aop.Api.Util
             req.KeepAlive = true;
             req.UserAgent = string.Format("yunzhanghu-sdk-net/1.0.0/{0}/{1}/1.0.0",Environment.OSVersion.VersionString,Environment.Version);
             Console.WriteLine(req.UserAgent);
-            req.Timeout = Timeout;
-            req.ReadWriteTimeout = ReadWritTimeout;
+            req.Timeout = this.Timeout;
+            req.ReadWriteTimeout = this.ReadWritTimeout;
             req.ContentType = "application/x-www-form-urlencoded";
-            if (CustomHeaders != null && CustomHeaders.Count > 0)
+            if (this.CustomHeaders != null && this.CustomHeaders.Count > 0)
             {
-                foreach (var header in CustomHeaders)
+                foreach (var header in this.CustomHeaders)
                 {
                     req.Headers.Add(header.Key, header.Value);
                 }
@@ -155,10 +159,22 @@ namespace Aop.Api.Util
             }
             finally
             {
-                if (reader != null) reader.Close();
-                if (stream != null) stream.Close();
-                if (response != null) response.Close();
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+
+                if (stream != null)
+                {
+                    stream.Close();
+                }
+
+                if (response != null)
+                {
+                    response.Close();
+                }
             }
+
             return result.ToString();
         }
     }

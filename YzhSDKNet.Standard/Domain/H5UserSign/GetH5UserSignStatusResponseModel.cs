@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,12 +12,11 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("signed_at")]
       public string SignedAt { get; set; }
-      
+
       /// <summary>
       /// 用户签约状态
       /// <summary>
       [JsonProperty("status")]
       public int Status { get; set; }
-      
    }
 }

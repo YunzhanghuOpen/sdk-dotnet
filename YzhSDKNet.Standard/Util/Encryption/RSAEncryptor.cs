@@ -15,11 +15,11 @@ namespace Aop.Api.Util.Encryption
         /// </summary>
         /// <param name="content">待签名的原文</param>
         /// <param name="appKey">云账户 App Key</param>
-        /// <param name="key">平台企业私钥</param>
+        /// <param name="privateKey">平台企业私钥</param>
         /// <returns>签名结果</returns>
         public string Sign(string content, string appKey, string privateKey)
         {
-            using (RSACryptoServiceProvider rsaService = BuildRSAServiceProvider(privateKey))
+            using (RSACryptoServiceProvider rsaService = this.BuildRSAServiceProvider(privateKey))
             {
                 byte[] data = Encoding.UTF8.GetBytes(content);
                 SHA256CryptoServiceProvider sha256 = new SHA256CryptoServiceProvider();
@@ -41,7 +41,7 @@ namespace Aop.Api.Util.Encryption
             using (RSACryptoServiceProvider rsaService = new RSACryptoServiceProvider())
             {
                 rsaService.PersistKeyInCsp = false;
-                rsaService.ImportParameters(ConvertFromPemPublicKey(publicKey));
+                rsaService.ImportParameters(this.ConvertFromPemPublicKey(publicKey));
                 SHA256CryptoServiceProvider sha256 = new SHA256CryptoServiceProvider();
                 return rsaService.VerifyData(Encoding.UTF8.GetBytes(content), sha256, Convert.FromBase64String(sign));
             }
@@ -56,8 +56,8 @@ namespace Aop.Api.Util.Encryption
             }
 
             // 移除干扰文本
-            pemPublicKey = pemPublicKey.Replace("-----BEGIN PUBLIC KEY-----", "")
-                .Replace("-----END PUBLIC KEY-----", "").Replace("\n", "").Replace("\r", "").Trim();
+            pemPublicKey = pemPublicKey.Replace("-----BEGIN PUBLIC KEY-----", string.Empty)
+                .Replace("-----END PUBLIC KEY-----", string.Empty).Replace("\n", string.Empty).Replace("\r", string.Empty).Trim();
 
             byte[] keyData = Convert.FromBase64String(pemPublicKey);
             bool keySize1024 = keyData.Length == 162;
@@ -66,34 +66,36 @@ namespace Aop.Api.Util.Encryption
             {
                 throw new AopException("公钥长度只支持 1024 或 2048。");
             }
+
             byte[] pemModulus = keySize1024 ? new byte[128] : new byte[256];
             byte[] pemPublicExponent = new byte[3];
             Array.Copy(keyData, keySize1024 ? 29 : 33, pemModulus, 0, keySize1024 ? 128 : 256);
             Array.Copy(keyData, keySize1024 ? 159 : 291, pemPublicExponent, 0, 3);
-            RSAParameters para = new RSAParameters();
-            para.Modulus = pemModulus;
-            para.Exponent = pemPublicExponent;
+            RSAParameters para = new RSAParameters
+            {
+                Modulus = pemModulus,
+                Exponent = pemPublicExponent,
+            };
             return para;
         }
 
         // 加载私钥
         private RSACryptoServiceProvider BuildRSAServiceProvider(string privateKey)
         {
-            privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", "")
-         .Replace("-----END RSA PRIVATE KEY-----", "").Replace("\n", "").Replace("\r", "").Trim();
+            privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", string.Empty)
+         .Replace("-----END RSA PRIVATE KEY-----", string.Empty).Replace("\n", string.Empty).Replace("\r", string.Empty).Trim();
 
             byte[] keyData = Convert.FromBase64String(privateKey);
 
-            byte[] MODULUS, E, D, P, Q, DP, DQ, IQ;
+            byte[] mODULUS, e, d, p, q, dP, dQ, iQ;
             byte bt = 0;
             ushort twobytes = 0;
             int elems = 0;
 
-            
             using (BinaryReader binaryReader = new BinaryReader(new MemoryStream(keyData)))
             {
                 twobytes = binaryReader.ReadUInt16();
-                
+
                 if (twobytes == 0x8130)
                 {
                     binaryReader.ReadByte();
@@ -108,11 +110,12 @@ namespace Aop.Api.Util.Encryption
                 }
 
                 twobytes = binaryReader.ReadUInt16();
-                
+
                 if (twobytes != 0x0102)
                 {
                     return null;
                 }
+
                 bt = binaryReader.ReadByte();
                 if (bt != 0x00)
                 {
@@ -120,41 +123,40 @@ namespace Aop.Api.Util.Encryption
                 }
 
                 elems = GetIntegerSize(binaryReader);
-                MODULUS = binaryReader.ReadBytes(elems);
+                mODULUS = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                E = binaryReader.ReadBytes(elems);
+                e = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                D = binaryReader.ReadBytes(elems);
+                d = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                P = binaryReader.ReadBytes(elems);
+                p = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                Q = binaryReader.ReadBytes(elems);
+                q = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                DP = binaryReader.ReadBytes(elems);
+                dP = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                DQ = binaryReader.ReadBytes(elems);
+                dQ = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                IQ = binaryReader.ReadBytes(elems);
+                iQ = binaryReader.ReadBytes(elems);
 
-                
                 RSACryptoServiceProvider rsaService = new RSACryptoServiceProvider();
                 RSAParameters rsaParams = new RSAParameters
                 {
-                    Modulus = MODULUS,
-                    Exponent = E,
-                    D = D,
-                    P = P,
-                    Q = Q,
-                    DP = DP,
-                    DQ = DQ,
-                    InverseQ = IQ
+                    Modulus = mODULUS,
+                    Exponent = e,
+                    D = d,
+                    P = p,
+                    Q = q,
+                    DP = dP,
+                    DQ = dQ,
+                    InverseQ = iQ,
                 };
                 rsaService.ImportParameters(rsaParams);
                 return rsaService;
@@ -191,8 +193,9 @@ namespace Aop.Api.Util.Encryption
             {
                 count = bt;
             }
+
             while (binaryReader.ReadByte() == 0x00)
-            {   
+            {
                 count -= 1;
             }
 

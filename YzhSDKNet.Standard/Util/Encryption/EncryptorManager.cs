@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aop.Api.Util.Encryption
+﻿namespace Aop.Api.Util.Encryption
 {
     /// <summary>
     /// 签名算法管理类
@@ -14,7 +10,6 @@ namespace Aop.Api.Util.Encryption
         /// </summary>
         /// <param name="type">签名类型</param>
         /// <returns>类型对应签名实例</returns>
-        /// <exception cref="AopException"></exception>
         public static IEncryptor GetByName(string type)
         {
             if (type.ToLower().Equals("rsa"))

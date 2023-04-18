@@ -1,9 +1,8 @@
 ﻿using System;
-using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Aop.Api.Example.config;
+using Aop.Api.Example.Config;
 
 namespace Aop.Api.Example
 {
@@ -13,28 +12,31 @@ namespace Aop.Api.Example
     public class Invoice
     {
         // 获取基础配置信息
-        static YzhConfig config = ConfigUtil.GetConfig();
+        private static readonly YzhConfig Config = ConfigUtil.GetConfig();
+
         // 客户端实现
-        static DefaultAopClient client = new DefaultAopClient(config);
-        
+        private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
+
         // 查询平台企业已开具和待开具发票金额
         public static void GetInvoiceStat_Example()
         {
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatRequest request = new GetInvoiceStatRequest();
+
             // 加载接口参数
             GetInvoiceStatRequestModel model = new GetInvoiceStatRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
-                Year = 2023
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
+                Year = 2023,
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceStatResponse res = client.Execute(request);
+            GetInvoiceStatResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -53,18 +55,20 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             GetInvoiceAmountRequest request = new GetInvoiceAmountRequest();
+
             // 加载接口参数
             GetInvoiceAmountRequestModel model = new GetInvoiceAmountRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceAmountResponse res = client.Execute(request);
+            GetInvoiceAmountResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -83,24 +87,26 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ApplyInvoiceRequest request = new ApplyInvoiceRequest();
+
             // 加载接口参数
             ApplyInvoiceRequestModel model = new ApplyInvoiceRequestModel
             {
                 InvoiceApplyID = "1231232131",
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 Amount = "100000.00",
                 InvoiceType = "1",
                 BankNameAccount = "交通银行北京东大桥支行 12343456654321",
                 GoodsServicesName = "信息技术服务*信息技术服务费",
-                Remark = ""
+                Remark = "测试备注内容",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ApplyInvoiceResponse res = client.Execute(request);
+            ApplyInvoiceResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -119,18 +125,20 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatusRequest request = new GetInvoiceStatusRequest();
+
             // 加载接口参数
             GetInvoiceStatusRequestModel model = new GetInvoiceStatusRequestModel
             {
                 InvoiceApplyID = "1231232131",
-                ApplicationID = ""
+                ApplicationID = "test12776352",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceStatusResponse res = client.Execute(request);
+            GetInvoiceStatusResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -149,18 +157,20 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             GetInvoiceFileRequest request = new GetInvoiceFileRequest();
+
             // 加载接口参数
             GetInvoiceFileRequestModel model = new GetInvoiceFileRequestModel
             {
                 InvoiceApplyID = "1231232131",
-                ApplicationID = ""
+                ApplicationID = "test12776352",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceFileResponse res = client.Execute(request);
+            GetInvoiceFileResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -179,18 +189,20 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             SendReminderEmailRequest request = new SendReminderEmailRequest();
+
             // 加载接口参数
             SendReminderEmailRequestModel model = new SendReminderEmailRequestModel
             {
                 InvoiceApplyID = "1231232131",
-                ApplicationID = ""
+                ApplicationID = "test12776352",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            SendReminderEmailResponse res = client.Execute(request);
+            SendReminderEmailResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)

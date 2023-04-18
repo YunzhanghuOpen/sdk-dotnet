@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aop.Api
+﻿namespace Aop.Api
 {
     /// <summary>
     /// 常量相关

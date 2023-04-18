@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,18 +12,17 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("name")]
       public string Name { get; set; }
-      
+
       /// <summary>
       /// 下载文件临时 URL
       /// <summary>
       [JsonProperty("url")]
       public string URL { get; set; }
-      
+
       /// <summary>
       /// 文件解压缩密码
       /// <summary>
       [JsonProperty("pwd")]
       public string Pwd { get; set; }
-      
    }
 }

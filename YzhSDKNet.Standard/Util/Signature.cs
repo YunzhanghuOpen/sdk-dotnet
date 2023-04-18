@@ -1,11 +1,11 @@
-﻿using Aop.Api;
-using Aop.Api.Util.Encryption;
+﻿using Aop.Api.Util.Encryption;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aop.Api.Util
 {
+    /// <summary>
+    /// 签名信息正确性判断
+    /// </summary>
     public class Signature
     {
         /// <summary>
@@ -20,10 +20,11 @@ namespace Aop.Api.Util
         {
             try
             {
-                if(string.IsNullOrEmpty(content))
+                if (string.IsNullOrEmpty(content))
                 {
                     throw new AopException("待签名内容不可为 null");
                 }
+
                 IEncryptor encryptor = EncryptorManager.GetByName(type);
                 return encryptor.Sign(content, appKey, privateKey);
             }
@@ -47,7 +48,7 @@ namespace Aop.Api.Util
         {
             try
             {
-                if(string.IsNullOrEmpty(content))
+                if (string.IsNullOrEmpty(content))
                 {
                     throw new AopException("待签名内容不可为 null");
                 }

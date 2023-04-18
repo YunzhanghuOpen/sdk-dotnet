@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,12 +12,11 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("invoice_apply_id")]
       public string InvoiceApplyID { get; set; }
-      
+
       /// <summary>
       /// 发票申请单 ID
       /// <summary>
       [JsonProperty("application_id")]
       public string ApplicationID { get; set; }
-      
    }
 }

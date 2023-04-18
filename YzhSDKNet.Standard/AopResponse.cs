@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aop.Api
 {
+    /// <summary>
+    /// 基础响应实体
+    /// </summary>
     public abstract class AopResponse
     {
         private string code;
@@ -12,15 +12,14 @@ namespace Aop.Api
         private string requestID;
         private string body;
 
-
         /// <summary>
         /// 响应码
         /// </summary>
         [JsonProperty("code")]
         public string Code
         {
-            get { return code; }
-            set { code = value; }
+            get { return this.code; }
+            set { this.code = value; }
         }
 
         /// <summary>
@@ -29,8 +28,8 @@ namespace Aop.Api
         [JsonProperty("message")]
         public string Message
         {
-            get { return message; }
-            set { message = value; }
+            get { return this.message; }
+            set { this.message = value; }
         }
 
         /// <summary>
@@ -39,8 +38,8 @@ namespace Aop.Api
         [JsonProperty("request_id")]
         public string RequestID
         {
-            get { return requestID; }
-            set { requestID = value; }
+            get { return this.requestID; }
+            set { this.requestID = value; }
         }
 
         /// <summary>
@@ -48,8 +47,8 @@ namespace Aop.Api
         /// </summary>
         public string Body
         {
-            get { return body; }
-            set { body = value; }
+            get { return this.body; }
+            set { this.body = value; }
         }
 
         /// <summary>
@@ -59,9 +58,8 @@ namespace Aop.Api
         {
             get
             {
-                return code.Equals("0000");
+                return this.code.Equals("0000");
             }
         }
-
     }
 }

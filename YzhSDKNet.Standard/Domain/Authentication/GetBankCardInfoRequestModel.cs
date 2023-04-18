@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,12 +12,11 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("card_no")]
       public string CardNo { get; set; }
-      
+
       /// <summary>
       /// 银行名称
       /// <summary>
       [JsonProperty("bank_name")]
       public string BankName { get; set; }
-      
    }
 }

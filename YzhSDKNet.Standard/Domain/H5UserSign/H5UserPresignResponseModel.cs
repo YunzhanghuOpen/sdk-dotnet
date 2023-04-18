@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,18 +12,17 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("uid")]
       public string Uid { get; set; }
-      
+
       /// <summary>
       /// H5 签约 token
       /// <summary>
       [JsonProperty("token")]
       public string Token { get; set; }
-      
+
       /// <summary>
       /// 签约状态
       /// <summary>
       [JsonProperty("status")]
       public int Status { get; set; }
-      
    }
 }

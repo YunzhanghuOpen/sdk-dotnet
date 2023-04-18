@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,18 +12,17 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("notify_id")]
       public string NotifyID { get; set; }
-      
+
       /// <summary>
       /// 通知时间
       /// <summary>
       [JsonProperty("notify_time")]
       public string NotifyTime { get; set; }
-      
+
       /// <summary>
       /// 返回数据
       /// <summary>
       [JsonProperty("data")]
       public NotifyOrderData Data { get; set; }
-      
    }
 }

@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,6 +12,5 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("url")]
       public string URL { get; set; }
-      
    }
 }

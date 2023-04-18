@@ -1,9 +1,8 @@
 ﻿using System;
-using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Aop.Api.Example.config;
+using Aop.Api.Example.Config;
 
 namespace Aop.Api.Example
 {
@@ -13,10 +12,11 @@ namespace Aop.Api.Example
     public class ApiUserSign
     {
         // 获取基础配置信息
-        static YzhConfig config = ConfigUtil.GetConfig();
+        private static readonly YzhConfig Config = ConfigUtil.GetConfig();
+
         // 客户端实现
-        static DefaultAopClient client = new DefaultAopClient(config);
-        
+        private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
+
         // 获取协议预览 URL
         public static void ApiUseSignContract_Example()
         {
@@ -25,15 +25,16 @@ namespace Aop.Api.Example
             // 加载接口参数
             ApiUserSignContractRequestModel model = new ApiUserSignContractRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ApiUserSignContractResponse res = client.Execute(request);
+            ApiUserSignContractResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -52,21 +53,23 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignRequest request = new ApiUserSignRequest();
+
             // 加载接口参数
             ApiUserSignRequestModel model = new ApiUserSignRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 RealName = "张三",
                 IDCard = "210110199001011212",
-                CardType = "idcard"
+                CardType = "idcard",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ApiUserSignResponse res = client.Execute(request);
+            ApiUserSignResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -85,20 +88,22 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             GetApiUserSignStatusRequest request = new GetApiUserSignStatusRequest();
+
             // 加载接口参数
             GetApiUserSignStatusRequestModel model = new GetApiUserSignStatusRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 RealName = "张三",
-                IDCard = "210110199001011212"
+                IDCard = "210110199001011212",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            GetApiUserSignStatusResponse res = client.Execute(request);
+            GetApiUserSignStatusResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -117,21 +122,23 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignReleaseRequest request = new ApiUserSignReleaseRequest();
+
             // 加载接口参数
             ApiUserSignReleaseRequestModel model = new ApiUserSignReleaseRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 RealName = "张三",
                 IDCard = "210110199001011212",
-                CardType = "idcard"
+                CardType = "idcard",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            ApiUserSignReleaseResponse res = client.Execute(request);
+            ApiUserSignReleaseResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -146,4 +153,3 @@ namespace Aop.Api.Example
         }
     }
 }
-

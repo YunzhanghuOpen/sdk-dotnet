@@ -1,10 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Aop.Api.Domain
 {
@@ -18,12 +12,11 @@ namespace Aop.Api.Domain
       /// <summary>
       [JsonProperty("batch_id")]
       public string BatchID { get; set; }
-      
+
       /// <summary>
       /// 订单结果列表
       /// <summary>
       [JsonProperty("result_list")]
       public BatchOrderResult[] ResultList { get; set; }
-      
    }
 }

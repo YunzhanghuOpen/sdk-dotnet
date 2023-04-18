@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace Aop.Api
 {
@@ -10,19 +8,39 @@ namespace Aop.Api
     /// </summary>
     public class AopException : Exception
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// </summary>
         public AopException()
         {
         }
 
-        public AopException(string message) : base(message)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// </summary>
+        /// <param name="message">具体错误信息</param>
+        public AopException(string message)
+            : base(message)
         {
         }
 
-        protected AopException(SerializationInfo info, StreamingContext context) : base(info, context)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// </summary>
+        /// <param name="info">序列化后的信息</param>
+        /// <param name="context">源信息</param>
+        protected AopException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
         {
         }
 
-        public AopException(string message, Exception innerException) : base(message, innerException)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// </summary>
+        /// <param name="message">错误信息</param>
+        /// <param name="innerException">内部异常</param>
+        public AopException(string message, Exception innerException)
+            : base(message, innerException)
         {
         }
 
@@ -36,10 +54,16 @@ namespace Aop.Api
         /// </summary>
         public string ErrMsg { get; set; }
 
-        public AopException(string errCode, string errMsg) : base(errCode + ":" + errMsg)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// </summary>
+        /// <param name="errCode">错误码</param>
+        /// <param name="errMsg">错误描述</param>
+        public AopException(string errCode, string errMsg)
+            : base(errCode + ":" + errMsg)
         {
-            ErrCode = errCode;
-            ErrMsg = errMsg;
+            this.ErrCode = errCode;
+            this.ErrMsg = errMsg;
         }
     }
 }

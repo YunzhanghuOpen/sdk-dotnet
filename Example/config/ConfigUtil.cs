@@ -1,7 +1,6 @@
 using System;
 using Aop.Api;
 
-
 namespace Aop.Api.Example.config
 {
     public class ConfigUtil

@@ -1,9 +1,8 @@
 ﻿using System;
-using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Aop.Api.Example.config;
+using Aop.Api.Example.Config;
 
 namespace Aop.Api.Example
 {
@@ -13,36 +12,39 @@ namespace Aop.Api.Example
     public class BizLicXjjH5Api
     {
         // 获取基础配置信息
-        static YzhConfig config = ConfigUtil.GetConfig();
+        private static readonly YzhConfig Config = ConfigUtil.GetConfig();
+
         // 客户端实现
-        static DefaultAopClient client = new DefaultAopClient(config);
-        
+        private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
+
         // 工商实名信息录入
         public static void H5PreCollectBizlicMsg_Example()
         {
             // 实例化具体 API 对应的 request 类
             H5PreCollectBizlicMsgRequest request = new H5PreCollectBizlicMsgRequest();
+
             // 加载接口参数
             H5PreCollectBizlicMsgRequestModel model = new H5PreCollectBizlicMsgRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
-                PhoneNo = "",
+                PhoneNo = "18888888888",
                 IDCard = "110101198010211423",
                 RealName = "张三",
                 IDCardAddress = "北京市朝阳区",
                 IDCardAgency = "北京市朝阳区派出所",
                 IDCardNation = "20",
                 IDCardValidityStart = "2020-10-01",
-                IDCardValidityEnd = "2040-10-01"
+                IDCardValidityEnd = "2040-10-01",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            H5PreCollectBizlicMsgResponse res = client.Execute(request);
+            H5PreCollectBizlicMsgResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -61,24 +63,26 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             H5APIGetStartUrlRequest request = new H5APIGetStartUrlRequest();
+
             // 加载接口参数
             H5APIGetStartUrlRequestModel model = new H5APIGetStartUrlRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 ClientType = 2,
                 NotifyURL = "http://www.abcdef.com/api/notify",
                 Color = "#007AFF",
-                ReturnURL = "",
-                CustomerTitle = 1
+                ReturnURL = "http://www.abcdef.com/api/returnurl",
+                CustomerTitle = 1,
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            H5APIGetStartUrlResponse res = client.Execute(request);
+            H5APIGetStartUrlResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -97,22 +101,24 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             H5APIEcoCityAicStatusRequest request = new H5APIEcoCityAicStatusRequest();
+
             // 加载接口参数
             H5APIEcoCityAicStatusRequestModel model = new H5APIEcoCityAicStatusRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 RealName = "张三",
                 IDCard = "110101198010211242",
-                OpenID = ""
+                OpenID = "AIjdiahekrSDHOjkdi",
             };
             request.SetBizModel(model);
+
             // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+            // request.SetRequestID("");
 
             // 发起请求
-            H5APIEcoCityAicStatusResponse res = client.Execute(request);
+            H5APIEcoCityAicStatusResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)

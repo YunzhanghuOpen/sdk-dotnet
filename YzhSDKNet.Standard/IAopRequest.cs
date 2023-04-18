@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aop.Api
+﻿namespace Aop.Api
 {
     /// <summary>
     /// Aop 请求接口
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public interface IAopRequest<T> where T : AopResponse
+    /// <typeparam name="T">响应数据类型</typeparam>
+    public interface IAopRequest<T>
+        where T : AopResponse
     {
         /// <summary>
         /// 设置请求 ID

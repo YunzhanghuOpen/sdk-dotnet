@@ -2,9 +2,7 @@
 using Aop.Api.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
-using System.Net.Http;
 
 namespace Aop.Api
 {
@@ -24,6 +22,7 @@ namespace Aop.Api
         private WebUtils webUtils;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DefaultAopClient"/> class.
         /// 客户端实现
         /// </summary>
         /// <param name="config">相关配置</param>
@@ -48,26 +47,35 @@ namespace Aop.Api
         /// <typeparam name="T">响应实体</typeparam>
         /// <param name="request">请求实体</param>
         /// <returns>响应实体</returns>
-        public T Execute<T>(IAopRequest<T> request) where T : AopResponse
+        public T Execute<T>(IAopRequest<T> request)
+            where T : AopResponse
         {
             // 校验基础参数是否为空
-            VerifyConfigIsEmpty();
+            this.VerifyConfigIsEmpty();
+
             // 获取业务参数
             AopObject bizModel = request.GetBizModel();
+
             // 验证业务参数是否为空
             if (bizModel == null)
             {
                 throw new AopException("biz_model can't be null");
             }
+
             string plaintext = JsonConvert.SerializeObject(bizModel);
+
             // 对明文信息进行加密
             string data = DESEncrypt.Encrypt(plaintext, this.config.Des3Key);
+
             // 获取随机字符串
             string mess = request.GetMess();
+
             // 获取当前时间戳
             string timestamp = request.GetTimestamp();
+
             // 封装待签名字符串
             string message = $"data={data}&mess={mess}&timestamp={timestamp}&key={this.config.AppKey}";
+
             // 获取签名
             string sign = Signature.Sign(message, this.config.SignType, this.config.AppKey, this.config.PrivateKey);
 
@@ -91,14 +99,14 @@ namespace Aop.Api
             string url = this.config.ServerUrl + request.GetApiPath();
             string method = request.GetMethod();
 
-            string body = webUtils.DoHttpClient(method, url, parameters);
+            string body = this.webUtils.DoHttpClient(method, url, parameters);
 
             string srcBody = body;
 
             // 如果数据是加密返回，对 data 字段进行解密
             if (bizModel.GetNeedEncrypt())
             {
-                srcBody = Parese(body, this.config.Des3Key);
+                srcBody = this.Parese(body, this.config.Des3Key);
             }
 
             T response = JsonConvert.DeserializeObject<T>(srcBody);
@@ -113,14 +121,18 @@ namespace Aop.Api
         /// <param name="request">回调输入内容</param>
         /// <returns>回调明文实体</returns>
         /// <exception cref="AopException">错误信息</exception>
-        public T CallBackExecute<T>(YzhCallbackRequest<T> request) where T : AopObject
+        public T CallBackExecute<T>(YzhCallbackRequest<T> request)
+            where T : AopObject
         {
             // 校验基础参数是否为空
-            VerifyConfigIsEmpty();
+            this.VerifyConfigIsEmpty();
+
             // 校验回调参数是否为空
-            VerifyNotifyIsEmpty(request);
+            this.VerifyNotifyIsEmpty(request);
+
             // 封装待签名字符串
             string message = $"data={request.Data}&mess={request.Mess}&timestamp={request.Timestamp}&key={this.config.AppKey}";
+
             // 验证回调请求签名是否正确
             if (!Signature.Verify(message, request.Sign, request.SignType, this.config.AppKey, this.config.YzhPublicKey))
             {
@@ -131,7 +143,7 @@ namespace Aop.Api
             string data = DESEncrypt.Decrypt(request.Data, this.config.Des3Key);
 
             T response = JsonConvert.DeserializeObject<T>(data);
-            
+
             return response;
         }
 
@@ -159,6 +171,7 @@ namespace Aop.Api
                 foreach (string key in json.Keys)
                 {
                     string value = json[key];
+
                     // 对 data 字段进行解密
                     if (key.Equals(YzhConstants.Data) && !string.IsNullOrEmpty(value))
                     {
@@ -166,10 +179,13 @@ namespace Aop.Api
                         data.Add(key, JsonConvert.DeserializeObject<JObject>(value));
                         continue;
                     }
+
                     data.Add(key, value);
                 }
+
                 body = JsonConvert.SerializeObject(data);
             }
+
             return body;
         }
 
@@ -226,7 +242,8 @@ namespace Aop.Api
         /// </summary>
         /// <typeparam name="T">回调明文实体</typeparam>
         /// <param name="request">回调输入内容</param>
-        private void VerifyNotifyIsEmpty<T>(YzhCallbackRequest<T> request) where T : AopObject
+        private void VerifyNotifyIsEmpty<T>(YzhCallbackRequest<T> request)
+            where T : AopObject
         {
             // 检查 RSA 签名类型下云账户公钥是否为空
             if (this.config.SignType.Equals("rsa") && string.IsNullOrEmpty(this.config.YzhPublicKey))

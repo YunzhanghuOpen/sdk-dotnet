@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aop.Api
+﻿namespace Aop.Api
 {
     /// <summary>
     /// Aop 客户端
@@ -15,6 +11,7 @@ namespace Aop.Api
         /// <typeparam name="T">请求参数模板类型</typeparam>
         /// <param name="request">请求参数对象</param>
         /// <returns>响应参数对象</returns>
-        T Execute<T>(IAopRequest<T> request) where T : AopResponse;
+        T Execute<T>(IAopRequest<T> request)
+            where T : AopResponse;
     }
 }
