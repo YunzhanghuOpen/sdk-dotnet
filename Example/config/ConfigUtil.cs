@@ -24,7 +24,7 @@ namespace Aop.Api.Example.config
             // 云账户公钥
             config.YzhPublicKey = "";
             // 3DES Key
-            config.Des3Key = "";
+            config.TripleDesKey = "";
             // 签名方式，rsa 或 sha256
             config.SignType = "";
 

@@ -31,7 +31,7 @@
         /// <summary>
         /// 3DES Key，必填
         /// </summary>
-        public string Des3Key { get; set; }
+        public string TripleDesKey { get; set; }
 
         /// <summary>
         /// 平台企业私钥，签名类型为 rsa 时，必填

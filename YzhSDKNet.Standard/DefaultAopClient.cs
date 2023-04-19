@@ -65,7 +65,7 @@ namespace Aop.Api
             string plaintext = JsonConvert.SerializeObject(bizModel);
 
             // 对明文信息进行加密
-            string data = DESEncrypt.Encrypt(plaintext, this.config.Des3Key);
+            string data = DESEncrypt.Encrypt(plaintext, this.config.TripleDesKey);
 
             // 获取随机字符串
             string mess = request.GetMess();
@@ -106,7 +106,7 @@ namespace Aop.Api
             // 如果数据是加密返回，对 data 字段进行解密
             if (bizModel.GetNeedEncrypt())
             {
-                srcBody = this.Parese(body, this.config.Des3Key);
+                srcBody = this.Parese(body, this.config.TripleDesKey);
             }
 
             T response = JsonConvert.DeserializeObject<T>(srcBody);
@@ -140,7 +140,7 @@ namespace Aop.Api
             }
 
             // 解密数据
-            string data = DESEncrypt.Decrypt(request.Data, this.config.Des3Key);
+            string data = DESEncrypt.Decrypt(request.Data, this.config.TripleDesKey);
 
             T response = JsonConvert.DeserializeObject<T>(data);
 
@@ -151,9 +151,9 @@ namespace Aop.Api
         /// 对密文数据进行解密
         /// </summary>
         /// <param name="body">原始响应数据</param>
-        /// <param name="des3Key">3DES KEY</param>
+        /// <param name="tripleDesKey">3DES KEY</param>
         /// <returns>响应数据解密结果</returns>
-        private string Parese(string body, string des3Key)
+        private string Parese(string body, string tripleDesKey)
         {
             IDictionary<string, string> json;
             try
@@ -175,7 +175,7 @@ namespace Aop.Api
                     // 对 data 字段进行解密
                     if (key.Equals(YzhConstants.Data) && !string.IsNullOrEmpty(value))
                     {
-                        value = DESEncrypt.Decrypt(value, des3Key);
+                        value = DESEncrypt.Decrypt(value, tripleDesKey);
                         data.Add(key, JsonConvert.DeserializeObject<JObject>(value));
                         continue;
                     }
@@ -212,10 +212,10 @@ namespace Aop.Api
                 throw new AopException("AppKey can't be null or empty");
             }
 
-            // 检查 Des3Key 是否为空
-            if (string.IsNullOrEmpty(this.config.Des3Key))
+            // 检查 TripleDesKey 是否为空
+            if (string.IsNullOrEmpty(this.config.TripleDesKey))
             {
-                throw new AopException("Des3Key can't be null or empty");
+                throw new AopException("TripleDesKey can't be null or empty");
             }
 
             // 检查 SignType 是否为空

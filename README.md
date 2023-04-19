@@ -127,7 +127,7 @@ namespace Aop.Api.Example
             // 设置云账户公钥
             config.YzhPublicKey = "";
             // 设置 3DES Key
-            config.Des3Key = "";
+            config.TripleDesKey = "";
             // 设置签名方式，rsa 或 sha256
             config.SignType = "";
 
