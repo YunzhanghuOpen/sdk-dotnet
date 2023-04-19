@@ -52,7 +52,7 @@ namespace Aop.Api.Request
         /// <summary>
         /// 获取随机数
         /// </summary>
-        /// <returns>随机数，未设置时默认生成</returns>
+        /// <returns>随机数，未设置时使用 GUID 方法自动生成</returns>
         public string GetMess()
         {
             if (string.IsNullOrEmpty(this.mess))
@@ -74,7 +74,7 @@ namespace Aop.Api.Request
         /// <summary>
         /// 获取请求ID
         /// </summary>
-        /// <returns>请求ID，未设置时返回默认</returns>
+        /// <returns>请求ID，未设置时使用 GUID 方法自动生成</returns>
         public string GetRequestID()
         {
             if (string.IsNullOrEmpty(this.requestID))

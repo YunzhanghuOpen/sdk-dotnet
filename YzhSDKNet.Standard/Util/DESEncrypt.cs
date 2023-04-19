@@ -14,7 +14,7 @@ namespace Aop.Api.Util
         /// </summary>
         /// <param name="plainText">明文字符串</param>
         /// <param name="desKey">3DES KEY</param>
-        /// <returns>密文 Base64 编码字符串</returns>
+        /// <returns>密文</returns>
         public static string Encrypt(string plainText, string desKey)
         {
             var des = new TripleDESCryptoServiceProvider
@@ -32,7 +32,7 @@ namespace Aop.Api.Util
         /// <summary>
         /// 3DES 解密
         /// </summary>
-        /// <param name="cipherTextBase64">密文 Base64 编码字符串</param>
+        /// <param name="cipherTextBase64">密文</param>
         /// <param name="desKey">3DES KEY</param>
         /// <returns>明文</returns>
         public static string Decrypt(string cipherTextBase64, string desKey)

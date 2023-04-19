@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Aop.Api.Request
+namespace Aop.Api
 {
     /// <summary>
     /// 云账户回调实体

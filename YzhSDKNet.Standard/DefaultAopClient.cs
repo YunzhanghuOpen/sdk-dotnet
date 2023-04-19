@@ -151,7 +151,7 @@ namespace Aop.Api
         /// 对密文数据进行解密
         /// </summary>
         /// <param name="body">原始响应数据</param>
-        /// <param name="des3Key">DES3 KEY</param>
+        /// <param name="des3Key">3DES KEY</param>
         /// <returns>响应数据解密结果</returns>
         private string Parese(string body, string des3Key)
         {
@@ -248,7 +248,7 @@ namespace Aop.Api
             // 检查 RSA 签名类型下云账户公钥是否为空
             if (this.config.SignType.Equals("rsa") && string.IsNullOrEmpty(this.config.YzhPublicKey))
             {
-                throw new AopException("yzh_public_key can't be null or empty");
+                throw new AopException("YzhPublicKey can't be null or empty");
             }
 
             // 检查回调内容是否为 null

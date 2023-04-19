@@ -40,12 +40,12 @@ namespace Aop.Api.Util
         public Dictionary<string, string> CustomHeaders { get; set; }
 
         /// <summary>
-        /// 获取 Http 请求方法
+        /// 使用 HTTP 请求方法
         /// </summary>
         /// <param name="method">请求方式</param>
         /// <param name="url">请求地址</param>
         /// <param name="parameters">请求参数</param>
-        /// <returns>Http 请求方法</returns>
+        /// <returns>HTTP 请求方法</returns>
         public string DoHttpClient(string method, string url, IDictionary<string, string> parameters)
         {
             return method == HttpMethod.Post.Method ? this.DoPost(url, parameters) : this.DoGet(url, parameters);

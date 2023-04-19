@@ -87,7 +87,7 @@ namespace Aop.Api.Util.Encryption
 
             byte[] keyData = Convert.FromBase64String(privateKey);
 
-            byte[] mODULUS, e, d, p, q, dP, dQ, iQ;
+            byte[] MODULUS, E, D, P, Q, DP, DQ, IQ;
             byte bt = 0;
             ushort twobytes = 0;
             int elems = 0;
@@ -123,40 +123,40 @@ namespace Aop.Api.Util.Encryption
                 }
 
                 elems = GetIntegerSize(binaryReader);
-                mODULUS = binaryReader.ReadBytes(elems);
+                MODULUS = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                e = binaryReader.ReadBytes(elems);
+                E = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                d = binaryReader.ReadBytes(elems);
+                D = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                p = binaryReader.ReadBytes(elems);
+                P = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                q = binaryReader.ReadBytes(elems);
+                Q = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                dP = binaryReader.ReadBytes(elems);
+                DP = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                dQ = binaryReader.ReadBytes(elems);
+                DQ = binaryReader.ReadBytes(elems);
 
                 elems = GetIntegerSize(binaryReader);
-                iQ = binaryReader.ReadBytes(elems);
+                IQ = binaryReader.ReadBytes(elems);
 
                 RSACryptoServiceProvider rsaService = new RSACryptoServiceProvider();
                 RSAParameters rsaParams = new RSAParameters
                 {
-                    Modulus = mODULUS,
-                    Exponent = e,
-                    D = d,
-                    P = p,
-                    Q = q,
-                    DP = dP,
-                    DQ = dQ,
-                    InverseQ = iQ,
+                    Modulus = MODULUS,
+                    Exponent = E,
+                    D = D,
+                    P = P,
+                    Q = Q,
+                    DP = DP,
+                    DQ = DQ,
+                    InverseQ = IQ,
                 };
                 rsaService.ImportParameters(rsaParams);
                 return rsaService;
@@ -176,6 +176,7 @@ namespace Aop.Api.Util.Encryption
             {
                 return 0;
             }
+
             bt = binaryReader.ReadByte();
 
             if (bt == 0x81)

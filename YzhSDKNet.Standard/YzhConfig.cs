@@ -6,7 +6,7 @@
     public class YzhConfig
     {
         /// <summary>
-        /// 请求地址
+        /// 基础接口地址
         /// 生产环境：https://api-service.yunzhanghu.com
         /// 沙箱沙箱：https://api-service.yunzhanghu.com/sandbox
         /// 个体户注册：https://api-aic.yunzhanghu.com
@@ -34,11 +34,6 @@
         public string Des3Key { get; set; }
 
         /// <summary>
-        /// 平台企业公钥
-        /// </summary>
-        public string PublicKey { get; set; }
-
-        /// <summary>
         /// 平台企业私钥，签名类型为 rsa 时，必填
         /// </summary>
         public string PrivateKey { get; set; }
@@ -53,6 +48,5 @@
         /// RSA 签名：rsa | HMAC 签名：sha256
         /// </summary>
         public string SignType { get; set; } = "rsa";
-
     }
 }

@@ -9,14 +9,14 @@ namespace Aop.Api
     public class AopException : Exception
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// 错误信息
         /// </summary>
         public AopException()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// 错误信息
         /// </summary>
         /// <param name="message">具体错误信息</param>
         public AopException(string message)
@@ -25,7 +25,7 @@ namespace Aop.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// 错误信息
         /// </summary>
         /// <param name="info">序列化后的信息</param>
         /// <param name="context">源信息</param>
@@ -35,7 +35,7 @@ namespace Aop.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// 错误信息
         /// </summary>
         /// <param name="message">错误信息</param>
         /// <param name="innerException">内部异常</param>
@@ -55,7 +55,7 @@ namespace Aop.Api
         public string ErrMsg { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AopException"/> class.
+        /// 错误信息
         /// </summary>
         /// <param name="errCode">错误码</param>
         /// <param name="errMsg">错误描述</param>
