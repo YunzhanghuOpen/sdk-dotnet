@@ -81,7 +81,7 @@ namespace Aop.Api.Example
         }
 
         // 查询平台企业预付业务服务费记录
-        public static void ListDealerRechargeRecordV2
+        public static void ListDealerRechargeRecordV2()
         {
             // 实例化具体 API 对应的 request 类
             ListDealerRechargeRecordV2Request request = new ListDealerRechargeRecordV2Request();
