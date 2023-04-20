@@ -34,7 +34,7 @@ namespace Aop.Api.Util.Encryption
         /// <param name="content">待验签的原文</param>
         /// <param name="sign">签名结果</param>
         /// <param name="appKey">云账户 App Key</param>
-        /// <param name="publicKey">公钥</param>
+        /// <param name="publicKey">云账户公钥</param>
         /// <returns>true：验证通过；false：验证不通过</returns>
         public bool Verify(string content, string sign, string appKey, string publicKey)
         {

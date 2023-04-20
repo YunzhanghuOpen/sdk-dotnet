@@ -147,6 +147,37 @@ namespace Aop.Api.Example
             }
         }
 
+        // 查询日订单文件（支付和退款订单）
+        public static void GetDailyOrderFileV2()
+        {
+            // 实例化具体 API 对应的 request 类
+            GetDailyOrderFileV2Request request = new GetDailyOrderFileV2Request();
+
+            // 加载接口参数
+            GetDailyOrderFileV2RequestModel model = new GetDailyOrderFileV2RequestModel
+            {
+                OrderDate = "2022-03-23",
+            };
+            request.SetBizModel(model);
+
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID("");
+
+            // 发起请求
+            GetDailyOrderFileV2Response res = Client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
+            {
+                GetDailyOrderFileV2ResponseModel data = res.Data;
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+            }
+        }
+
         // 查询日流水数据
         public static void ListDailyBill()
         {
@@ -173,37 +204,6 @@ namespace Aop.Api.Example
             if (res.IsSuccess)
             {
                 ListDailyBillResponseModel data = res.Data;
-            }
-            else
-            {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
-            }
-        }
-
-        // 查询日订单文件（支付和退款订单）
-        public static void GetDailyOrderFileV2()
-        {
-            // 实例化具体 API 对应的 request 类
-            GetDailyOrderFileV2Request request = new GetDailyOrderFileV2Request();
-
-            // 加载接口参数
-            GetDailyOrderFileV2RequestModel model = new GetDailyOrderFileV2RequestModel
-            {
-                OrderDate = "2022-03-23",
-            };
-            request.SetBizModel(model);
-
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID("");
-
-            // 发起请求
-            GetDailyOrderFileV2Response res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
-            {
-                GetDailyOrderFileV2ResponseModel data = res.Data;
             }
             else
             {

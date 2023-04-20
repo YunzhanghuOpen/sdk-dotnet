@@ -36,7 +36,7 @@
         public const string Sign = "sign";
 
         /// <summary>
-        /// 签名类型
+        /// 签名方式
         /// </summary>
         public const string SignType = "sign_type";
     }

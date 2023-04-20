@@ -12,7 +12,7 @@ namespace Aop.Api.Util
         /// 签名
         /// </summary>
         /// <param name="content">待签名字符串</param>
-        /// <param name="type">签名类型（rsa 或 sha256）</param>
+        /// <param name="type">签名方式（rsa 或 sha256）</param>
         /// <param name="appKey">App Key</param>
         /// <param name="privateKey">私钥</param>
         /// <returns>签名结果</returns>
@@ -40,7 +40,7 @@ namespace Aop.Api.Util
         /// </summary>
         /// <param name="content">原始字符串</param>
         /// <param name="sign">签名</param>
-        /// <param name="type">签名类型（rsa 或 sha256）</param>
+        /// <param name="type">签名方式（rsa 或 sha256）</param>
         /// <param name="appKey">App Key</param>
         /// <param name="publicKey">公钥</param>
         /// <returns>true：验证通过；false：验证不通过</returns>

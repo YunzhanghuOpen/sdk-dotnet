@@ -7,7 +7,7 @@ using Aop.Api.Example.Config;
 namespace Aop.Api.Example
 {
     /// <summary>
-    /// 云账户新经济（H5）个体工商户注册
+    /// 个体工商户注册（云账户新经济 H5）
     /// </summary>
     public class BizLicXjjH5
     {

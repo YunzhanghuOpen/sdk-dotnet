@@ -13,7 +13,7 @@ namespace Aop.Api.Util
         /// 3DES 加密
         /// </summary>
         /// <param name="plainText">明文字符串</param>
-        /// <param name="desKey">3DES KEY</param>
+        /// <param name="desKey">3DES Key</param>
         /// <returns>密文</returns>
         public static string Encrypt(string plainText, string desKey)
         {
@@ -33,7 +33,7 @@ namespace Aop.Api.Util
         /// 3DES 解密
         /// </summary>
         /// <param name="cipherTextBase64">密文</param>
-        /// <param name="desKey">3DES KEY</param>
+        /// <param name="desKey">3DES Key</param>
         /// <returns>明文</returns>
         public static string Decrypt(string cipherTextBase64, string desKey)
         {

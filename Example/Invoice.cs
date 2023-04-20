@@ -152,6 +152,38 @@ namespace Aop.Api.Example
             }
         }
 
+        // 查询发票信息
+        public static void GetInvoiceInformation()
+        {
+            // 实例化具体 API 对应的 request 类
+            GetInvoiceInformationRequest request = new GetInvoiceInformationRequest();
+
+            // 加载接口参数
+            GetInvoiceInformationRequestModel model = new GetInvoiceInformationRequestModel
+            {
+                InvoiceApplyID = "1231232131",
+                ApplicationID = "test12776352",
+            };
+            request.SetBizModel(model);
+
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID("");
+
+            // 发起请求
+            GetInvoiceInformationResponse res = Client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
+            {
+                GetInvoiceInformationResponseModel data = res.Data;
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+            }
+        }
+
         // 下载 PDF 版发票
         public static void GetInvoiceFile()
         {

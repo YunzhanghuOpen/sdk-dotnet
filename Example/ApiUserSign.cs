@@ -7,7 +7,7 @@ using Aop.Api.Example.Config;
 namespace Aop.Api.Example
 {
     /// <summary>
-    /// API 签约
+    /// 用户签约（API 签约）
     /// </summary>
     public class ApiUserSign
     {

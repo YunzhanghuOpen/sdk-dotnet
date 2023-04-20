@@ -34,7 +34,7 @@
         public string TripleDesKey { get; set; }
 
         /// <summary>
-        /// 平台企业私钥，签名类型为 rsa 时，必填
+        /// 平台企业私钥，签名方式为 rsa 时，必填
         /// </summary>
         public string PrivateKey { get; set; }
 

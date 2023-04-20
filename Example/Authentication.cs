@@ -17,137 +17,6 @@ namespace Aop.Api.Example
         // 客户端实现
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
-        // 身份证实名验证
-        public static void IDCardVerify()
-        {
-            // 实例化具体 API 对应的 request 类
-            IDCardVerifyRequest request = new IDCardVerifyRequest();
-
-            // 加载接口参数
-            IDCardVerifyRequestModel model = new IDCardVerifyRequestModel
-            {
-                IDCard = "110101198001221211",
-                RealName = "张三",
-            };
-            request.SetBizModel(model);
-
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID("");
-
-            // 发起请求
-            IDCardVerifyResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
-            {
-                IDCardVerifyResponseModel data = res.Data;
-            }
-            else
-            {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
-            }
-        }
-
-        // 银行卡信息查询
-        public static void GetBankCardInfo()
-        {
-            // 实例化具体 API 对应的 request 类
-            GetBankCardInfoRequest request = new GetBankCardInfoRequest();
-
-            // 加载接口参数
-            GetBankCardInfoRequestModel model = new GetBankCardInfoRequestModel
-            {
-                CardNo = "1234568987645212321",
-                BankName = "招商银行",
-            };
-            request.SetBizModel(model);
-
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID("");
-
-            // 发起请求
-            GetBankCardInfoResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
-            {
-                GetBankCardInfoResponseModel data = res.Data;
-            }
-            else
-            {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
-            }
-        }
-
-        // 银行卡三要素验证
-        public static void BankCardThreeVerify()
-        {
-            // 实例化具体 API 对应的 request 类
-            BankCardThreeVerifyRequest request = new BankCardThreeVerifyRequest();
-
-            // 加载接口参数
-            BankCardThreeVerifyRequestModel model = new BankCardThreeVerifyRequestModel
-            {
-                RealName = "张三",
-                IDCard = "110101198001201232",
-                CardNo = "1234568987645212321",
-            };
-            request.SetBizModel(model);
-
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID("");
-
-            // 发起请求
-            BankCardThreeVerifyResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
-            {
-                BankCardThreeVerifyResponseModel data = res.Data;
-            }
-            else
-            {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
-            }
-        }
-
-        // 银行卡四要素验证
-        public static void BankCardFourVerify()
-        {
-            // 实例化具体 API 对应的 request 类
-            BankCardFourVerifyRequest request = new BankCardFourVerifyRequest();
-
-            // 加载接口参数
-            BankCardFourVerifyRequestModel model = new BankCardFourVerifyRequestModel
-            {
-                RealName = "张三",
-                IDCard = "110101198001201232",
-                CardNo = "1234568987645212321",
-                Mobile = "18888888888",
-            };
-            request.SetBizModel(model);
-
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID("");
-
-            // 发起请求
-            BankCardFourVerifyResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
-            {
-                BankCardFourVerifyResponseModel data = res.Data;
-            }
-            else
-            {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
-            }
-        }
-
         // 银行卡四要素鉴权请求（下发短信验证码）
         public static void BankCardFourAuthVerify()
         {
@@ -210,6 +79,105 @@ namespace Aop.Api.Example
             if (res.IsSuccess)
             {
                 BankCardFourAuthConfirmResponseModel data = res.Data;
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+            }
+        }
+
+        // 银行卡四要素验证
+        public static void BankCardFourVerify()
+        {
+            // 实例化具体 API 对应的 request 类
+            BankCardFourVerifyRequest request = new BankCardFourVerifyRequest();
+
+            // 加载接口参数
+            BankCardFourVerifyRequestModel model = new BankCardFourVerifyRequestModel
+            {
+                RealName = "张三",
+                IDCard = "110101198001201232",
+                CardNo = "1234568987645212321",
+                Mobile = "18888888888",
+            };
+            request.SetBizModel(model);
+
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID("");
+
+            // 发起请求
+            BankCardFourVerifyResponse res = Client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
+            {
+                BankCardFourVerifyResponseModel data = res.Data;
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+            }
+        }
+
+        // 银行卡三要素验证
+        public static void BankCardThreeVerify()
+        {
+            // 实例化具体 API 对应的 request 类
+            BankCardThreeVerifyRequest request = new BankCardThreeVerifyRequest();
+
+            // 加载接口参数
+            BankCardThreeVerifyRequestModel model = new BankCardThreeVerifyRequestModel
+            {
+                RealName = "张三",
+                IDCard = "110101198001201232",
+                CardNo = "1234568987645212321",
+            };
+            request.SetBizModel(model);
+
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID("");
+
+            // 发起请求
+            BankCardThreeVerifyResponse res = Client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
+            {
+                BankCardThreeVerifyResponseModel data = res.Data;
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+            }
+        }
+
+        // 身份证实名验证
+        public static void IDCardVerify()
+        {
+            // 实例化具体 API 对应的 request 类
+            IDCardVerifyRequest request = new IDCardVerifyRequest();
+
+            // 加载接口参数
+            IDCardVerifyRequestModel model = new IDCardVerifyRequestModel
+            {
+                IDCard = "110101198001221211",
+                RealName = "张三",
+            };
+            request.SetBizModel(model);
+
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID("");
+
+            // 发起请求
+            IDCardVerifyResponse res = Client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
+            {
+                IDCardVerifyResponseModel data = res.Data;
             }
             else
             {
@@ -284,6 +252,38 @@ namespace Aop.Api.Example
             if (res.IsSuccess)
             {
                 UserWhiteCheckResponseModel data = res.Data;
+            }
+            else
+            {
+                // 处理异常情况
+                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+            }
+        }
+
+        // 银行卡信息查询
+        public static void GetBankCardInfo()
+        {
+            // 实例化具体 API 对应的 request 类
+            GetBankCardInfoRequest request = new GetBankCardInfoRequest();
+
+            // 加载接口参数
+            GetBankCardInfoRequestModel model = new GetBankCardInfoRequestModel
+            {
+                CardNo = "1234568987645212321",
+                BankName = "招商银行",
+            };
+            request.SetBizModel(model);
+
+            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // request.SetRequestID("");
+
+            // 发起请求
+            GetBankCardInfoResponse res = Client.Execute(request);
+
+            Console.WriteLine(res.Body);
+            if (res.IsSuccess)
+            {
+                GetBankCardInfoResponseModel data = res.Data;
             }
             else
             {

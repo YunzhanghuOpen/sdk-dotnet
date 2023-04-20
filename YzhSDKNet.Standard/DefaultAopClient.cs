@@ -151,7 +151,7 @@ namespace Aop.Api
         /// 对密文数据进行解密
         /// </summary>
         /// <param name="body">原始响应数据</param>
-        /// <param name="tripleDesKey">3DES KEY</param>
+        /// <param name="tripleDesKey">3DES Key</param>
         /// <returns>响应数据解密结果</returns>
         private string Parese(string body, string tripleDesKey)
         {
@@ -230,7 +230,7 @@ namespace Aop.Api
                 throw new AopException("SignType only support sha256 or rsa");
             }
 
-            // 检查 RSA 签名类型下 PrivateKey 是否为空
+            // 检查 RSA 签名方式下 PrivateKey 是否为空
             if (this.config.SignType.ToLower().Equals("rsa") && string.IsNullOrEmpty(this.config.PrivateKey))
             {
                 throw new AopException("PrivateKey can't be null or empty");
@@ -245,7 +245,7 @@ namespace Aop.Api
         private void VerifyNotifyIsEmpty<T>(YzhCallbackRequest<T> request)
             where T : AopObject
         {
-            // 检查 RSA 签名类型下云账户公钥是否为空
+            // 检查 RSA 签名方式下云账户公钥是否为空
             if (this.config.SignType.Equals("rsa") && string.IsNullOrEmpty(this.config.YzhPublicKey))
             {
                 throw new AopException("YzhPublicKey can't be null or empty");
