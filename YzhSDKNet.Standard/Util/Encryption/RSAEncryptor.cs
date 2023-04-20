@@ -47,7 +47,7 @@ namespace Aop.Api.Util.Encryption
             }
         }
 
-        // 加载公钥
+        // 加载云账户公钥
         private RSAParameters ConvertFromPemPublicKey(string pemPublicKey)
         {
             if (string.IsNullOrEmpty(pemPublicKey))
@@ -64,7 +64,7 @@ namespace Aop.Api.Util.Encryption
             bool keySize2048 = keyData.Length == 294;
             if (!(keySize1024 || keySize2048))
             {
-                throw new AopException("公钥长度只支持 1024 或 2048。");
+                throw new AopException("云账户公钥长度只支持 1024 或 2048。");
             }
 
             byte[] pemModulus = keySize1024 ? new byte[128] : new byte[256];
@@ -79,7 +79,7 @@ namespace Aop.Api.Util.Encryption
             return para;
         }
 
-        // 加载私钥
+        // 加载平台企业私钥
         private RSACryptoServiceProvider BuildRSAServiceProvider(string privateKey)
         {
             privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", string.Empty)
