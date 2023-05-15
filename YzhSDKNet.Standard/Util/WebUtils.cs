@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace Aop.Api.Util
@@ -175,7 +176,35 @@ namespace Aop.Api.Util
                 }
             }
 
-            return result.ToString();
+            return UnicodeDecode(result.ToString());
+        }
+
+        /// <summary>
+        /// Unicode解码
+        /// </summary>
+        /// <param name="unicodeStr">Unicode字符串</param>
+        /// <returns>解码后的字符串</returns>
+        public static string UnicodeDecode(string unicodeStr)
+        {
+            if (string.IsNullOrWhiteSpace(unicodeStr) || (!unicodeStr.Contains("\\u") && !unicodeStr.Contains("\\U")))
+            {
+                return unicodeStr;
+            }
+
+            string newStr = Regex.Replace(unicodeStr, @"\\[uU](.{4})", (m) =>
+            {
+                string unicode = m.Groups[1].Value;
+                if (int.TryParse(unicode, System.Globalization.NumberStyles.HexNumber, null, out int temp))
+                {
+                    return ((char)temp).ToString();
+                }
+                else
+                {
+                    return m.Groups[0].Value;
+                }
+            }, RegexOptions.Singleline);
+
+            return newStr;
         }
     }
 }

@@ -68,6 +68,7 @@ namespace Aop.Api.Example
     {
         // 获取基础配置信息
         static YzhConfig config = GetConfig();
+
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
 
@@ -76,6 +77,7 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
+
             // 加载接口参数
             CreateBankpayOrderRequestModel model = new CreateBankpayOrderRequestModel
             {
@@ -91,10 +93,14 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+
+            // 注意：需保证每次请求的 request-id 具有唯一性，可使用微软的Guid.NewGuid()方法生成
+            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题，如未自定义则使用 SDK 中的 GUID 方法自动生成。
             // request.SetRequestID("");
+
             // 设置超时时间，不设置时默认 30 秒
             // client.SetTimeout(30 * 1000);
+
             // 发起请求
             CreateBankpayOrderResponse res = client.Execute(request);
 

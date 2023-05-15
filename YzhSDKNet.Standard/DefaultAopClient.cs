@@ -82,18 +82,18 @@ namespace Aop.Api
             // 封装请求体
             Dictionary<string, string> parameters = new Dictionary<string, string>
             {
-                { YzhConstants.Data,data},
-                { YzhConstants.Mess,mess},
-                { YzhConstants.Timestamp,timestamp},
-                { YzhConstants.Sign,sign},
-                { YzhConstants.SignType,this.config.SignType},
+                { YzhConstants.Data, data },
+                { YzhConstants.Mess, mess },
+                { YzhConstants.Timestamp, timestamp },
+                { YzhConstants.Sign, sign},
+                { YzhConstants.SignType, this.config.SignType },
             };
 
             // 封装请求头
             this.webUtils.CustomHeaders = new Dictionary<string, string>
             {
-                { YzhConstants.DealerID,this.config.DealerID},
-                { YzhConstants.RequestID,request.GetRequestID()},
+                { YzhConstants.DealerID, this.config.DealerID },
+                { YzhConstants.RequestID, request.GetRequestID() },
             };
 
             string url = this.config.ServerUrl + request.GetApiPath();
@@ -104,9 +104,9 @@ namespace Aop.Api
             string srcBody = body;
 
             // 如果数据是加密返回，对 data 字段进行解密
-            if (bizModel.GetNeedEncrypt())
+            if (bizModel.IsNeedEncrypt())
             {
-                srcBody = this.Parese(body, this.config.TripleDesKey);
+                srcBody = this.Parse(body, this.config.TripleDesKey);
             }
 
             T response = JsonConvert.DeserializeObject<T>(srcBody);
@@ -153,7 +153,7 @@ namespace Aop.Api
         /// <param name="body">原始响应数据</param>
         /// <param name="tripleDesKey">3DES Key</param>
         /// <returns>响应数据解密结果</returns>
-        private string Parese(string body, string tripleDesKey)
+        private string Parse(string body, string tripleDesKey)
         {
             IDictionary<string, string> json;
             try

@@ -3,6 +3,8 @@
     <Files>
       <File FileName="YzhConfig.cs" Line="1" Column="1" />
       <File FileName="Domain/Payment/BatchOrderInfo.cs" Line="12" Column="10" />
+      <File FileName="Domain/Payment/CreateBankpayOrderRequestModel.cs" />
+      <File FileName="Domain/Payment/CreateAlipayOrderResponseModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,11 +15,9 @@
                 <Node name="PackageDependencies" expanded="True" />
                 <Node name="SdkDependencies" expanded="True" />
               </Node>
-              <Node name="Domain" expanded="True">
-                <Node name="Payment" expanded="True">
-                  <Node name="BatchOrderInfo.cs" selected="True" />
-                </Node>
-              </Node>
+              <Node name="Domain" expanded="True" />
+              <Node name="Request" expanded="True" />
+              <Node name="Response" expanded="True" />
               <Node name="Util" expanded="True">
                 <Node name="Encryption" expanded="True" />
               </Node>
