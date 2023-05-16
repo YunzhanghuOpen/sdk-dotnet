@@ -22,7 +22,7 @@ namespace Aop.Api.Util
             {
                 if (string.IsNullOrEmpty(content))
                 {
-                    throw new AopException("待签名内容不可为 null");
+                    throw new AopException("待签名内容不可为空");
                 }
 
                 IEncryptor encryptor = EncryptorManager.GetByName(type);
@@ -50,7 +50,7 @@ namespace Aop.Api.Util
             {
                 if (string.IsNullOrEmpty(content))
                 {
-                    throw new AopException("待签名内容不可为 null");
+                    throw new AopException("待签名内容不可为空");
                 }
 
                 if (string.IsNullOrEmpty(sign))
