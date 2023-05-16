@@ -39,8 +39,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -81,8 +81,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -124,8 +124,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -196,8 +196,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -232,8 +232,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -266,8 +266,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -299,8 +299,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -333,8 +333,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -369,8 +369,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
@@ -403,8 +403,8 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // 如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义 request-id 并记录在日志中，便于使用 request-id 追踪问题
-            // 注意：自定义 request-id 时，需保证每次请求的 request-id 具有唯一性
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
             // 如未自定义则使用 SDK 中的 GUID 方法自动生成
             // request.SetRequestID("");
 
