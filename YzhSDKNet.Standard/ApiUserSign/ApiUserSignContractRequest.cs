@@ -74,7 +74,7 @@ namespace Aop.Api.Request
         /// <summary>
         /// 获取请求ID
         /// </summary>
-        /// <returns>请求ID，未设置时使用 GUID 方法自动生成</returns>
+        /// <returns>请求 ID，未设置时使用 GUID 方法自动生成</returns>
         public string GetRequestID()
         {
             if (string.IsNullOrEmpty(this.requestID))

@@ -1,7 +1,7 @@
 ﻿namespace Aop.Api
 {
     /// <summary>
-    /// 配置文件
+    /// 配置信息
     /// </summary>
     public class YzhConfig
     {

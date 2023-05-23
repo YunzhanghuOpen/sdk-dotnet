@@ -41,7 +41,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -83,7 +83,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -126,7 +126,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -198,7 +198,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -234,7 +234,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -268,7 +268,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -301,7 +301,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -335,7 +335,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -371,7 +371,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
@@ -405,7 +405,7 @@ namespace Aop.Api.Example
 
             // request-id：每次请求的唯一标识
             // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 GUID 方法自动生成
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
