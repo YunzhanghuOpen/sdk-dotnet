@@ -92,10 +92,12 @@ namespace Aop.Api.Util.Encryption
             ushort twobytes = 0;
             int elems = 0;
 
+            // 将私钥存储到 IO 流中
             using (BinaryReader binaryReader = new BinaryReader(new MemoryStream(keyData)))
             {
                 twobytes = binaryReader.ReadUInt16();
 
+                // 以小端顺序读取数据
                 if (twobytes == 0x8130)
                 {
                     binaryReader.ReadByte();
