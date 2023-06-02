@@ -1,9 +1,8 @@
 ﻿using System;
-using Aop.Api;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Aop.Api.Example.config;
+using Aop.Api.Example.Config;
 
 namespace Aop.Api.Example
 {
@@ -13,35 +12,40 @@ namespace Aop.Api.Example
     public class Payment
     {
         // 获取基础配置信息
-        static YzhConfig config = ConfigUtil.GetConfig();
+        private static readonly YzhConfig Config = ConfigUtil.GetConfig();
+
         // 客户端实现
-        static DefaultAopClient client = new DefaultAopClient(config);
-        
+        private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
+
         // 银行卡实时支付
-        public static void CreateBankpayOrder_Example()
+        public static void CreateBankpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
+
             // 加载接口参数
             CreateBankpayOrderRequestModel model = new CreateBankpayOrderRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 OrderID = "test1234567890",
                 RealName = "张三",
                 IDCard = "110101198012021002",
                 CardNo = "231326472361746231",
-                PhoneNo = "",
+                PhoneNo = "18888888888",
                 Pay = "100.25",
                 PayRemark = "测试备注",
-                NotifyURL = ""
+                NotifyURL = "http://www.abcdef.com/api/notify",
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            CreateBankpayOrderResponse res = client.Execute(request);
+            CreateBankpayOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -56,30 +60,34 @@ namespace Aop.Api.Example
         }
 
         // 支付宝实时支付
-        public static void CreateAlipayOrder_Example()
+        public static void CreateAlipayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateAlipayOrderRequest request = new CreateAlipayOrderRequest();
+
             // 加载接口参数
             CreateAlipayOrderRequestModel model = new CreateAlipayOrderRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 OrderID = "test1234567890",
                 RealName = "张三",
                 IDCard = "110101198012021002",
                 CardNo = "231326472361746231",
-                PhoneNo = "",
+                PhoneNo = "18888888888",
                 Pay = "100.25",
                 PayRemark = "测试备注",
-                NotifyURL = ""
+                NotifyURL = "http://www.abcdef.com/api/notify",
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            CreateAlipayOrderResponse res = client.Execute(request);
+            CreateAlipayOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -94,31 +102,35 @@ namespace Aop.Api.Example
         }
 
         // 微信实时支付
-        public static void CreateWxpayOrder_Example()
+        public static void CreateWxpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateWxpayOrderRequest request = new CreateWxpayOrderRequest();
+
             // 加载接口参数
             CreateWxpayOrderRequestModel model = new CreateWxpayOrderRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 OrderID = "test1234567890",
                 RealName = "张三",
                 IDCard = "110101198012021002",
                 Openid = "dakdfe123121",
-                WxAppID = "",
-                PhoneNo = "",
+                WxAppID = "wxsaiIdjfei",
+                PhoneNo = "18888888888",
                 Pay = "100.25",
                 PayRemark = "测试备注",
-                NotifyURL = ""
+                NotifyURL = "http://www.abcdef.com/api/notify",
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            CreateWxpayOrderResponse res = client.Execute(request);
+            CreateWxpayOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -133,55 +145,64 @@ namespace Aop.Api.Example
         }
 
         // 批次下单
-        public static void CreateBatchOrder_Example()
+        public static void CreateBatchOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBatchOrderRequest request = new CreateBatchOrderRequest();
+
             // 加载接口参数
             CreateBatchOrderRequestModel model = new CreateBatchOrderRequestModel
             {
-                BatchID = "test12321332",
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
+                BatchID = "test20230418001",
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
                 Channel = "银行卡",
-                TotalPay = "100.00",
+                TotalPay = "10.00",
                 TotalCount = "3",
-                OrderList = new BatchOrderInfo[] {new BatchOrderInfo{
-                    OrderID = "test1234567890",
+                OrderList = new BatchOrderInfo[]
+                {
+                    new BatchOrderInfo
+                    {
+                    OrderID = "test202304180011",
                     RealName = "张三",
                     IDCard = "110101198012021002",
                     CardNo = "dakdfe123121",
-                    PhoneNo = "",
-                    Pay = "30.00",
+                    PhoneNo = "16666666666",
+                    Pay = "3.00",
                     PayRemark = "测试备注",
-                    NotifyURL = ""
-                },new BatchOrderInfo{
-                    OrderID = "test1234567891",
+                    NotifyURL = "http://www.abcdef.com/api/notify",
+                    }, new BatchOrderInfo
+                    {
+                    OrderID = "test202304180012",
                     RealName = "李四",
                     IDCard = "110101198012021003",
                     CardNo = "dakdfe123122",
-                    PhoneNo = "",
-                    Pay = "20.00",
+                    PhoneNo = "17777777777",
+                    Pay = "2.00",
                     PayRemark = "测试备注",
-                    NotifyURL = ""
-                },new BatchOrderInfo{
-                    OrderID = "test1234567892",
+                    NotifyURL = "http://www.abcdef.com/api/notify",
+                    }, new BatchOrderInfo
+                    {
+                    OrderID = "test202304180013",
                     RealName = "王五",
                     IDCard = "110101198012021004",
                     CardNo = "dakdfe123123",
-                    PhoneNo = "",
-                    Pay = "50.00",
+                    PhoneNo = "18888888888",
+                    Pay = "5.00",
                     PayRemark = "测试备注",
-                    NotifyURL = ""
-                }
-                }
+                    NotifyURL = "http://www.abcdef.com/api/notify",
+                    },
+                },
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            CreateBatchOrderResponse res = client.Execute(request);
+            CreateBatchOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -196,24 +217,28 @@ namespace Aop.Api.Example
         }
 
         // 批次确认
-        public static void ConfirmBatchOrder_Example()
+        public static void ConfirmBatchOrder()
         {
             // 实例化具体 API 对应的 request 类
             ConfirmBatchOrderRequest request = new ConfirmBatchOrderRequest();
+
             // 加载接口参数
             ConfirmBatchOrderRequestModel model = new ConfirmBatchOrderRequestModel
             {
                 BatchID = "b2321ewfada",
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID,
-                Channel = "支付宝"
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
+                Channel = "支付宝",
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            ConfirmBatchOrderResponse res = client.Execute(request);
+            ConfirmBatchOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -228,7 +253,7 @@ namespace Aop.Api.Example
         }
 
         // 查询单笔订单信息
-        public static void GetOrder_Example()
+        public static void GetOrder()
         {
             // 实例化具体 API 对应的 request 类
             GetOrderRequest request = new GetOrderRequest();
@@ -237,14 +262,17 @@ namespace Aop.Api.Example
             {
                 OrderID = "123123142718321",
                 Channel = "银行卡",
-                DataType = "encryption"
+                DataType = "encryption",
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            GetOrderResponse res = client.Execute(request);
+            GetOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -259,21 +287,25 @@ namespace Aop.Api.Example
         }
 
         // 查询平台企业余额
-        public static void ListAccount_Example()
+        public static void ListAccount()
         {
             // 实例化具体 API 对应的 request 类
             ListAccountRequest request = new ListAccountRequest();
+
             // 加载接口参数
             ListAccountRequestModel model = new ListAccountRequestModel
             {
-                DealerID = config.DealerID
+                DealerID = Config.DealerID,
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            ListAccountResponse res = client.Execute(request);
+            ListAccountResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -288,22 +320,26 @@ namespace Aop.Api.Example
         }
 
         // 查询电子回单
-        public static void GetEleReceiptFile_Example()
+        public static void GetEleReceiptFile()
         {
             // 实例化具体 API 对应的 request 类
             GetEleReceiptFileRequest request = new GetEleReceiptFileRequest();
+
             // 加载接口参数
             GetEleReceiptFileRequestModel model = new GetEleReceiptFileRequestModel
             {
                 OrderID = "12312312421321",
-                Ref = ""
+                Ref = "1234562312314231",
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            GetEleReceiptFileResponse res = client.Execute(request);
+            GetEleReceiptFileResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -318,24 +354,28 @@ namespace Aop.Api.Example
         }
 
         // 取消待支付订单
-        public static void CancelOrder_Example()
+        public static void CancelOrder()
         {
             // 实例化具体 API 对应的 request 类
             CancelOrderRequest request = new CancelOrderRequest();
+
             // 加载接口参数
             CancelOrderRequestModel model = new CancelOrderRequestModel
             {
-                DealerID = config.DealerID,
+                DealerID = Config.DealerID,
                 OrderID = "12312312421321",
-                Ref = "",
-                Channel = "银行卡"
+                Ref = "1234562312314231",
+                Channel = "银行卡",
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            CancelOrderResponse res = client.Execute(request);
+            CancelOrderResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)
@@ -350,22 +390,26 @@ namespace Aop.Api.Example
         }
 
         // 查询平台企业汇款信息
-        public static void GetDealerVARechargeAccount_Example()
+        public static void GetDealerVARechargeAccount()
         {
             // 实例化具体 API 对应的 request 类
             GetDealerVARechargeAccountRequest request = new GetDealerVARechargeAccountRequest();
+
             // 加载接口参数
             GetDealerVARechargeAccountRequestModel model = new GetDealerVARechargeAccountRequestModel
             {
-                DealerID = config.DealerID,
-                BrokerID = config.BrokerID
+                DealerID = Config.DealerID,
+                BrokerID = Config.BrokerID,
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
-            // request.SetRequestID(""); 
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request.SetRequestID("");
 
             // 发起请求
-            GetDealerVARechargeAccountResponse res = client.Execute(request);
+            GetDealerVARechargeAccountResponse res = Client.Execute(request);
 
             Console.WriteLine(res.Body);
             if (res.IsSuccess)

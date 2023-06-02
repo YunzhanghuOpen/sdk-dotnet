@@ -1,20 +1,26 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AopObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Domain/Payment/BatchOrderInfo.cs">
     <Files>
-      <File FileName="AopObject.cs" Line="14" Column="21" />
+      <File FileName="YzhConfig.cs" Line="1" Column="1" />
+      <File FileName="Domain/Payment/BatchOrderInfo.cs" Line="12" Column="10" />
+      <File FileName="Domain/Payment/CreateBankpayOrderRequestModel.cs" />
+      <File FileName="Domain/Payment/CreateAlipayOrderResponseModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="YzhSDKNet.Standard" expanded="True">
             <Node name="YzhSDKNet.Standard" expanded="True">
-              <Node name="Request" expanded="True">
-                <Node name="ApiUserSign" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+                <Node name="SdkDependencies" expanded="True" />
               </Node>
+              <Node name="Domain" expanded="True" />
+              <Node name="Request" expanded="True" />
+              <Node name="Response" expanded="True" />
               <Node name="Util" expanded="True">
                 <Node name="Encryption" expanded="True" />
               </Node>
-              <Node name="AopObject.cs" selected="True" />
             </Node>
           </Node>
         </State>

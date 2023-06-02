@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 
 namespace Aop.Api.Util.Encryption
@@ -15,11 +13,11 @@ namespace Aop.Api.Util.Encryption
         /// </summary>
         /// <param name="content">待签名的原文</param>
         /// <param name="appKey">云账户 App Key</param>
-        /// <param name="privateKey">私钥，不需要传输</param>
+        /// <param name="privateKey">平台企业私钥，不需要传输</param>
         /// <returns>签名结果</returns>
         public string Sign(string content, string appKey, string privateKey)
         {
-            return Sign(content, appKey);
+            return this.Sign(content, appKey);
         }
 
         /// <summary>
@@ -28,11 +26,11 @@ namespace Aop.Api.Util.Encryption
         /// <param name="content">待验签的原文</param>
         /// <param name="sign">签名结果</param>
         /// <param name="appKey">云账户 App Key</param>
-        /// <param name="publicKey">公钥，不需要传输</param>
+        /// <param name="publicKey">云账户公钥，不需要传输</param>
         /// <returns>true：验证通过；false：验证不通过</returns>
         public bool Verify(string content, string sign, string appKey, string publicKey)
         {
-            string newSign = Sign(content, appKey);
+            string newSign = this.Sign(content, appKey);
             return sign == newSign;
         }
 
@@ -42,7 +40,7 @@ namespace Aop.Api.Util.Encryption
         /// <param name="content">待签名原文</param>
         /// <param name="appKey">云账户 App Key</param>
         /// <returns>签名结果</returns>
-        private string Sign(string content,string appKey)
+        private string Sign(string content, string appKey)
         {
             var encoding = Encoding.UTF8;
             byte[] dataByte = encoding.GetBytes(content);
@@ -55,6 +53,7 @@ namespace Aop.Api.Util.Encryption
                 {
                     builder.Append(hashByte[i].ToString("x2"));
                 }
+
                 return builder.ToString();
             }
         }

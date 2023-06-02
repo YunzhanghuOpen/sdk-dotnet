@@ -1,15 +1,13 @@
-using System;
 using Aop.Api;
-
 
 namespace Aop.Api.Example.config
 {
     public class ConfigUtil
     {
         /// <summary>
-        /// 设置基础信息配置
+        /// 配置基础信息
         /// </summary>
-        /// <returns>基础配置信息</returns>
+        /// <returns>基础信息</returns>
         public static YzhConfig GetConfig()
         {
             YzhConfig config = new YzhConfig();
@@ -26,7 +24,7 @@ namespace Aop.Api.Example.config
             // 云账户公钥
             config.YzhPublicKey = "";
             // 3DES Key
-            config.Des3Key = "";
+            config.TripleDesKey = "";
             // 签名方式，rsa 或 sha256
             config.SignType = "";
 

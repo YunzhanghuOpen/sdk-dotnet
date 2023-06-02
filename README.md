@@ -25,8 +25,6 @@
 
 OpenSSL-> genrsa -out private_key.pem 2048   // 建议密钥⻓度⾄少为 2048 位
 
-OpenSSL-> pkcs8 -topk8 -inform PEM -in private_key.pem -outform PEM -nocrypt -out private_key_pkcs8.pem  // 将私钥转为 PKCS8 格式 
-
 ② ⽣成公钥⽂件 pubkey.pem
 
 OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
@@ -70,14 +68,16 @@ namespace Aop.Api.Example
     {
         // 获取基础配置信息
         static YzhConfig config = GetConfig();
+
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
 
         // 银行卡实时支付
-        public static void CreateBankpayOrder_Example()
+        public static void CreateBankpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
+
             // 加载接口参数
             CreateBankpayOrderRequestModel model = new CreateBankpayOrderRequestModel
             {
@@ -93,10 +93,15 @@ namespace Aop.Api.Example
                 NotifyURL = ""
             };
             request.SetBizModel(model);
-            // 设置 request-id，如遇异常请求，为方便定位异常原因，强烈建议平台企业自定义并记录在日志中，如未自定义则使用 SDK 中的 GUID 方法自动生成
+
+            // request-id：每次请求的唯一标识
+            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
             // request.SetRequestID("");
+
             // 设置超时时间，不设置时默认 30 秒
             // client.SetTimeout(30 * 1000);
+
             // 发起请求
             CreateBankpayOrderResponse res = client.Execute(request);
 
@@ -129,7 +134,7 @@ namespace Aop.Api.Example
             // 设置云账户公钥
             config.YzhPublicKey = "";
             // 设置 3DES Key
-            config.Des3Key = "";
+            config.TripleDesKey = "";
             // 设置签名方式，rsa 或 sha256
             config.SignType = "";
 

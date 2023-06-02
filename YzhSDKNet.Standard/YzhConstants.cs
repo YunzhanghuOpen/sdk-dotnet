@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aop.Api
+﻿namespace Aop.Api
 {
     /// <summary>
     /// 常量相关
@@ -40,7 +36,7 @@ namespace Aop.Api
         public const string Sign = "sign";
 
         /// <summary>
-        /// 签名类型
+        /// 签名方式
         /// </summary>
         public const string SignType = "sign_type";
     }

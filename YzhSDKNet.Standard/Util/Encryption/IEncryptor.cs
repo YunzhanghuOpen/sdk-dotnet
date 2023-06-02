@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aop.Api.Util.Encryption
+﻿namespace Aop.Api.Util.Encryption
 {
     /// <summary>
     /// 加密算法接口
