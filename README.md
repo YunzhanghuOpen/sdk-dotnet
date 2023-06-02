@@ -140,6 +140,6 @@ namespace Aop.Api.Example
 
             return config;
         }
-	}
+    }
 }
 ```
