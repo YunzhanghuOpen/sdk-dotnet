@@ -143,7 +143,7 @@ namespace Aop.Api.Example
             config.PrivateKey = "";
             // 云账户公钥
             config.YzhPublicKey = "";
-            // 签名类型，rsa 或 sha256
+            // 签名方式，rsa 或 sha256
             config.SignType = "";
 
             return config;

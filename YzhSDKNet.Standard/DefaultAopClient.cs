@@ -232,7 +232,7 @@ namespace Aop.Api
                 throw new AopException("SignType only support sha256 or rsa");
             }
 
-            // 校验 RSA 签名类型下 PrivateKey 是否为空
+            // 校验 RSA 签名方式下 PrivateKey 是否为空
             if (this.config.SignType.ToLower().Equals("rsa") && string.IsNullOrEmpty(this.config.PrivateKey))
             {
                 throw new AopException("PrivateKey can't be null or empty");
@@ -247,7 +247,7 @@ namespace Aop.Api
         private void VerifyNotifyIsEmpty<T>(YzhCallbackRequest<T> request)
             where T : AopObject
         {
-            // 校验 RSA 签名类型下云账户公钥是否为空
+            // 校验 RSA 签名方式下云账户公钥是否为空
             if (this.config.SignType.Equals("rsa") && string.IsNullOrEmpty(this.config.YzhPublicKey))
             {
                 throw new AopException("YzhPublicKey can't be null or empty");
