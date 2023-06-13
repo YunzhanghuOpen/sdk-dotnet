@@ -24,30 +24,38 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileRequest request = new GetDailyOrderFileRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetDailyOrderFileRequestModel model = new GetDailyOrderFileRequestModel
             {
                 OrderDate = "2022-03-23",
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetDailyOrderFileResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetDailyOrderFileResponseModel data = res.Data;
+                GetDailyOrderFileResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetDailyOrderFileResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -57,30 +65,38 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetDailyBillFileV2Request request = new GetDailyBillFileV2Request();
 
-            // 加载接口参数
+            // 配置请求参数
             GetDailyBillFileV2RequestModel model = new GetDailyBillFileV2RequestModel
             {
                 BillDate = "2022-03-23",
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetDailyBillFileV2Response res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetDailyBillFileV2ResponseModel data = res.Data;
+                GetDailyBillFileV2Response res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetDailyBillFileV2ResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -90,7 +106,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             ListDealerRechargeRecordV2Request request = new ListDealerRechargeRecordV2Request();
 
-            // 加载接口参数
+            // 配置请求参数
             ListDealerRechargeRecordV2RequestModel model = new ListDealerRechargeRecordV2RequestModel
             {
                 BeginAt = "2022-03-23",
@@ -98,23 +114,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ListDealerRechargeRecordV2Response res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                List<RechargeRecordInfo> data = res.Data;
+                ListDealerRechargeRecordV2Response res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    List<RechargeRecordInfo> data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -124,7 +148,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             ListDailyOrderRequest request = new ListDailyOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ListDailyOrderRequestModel model = new ListDailyOrderRequestModel
             {
                 OrderDate = "2022-03-23",
@@ -135,23 +159,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ListDailyOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ListDailyOrderResponseModel data = res.Data;
+                ListDailyOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ListDailyOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -161,30 +193,38 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetDailyOrderFileV2Request request = new GetDailyOrderFileV2Request();
 
-            // 加载接口参数
+            // 配置请求参数
             GetDailyOrderFileV2RequestModel model = new GetDailyOrderFileV2RequestModel
             {
                 OrderDate = "2022-03-23",
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetDailyOrderFileV2Response res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetDailyOrderFileV2ResponseModel data = res.Data;
+                GetDailyOrderFileV2Response res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetDailyOrderFileV2ResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -194,7 +234,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             ListDailyBillRequest request = new ListDailyBillRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ListDailyBillRequestModel model = new ListDailyBillRequestModel
             {
                 BillDate = "2022-03-23",
@@ -204,23 +244,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ListDailyBillResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ListDailyBillResponseModel data = res.Data;
+                ListDailyBillResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ListDailyBillResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -230,30 +278,38 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             ListBalanceDailyStatementRequest request = new ListBalanceDailyStatementRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ListBalanceDailyStatementRequestModel model = new ListBalanceDailyStatementRequestModel
             {
                 StatementDate = "2022-03-23",
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ListBalanceDailyStatementResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ListBalanceDailyStatementResponseModel data = res.Data;
+                ListBalanceDailyStatementResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ListBalanceDailyStatementResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
     }

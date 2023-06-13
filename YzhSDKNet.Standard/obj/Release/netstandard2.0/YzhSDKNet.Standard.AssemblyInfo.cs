@@ -13,7 +13,7 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("YzhSDKNet.Standard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("云账户开放平台官方SDK，基于.Net Standard 2.0开发，支持.Net Framework 4.6.1、.Net Core 2.0及其以上版本。")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("云账户开放平台官方 SDK，基于.Net Standard 2.0 开发，支持.Net Framework 4.6.1、.Net Core 2.0 及以上版本。")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("YzhSDKNet.Standard")]

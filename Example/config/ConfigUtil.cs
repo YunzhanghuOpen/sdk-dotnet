@@ -19,13 +19,13 @@ namespace Aop.Api.Example.config
             config.BrokerID = "";
             // App Key
             config.AppKey = "";
+            // 3DES Key
+            config.TripleDesKey = "";
             // 平台企业私钥
             config.PrivateKey = "";
             // 云账户公钥
             config.YzhPublicKey = "";
-            // 3DES Key
-            config.TripleDesKey = "";
-            // 签名方式，rsa 或 sha256
+            // 签名类型，rsa 或 sha256
             config.SignType = "";
 
             return config;

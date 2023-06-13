@@ -17,13 +17,13 @@ namespace Aop.Api.Example
         // 客户端实现
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
-        // 银行卡实时支付
+        // 单笔支付（银行卡实时支付）
         public static void CreateBankpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             CreateBankpayOrderRequestModel model = new CreateBankpayOrderRequestModel
             {
                 DealerID = Config.DealerID,
@@ -39,33 +39,41 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            CreateBankpayOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                CreateBankpayOrderResponseModel data = res.Data;
+                CreateBankpayOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    CreateBankpayOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
-        // 支付宝实时支付
+        // 单笔支付（支付宝实时支付）
         public static void CreateAlipayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateAlipayOrderRequest request = new CreateAlipayOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             CreateAlipayOrderRequestModel model = new CreateAlipayOrderRequestModel
             {
                 DealerID = Config.DealerID,
@@ -81,33 +89,41 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            CreateAlipayOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                CreateAlipayOrderResponseModel data = res.Data;
+                CreateAlipayOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    CreateAlipayOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
-        // 微信实时支付
+        // 单笔支付（微信实时支付）
         public static void CreateWxpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateWxpayOrderRequest request = new CreateWxpayOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             CreateWxpayOrderRequestModel model = new CreateWxpayOrderRequestModel
             {
                 DealerID = Config.DealerID,
@@ -124,33 +140,41 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            CreateWxpayOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                CreateWxpayOrderResponseModel data = res.Data;
+                CreateWxpayOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    CreateWxpayOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
-        // 批次下单
+        // 批量支付（批次下单）
         public static void CreateBatchOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBatchOrderRequest request = new CreateBatchOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             CreateBatchOrderRequestModel model = new CreateBatchOrderRequestModel
             {
                 BatchID = "test20230418001",
@@ -196,33 +220,41 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            CreateBatchOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                CreateBatchOrderResponseModel data = res.Data;
+                CreateBatchOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    CreateBatchOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
-        // 批次确认
+        // 批量支付（批次确认）
         public static void ConfirmBatchOrder()
         {
             // 实例化具体 API 对应的 request 类
             ConfirmBatchOrderRequest request = new ConfirmBatchOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ConfirmBatchOrderRequestModel model = new ConfirmBatchOrderRequestModel
             {
                 BatchID = "b2321ewfada",
@@ -232,23 +264,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ConfirmBatchOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ConfirmBatchOrderResponseModel data = res.Data;
+                ConfirmBatchOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ConfirmBatchOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -257,7 +297,7 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             GetOrderRequest request = new GetOrderRequest();
-            // 加载接口参数
+            // 配置请求参数
             GetOrderRequestModel model = new GetOrderRequestModel
             {
                 OrderID = "123123142718321",
@@ -266,23 +306,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetOrderResponseModel data = res.Data;
+                GetOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -292,30 +340,38 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             ListAccountRequest request = new ListAccountRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ListAccountRequestModel model = new ListAccountRequestModel
             {
                 DealerID = Config.DealerID,
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ListAccountResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ListAccountResponseModel data = res.Data;
+                ListAccountResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ListAccountResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -325,7 +381,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetEleReceiptFileRequest request = new GetEleReceiptFileRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetEleReceiptFileRequestModel model = new GetEleReceiptFileRequestModel
             {
                 OrderID = "12312312421321",
@@ -333,23 +389,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetEleReceiptFileResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetEleReceiptFileResponseModel data = res.Data;
+                GetEleReceiptFileResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetEleReceiptFileResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -359,7 +423,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             CancelOrderRequest request = new CancelOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             CancelOrderRequestModel model = new CancelOrderRequestModel
             {
                 DealerID = Config.DealerID,
@@ -369,23 +433,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            CancelOrderResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                CancelOrderResponseModel data = res.Data;
+                CancelOrderResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    CancelOrderResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -395,7 +467,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetDealerVARechargeAccountRequest request = new GetDealerVARechargeAccountRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetDealerVARechargeAccountRequestModel model = new GetDealerVARechargeAccountRequestModel
             {
                 DealerID = Config.DealerID,
@@ -403,23 +475,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetDealerVARechargeAccountResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetDealerVARechargeAccountResponseModel data = res.Data;
+                GetDealerVARechargeAccountResponse res = Client.Execute(request);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetDealerVARechargeAccountResponseModel data = res.Data;
+                    Console.WriteLine(data);
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
     }

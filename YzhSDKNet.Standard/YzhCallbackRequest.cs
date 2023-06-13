@@ -34,7 +34,7 @@ namespace Aop.Api
         public string Sign { get; set; }
 
         /// <summary>
-        /// 签名方式，rsa 或 sha256
+        /// 签名类型，rsa 或 sha256
         /// </summary>
         [JsonProperty("sign_type")]
         public string SignType { get; set; }

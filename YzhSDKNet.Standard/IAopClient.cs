@@ -1,7 +1,7 @@
 ﻿namespace Aop.Api
 {
     /// <summary>
-    /// Aop 客户端
+    /// AOP 客户端
     /// </summary>
     public interface IAopClient
     {
