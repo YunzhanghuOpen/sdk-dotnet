@@ -60,7 +60,7 @@ namespace Aop.Api.Example
         }
 
         // 用户签约
-        public static void ApiUserSign()
+        public static void UserSign()
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignRequest request = new ApiUserSignRequest();
