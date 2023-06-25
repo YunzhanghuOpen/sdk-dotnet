@@ -42,16 +42,16 @@ namespace Aop.Api.Example
             try
             {
                 BankCardFourAuthVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     BankCardFourAuthVerifyResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -88,16 +88,16 @@ namespace Aop.Api.Example
             try
             {
                 BankCardFourAuthConfirmResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     BankCardFourAuthConfirmResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -132,16 +132,16 @@ namespace Aop.Api.Example
             try
             {
                 BankCardFourVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     BankCardFourVerifyResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -175,16 +175,16 @@ namespace Aop.Api.Example
             try
             {
                 BankCardThreeVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     BankCardThreeVerifyResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -217,16 +217,16 @@ namespace Aop.Api.Example
             try
             {
                 IDCardVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     IDCardVerifyResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -269,16 +269,16 @@ namespace Aop.Api.Example
             try
             {
                 UserExemptedInfoResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     UserExemptedInfoResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -311,16 +311,16 @@ namespace Aop.Api.Example
             try
             {
                 UserWhiteCheckResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     UserWhiteCheckResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -353,16 +353,16 @@ namespace Aop.Api.Example
             try
             {
                 GetBankCardInfoResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     GetBankCardInfoResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)

@@ -106,16 +106,16 @@ namespace Aop.Api.Example
             try
             {
                 CreateBankpayOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     CreateBankpayOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)

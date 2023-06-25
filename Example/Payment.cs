@@ -48,16 +48,16 @@ namespace Aop.Api.Example
             try
             {
                 CreateBankpayOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     CreateBankpayOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -98,16 +98,16 @@ namespace Aop.Api.Example
             try
             {
                 CreateAlipayOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     CreateAlipayOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -149,16 +149,16 @@ namespace Aop.Api.Example
             try
             {
                 CreateWxpayOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     CreateWxpayOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -229,16 +229,16 @@ namespace Aop.Api.Example
             try
             {
                 CreateBatchOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     CreateBatchOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -273,16 +273,16 @@ namespace Aop.Api.Example
             try
             {
                 ConfirmBatchOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     ConfirmBatchOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -315,16 +315,16 @@ namespace Aop.Api.Example
             try
             {
                 GetOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     GetOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -356,16 +356,16 @@ namespace Aop.Api.Example
             try
             {
                 ListAccountResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     ListAccountResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -398,16 +398,16 @@ namespace Aop.Api.Example
             try
             {
                 GetEleReceiptFileResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     GetEleReceiptFileResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -442,16 +442,16 @@ namespace Aop.Api.Example
             try
             {
                 CancelOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     CancelOrderResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -484,16 +484,16 @@ namespace Aop.Api.Example
             try
             {
                 GetDealerVARechargeAccountResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     GetDealerVARechargeAccountResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)

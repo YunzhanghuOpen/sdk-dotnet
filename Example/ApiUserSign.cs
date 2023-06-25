@@ -40,16 +40,16 @@ namespace Aop.Api.Example
             try
             {
                 ApiUserSignContractResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     ApiUserSignContractResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -85,16 +85,16 @@ namespace Aop.Api.Example
             try
             {
                 ApiUserSignResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     ApiUserSignResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -129,16 +129,16 @@ namespace Aop.Api.Example
             try
             {
                 GetApiUserSignStatusResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     GetApiUserSignStatusResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -174,16 +174,16 @@ namespace Aop.Api.Example
             try
             {
                 ApiUserSignReleaseResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     ApiUserSignReleaseResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)

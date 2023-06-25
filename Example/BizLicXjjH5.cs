@@ -46,16 +46,16 @@ namespace Aop.Api.Example
             try
             {
                 H5GetStartUrlResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     H5GetStartUrlResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
@@ -92,16 +92,16 @@ namespace Aop.Api.Example
             try
             {
                 H5EcoCityAicStatusResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 处理成功
                     H5EcoCityAicStatusResponseModel data = res.Data;
-                    Console.WriteLine(data);
                 }
                 else
                 {
                     // 失败返回
-                    Console.WriteLine("响应码：" + res.Code + "\n响应码描述：" + res.Message);
+                    Console.WriteLine("失败返回");
                 }
             }
             catch (Exception e)
