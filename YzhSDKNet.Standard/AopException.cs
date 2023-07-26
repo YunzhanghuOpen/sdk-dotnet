@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Aop.Api
 {
     /// <summary>
-    /// Aop 客户端异常
+    /// AOP 客户端异常
     /// </summary>
     public class AopException : Exception
     {
@@ -18,7 +18,7 @@ namespace Aop.Api
         /// <summary>
         /// 错误信息
         /// </summary>
-        /// <param name="message">具体错误信息</param>
+        /// <param name="message">错误信息</param>
         public AopException(string message)
             : base(message)
         {
@@ -50,7 +50,7 @@ namespace Aop.Api
         public string ErrCode { get; set; }
 
         /// <summary>
-        /// 错误文案
+        /// 错误描述
         /// </summary>
         public string ErrMsg { get; set; }
 

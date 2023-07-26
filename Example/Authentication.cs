@@ -23,7 +23,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             BankCardFourAuthVerifyRequest request = new BankCardFourAuthVerifyRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             BankCardFourAuthVerifyRequestModel model = new BankCardFourAuthVerifyRequestModel
             {
                 RealName = "张三",
@@ -33,23 +33,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            BankCardFourAuthVerifyResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                BankCardFourAuthVerifyResponseModel data = res.Data;
+                BankCardFourAuthVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    BankCardFourAuthVerifyResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -59,7 +67,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             BankCardFourAuthConfirmRequest request = new BankCardFourAuthConfirmRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             BankCardFourAuthConfirmRequestModel model = new BankCardFourAuthConfirmRequestModel
             {
                 RealName = "张三",
@@ -71,23 +79,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            BankCardFourAuthConfirmResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                BankCardFourAuthConfirmResponseModel data = res.Data;
+                BankCardFourAuthConfirmResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    BankCardFourAuthConfirmResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -97,7 +113,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             BankCardFourVerifyRequest request = new BankCardFourVerifyRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             BankCardFourVerifyRequestModel model = new BankCardFourVerifyRequestModel
             {
                 RealName = "张三",
@@ -107,23 +123,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            BankCardFourVerifyResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                BankCardFourVerifyResponseModel data = res.Data;
+                BankCardFourVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    BankCardFourVerifyResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -133,7 +157,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             BankCardThreeVerifyRequest request = new BankCardThreeVerifyRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             BankCardThreeVerifyRequestModel model = new BankCardThreeVerifyRequestModel
             {
                 RealName = "张三",
@@ -142,23 +166,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            BankCardThreeVerifyResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                BankCardThreeVerifyResponseModel data = res.Data;
+                BankCardThreeVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    BankCardThreeVerifyResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -168,7 +200,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             IDCardVerifyRequest request = new IDCardVerifyRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             IDCardVerifyRequestModel model = new IDCardVerifyRequestModel
             {
                 IDCard = "110101198001221211",
@@ -176,23 +208,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            IDCardVerifyResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                IDCardVerifyResponseModel data = res.Data;
+                IDCardVerifyResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    IDCardVerifyResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -202,7 +242,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             UserExemptedInfoRequest request = new UserExemptedInfoRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             UserExemptedInfoRequestModel model = new UserExemptedInfoRequestModel
             {
                 RealName = "张三",
@@ -220,23 +260,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            UserExemptedInfoResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                UserExemptedInfoResponseModel data = res.Data;
+                UserExemptedInfoResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    UserExemptedInfoResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -246,7 +294,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             UserWhiteCheckRequest request = new UserWhiteCheckRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             UserWhiteCheckRequestModel model = new UserWhiteCheckRequestModel
             {
                 RealName = "张三",
@@ -254,23 +302,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            UserWhiteCheckResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                UserWhiteCheckResponseModel data = res.Data;
+                UserWhiteCheckResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    UserWhiteCheckResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -280,7 +336,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetBankCardInfoRequest request = new GetBankCardInfoRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetBankCardInfoRequestModel model = new GetBankCardInfoRequestModel
             {
                 CardNo = "1234568987645212321",
@@ -288,23 +344,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetBankCardInfoResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetBankCardInfoResponseModel data = res.Data;
+                GetBankCardInfoResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetBankCardInfoResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
     }

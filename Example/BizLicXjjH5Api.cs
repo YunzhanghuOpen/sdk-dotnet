@@ -23,7 +23,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             H5PreCollectBizlicMsgRequest request = new H5PreCollectBizlicMsgRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             H5PreCollectBizlicMsgRequestModel model = new H5PreCollectBizlicMsgRequestModel
             {
                 DealerID = Config.DealerID,
@@ -40,23 +40,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            H5PreCollectBizlicMsgResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                H5PreCollectBizlicMsgResponseModel data = res.Data;
+                H5PreCollectBizlicMsgResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    H5PreCollectBizlicMsgResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -66,7 +74,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             H5APIGetStartUrlRequest request = new H5APIGetStartUrlRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             H5APIGetStartUrlRequestModel model = new H5APIGetStartUrlRequestModel
             {
                 DealerID = Config.DealerID,
@@ -80,23 +88,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            H5APIGetStartUrlResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                H5APIGetStartUrlResponseModel data = res.Data;
+                H5APIGetStartUrlResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    H5APIGetStartUrlResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -106,7 +122,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             H5APIEcoCityAicStatusRequest request = new H5APIEcoCityAicStatusRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             H5APIEcoCityAicStatusRequestModel model = new H5APIEcoCityAicStatusRequestModel
             {
                 DealerID = Config.DealerID,
@@ -118,23 +134,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            H5APIEcoCityAicStatusResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                H5APIEcoCityAicStatusResponseModel data = res.Data;
+                H5APIEcoCityAicStatusResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    H5APIEcoCityAicStatusResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
     }

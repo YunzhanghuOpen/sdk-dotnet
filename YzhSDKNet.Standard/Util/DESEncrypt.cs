@@ -12,9 +12,9 @@ namespace Aop.Api.Util
         /// <summary>
         /// 3DES 加密
         /// </summary>
-        /// <param name="plainText">明文字符串</param>
+        /// <param name="plainText">明文数据</param>
         /// <param name="desKey">3DES Key</param>
-        /// <returns>密文</returns>
+        /// <returns>加密数据</returns>
         public static string Encrypt(string plainText, string desKey)
         {
             var des = new TripleDESCryptoServiceProvider
@@ -32,9 +32,9 @@ namespace Aop.Api.Util
         /// <summary>
         /// 3DES 解密
         /// </summary>
-        /// <param name="cipherTextBase64">密文</param>
+        /// <param name="cipherTextBase64">加密数据</param>
         /// <param name="desKey">3DES Key</param>
-        /// <returns>明文</returns>
+        /// <returns>明文数据</returns>
         public static string Decrypt(string cipherTextBase64, string desKey)
         {
             var des = new TripleDESCryptoServiceProvider

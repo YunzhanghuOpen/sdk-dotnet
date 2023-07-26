@@ -1,7 +1,7 @@
 ﻿namespace Aop.Api
 {
     /// <summary>
-    /// Aop 请求接口
+    /// AOP 请求接口
     /// </summary>
     /// <typeparam name="T">响应数据类型</typeparam>
     public interface IAopRequest<T>
@@ -16,7 +16,7 @@
         /// <summary>
         /// 获取请求 ID
         /// </summary>
-        /// <returns>响应请求 ID</returns>
+        /// <returns>请求 ID</returns>
         string GetRequestID();
 
         /// <summary>
@@ -45,7 +45,7 @@
         /// <summary>
         /// 获取接口请求路由
         /// </summary>
-        /// <returns>响应接口请求路由</returns>
+        /// <returns>接口请求路由</returns>
         string GetApiPath();
 
         /// <summary>

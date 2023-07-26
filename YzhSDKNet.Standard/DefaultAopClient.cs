@@ -56,7 +56,7 @@ namespace Aop.Api
             // 获取业务参数
             AopObject bizModel = request.GetBizModel();
 
-            // 验证业务参数是否为空
+            // 校验业务参数是否为空
             if (bizModel == null)
             {
                 throw new AopException("biz_model can't be null");
@@ -64,7 +64,7 @@ namespace Aop.Api
 
             string plaintext = JsonConvert.SerializeObject(bizModel);
 
-            // 对明文信息进行加密
+            // 明文数据加密
             string data = DESEncrypt.Encrypt(plaintext, this.config.TripleDesKey);
 
             // 获取随机字符串
@@ -103,7 +103,7 @@ namespace Aop.Api
 
             string srcBody = body;
 
-            // 如果数据是加密返回，对 data 字段进行解密
+            // 如果数据加密返回，对 data 字段进行解密
             if (bizModel.IsNeedEncrypt())
             {
                 srcBody = this.Parse(body, this.config.TripleDesKey);
@@ -135,7 +135,7 @@ namespace Aop.Api
             // 封装待签名字符串
             string message = $"data={request.Data}&mess={request.Mess}&timestamp={request.Timestamp}&key={this.config.AppKey}";
 
-            // 验证回调请求签名是否正确
+            // 校验回调请求签名是否正确
             if (!Signature.Verify(message, request.Sign, request.SignType, this.config.AppKey, this.config.YzhPublicKey))
             {
                 throw new AopException("sign verify failed");
@@ -150,7 +150,7 @@ namespace Aop.Api
         }
 
         /// <summary>
-        /// 对密文数据进行解密
+        /// 加密数据解密
         /// </summary>
         /// <param name="body">原始响应数据</param>
         /// <param name="tripleDesKey">3DES Key</param>
@@ -196,43 +196,43 @@ namespace Aop.Api
         /// </summary>
         private void VerifyConfigIsEmpty()
         {
-            // 检查配置是否为空
+            // 校验配置是否为空
             if (this.config == null)
             {
                 throw new AopException("Config can't be null");
             }
 
-            // 检查 DealerID 是否为空
+            // 校验 DealerID 是否为空
             if (string.IsNullOrEmpty(this.config.DealerID))
             {
                 throw new AopException("DealerID can't be null or empty");
             }
 
-            // 检查 AppKey 是否为空
+            // 校验 AppKey 是否为空
             if (string.IsNullOrEmpty(this.config.AppKey))
             {
                 throw new AopException("AppKey can't be null or empty");
             }
 
-            // 检查 TripleDesKey 是否为空
+            // 校验 TripleDesKey 是否为空
             if (string.IsNullOrEmpty(this.config.TripleDesKey))
             {
                 throw new AopException("TripleDesKey can't be null or empty");
             }
 
-            // 检查 SignType 是否为空
+            // 校验 SignType 是否为空
             if (string.IsNullOrEmpty(this.config.SignType))
             {
                 throw new AopException("SignType can't be null or empty");
             }
 
-            // 检查 SignType 是否符合要求
+            // 校验 SignType 是否符合要求
             if (!this.config.SignType.ToLower().Equals("sha256") && !this.config.SignType.Equals("rsa"))
             {
                 throw new AopException("SignType only support sha256 or rsa");
             }
 
-            // 检查 RSA 签名方式下 PrivateKey 是否为空
+            // 校验 RSA 签名算法下 PrivateKey 是否为空
             if (this.config.SignType.ToLower().Equals("rsa") && string.IsNullOrEmpty(this.config.PrivateKey))
             {
                 throw new AopException("PrivateKey can't be null or empty");
@@ -247,49 +247,49 @@ namespace Aop.Api
         private void VerifyNotifyIsEmpty<T>(YzhCallbackRequest<T> request)
             where T : AopObject
         {
-            // 检查 RSA 签名方式下云账户公钥是否为空
+            // 校验 RSA 签名算法下云账户公钥是否为空
             if (this.config.SignType.Equals("rsa") && string.IsNullOrEmpty(this.config.YzhPublicKey))
             {
                 throw new AopException("YzhPublicKey can't be null or empty");
             }
 
-            // 检查回调内容是否为 null
+            // 校验回调内容是否为 null
             if (request == null)
             {
                 throw new AopException("request can't be null");
             }
 
-            // 检查 data 是否为空
+            // 校验 data 是否为空
             if (string.IsNullOrEmpty(request.Data))
             {
                 throw new AopException("data can't be empty");
             }
 
-            // 检查 mess 是否为空
+            // 校验 mess 是否为空
             if (string.IsNullOrEmpty(request.Mess))
             {
                 throw new AopException("mess can't be empty");
             }
 
-            // 检查 timestamp 是否为空
+            // 校验 timestamp 是否为空
             if (string.IsNullOrEmpty(request.Timestamp))
             {
                 throw new AopException("timestamp can't be empty");
             }
 
-            // 检查 sign 是否为空
+            // 校验 sign 是否为空
             if (string.IsNullOrEmpty(request.Sign))
             {
                 throw new AopException("sign can't be empty");
             }
 
-            // 检查 sign_type 是否为空
+            // 校验 sign_type 是否为空
             if (string.IsNullOrEmpty(request.SignType))
             {
                 throw new AopException("sign_type can't be empty");
             }
 
-            // 检查 sign_type 是否一致
+            // 校验 sign_type 是否一致
             if (!this.config.SignType.Equals(request.SignType))
             {
                 throw new AopException("sign_type not equal");

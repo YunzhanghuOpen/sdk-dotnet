@@ -19,7 +19,7 @@ namespace Aop.Api.Example
         // 订单支付状态回调通知
         public static void NotifyOrderData()
         {
-            // 实例化解密验签对应的 request 类
+            // 实例化验签解密对应的 request 类
             YzhCallbackRequest<NotifyOrderRequestModel> request = new YzhCallbackRequest<NotifyOrderRequestModel>()
             {
                 Data = "testData",
@@ -29,18 +29,24 @@ namespace Aop.Api.Example
                 SignType = "testSignType",
             };
 
-            // 发起解密验签
-            NotifyOrderRequestModel res = Client.CallBackExecute(request);
-
-            Console.WriteLine(res.Data);
-
-            NotifyOrderData data = res.Data;
+            // 发起验签解密
+            try
+            {
+                NotifyOrderRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
+                NotifyOrderData data = res.Data;
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
         }
 
         // 发票开具完成通知
         public static void NotifyInvoiceDone()
         {
-            // 实例化解密验签对应的 request 类
+            // 实例化验签解密对应的 request 类
             YzhCallbackRequest<NotifyInvoiceDoneRequestModel> request = new YzhCallbackRequest<NotifyInvoiceDoneRequestModel>()
             {
                 Data = "testData",
@@ -50,25 +56,23 @@ namespace Aop.Api.Example
                 SignType = "testSignType",
             };
 
-            // 发起解密验签
-            NotifyInvoiceDoneRequestModel res = Client.CallBackExecute(request);
-
-            // 根据接收到的数据进行后续业务处理
-            if (res.Status == "3")
+            // 发起验签解密
+            try
             {
-                // 发票已邮寄，处理后续业务
+                NotifyInvoiceDoneRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
             }
-            else
+            catch (Exception e)
             {
-                // 发票驳回
-                Console.WriteLine("发票驳回原因：" + res.RejectReason);
-            }
+                // 发生异常
+                Console.WriteLine(e);
+            } 
         }
 
-        // 个体工商户注册结果回调
+        // 个体工商户注册结果回调（云账户新经济 H5）
         public static void NotifyH5EcoCityAic()
         {
-            // 实例化解密验签对应的 request 类
+            // 实例化验签解密对应的 request 类
             YzhCallbackRequest<NotifyH5EcoCityAicRequestModel> request = new YzhCallbackRequest<NotifyH5EcoCityAicRequestModel>()
             {
                 Data = "testData",
@@ -78,25 +82,49 @@ namespace Aop.Api.Example
                 SignType = "testSignType",
             };
 
-            // 发起解密验签
-            NotifyH5EcoCityAicRequestModel res = Client.CallBackExecute(request);
+            // 发起验签解密
+            try
+            {
+                NotifyH5EcoCityAicRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            } 
+        }
 
-            // 根据接收到的数据进行后续业务处理
-            if (res.Status == 6)
+        // 个体工商户注册结果回调（云账户新经济 H5+API）
+        public static void NotifyH5APIEcoCityAic()
+        {
+            // 实例化验签解密对应的 request 类
+            YzhCallbackRequest<NotifyH5APIEcoCityAicRequestModel> request = new YzhCallbackRequest<NotifyH5APIEcoCityAicRequestModel>()
             {
-                // 税务登记成功，可向用户进行支付
-            }
-            else
+                Data = "testData",
+                Mess = "testMess",
+                Timestamp = "testTimestamp",
+                Sign = "testSign",
+                SignType = "testSignType",
+            };
+
+            // 发起验签解密
+            try
             {
-                // 处理异常情况
-                Console.WriteLine("用户姓名：" + res.RealName + "\n个体户注册状态码：" + res.Status + "\n个体户注册状态吗描述：" + res.StatusMessage);
+                NotifyH5APIEcoCityAicRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
             }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            } 
         }
 
         // H5 签约回调
         public static void NotifyH5UserSign()
         {
-            // 实例化解密验签对应的 request 类
+            // 实例化验签解密对应的 request 类
             YzhCallbackRequest<NotifyH5UserSignRequestModel> request = new YzhCallbackRequest<NotifyH5UserSignRequestModel>()
             {
                 Data = "testData",
@@ -106,17 +134,23 @@ namespace Aop.Api.Example
                 SignType = "testSignType",
             };
 
-            // 发起解密验签
-            NotifyH5UserSignRequestModel res = Client.CallBackExecute(request);
-
-            // 根据回调信息处理
-            Console.WriteLine("用户姓名：" + res.RealName + "\n证件号：" + res.IDCard);
+            // 发起验签解密
+            try
+            {
+                NotifyH5UserSignRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            } 
         }
 
         // 免验证名单审核结果回调通知
         public static void NotifyUserExemptedInfo()
         {
-            // 实例化解密验签对应的 request 类
+            // 实例化验签解密对应的 request 类
             YzhCallbackRequest<NotifyUserExemptedInfoRequestModel> request = new YzhCallbackRequest<NotifyUserExemptedInfoRequestModel>()
             {
                 Data = "testData",
@@ -126,19 +160,17 @@ namespace Aop.Api.Example
                 SignType = "testSignType",
             };
 
-            // 发起解密验签
-            NotifyUserExemptedInfoRequestModel res = Client.CallBackExecute(request);
-
-            // 根据接收到的数据进行后续业务处理
-            if (res.Status == "pass")
+            // 发起验签解密
+            try
             {
-                // 审核通过，进行后续业务处理
+                NotifyUserExemptedInfoRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("用户姓名：" + res.RealName + "\n审核信息：" + res.Comment);
-            }
+                // 发生异常
+                Console.WriteLine(e);
+            } 
         }
     }
 }

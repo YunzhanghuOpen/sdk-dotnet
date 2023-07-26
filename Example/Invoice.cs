@@ -23,7 +23,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatRequest request = new GetInvoiceStatRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetInvoiceStatRequestModel model = new GetInvoiceStatRequestModel
             {
                 DealerID = Config.DealerID,
@@ -32,23 +32,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceStatResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetInvoiceStatResponseModel data = res.Data;
+                GetInvoiceStatResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetInvoiceStatResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -58,7 +66,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetInvoiceAmountRequest request = new GetInvoiceAmountRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetInvoiceAmountRequestModel model = new GetInvoiceAmountRequestModel
             {
                 DealerID = Config.DealerID,
@@ -66,23 +74,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceAmountResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetInvoiceAmountResponseModel data = res.Data;
+                GetInvoiceAmountResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetInvoiceAmountResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -92,7 +108,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             ApplyInvoiceRequest request = new ApplyInvoiceRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ApplyInvoiceRequestModel model = new ApplyInvoiceRequestModel
             {
                 InvoiceApplyID = "1231232131",
@@ -106,23 +122,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ApplyInvoiceResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ApplyInvoiceResponseModel data = res.Data;
+                ApplyInvoiceResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ApplyInvoiceResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -132,7 +156,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetInvoiceStatusRequest request = new GetInvoiceStatusRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetInvoiceStatusRequestModel model = new GetInvoiceStatusRequestModel
             {
                 InvoiceApplyID = "1231232131",
@@ -140,23 +164,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceStatusResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetInvoiceStatusResponseModel data = res.Data;
+                GetInvoiceStatusResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetInvoiceStatusResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -166,7 +198,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetInvoiceInformationRequest request = new GetInvoiceInformationRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetInvoiceInformationRequestModel model = new GetInvoiceInformationRequestModel
             {
                 InvoiceApplyID = "1231232131",
@@ -174,23 +206,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceInformationResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetInvoiceInformationResponseModel data = res.Data;
+                GetInvoiceInformationResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetInvoiceInformationResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -200,7 +240,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetInvoiceFileRequest request = new GetInvoiceFileRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetInvoiceFileRequestModel model = new GetInvoiceFileRequestModel
             {
                 InvoiceApplyID = "1231232131",
@@ -208,23 +248,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetInvoiceFileResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetInvoiceFileResponseModel data = res.Data;
+                GetInvoiceFileResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetInvoiceFileResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -234,7 +282,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             SendReminderEmailRequest request = new SendReminderEmailRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             SendReminderEmailRequestModel model = new SendReminderEmailRequestModel
             {
                 InvoiceApplyID = "1231232131",
@@ -242,23 +290,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            SendReminderEmailResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                SendReminderEmailResponseModel data = res.Data;
+                SendReminderEmailResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    SendReminderEmailResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
     }

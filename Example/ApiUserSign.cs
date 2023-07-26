@@ -22,8 +22,8 @@ namespace Aop.Api.Example
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignContractRequest request = new ApiUserSignContractRequest();
-            
-            // 加载接口参数
+
+            // 配置请求参数
             ApiUserSignContractRequestModel model = new ApiUserSignContractRequestModel
             {
                 DealerID = Config.DealerID,
@@ -31,33 +31,41 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ApiUserSignContractResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ApiUserSignContractResponseModel data = res.Data;
+                ApiUserSignContractResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ApiUserSignContractResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
         // 用户签约
-        public static void ApiUserSign()
+        public static void UserSign()
         {
             // 实例化具体 API 对应的 request 类
             ApiUserSignRequest request = new ApiUserSignRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ApiUserSignRequestModel model = new ApiUserSignRequestModel
             {
                 DealerID = Config.DealerID,
@@ -68,23 +76,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ApiUserSignResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ApiUserSignResponseModel data = res.Data;
+                ApiUserSignResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ApiUserSignResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -94,7 +110,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             GetApiUserSignStatusRequest request = new GetApiUserSignStatusRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             GetApiUserSignStatusRequestModel model = new GetApiUserSignStatusRequestModel
             {
                 DealerID = Config.DealerID,
@@ -104,23 +120,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            GetApiUserSignStatusResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                GetApiUserSignStatusResponseModel data = res.Data;
+                GetApiUserSignStatusResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    GetApiUserSignStatusResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -130,7 +154,7 @@ namespace Aop.Api.Example
             // 实例化具体 API 对应的 request 类
             ApiUserSignReleaseRequest request = new ApiUserSignReleaseRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             ApiUserSignReleaseRequestModel model = new ApiUserSignReleaseRequestModel
             {
                 DealerID = Config.DealerID,
@@ -141,23 +165,31 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
             // 发起请求
-            ApiUserSignReleaseResponse res = Client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                ApiUserSignReleaseResponseModel data = res.Data;
+                ApiUserSignReleaseResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    ApiUserSignReleaseResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
     }

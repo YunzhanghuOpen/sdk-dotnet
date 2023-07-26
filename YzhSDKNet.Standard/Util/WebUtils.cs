@@ -16,12 +16,12 @@ namespace Aop.Api.Util
     public sealed class WebUtils
     {
         /// <summary>
-        /// 发起请求到服务端首次返回数据的超时时长，单位毫秒
+        /// 发起请求到服务端首次返回数据的超时时间，单位：毫秒
         /// </summary>
         public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
-        /// 服务端首次返回数据后，等待后续数据的超时时长，单位毫秒
+        /// 服务端首次返回数据后，等待后续数据的超时时间，单位：毫秒
         /// </summary>
         public int ReadWritTimeout { get; set; } = 15 * 1000;
 
@@ -132,7 +132,7 @@ namespace Aop.Api.Util
         }
 
         /// <summary>
-        /// 把响应流转换为文本
+        /// 响应流转换为文本
         /// </summary>
         /// <param name="response">响应流对象</param>
         /// <returns>响应文本</returns>
@@ -180,9 +180,9 @@ namespace Aop.Api.Util
         }
 
         /// <summary>
-        /// Unicode解码
+        /// Unicode 解码
         /// </summary>
-        /// <param name="unicodeStr">Unicode字符串</param>
+        /// <param name="unicodeStr">Unicode 字符串</param>
         /// <returns>解码后的字符串</returns>
         public static string UnicodeDecode(string unicodeStr)
         {

@@ -23,7 +23,7 @@ namespace Aop.Api
         }
 
         /// <summary>
-        /// 响应文案
+        /// 响应码描述
         /// </summary>
         [JsonProperty("message")]
         public string Message
@@ -43,7 +43,7 @@ namespace Aop.Api
         }
 
         /// <summary>
-        /// 响应原始内容
+        /// 响应结果原始内容
         /// </summary>
         public string Body
         {

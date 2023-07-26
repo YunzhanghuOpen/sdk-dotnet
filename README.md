@@ -12,7 +12,7 @@
 
 #### 1、获取配置
 
-使用云账户 SDK for .Net 前，您需先获取 dealer_id、broker_id、3DES Key、App Key 信息。    
+使用云账户 SDK for .Net 前，您需先获取 dealer_id、broker_id、3DES Key 和 App Key。    
 获取方式：使用开户邮件中的账号登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择“业务中心 > 业务管理 > 对接信息”，查看并获取以上配置信息。  
 ![获取配置信息](https://yos.yunzhanghu.com/getobject/duijiexinxi.png?isAttachment=false&fileID=9487bd54b93a5abf49003c2b8ce7e069bfa24220&signature=X%2BR7PocQgPqSpR2xM1TgYU6lAapr%2FB9p3aFof03Gcfw%3D)
 
@@ -25,7 +25,7 @@
 
 OpenSSL-> genrsa -out private_key.pem 2048   // 建议密钥⻓度⾄少为 2048 位
 
-② ⽣成公钥⽂件 pubkey.pem
+② ⽣成公钥 pubkey.pem
 
 OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
@@ -49,11 +49,11 @@ NuGet 依赖，请参考：https://learn.microsoft.com/zh-cn/nuget/install-nuget
 #### 示例功能列表
 
 - [H5 签约](Example/H5UserSign.cs) or [API 签约](Example/ApiUserSign.cs)
-- [实时下单接口](Example/Payment.cs)
-- [数据接口](Example/DataService.cs)
-- [发票接口](Example/Invoice.cs)
-- [个税扣缴明细表下载接口](Example/Tax.cs)
-- [用户信息验证接口](Example/Authentication.cs)
+- [实时支付](Example/Payment.cs)
+- [对账文件获取](Example/DataService.cs)
+- [发票开具](Example/Invoice.cs)
+- [个人所得税扣缴明细表](Example/Tax.cs)
+- [用户信息验证](Example/Authentication.cs)
 
 
 ### 示例
@@ -72,13 +72,13 @@ namespace Aop.Api.Example
         // 客户端实现
         static DefaultAopClient client = new DefaultAopClient(config);
 
-        // 银行卡实时支付
+        // 单笔支付（银行卡实时支付）
         public static void CreateBankpayOrder()
         {
             // 实例化具体 API 对应的 request 类
             CreateBankpayOrderRequest request = new CreateBankpayOrderRequest();
 
-            // 加载接口参数
+            // 配置请求参数
             CreateBankpayOrderRequestModel model = new CreateBankpayOrderRequestModel
             {
                 DealerID = config.DealerID,
@@ -94,26 +94,34 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：每次请求的唯一标识
-            // 强烈建议平台企业自定义 request-id 并记录在日志中，如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义则使用 SDK 中的 Guid.NewGuid() 方法自动生成，注意：Guid.NewGuid() 方法不能保证全局唯一，可能会出现 ID 重复，推荐自行实现全局唯一 ID
+            // request-id：请求ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
+            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
             // request.SetRequestID("");
 
-            // 设置超时时间，不设置时默认 30 秒
+            // 设置超时时间。非必填，默认 30 秒
             // client.SetTimeout(30 * 1000);
 
             // 发起请求
-            CreateBankpayOrderResponse res = client.Execute(request);
-
-            Console.WriteLine(res.Body);
-            if (res.IsSuccess)
+            try
             {
-                CreateBankpayOrderResponseModel data = res.Data;
+                CreateBankpayOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 处理成功
+                    CreateBankpayOrderResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
             }
-            else
+            catch (Exception e)
             {
-                // 处理异常情况
-                Console.WriteLine("响应码：" + res.Code + "\n响应信息：" + res.Message);
+                // 发生异常
+                Console.WriteLine(e);
             }
         }
 
@@ -121,22 +129,22 @@ namespace Aop.Api.Example
         public static YzhConfig GetConfig()
         {
             YzhConfig config = new YzhConfig();
-            // 设置基础接口地址
+            // 基础接口地址
             config.ServerUrl = "";
-            // 设置平台企业 ID
+            // 平台企业 ID
             config.DealerID = "";
-            // 设置综合服务主体 ID
+            // 综合服务主体 ID
             config.BrokerID = "";
-            // 设置 App Key
+            // App Key
             config.AppKey = "";
-            // 设置平台企业私钥
-            config.PrivateKey = "";
-            // 设置云账户公钥
-            config.YzhPublicKey = "";
-            // 设置 3DES Key
+            // 3DES Key
             config.TripleDesKey = "";
-            // 设置签名方式，rsa 或 sha256
-            config.SignType = "";
+            // 平台企业私钥
+            config.PrivateKey = "";
+            // 云账户公钥
+            config.YzhPublicKey = "";
+            // 签名算法为 RSA，参数固定为：rsa
+            config.SignType = "rsa";
 
             return config;
         }
