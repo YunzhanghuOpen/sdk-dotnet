@@ -6,9 +6,9 @@
     public static class EncryptorManager
     {
         /// <summary>
-        /// 根据算法名称（rsa、sha256）实例化具体的算法加密器
+        /// 根据算法入参（rsa、sha256）实例化具体的算法加密器
         /// </summary>
-        /// <param name="type">签名方式</param>
+        /// <param name="type">签名算法</param>
         /// <returns>类型对应签名实例</returns>
         public static IEncryptor GetByName(string type)
         {
@@ -22,7 +22,7 @@
                 return new HMACEncryptor();
             }
 
-            throw new AopException($"无效的签名方式：[{type}]，可选值为：rsa、sha256");
+            throw new AopException($"无效的签名算法：[{type}]，可选值为：rsa、sha256");
         }
     }
 }

@@ -25,8 +25,8 @@ namespace Aop.Api.Example.config
             config.PrivateKey = "";
             // 云账户公钥
             config.YzhPublicKey = "";
-            // 签名方式，rsa 或 sha256
-            config.SignType = "";
+            // 签名算法为 RSA，参数固定为：rsa
+            config.SignType = "rsa";
 
             return config;
         }
