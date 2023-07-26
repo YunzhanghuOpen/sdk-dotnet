@@ -123,7 +123,7 @@ namespace Aop.Api
         /// <param name="request">回调输入内容</param>
         /// <returns>回调明文实体</returns>
         /// <exception cref="AopException">错误信息</exception>
-        public T CallBackExecute<T>(YzhCallbackRequest<T> request)
+        public T NotifyDecoder<T>(YzhCallbackRequest<T> request)
             where T : AopObject
         {
             // 校验基础参数是否为空
