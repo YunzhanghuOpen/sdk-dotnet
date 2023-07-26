@@ -6,7 +6,7 @@
     public static class EncryptorManager
     {
         /// <summary>
-        /// 根据算法入参（rsa、sha256）实例化具体的算法加密器
+        /// 根据算法枚举值（rsa、sha256）实例化具体的算法加密器
         /// </summary>
         /// <param name="type">签名算法</param>
         /// <returns>类型对应签名实例</returns>
