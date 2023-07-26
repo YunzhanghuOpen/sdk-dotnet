@@ -63,7 +63,7 @@ namespace Aop.Api.Example
         }
 
         // 申请签约
-        public static void H5UserSign()
+        public static void UserSign()
         {
             // 实例化具体 API 对应的 request 类
             H5UserSignRequest request = new H5UserSignRequest();
