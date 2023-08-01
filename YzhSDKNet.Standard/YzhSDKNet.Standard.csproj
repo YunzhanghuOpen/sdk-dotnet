@@ -5,7 +5,7 @@
     <RootNamespace>Aop.Api</RootNamespace>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <NeutralLanguage>zh</NeutralLanguage>
-    <Description>云账户开放平台官方SDK，基于.Net Standard 2.0开发，支持.Net Framework 4.6.1、.Net Core 2.0及其以上版本。</Description>
+    <Description>云账户综合服务平台官方 SDK，基于.Net Standard 2.0开发，支持.Net Framework 4.6.1、.Net Core 2.0及其以上版本。</Description>
   </PropertyGroup>
 
   <ItemGroup>
