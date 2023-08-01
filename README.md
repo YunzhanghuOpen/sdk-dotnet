@@ -50,7 +50,7 @@ NuGet 依赖，请参考：https://learn.microsoft.com/zh-cn/nuget/install-nuget
 
 - [用户信息验证](Example/Authentication.cs)
 - [H5 签约](Example/H5UserSign.cs) or [API 签约](Example/ApiUserSign.cs)
-- [个体工商户注册（云账户新经济 H5）](example/BizLicXjjH5.cs) or [个体工商户注册（云账户新经济H5+API）](example/BizLicXjjH5Api.cs) 
+- [个体工商户注册（云账户新经济 H5）](Example/BizLicXjjH5.cs) or [个体工商户注册（云账户新经济H5+API）](Example/BizLicXjjH5Api.cs) 
 - [实时支付](Example/Payment.cs)
 - [对账文件获取](Example/DataService.cs)
 - [发票开具](Example/Invoice.cs)
