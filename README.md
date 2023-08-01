@@ -12,7 +12,7 @@
 
 #### 1、获取配置
 
-使用云账户 SDK for .Net 前，您需先获取 dealer_id、broker_id、3DES Key 和 App Key。    
+使用云账户 SDK for .Net 前，您需先获取 dealer_id、broker_id、3DES Key、App Key、云账户公钥。   
 获取方式：使用开户邮件中的账号登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择“业务中心 > 业务管理 > 对接信息”，查看并获取以上配置信息。  
 ![获取配置信息](https://yos.yunzhanghu.com/getobject/duijiexinxi.png?isAttachment=false&fileID=9487bd54b93a5abf49003c2b8ce7e069bfa24220&signature=X%2BR7PocQgPqSpR2xM1TgYU6lAapr%2FB9p3aFof03Gcfw%3D)
 
@@ -48,12 +48,14 @@ NuGet 依赖，请参考：https://learn.microsoft.com/zh-cn/nuget/install-nuget
 
 #### 示例功能列表
 
+- [用户信息验证](Example/Authentication.cs)
 - [H5 签约](Example/H5UserSign.cs) or [API 签约](Example/ApiUserSign.cs)
+- [个体工商户注册（云账户新经济 H5）](Example/BizLicXjjH5.cs) or [个体工商户注册（云账户新经济H5+API）](Example/BizLicXjjH5Api.cs) 
 - [实时支付](Example/Payment.cs)
 - [对账文件获取](Example/DataService.cs)
 - [发票开具](Example/Invoice.cs)
 - [个人所得税扣缴明细表](Example/Tax.cs)
-- [用户信息验证](Example/Authentication.cs)
+
 
 
 ### 示例
