@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询平台企业预付业务服务费记录
-   /// <summary>
+   /// </summary>
    public class ListDealerRechargeRecordV2Request : IAopRequest<ListDealerRechargeRecordV2Response>
    {
         private string mess;

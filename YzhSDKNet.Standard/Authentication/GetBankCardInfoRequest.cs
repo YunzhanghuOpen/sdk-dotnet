@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 银行卡信息查询接口
-   /// <summary>
+   /// </summary>
    public class GetBankCardInfoRequest : IAopRequest<GetBankCardInfoResponse>
    {
         private string mess;

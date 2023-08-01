@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 下载个人所得税扣缴明细表
-   /// <summary>
+   /// </summary>
    public class GetTaxFileRequest : IAopRequest<GetTaxFileResponse>
    {
         private string mess;

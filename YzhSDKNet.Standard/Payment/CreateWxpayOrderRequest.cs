@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 微信实时支付
-   /// <summary>
+   /// </summary>
    public class CreateWxpayOrderRequest : IAopRequest<CreateWxpayOrderResponse>
    {
         private string mess;

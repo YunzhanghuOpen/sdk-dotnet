@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询发票信息
-   /// <summary>
+   /// </summary>
    public class GetInvoiceInformationRequest : IAopRequest<GetInvoiceInformationResponse>
    {
         private string mess;

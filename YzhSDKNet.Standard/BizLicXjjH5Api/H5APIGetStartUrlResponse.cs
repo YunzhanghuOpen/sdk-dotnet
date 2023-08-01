@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 预启动
-   /// <summary>
+   /// </summary>
    public class H5APIGetStartUrlResponse : AopResponse
    {
       /// <summary>
       /// 预启动
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public H5APIGetStartUrlResponseModel Data { get; set; }
    }

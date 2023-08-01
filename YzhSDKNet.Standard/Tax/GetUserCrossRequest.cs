@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询纳税人是否为跨集团用户
-   /// <summary>
+   /// </summary>
    public class GetUserCrossRequest : IAopRequest<GetUserCrossResponse>
    {
         private string mess;

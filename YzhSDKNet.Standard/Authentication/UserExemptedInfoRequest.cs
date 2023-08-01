@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 上传免验证用户名单信息
-   /// <summary>
+   /// </summary>
    public class UserExemptedInfoRequest : IAopRequest<UserExemptedInfoResponse>
    {
         private string mess;

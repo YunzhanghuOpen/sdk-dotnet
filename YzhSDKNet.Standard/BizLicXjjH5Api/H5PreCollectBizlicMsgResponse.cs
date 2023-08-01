@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 工商实名信息录入
-   /// <summary>
+   /// </summary>
    public class H5PreCollectBizlicMsgResponse : AopResponse
    {
       /// <summary>
       /// 工商实名信息录入
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public H5PreCollectBizlicMsgResponseModel Data { get; set; }
    }

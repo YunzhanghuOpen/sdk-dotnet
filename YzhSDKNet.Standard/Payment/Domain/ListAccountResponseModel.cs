@@ -4,12 +4,12 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 查询平台企业余额返回
-   /// <summary>
+   /// </summary>
    public class ListAccountResponseModel : AopObject
    {
       /// <summary>
       /// dealer_infos
-      /// <summary>
+      /// </summary>
       [JsonProperty("dealer_infos")]
       public AccountInfo[] DealerInfos { get; set; }
    }

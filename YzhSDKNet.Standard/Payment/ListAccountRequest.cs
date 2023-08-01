@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询平台企业余额
-   /// <summary>
+   /// </summary>
    public class ListAccountRequest : IAopRequest<ListAccountResponse>
    {
         private string mess;

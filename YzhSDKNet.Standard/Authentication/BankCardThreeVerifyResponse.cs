@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 银行卡三要素验证
-   /// <summary>
+   /// </summary>
    public class BankCardThreeVerifyResponse : AopResponse
    {
       /// <summary>
       /// 银行卡三要素验证
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public BankCardThreeVerifyResponseModel Data { get; set; }
    }

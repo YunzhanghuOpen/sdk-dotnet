@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 银行卡信息查询接口
-   /// <summary>
+   /// </summary>
    public class GetBankCardInfoResponse : AopResponse
    {
       /// <summary>
       /// 银行卡信息查询接口
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public GetBankCardInfoResponseModel Data { get; set; }
    }

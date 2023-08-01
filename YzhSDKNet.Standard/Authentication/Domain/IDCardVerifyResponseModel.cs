@@ -2,7 +2,7 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 身份证实名验证返回
-   /// <summary>
+   /// </summary>
    public class IDCardVerifyResponseModel : AopObject
    {
    }

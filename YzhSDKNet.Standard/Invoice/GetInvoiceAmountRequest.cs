@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询可开具发票额度和发票开具信息
-   /// <summary>
+   /// </summary>
    public class GetInvoiceAmountRequest : IAopRequest<GetInvoiceAmountResponse>
    {
         private string mess;

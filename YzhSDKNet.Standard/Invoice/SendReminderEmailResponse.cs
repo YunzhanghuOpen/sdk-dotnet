@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 发送发票扫描件压缩包下载链接邮件
-   /// <summary>
+   /// </summary>
    public class SendReminderEmailResponse : AopResponse
    {
       /// <summary>
       /// 发送发票扫描件压缩包下载链接邮件
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public SendReminderEmailResponseModel Data { get; set; }
    }

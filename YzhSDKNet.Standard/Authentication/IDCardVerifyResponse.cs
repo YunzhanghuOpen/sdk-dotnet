@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 身份证实名验证
-   /// <summary>
+   /// </summary>
    public class IDCardVerifyResponse : AopResponse
    {
       /// <summary>
       /// 身份证实名验证
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public IDCardVerifyResponseModel Data { get; set; }
    }

@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 支付宝实时支付
-   /// <summary>
+   /// </summary>
    public class CreateAlipayOrderRequest : IAopRequest<CreateAlipayOrderResponse>
    {
         private string mess;

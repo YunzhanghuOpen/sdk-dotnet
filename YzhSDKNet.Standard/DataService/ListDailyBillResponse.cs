@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 查询日流水数据
-   /// <summary>
+   /// </summary>
    public class ListDailyBillResponse : AopResponse
    {
       /// <summary>
       /// 查询日流水数据
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public ListDailyBillResponseModel Data { get; set; }
    }

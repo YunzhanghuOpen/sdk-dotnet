@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 申请签约
-   /// <summary>
+   /// </summary>
    public class H5UserSignResponse : AopResponse
    {
       /// <summary>
       /// 申请签约
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public H5UserSignResponseModel Data { get; set; }
    }

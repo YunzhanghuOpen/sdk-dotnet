@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 查询可开具发票额度和发票开具信息请求
-   /// <summary>
+   /// </summary>
    public class GetInvoiceAmountRequestModel : AopObject
    {
       /// <summary>
       /// 综合服务主体 ID
-      /// <summary>
+      /// </summary>
       [JsonProperty("broker_id")]
       public string BrokerID { get; set; }
 
       /// <summary>
       /// 平台企业 ID
-      /// <summary>
+      /// </summary>
       [JsonProperty("dealer_id")]
       public string DealerID { get; set; }
    }

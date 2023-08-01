@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 银行卡四要素鉴权请求（下发短信验证码）
-   /// <summary>
+   /// </summary>
    public class BankCardFourAuthVerifyResponse : AopResponse
    {
       /// <summary>
       /// 银行卡四要素鉴权请求（下发短信验证码）
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public BankCardFourAuthVerifyResponseModel Data { get; set; }
    }

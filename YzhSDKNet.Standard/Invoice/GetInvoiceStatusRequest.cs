@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询发票开具申请状态
-   /// <summary>
+   /// </summary>
    public class GetInvoiceStatusRequest : IAopRequest<GetInvoiceStatusResponse>
    {
         private string mess;

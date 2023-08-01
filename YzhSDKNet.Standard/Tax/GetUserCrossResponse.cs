@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 查询纳税人是否为跨集团用户
-   /// <summary>
+   /// </summary>
    public class GetUserCrossResponse : AopResponse
    {
       /// <summary>
       /// 查询纳税人是否为跨集团用户
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public GetUserCrossResponseModel Data { get; set; }
 

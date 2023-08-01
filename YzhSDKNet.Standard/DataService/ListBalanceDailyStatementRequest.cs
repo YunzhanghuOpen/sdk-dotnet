@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询余额日账单数据
-   /// <summary>
+   /// </summary>
    public class ListBalanceDailyStatementRequest : IAopRequest<ListBalanceDailyStatementResponse>
    {
         private string mess;

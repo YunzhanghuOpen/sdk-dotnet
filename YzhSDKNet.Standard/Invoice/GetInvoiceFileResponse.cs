@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 下载 PDF 版发票
-   /// <summary>
+   /// </summary>
    public class GetInvoiceFileResponse : AopResponse
    {
       /// <summary>
       /// 下载 PDF 版发票
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public GetInvoiceFileResponseModel Data { get; set; }
    }

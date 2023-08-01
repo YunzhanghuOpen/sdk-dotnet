@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查看免验证用户名单是否存在
-   /// <summary>
+   /// </summary>
    public class UserWhiteCheckRequest : IAopRequest<UserWhiteCheckResponse>
    {
         private string mess;

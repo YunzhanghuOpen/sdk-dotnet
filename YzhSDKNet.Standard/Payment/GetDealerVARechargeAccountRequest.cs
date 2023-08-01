@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询平台企业汇款信息
-   /// <summary>
+   /// </summary>
    public class GetDealerVARechargeAccountRequest : IAopRequest<GetDealerVARechargeAccountResponse>
    {
         private string mess;

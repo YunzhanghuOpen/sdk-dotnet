@@ -4,12 +4,12 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 预启动返回
-   /// <summary>
+   /// </summary>
    public class H5GetStartUrlResponseModel : AopObject
    {
       /// <summary>
       /// 跳转 URL
-      /// <summary>
+      /// </summary>
       [JsonProperty("h5_url")]
       public string H5URL { get; set; }
    }

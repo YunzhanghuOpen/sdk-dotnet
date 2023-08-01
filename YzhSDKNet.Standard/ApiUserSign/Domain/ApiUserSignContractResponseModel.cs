@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
     /// <summary>
     /// 获取协议预览 URL 返回
-    /// <summary>
+    /// </summary>
     public class ApiUserSignContractResponseModel : AopObject
     {
         /// <summary>
         /// 预览跳转 URL
-        /// <summary>
+        /// </summary>
         [JsonProperty("url")]
         public string URL { get; set; }
 
         /// <summary>
         /// 协议名称
-        /// <summary>
+        /// </summary>
         [JsonProperty("title")]
         public string Title { get; set; }
     }

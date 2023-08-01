@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 发票开具申请
-   /// <summary>
+   /// </summary>
    public class ApplyInvoiceRequest : IAopRequest<ApplyInvoiceResponse>
    {
         private string mess;

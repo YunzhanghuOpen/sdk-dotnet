@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 预启动
-   /// <summary>
+   /// </summary>
    public class H5GetStartUrlRequest : IAopRequest<H5GetStartUrlResponse>
    {
         private string mess;

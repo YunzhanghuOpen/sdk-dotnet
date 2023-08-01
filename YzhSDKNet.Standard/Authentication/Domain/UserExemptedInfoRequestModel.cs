@@ -4,78 +4,78 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 上传免验证用户名单信息请求
-   /// <summary>
+   /// </summary>
    public class UserExemptedInfoRequestModel : AopObject
    {
       /// <summary>
       /// 证件类型码
-      /// <summary>
+      /// </summary>
       [JsonProperty("card_type")]
       public string CardType { get; set; }
 
       /// <summary>
       /// 证件号码
-      /// <summary>
+      /// </summary>
       [JsonProperty("id_card")]
       public string IDCard { get; set; }
 
       /// <summary>
       /// 姓名
-      /// <summary>
+      /// </summary>
       [JsonProperty("real_name")]
       public string RealName { get; set; }
 
       /// <summary>
       /// 申请备注
-      /// <summary>
+      /// </summary>
       [JsonProperty("comment_apply")]
       public string CommentApply { get; set; }
 
       /// <summary>
       /// 综合服务主体 ID
-      /// <summary>
+      /// </summary>
       [JsonProperty("broker_id")]
       public string BrokerID { get; set; }
 
       /// <summary>
       /// 平台企业 ID
-      /// <summary>
+      /// </summary>
       [JsonProperty("dealer_id")]
       public string DealerID { get; set; }
 
       /// <summary>
       /// 人员信息图片
-      /// <summary>
+      /// </summary>
       [JsonProperty("user_images")]
       public string[] UserImages { get; set; }
 
       /// <summary>
       /// 国别（地区）代码
-      /// <summary>
+      /// </summary>
       [JsonProperty("country")]
       public string Country { get; set; }
 
       /// <summary>
       /// 出生日期
-      /// <summary>
+      /// </summary>
       [JsonProperty("birthday")]
       public string Birthday { get; set; }
 
       /// <summary>
       /// 性别
-      /// <summary>
+      /// </summary>
       [JsonProperty("gender")]
       public string Gender { get; set; }
 
       /// <summary>
       /// 回调地址
-      /// <summary>
+      /// </summary>
       [JsonProperty("notify_url")]
       public string NotifyURL { get; set; }
 
       /// <summary>
       /// 请求流水号
-      /// <summary>
+      /// </summary>
       [JsonProperty("ref")]
       public string Ref { get; set; }
    }

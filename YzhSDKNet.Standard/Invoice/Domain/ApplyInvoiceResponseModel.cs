@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 发票开具申请返回
-   /// <summary>
+   /// </summary>
    public class ApplyInvoiceResponseModel : AopObject
    {
       /// <summary>
       /// 发票申请单 ID
-      /// <summary>
+      /// </summary>
       [JsonProperty("application_id")]
       public string ApplicationID { get; set; }
 
       /// <summary>
       /// 发票张数
-      /// <summary>
+      /// </summary>
       [JsonProperty("count")]
       public long Count { get; set; }
    }

@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 批次下单
-   /// <summary>
+   /// </summary>
    public class CreateBatchOrderResponse : AopResponse
    {
       /// <summary>
       /// 批次下单
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public CreateBatchOrderResponseModel Data { get; set; }
    }

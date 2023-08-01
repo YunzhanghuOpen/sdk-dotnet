@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 身份证实名验证请求
-   /// <summary>
+   /// </summary>
    public class IDCardVerifyRequestModel : AopObject
    {
       /// <summary>
       /// 身份证号码
-      /// <summary>
+      /// </summary>
       [JsonProperty("id_card")]
       public string IDCard { get; set; }
 
       /// <summary>
       /// 姓名
-      /// <summary>
+      /// </summary>
       [JsonProperty("real_name")]
       public string RealName { get; set; }
    }

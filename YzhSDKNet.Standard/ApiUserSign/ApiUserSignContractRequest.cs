@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 获取协议预览 URL
-   /// <summary>
+   /// </summary>
    public class ApiUserSignContractRequest : IAopRequest<ApiUserSignContractResponse>
    {
         private string mess;

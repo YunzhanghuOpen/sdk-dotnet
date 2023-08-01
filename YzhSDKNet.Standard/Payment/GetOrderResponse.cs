@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 查询单笔订单信息
-   /// <summary>
+   /// </summary>
    public class GetOrderResponse : AopResponse
    {
       /// <summary>
       /// 查询单笔订单信息
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public GetOrderResponseModel Data { get; set; }
    }

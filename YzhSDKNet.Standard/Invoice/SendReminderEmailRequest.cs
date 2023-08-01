@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 发送发票扫描件压缩包下载链接邮件
-   /// <summary>
+   /// </summary>
    public class SendReminderEmailRequest : IAopRequest<SendReminderEmailResponse>
    {
         private string mess;

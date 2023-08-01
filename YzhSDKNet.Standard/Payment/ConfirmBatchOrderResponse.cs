@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 批次确认
-   /// <summary>
+   /// </summary>
    public class ConfirmBatchOrderResponse : AopResponse
    {
       /// <summary>
       /// 批次确认
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public ConfirmBatchOrderResponseModel Data { get; set; }
    }

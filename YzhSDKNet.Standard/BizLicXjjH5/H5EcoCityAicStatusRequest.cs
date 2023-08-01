@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询个体工商户状态
-   /// <summary>
+   /// </summary>
    public class H5EcoCityAicStatusRequest : IAopRequest<H5EcoCityAicStatusResponse>
    {
         private string mess;

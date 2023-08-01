@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 查询平台企业余额
-   /// <summary>
+   /// </summary>
    public class ListAccountResponse : AopResponse
    {
       /// <summary>
       /// 查询平台企业余额
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public ListAccountResponseModel Data { get; set; }
    }

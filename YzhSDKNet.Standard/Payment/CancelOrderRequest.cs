@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 取消待支付订单
-   /// <summary>
+   /// </summary>
    public class CancelOrderRequest : IAopRequest<CancelOrderResponse>
    {
         private string mess;

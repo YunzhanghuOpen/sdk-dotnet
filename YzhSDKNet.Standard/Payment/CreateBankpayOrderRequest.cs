@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 银行卡实时支付
-   /// <summary>
+   /// </summary>
    public class CreateBankpayOrderRequest : IAopRequest<CreateBankpayOrderResponse>
    {
         private string mess;

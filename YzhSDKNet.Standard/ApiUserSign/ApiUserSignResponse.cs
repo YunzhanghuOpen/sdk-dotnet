@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 用户签约
-   /// <summary>
+   /// </summary>
    public class ApiUserSignResponse : AopResponse
    {
       /// <summary>
       /// 用户签约
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public ApiUserSignResponseModel Data { get; set; }
    }

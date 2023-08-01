@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 查询日流水数据返回
-   /// <summary>
+   /// </summary>
    public class ListDailyBillResponseModel : AopObject
    {
       /// <summary>
       /// 总条数
-      /// <summary>
+      /// </summary>
       [JsonProperty("total_num")]
       public int TotalNum { get; set; }
 
       /// <summary>
       /// 条目信息
-      /// <summary>
+      /// </summary>
       [JsonProperty("list")]
       public DealerBillInfo[] List { get; set; }
    }

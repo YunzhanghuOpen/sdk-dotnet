@@ -4,12 +4,12 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 查看免验证用户名单是否存在返回
-   /// <summary>
+   /// </summary>
    public class UserWhiteCheckResponseModel : AopObject
    {
       /// <summary>
       /// ok
-      /// <summary>
+      /// </summary>
       [JsonProperty("ok")]
       public bool Ok { get; set; }
    }

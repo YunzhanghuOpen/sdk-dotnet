@@ -4,12 +4,12 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 申请签约返回
-   /// <summary>
+   /// </summary>
    public class H5UserSignResponseModel : AopObject
    {
       /// <summary>
       /// H5 签约页面 URL
-      /// <summary>
+      /// </summary>
       [JsonProperty("url")]
       public string URL { get; set; }
    }

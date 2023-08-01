@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 下载 PDF 版发票
-   /// <summary>
+   /// </summary>
    public class GetInvoiceFileRequest : IAopRequest<GetInvoiceFileResponse>
    {
         private string mess;

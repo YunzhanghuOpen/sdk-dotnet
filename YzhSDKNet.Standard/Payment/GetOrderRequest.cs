@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询单笔订单信息
-   /// <summary>
+   /// </summary>
    public class GetOrderRequest : IAopRequest<GetOrderResponse>
    {
         private string mess;

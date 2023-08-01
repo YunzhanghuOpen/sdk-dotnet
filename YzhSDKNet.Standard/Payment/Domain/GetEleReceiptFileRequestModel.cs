@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 查询电子回单请求
-   /// <summary>
+   /// </summary>
    public class GetEleReceiptFileRequestModel : AopObject
    {
       /// <summary>
       /// 平台企业订单号
-      /// <summary>
+      /// </summary>
       [JsonProperty("order_id")]
       public string OrderID { get; set; }
 
       /// <summary>
       /// 综合服务平台流水号
-      /// <summary>
+      /// </summary>
       [JsonProperty("ref")]
       public string Ref { get; set; }
    }

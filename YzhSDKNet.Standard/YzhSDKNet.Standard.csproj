@@ -5,7 +5,7 @@
     <RootNamespace>Aop.Api</RootNamespace>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <NeutralLanguage>zh</NeutralLanguage>
-    <Description>云账户开放平台官方SDK，基于.Net Standard 2.0开发，支持.Net Framework 4.6.1、.Net Core 2.0及其以上版本。</Description>
+    <Description>云账户综合服务平台官方SDK for .Net，基于.Net Standard 2.0开发，支持.Net Framework 4.6.1、.Net Core 2.0及其以上版本。</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,39 +14,5 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="YzhTest\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
-    <Compile Remove="YzhTest\Program.cs" />
-    <Compile Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhSDKNet.Standard.dll" />
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.dll" />
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.pdb" />
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.runtimeconfig.dev.json" />
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhSDKNet.Standard.pdb" />
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll" />
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.runtimeconfig.json" />
-    <None Remove="YzhTest\bin\Debug\netcoreapp3.1\YzhTest.deps.json" />
-    <None Remove="YzhTest\obj\YzhTest.csproj.nuget.dgspec.json" />
-    <None Remove="YzhTest\obj\YzhTest.csproj.nuget.g.props" />
-    <None Remove="YzhTest\obj\project.nuget.cache" />
-    <None Remove="YzhTest\obj\YzhTest.csproj.nuget.g.targets" />
-    <None Remove="YzhTest\obj\project.assets.json" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.genruntimeconfig.cache" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.dll" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.FileListAbsolute.txt" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.pdb" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.CoreCompileInputs.cache" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.AssemblyInfoInputs.cache" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.GeneratedMSBuildEditorConfig.editorconfig" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.AssemblyReference.cache" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.csproj.CopyComplete" />
-    <None Remove="YzhTest\obj\Debug\netcoreapp3.1\YzhTest.assets.cache" />
-    <None Remove="StyleCop.Analyzers" />
-    <None Remove="Microsoft.CodeAnalysis.FxCopAnalyzers" />
-    <None Remove="JetBrains.ReSharper.CommandLineTools" />
   </ItemGroup>
 </Project>

@@ -4,24 +4,24 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 微信实时支付返回
-   /// <summary>
+   /// </summary>
    public class CreateWxpayOrderResponseModel : AopObject
    {
       /// <summary>
       /// 平台企业订单号
-      /// <summary>
+      /// </summary>
       [JsonProperty("order_id")]
       public string OrderID { get; set; }
 
       /// <summary>
       /// 综合服务平台流水号，唯一
-      /// <summary>
+      /// </summary>
       [JsonProperty("ref")]
       public string Ref { get; set; }
 
       /// <summary>
       /// 订单金额
-      /// <summary>
+      /// </summary>
       [JsonProperty("pay")]
       public string Pay { get; set; }
    }

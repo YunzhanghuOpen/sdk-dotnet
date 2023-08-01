@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 获取用户签约状态
-   /// <summary>
+   /// </summary>
    public class GetApiUserSignStatusRequest : IAopRequest<GetApiUserSignStatusResponse>
    {
         private string mess;

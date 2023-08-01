@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 批量下单返回
-   /// <summary>
+   /// </summary>
    public class CreateBatchOrderResponseModel : AopObject
    {
       /// <summary>
       /// 平台企业批次号
-      /// <summary>
+      /// </summary>
       [JsonProperty("batch_id")]
       public string BatchID { get; set; }
 
       /// <summary>
       /// 订单结果列表
-      /// <summary>
+      /// </summary>
       [JsonProperty("result_list")]
       public BatchOrderResult[] ResultList { get; set; }
    }

@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 银行卡四要素确认请求（上传短信验证码）
-   /// <summary>
+   /// </summary>
    public class BankCardFourAuthConfirmRequest : IAopRequest<BankCardFourAuthConfirmResponse>
    {
         private string mess;

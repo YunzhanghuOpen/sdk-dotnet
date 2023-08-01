@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 银行卡实时支付
-   /// <summary>
+   /// </summary>
    public class CreateBankpayOrderResponse : AopResponse
    {
       /// <summary>
       /// 银行卡实时支付
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public CreateBankpayOrderResponseModel Data { get; set; }
    }

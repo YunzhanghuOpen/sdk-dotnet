@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 身份证实名验证
-   /// <summary>
+   /// </summary>
    public class IDCardVerifyRequest : IAopRequest<IDCardVerifyResponse>
    {
         private string mess;

@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 查看免验证用户名单是否存在
-   /// <summary>
+   /// </summary>
    public class UserWhiteCheckResponse : AopResponse
    {
       /// <summary>
       /// 查看免验证用户名单是否存在
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public UserWhiteCheckResponseModel Data { get; set; }
    }

@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 预申请签约
-   /// <summary>
+   /// </summary>
    public class H5UserPresignRequest : IAopRequest<H5UserPresignResponse>
    {
         private string mess;

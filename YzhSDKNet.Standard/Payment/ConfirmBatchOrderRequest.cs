@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 批次确认
-   /// <summary>
+   /// </summary>
    public class ConfirmBatchOrderRequest : IAopRequest<ConfirmBatchOrderResponse>
    {
         private string mess;

@@ -4,18 +4,18 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 下载 PDF 版发票返回
-   /// <summary>
+   /// </summary>
    public class GetInvoiceFileResponseModel : AopObject
    {
       /// <summary>
       /// 下载地址
-      /// <summary>
+      /// </summary>
       [JsonProperty("url")]
       public string URL { get; set; }
 
       /// <summary>
       /// 文件名称
-      /// <summary>
+      /// </summary>
       [JsonProperty("name")]
       public string Name { get; set; }
    }

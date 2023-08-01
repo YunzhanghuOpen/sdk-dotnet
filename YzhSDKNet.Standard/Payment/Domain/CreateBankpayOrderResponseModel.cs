@@ -4,24 +4,24 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 银行卡实时支付返回
-   /// <summary>
+   /// </summary>
    public class CreateBankpayOrderResponseModel : AopObject
    {
       /// <summary>
       /// order_id
-      /// <summary>
+      /// </summary>
       [JsonProperty("order_id")]
       public string OrderID { get; set; }
 
       /// <summary>
       /// 综合服务平台流水号
-      /// <summary>
+      /// </summary>
       [JsonProperty("ref")]
       public string Ref { get; set; }
 
       /// <summary>
       /// 订单金额
-      /// <summary>
+      /// </summary>
       [JsonProperty("pay")]
       public string Pay { get; set; }
    }

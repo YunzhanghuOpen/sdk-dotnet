@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 批次下单
-   /// <summary>
+   /// </summary>
    public class CreateBatchOrderRequest : IAopRequest<CreateBatchOrderResponse>
    {
         private string mess;

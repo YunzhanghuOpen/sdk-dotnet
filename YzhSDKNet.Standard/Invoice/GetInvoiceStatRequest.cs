@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询平台企业已开具和待开具发票金额
-   /// <summary>
+   /// </summary>
    public class GetInvoiceStatRequest : IAopRequest<GetInvoiceStatResponse>
    {
         private string mess;

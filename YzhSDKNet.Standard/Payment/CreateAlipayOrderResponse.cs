@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 支付宝实时支付
-   /// <summary>
+   /// </summary>
    public class CreateAlipayOrderResponse : AopResponse
    {
       /// <summary>
       /// 支付宝实时支付
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public CreateAlipayOrderResponseModel Data { get; set; }
    }

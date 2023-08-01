@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 取消待支付订单
-   /// <summary>
+   /// </summary>
    public class CancelOrderResponse : AopResponse
    {
       /// <summary>
       /// 取消待支付订单
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public CancelOrderResponseModel Data { get; set; }
    }

@@ -4,12 +4,12 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 取消待支付订单返回
-   /// <summary>
+   /// </summary>
    public class CancelOrderResponseModel : AopObject
    {
       /// <summary>
       /// ok
-      /// <summary>
+      /// </summary>
       [JsonProperty("ok")]
       public string Ok { get; set; }
    }

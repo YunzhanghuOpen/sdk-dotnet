@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 工商实名信息录入
-   /// <summary>
+   /// </summary>
    public class H5PreCollectBizlicMsgRequest : IAopRequest<H5PreCollectBizlicMsgResponse>
    {
         private string mess;

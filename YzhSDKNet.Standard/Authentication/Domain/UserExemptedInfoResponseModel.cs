@@ -4,12 +4,12 @@ namespace Aop.Api.Domain
 {
    /// <summary>
    /// 上传免验证用户名单信息返回
-   /// <summary>
+   /// </summary>
    public class UserExemptedInfoResponseModel : AopObject
    {
       /// <summary>
       /// 是否上传成功
-      /// <summary>
+      /// </summary>
       [JsonProperty("ok")]
       public string Ok { get; set; }
    }

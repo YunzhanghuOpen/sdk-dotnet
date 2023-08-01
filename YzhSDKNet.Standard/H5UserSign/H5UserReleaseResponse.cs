@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 用户解约（测试账号专用接口）
-   /// <summary>
+   /// </summary>
    public class H5UserReleaseResponse : AopResponse
    {
       /// <summary>
       /// 用户解约（测试账号专用接口）
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public H5UserReleaseResponseModel Data { get; set; }
    }

@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询日订单文件（支付和退款订单）
-   /// <summary>
+   /// </summary>
    public class GetDailyOrderFileV2Request : IAopRequest<GetDailyOrderFileV2Response>
    {
         private string mess;

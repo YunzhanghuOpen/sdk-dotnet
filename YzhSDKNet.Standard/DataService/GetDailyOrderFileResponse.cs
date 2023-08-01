@@ -5,12 +5,12 @@ namespace Aop.Api.Response
 {
    /// <summary>
    /// 查询日订单文件
-   /// <summary>
+   /// </summary>
    public class GetDailyOrderFileResponse : AopResponse
    {
       /// <summary>
       /// 查询日订单文件
-      /// <summary>
+      /// </summary>
       [JsonProperty("data")]
       public GetDailyOrderFileResponseModel Data { get; set; }
    }

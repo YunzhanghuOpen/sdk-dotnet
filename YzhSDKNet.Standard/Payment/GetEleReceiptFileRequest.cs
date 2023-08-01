@@ -6,7 +6,7 @@ namespace Aop.Api.Request
 {
    /// <summary>
    /// 查询电子回单
-   /// <summary>
+   /// </summary>
    public class GetEleReceiptFileRequest : IAopRequest<GetEleReceiptFileResponse>
    {
         private string mess;
