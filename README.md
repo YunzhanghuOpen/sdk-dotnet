@@ -42,7 +42,16 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 ### 安装 .Net SDK
 
-NuGet 依赖，请参考：https://learn.microsoft.com/zh-cn/nuget/install-nuget-client-tools
+- 方式一：通过NuGet程序包管理器安装（推荐）
+
+以Visual Studio 2022为例  
+① 在解决方案资源管理器面板中右键“项目”，选择“管理NuGet包”  
+② 在“NuGet包管理器”窗口中，默认选择“nuget.org”作为包源  
+③ 在“浏览”选项卡中，搜索YzhSDKNet.Standard，在搜索结果列表中选择YzhSDKNet.Standard，然后点击“安装”
+
+- 方式二：通过.NET CLI工具来安装
+
+执行命令：dotnet add package YzhSDKNet.Standard
 
 ### 快速使用
 
@@ -63,6 +72,7 @@ NuGet 依赖，请参考：https://learn.microsoft.com/zh-cn/nuget/install-nuget
 using System;
 using Aop.Api.Domain;
 using Aop.Api.Request;
+using Aop.Api.Response;
 
 namespace Aop.Api.Example
 {
@@ -107,7 +117,7 @@ namespace Aop.Api.Example
             // 发起请求
             try
             {
-                CreateBankpayOrderResponse res = Client.Execute(request);
+                CreateBankpayOrderResponse res = client.Execute(request);
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
