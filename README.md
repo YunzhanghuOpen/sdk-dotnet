@@ -41,8 +41,6 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 ![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/dujiexinxi-2.png?isAttachment=false&fileID=84e3cd1684a61c1e32eb0e7b7f43390cd053206b&signature=mqW8Zbk7h3gYXfzjR99pK%2B0pgVLcLly3VjBB2KsqDvQ%3D)
 
 ### 安装 .Net SDK
-
-
 - 方式一：通过NuGet程序包管理器安装（推荐）
 
 以Visual Studio 2022为例  
@@ -52,9 +50,9 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 
 - 方式二：通过.NET CLI工具来安装
 
-```
-执行命令：dotnet add package YzhSDKNet.Standard
-```
+执行命令： 
+> dotnet add package YzhSDKNet.Standard
+
 
 详情参考：[https://learn.microsoft.com/zh-cn/nuget/install-nuget-client-tools](https://learn.microsoft.com/zh-cn/nuget/install-nuget-client-tools)
 
