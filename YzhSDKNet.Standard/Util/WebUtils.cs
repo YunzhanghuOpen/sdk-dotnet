@@ -106,7 +106,7 @@ namespace Aop.Api.Util
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
             req.Method = method;
             req.KeepAlive = true;
-            req.UserAgent = string.Format("yunzhanghu-sdk-net/1.0.0/{0}/{1}/1.0.0",Environment.OSVersion.VersionString,Environment.Version);
+            req.UserAgent = string.Format("yunzhanghu-sdk-net/1.0.0/{0}/{1}/1.0.2",Environment.OSVersion.VersionString,Environment.Version);
             Console.WriteLine(req.UserAgent);
             req.Timeout = this.Timeout;
             req.ReadWriteTimeout = this.ReadWritTimeout;
