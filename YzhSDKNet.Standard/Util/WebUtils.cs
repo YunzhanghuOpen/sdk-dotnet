@@ -107,7 +107,6 @@ namespace Aop.Api.Util
             req.Method = method;
             req.KeepAlive = true;
             req.UserAgent = string.Format("yunzhanghu-sdk-net/1.0.0/{0}/{1}/1.0.2",Environment.OSVersion.VersionString,Environment.Version);
-            Console.WriteLine(req.UserAgent);
             req.Timeout = this.Timeout;
             req.ReadWriteTimeout = this.ReadWritTimeout;
             req.ContentType = "application/x-www-form-urlencoded";
