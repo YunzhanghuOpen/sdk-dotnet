@@ -10,13 +10,19 @@ namespace Aop.Api.Example
     /// </summary>
     public class Notify
     {
-        // 获取基础配置信息
+        /// <summary>
+        /// 获取基础配置信息
+        /// </summary>
         private static readonly YzhConfig Config = ConfigUtil.GetConfig();
 
-        // 客户端实现
+        /// <summary>
+        /// 客户端实现
+        /// </summary>
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
-        // 订单支付状态回调通知
+        /// <summary>
+        /// 订单支付状态回调通知
+        /// </summary>
         public static void NotifyOrderData()
         {
             // 实例化验签解密对应的 request 类
@@ -43,7 +49,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 发票开具完成通知
+        /// <summary>
+        /// 发票开具完成通知
+        /// </summary>
         public static void NotifyInvoiceDone()
         {
             // 实例化验签解密对应的 request 类
@@ -69,7 +77,9 @@ namespace Aop.Api.Example
             } 
         }
 
-        // 个体工商户注册结果回调（云账户新经济 H5）
+        /// <summary>
+        /// 个体工商户注册结果回调（云账户新经济 H5）
+        /// </summary>
         public static void NotifyH5EcoCityAic()
         {
             // 实例化验签解密对应的 request 类
@@ -95,7 +105,9 @@ namespace Aop.Api.Example
             } 
         }
 
-        // 个体工商户注册结果回调（云账户新经济 H5+API）
+        /// <summary>
+        /// 个体工商户注册结果回调（云账户新经济 H5+API）
+        /// </summary>
         public static void NotifyH5APIEcoCityAic()
         {
             // 实例化验签解密对应的 request 类
@@ -121,7 +133,9 @@ namespace Aop.Api.Example
             } 
         }
 
-        // H5 签约回调
+        /// <summary>
+        /// H5 签约回调
+        /// </summary>
         public static void NotifyH5UserSign()
         {
             // 实例化验签解密对应的 request 类
@@ -147,7 +161,9 @@ namespace Aop.Api.Example
             } 
         }
 
-        // 免验证名单审核结果回调通知
+        /// <summary>
+        /// 免验证名单审核结果回调通知
+        /// </summary>
         public static void NotifyUserExemptedInfo()
         {
             // 实例化验签解密对应的 request 类
@@ -171,6 +187,34 @@ namespace Aop.Api.Example
                 // 发生异常
                 Console.WriteLine(e);
             } 
+        }
+
+        /// <summary>
+        /// 签约成功状态回调通知
+        /// </summary>
+        public static void NotifyUploadUserSignStatus()
+        {
+            // 实例化验签解密对应的 request 类
+            YzhCallbackRequest<NotifyUploadUserSignRequestModel> request = new YzhCallbackRequest<NotifyUploadUserSignRequestModel>()
+            {
+                Data = "testData",
+                Mess = "testMess",
+                Timestamp = "testTimestamp",
+                Sign = "testSign",
+                SignType = "testSignType",
+            };
+
+            // 发起验签解密
+            try
+            {
+                NotifyUploadUserSignRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
         }
     }
 }

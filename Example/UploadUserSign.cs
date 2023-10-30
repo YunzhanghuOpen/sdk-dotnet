@@ -7,9 +7,9 @@ using Aop.Api.Example.Config;
 namespace Aop.Api.Example
 {
     /// <summary>
-    /// 个人所得税扣缴明细表
+    /// 用户签约信息上传
     /// </summary>
-    public class Tax
+    public class UploadUserSign
     {
         /// <summary>
         /// 获取基础配置信息
@@ -22,19 +22,23 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         /// <summary>
-        /// 下载个人所得税扣缴明细表
+        /// 用户签约信息上传
         /// </summary>
-        public static void GetTaxFile()
+        public static void UploadUserSignInfo()
         {
             // 实例化具体 API 对应的 request 类
-            GetTaxFileRequest request = new GetTaxFileRequest();
+            UploadUserSignRequest request = new UploadUserSignRequest();
 
             // 配置请求参数
-            GetTaxFileRequestModel model = new GetTaxFileRequestModel
+            UploadUserSignRequestModel model = new UploadUserSignRequestModel
             {
                 DealerID = Config.DealerID,
-                EntID = "accumulus_tj",
-                YearMonth = "2023-01",
+                BrokerID = Config.BrokerID,
+                RealName = "张三",
+                IDCard = "1233984756231232",
+                Phone = "188****8888",
+                IsAbroad = false,
+                NotifyURL = "https://www.example.com"
             };
             request.SetBizModel(model);
 
@@ -46,12 +50,12 @@ namespace Aop.Api.Example
             // 发起请求
             try
             {
-                GetTaxFileResponse res = Client.Execute(request);
+                UploadUserSignResponse res = Client.Execute(request);
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 操作成功
-                    GetTaxFileResponseModel data = res.Data;
+                    UploadUserSignResponseModel data = res.Data;
                 }
                 else
                 {
@@ -67,20 +71,20 @@ namespace Aop.Api.Example
         }
 
         /// <summary>
-        /// 查询纳税人是否为跨集团用户
+        /// 获取用户签约状态
         /// </summary>
-        public static void GetUserCross()
+        public static void GetUploadUserSignStatus()
         {
             // 实例化具体 API 对应的 request 类
-            GetUserCrossRequest request = new GetUserCrossRequest();
+            GetUploadUserSignStatusRequest request = new GetUploadUserSignStatusRequest();
 
             // 配置请求参数
-            GetUserCrossRequestModel model = new GetUserCrossRequestModel
+            GetUploadUserSignStatusRequestModel model = new GetUploadUserSignStatusRequestModel
             {
                 DealerID = Config.DealerID,
-                EntID = "accumulus_tj",
-                Year = "2023",
-                IDCard = "110101198010021201",
+                BrokerID = Config.BrokerID,
+                RealName = "张三",
+                IDCard = "1233984756231232"
             };
             request.SetBizModel(model);
 
@@ -92,12 +96,12 @@ namespace Aop.Api.Example
             // 发起请求
             try
             {
-                GetUserCrossResponse res = Client.Execute(request);
+                GetUploadUserSignStatusResponse res = Client.Execute(request);
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
                     // 操作成功
-                    GetUserCrossResponseModel data = res.Data;
+                    GetUploadUserSignStatusResponseModel data = res.Data;
                 }
                 else
                 {
@@ -113,3 +117,4 @@ namespace Aop.Api.Example
         }
     }
 }
+

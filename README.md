@@ -61,8 +61,13 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 #### 示例功能列表
 
 - [用户信息验证](Example/Authentication.cs)
-- [H5 签约](Example/H5UserSign.cs) or [API 签约](Example/ApiUserSign.cs)
-- [个体工商户注册（云账户新经济 H5）](Example/BizLicXjjH5.cs) or [个体工商户注册（云账户新经济H5+API）](Example/BizLicXjjH5Api.cs) 
+- 用户签约
+   - [H5 签约](Example/H5UserSign.cs)
+   - [API 签约](Example/ApiUserSign.cs)
+   - [签约信息上传](Example/UploadUserSign.cs)
+- 个体工商户注册
+   - [云账户新经济 H5](Example/BizLicXjjH5.cs)
+   - [云账户新经济 H5+API](Example/BizLicXjjH5Api.cs) 
 - [实时支付](Example/Payment.cs)
 - [对账文件获取](Example/DataService.cs)
 - [发票开具](Example/Invoice.cs)
@@ -105,13 +110,13 @@ namespace Aop.Api.Example
                 PhoneNo = "",
                 Pay = "100.25",
                 PayRemark = "测试备注",
-                NotifyURL = ""
+                NotifyURL = "https://www.example.com"
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 设置超时时间。非必填，默认 30 秒
@@ -124,7 +129,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     CreateBankpayOrderResponseModel data = res.Data;
                 }
                 else

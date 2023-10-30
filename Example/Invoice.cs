@@ -11,13 +11,19 @@ namespace Aop.Api.Example
     /// </summary>
     public class Invoice
     {
-        // 获取基础配置信息
+        /// <summary>
+        /// 获取基础配置信息
+        /// </summary>
         private static readonly YzhConfig Config = ConfigUtil.GetConfig();
 
-        // 客户端实现
+        /// <summary>
+        /// 客户端实现
+        /// </summary>
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
-        // 查询平台企业已开具和待开具发票金额
+        /// <summary>
+        /// 查询平台企业已开具和待开具发票金额
+        /// </summary>
         public static void GetInvoiceStat()
         {
             // 实例化具体 API 对应的 request 类
@@ -32,9 +38,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -44,7 +50,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetInvoiceStatResponseModel data = res.Data;
                 }
                 else
@@ -60,7 +66,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询可开具发票额度和发票开具信息
+        /// <summary>
+        /// 查询可开具发票额度和发票开具信息
+        /// </summary>
         public static void GetInvoiceAmount()
         {
             // 实例化具体 API 对应的 request 类
@@ -74,9 +82,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -86,7 +94,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetInvoiceAmountResponseModel data = res.Data;
                 }
                 else
@@ -102,7 +110,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 发票开具申请
+        /// <summary>
+        /// 发票开具申请
+        /// </summary>
         public static void ApplyInvoice()
         {
             // 实例化具体 API 对应的 request 类
@@ -122,9 +132,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -134,7 +144,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     ApplyInvoiceResponseModel data = res.Data;
                 }
                 else
@@ -150,7 +160,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询发票开具申请状态
+        /// <summary>
+        /// 查询发票开具申请状态
+        /// </summary>
         public static void GetInvoiceStatus()
         {
             // 实例化具体 API 对应的 request 类
@@ -164,9 +176,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -176,7 +188,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetInvoiceStatusResponseModel data = res.Data;
                 }
                 else
@@ -192,7 +204,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询发票信息
+        /// <summary>
+        /// 查询发票信息
+        /// </summary>
         public static void GetInvoiceInformation()
         {
             // 实例化具体 API 对应的 request 类
@@ -206,9 +220,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -218,7 +232,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetInvoiceInformationResponseModel data = res.Data;
                 }
                 else
@@ -234,7 +248,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 下载 PDF 版发票
+        /// <summary>
+        /// 下载 PDF 版发票
+        /// </summary>
         public static void GetInvoiceFile()
         {
             // 实例化具体 API 对应的 request 类
@@ -248,9 +264,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -260,7 +276,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetInvoiceFileResponseModel data = res.Data;
                 }
                 else
@@ -276,7 +292,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 发送发票扫描件压缩包下载链接邮件
+        /// <summary>
+        /// 发送发票扫描件压缩包下载链接邮件
+        /// </summary>
         public static void SendReminderEmail()
         {
             // 实例化具体 API 对应的 request 类
@@ -290,9 +308,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -302,7 +320,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     SendReminderEmailResponseModel data = res.Data;
                 }
                 else

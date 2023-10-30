@@ -12,13 +12,19 @@ namespace Aop.Api.Example
     /// </summary>
     public class DataService
     {
-        // 获取基础配置信息
+        /// <summary>
+        /// 获取基础配置信息
+        /// </summary>
         private static readonly YzhConfig Config = ConfigUtil.GetConfig();
 
-        // 客户端实现
+        /// <summary>
+        /// 客户端实现
+        /// </summary>
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
-        // 查询日订单文件
+        /// <summary>
+        /// 查询日订单文件
+        /// </summary>
         public static void GetOrderDownloadsUrl()
         {
             // 实例化具体 API 对应的 request 类
@@ -31,9 +37,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -43,7 +49,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetDailyOrderFileResponseModel data = res.Data;
                 }
                 else
@@ -59,7 +65,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询日流水文件
+        /// <summary>
+        /// 查询日流水文件
+        /// </summary>
         public static void GetDailyBillFileV2()
         {
             // 实例化具体 API 对应的 request 类
@@ -72,9 +80,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -84,7 +92,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetDailyBillFileV2ResponseModel data = res.Data;
                 }
                 else
@@ -100,7 +108,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询平台企业预付业务服务费记录
+        /// <summary>
+        /// 查询平台企业预付业务服务费记录
+        /// </summary>
         public static void ListDealerRechargeRecordV2()
         {
             // 实例化具体 API 对应的 request 类
@@ -114,9 +124,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -126,7 +136,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     List<RechargeRecordInfo> data = res.Data;
                 }
                 else
@@ -142,7 +152,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询日订单数据
+        /// <summary>
+        /// 查询日订单数据
+        /// </summary>
         public static void ListDailyOrder()
         {
             // 实例化具体 API 对应的 request 类
@@ -159,9 +171,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -171,7 +183,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     ListDailyOrderResponseModel data = res.Data;
                 }
                 else
@@ -187,7 +199,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询日订单文件（支付和退款订单）
+        /// <summary>
+        /// 查询日订单文件（支付和退款订单）
+        /// </summary>
         public static void GetDailyOrderFileV2()
         {
             // 实例化具体 API 对应的 request 类
@@ -200,9 +214,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -212,7 +226,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetDailyOrderFileV2ResponseModel data = res.Data;
                 }
                 else
@@ -228,7 +242,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询日流水数据
+        /// <summary>
+        /// 查询日流水数据
+        /// </summary>
         public static void ListDailyBill()
         {
             // 实例化具体 API 对应的 request 类
@@ -244,9 +260,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -256,7 +272,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     ListDailyBillResponseModel data = res.Data;
                 }
                 else
@@ -272,7 +288,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询余额日账单数据
+        /// <summary>
+        /// 查询余额日账单数据
+        /// </summary>
         public static void ListBalanceDailyStatement()
         {
             // 实例化具体 API 对应的 request 类
@@ -285,9 +303,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -297,7 +315,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     ListBalanceDailyStatementResponseModel data = res.Data;
                 }
                 else

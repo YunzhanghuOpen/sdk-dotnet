@@ -1,6 +1,6 @@
 using Aop.Api;
 
-namespace Aop.Api.Example.config
+namespace Aop.Api.Example.Config
 {
     public class ConfigUtil
     {

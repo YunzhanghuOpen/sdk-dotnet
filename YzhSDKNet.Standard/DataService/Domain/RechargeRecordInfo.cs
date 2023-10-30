@@ -23,19 +23,19 @@ namespace Aop.Api.Domain
       /// 预付业务服务费记录 ID
       /// </summary>
       [JsonProperty("recharge_id")]
-      public string RechargeID { get; set; }
+      public long RechargeID { get; set; }
 
       /// <summary>
       /// 预付业务服务费
       /// </summary>
       [JsonProperty("amount")]
-      public string Amount { get; set; }
+      public double Amount { get; set; }
 
       /// <summary>
       /// 实际到账金额
       /// </summary>
       [JsonProperty("actual_amount")]
-      public string ActualAmount { get; set; }
+      public double ActualAmount { get; set; }
 
       /// <summary>
       /// 创建时间

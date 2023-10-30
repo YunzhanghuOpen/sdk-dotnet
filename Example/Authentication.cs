@@ -11,13 +11,19 @@ namespace Aop.Api.Example
     /// </summary>
     public class Authentication
     {
-        // 获取基础配置信息
+        /// <summary>
+        /// 获取基础配置信息
+        /// </summary>
         private static readonly YzhConfig Config = ConfigUtil.GetConfig();
 
-        // 客户端实现
+        /// <summary>
+        /// 客户端实现
+        /// </summary>
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
-        // 银行卡四要素鉴权请求（下发短信验证码）
+        /// <summary>
+        /// 银行卡四要素鉴权请求（下发短信验证码）
+        /// </summary>
         public static void BankCardFourAuthVerify()
         {
             // 实例化具体 API 对应的 request 类
@@ -29,13 +35,13 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "110101198001201232",
                 CardNo = "1234568987645212321",
-                Mobile = "18888888888",
+                Mobile = "188****8888",
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -45,7 +51,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     BankCardFourAuthVerifyResponseModel data = res.Data;
                 }
                 else
@@ -61,7 +67,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 银行卡四要素确认请求（上传短信验证码）
+        /// <summary>
+        /// 银行卡四要素确认请求（上传短信验证码）
+        /// </summary>
         public static void BankCardFourAuthConfirm()
         {
             // 实例化具体 API 对应的 request 类
@@ -73,15 +81,15 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "110101198001201232",
                 CardNo = "1234568987645212321",
-                Mobile = "18888888888",
+                Mobile = "188****8888",
                 Captcha = "12345",
                 Ref = "1234567890",
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -91,7 +99,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     BankCardFourAuthConfirmResponseModel data = res.Data;
                 }
                 else
@@ -107,7 +115,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 银行卡四要素验证
+        /// <summary>
+        /// 银行卡四要素验证
+        /// </summary>
         public static void BankCardFourVerify()
         {
             // 实例化具体 API 对应的 request 类
@@ -119,13 +129,13 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "110101198001201232",
                 CardNo = "1234568987645212321",
-                Mobile = "18888888888",
+                Mobile = "188****8888",
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -135,7 +145,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     BankCardFourVerifyResponseModel data = res.Data;
                 }
                 else
@@ -151,7 +161,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 银行卡三要素验证
+        /// <summary>
+        /// 银行卡三要素验证
+        /// </summary>
         public static void BankCardThreeVerify()
         {
             // 实例化具体 API 对应的 request 类
@@ -166,9 +178,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -178,7 +190,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     BankCardThreeVerifyResponseModel data = res.Data;
                 }
                 else
@@ -194,7 +206,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 身份证实名验证
+        /// <summary>
+        /// 身份证实名验证
+        /// </summary>
         public static void IDCardVerify()
         {
             // 实例化具体 API 对应的 request 类
@@ -208,9 +222,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -220,7 +234,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     IDCardVerifyResponseModel data = res.Data;
                 }
                 else
@@ -236,7 +250,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 上传免验证用户名单信息
+        /// <summary>
+        /// 上传免验证用户名单信息
+        /// </summary>
         public static void UserExemptedInfo()
         {
             // 实例化具体 API 对应的 request 类
@@ -246,23 +262,23 @@ namespace Aop.Api.Example
             UserExemptedInfoRequestModel model = new UserExemptedInfoRequestModel
             {
                 RealName = "张三",
-                IDCard = "M101198001201232",
+                IDCard = "EA3456789",
                 CardType = "passport",
                 CommentApply = "申请免验证名单",
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
-                UserImages = new string[] { "igngudaere", "dfafdaea" },
+                UserImages = new string[] { "...." },
                 Country = "NOR",
                 Birthday = "20010809",
                 Gender = "男",
-                NotifyURL = "http://www.abcdef.com/api/notify",
+                NotifyURL = "https://www.example.com",
                 Ref = "1234567890",
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -272,7 +288,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     UserExemptedInfoResponseModel data = res.Data;
                 }
                 else
@@ -288,7 +304,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查看免验证用户名单是否存在
+        /// <summary>
+        /// 查看免验证用户名单是否存在
+        /// </summary>
         public static void UserWhiteCheck()
         {
             // 实例化具体 API 对应的 request 类
@@ -298,13 +316,13 @@ namespace Aop.Api.Example
             UserWhiteCheckRequestModel model = new UserWhiteCheckRequestModel
             {
                 RealName = "张三",
-                IDCard = "M101198001201232",
+                IDCard = "EA3456789",
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -314,7 +332,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     UserWhiteCheckResponseModel data = res.Data;
                 }
                 else
@@ -330,7 +348,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 银行卡信息查询
+        /// <summary>
+        /// 银行卡信息查询
+        /// </summary>
         public static void GetBankCardInfo()
         {
             // 实例化具体 API 对应的 request 类
@@ -344,9 +364,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -356,7 +376,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     GetBankCardInfoResponseModel data = res.Data;
                 }
                 else

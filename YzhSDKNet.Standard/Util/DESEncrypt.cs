@@ -47,7 +47,6 @@ namespace Aop.Api.Util
             var decryptor = des.CreateDecryptor();
             byte[] buffer = Convert.FromBase64String(cipherTextBase64);
             return Encoding.UTF8.GetString(decryptor.TransformFinalBlock(buffer, 0, buffer.Length));
-
         }
     }
 }
