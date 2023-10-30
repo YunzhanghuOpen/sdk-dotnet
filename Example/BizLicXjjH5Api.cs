@@ -11,13 +11,19 @@ namespace Aop.Api.Example
     /// </summary>
     public class BizLicXjjH5Api
     {
-        // 获取基础配置信息
+        /// <summary>
+        /// 获取基础配置信息
+        /// </summary>
         private static readonly YzhConfig Config = ConfigUtil.GetConfig();
 
-        // 客户端实现
+        /// <summary>
+        /// 客户端实现
+        /// </summary>
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
-        // 工商实名信息录入
+        /// <summary>
+        /// 工商实名信息录入
+        /// </summary>
         public static void H5PreCollectBizlicMsg()
         {
             // 实例化具体 API 对应的 request 类
@@ -29,7 +35,7 @@ namespace Aop.Api.Example
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
-                PhoneNo = "18888888888",
+                PhoneNo = "188****8888",
                 IDCard = "110101198010211423",
                 RealName = "张三",
                 IDCardAddress = "北京市朝阳区",
@@ -40,9 +46,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -52,7 +58,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     H5PreCollectBizlicMsgResponseModel data = res.Data;
                 }
                 else
@@ -68,7 +74,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 预启动
+        /// <summary>
+        /// 预启动
+        /// </summary>
         public static void H5APIGetStartUrl()
         {
             // 实例化具体 API 对应的 request 类
@@ -81,16 +89,16 @@ namespace Aop.Api.Example
                 BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 ClientType = 2,
-                NotifyURL = "http://www.abcdef.com/api/notify",
+                NotifyURL = "https://www.example.com",
                 Color = "#007AFF",
-                ReturnURL = "http://www.abcdef.com/api/returnurl",
+                ReturnURL = "https://www.example.com",
                 CustomerTitle = 1,
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -100,7 +108,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     H5APIGetStartUrlResponseModel data = res.Data;
                 }
                 else
@@ -116,7 +124,9 @@ namespace Aop.Api.Example
             }
         }
 
-        // 查询个体工商户状态
+        /// <summary>
+        /// 查询个体工商户状态
+        /// </summary>
         public static void H5APIEcoCityAicStatus()
         {
             // 实例化具体 API 对应的 request 类
@@ -134,9 +144,9 @@ namespace Aop.Api.Example
             };
             request.SetBizModel(model);
 
-            // request-id：请求ID，请求的唯一标识
+            // request-id：请求 ID，请求的唯一标识
             // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于使用 request-id 追踪问题
-            // 如未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，可能会出现 ID 重复，推荐自定义 request-id，实现全局唯一 ID
+            // 如平台企业未自定义 request-id，将使用 SDK 中的 Guid.NewGuid() 方法自动生成。注意：Guid.NewGuid() 方法生成的 request-id 不能保证全局唯一，推荐自定义
             // request.SetRequestID("");
 
             // 发起请求
@@ -146,7 +156,7 @@ namespace Aop.Api.Example
                 Console.WriteLine(res.Body);
                 if (res.IsSuccess)
                 {
-                    // 处理成功
+                    // 操作成功
                     H5APIEcoCityAicStatusResponseModel data = res.Data;
                 }
                 else
