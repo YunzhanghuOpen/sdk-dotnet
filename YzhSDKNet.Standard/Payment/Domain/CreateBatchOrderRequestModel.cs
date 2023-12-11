@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 批量下单请求
+   /// 批次下单请求
    /// </summary>
    public class CreateBatchOrderRequestModel : AopObject
    {
