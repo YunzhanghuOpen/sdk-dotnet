@@ -3,20 +3,21 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
    /// <summary>
-   /// 批次下单返回
+   /// 查询批次订单信息请求
    /// </summary>
-   public class CreateBatchOrderResponseModel : AopObject
+   public class QueryBatchOrderRequestModel : AopObject
    {
       /// <summary>
       /// 平台企业批次号
       /// </summary>
       [JsonProperty("batch_id")]
       public string BatchID { get; set; }
-
+      
       /// <summary>
-      /// 订单结果列表
+      /// 平台企业 ID
       /// </summary>
-      [JsonProperty("result_list")]
-      public BatchOrderResult[] ResultList { get; set; }
+      [JsonProperty("dealer_id")]
+      public string DealerID { get; set; }
+      
    }
 }
