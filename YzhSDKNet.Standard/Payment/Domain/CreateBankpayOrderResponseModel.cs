@@ -8,7 +8,7 @@ namespace Aop.Api.Domain
    public class CreateBankpayOrderResponseModel : AopObject
    {
       /// <summary>
-      /// order_id
+      /// 平台企业订单号
       /// </summary>
       [JsonProperty("order_id")]
       public string OrderID { get; set; }
