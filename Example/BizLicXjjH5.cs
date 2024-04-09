@@ -86,7 +86,7 @@ namespace Aop.Api.Example
                 BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 RealName = "张三",
-                IDCard = "110101198010211242",
+                IDCard = "11010519491231002X",
                 OpenID = "",
             };
             request.SetBizModel(model);

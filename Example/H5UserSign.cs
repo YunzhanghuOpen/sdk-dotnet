@@ -35,7 +35,7 @@ namespace Aop.Api.Example
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
                 RealName = "张三",
-                IDCard = "1102321742183272",
+                IDCard = "11010519491231002X",
                 CertificateType = 0,
             };
             request.SetBizModel(model);
@@ -128,7 +128,7 @@ namespace Aop.Api.Example
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
                 RealName = "张三",
-                IDCard = "1233984756231232",
+                IDCard = "11010519491231002X",
             };
             request.SetBizModel(model);
 
@@ -174,7 +174,7 @@ namespace Aop.Api.Example
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
                 RealName = "张三",
-                IDCard = "1233984756231232",
+                IDCard = "11010519491231002X",
                 CertificateType = 0,
             };
             request.SetBizModel(model);

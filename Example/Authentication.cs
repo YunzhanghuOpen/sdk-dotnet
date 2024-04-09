@@ -33,8 +33,8 @@ namespace Aop.Api.Example
             BankCardFourAuthVerifyRequestModel model = new BankCardFourAuthVerifyRequestModel
             {
                 RealName = "张三",
-                IDCard = "110101198001201232",
-                CardNo = "1234568987645212321",
+                IDCard = "11010519491231002X",
+                CardNo = "6228888888888888888",
                 Mobile = "188****8888",
             };
             request.SetBizModel(model);
@@ -79,8 +79,8 @@ namespace Aop.Api.Example
             BankCardFourAuthConfirmRequestModel model = new BankCardFourAuthConfirmRequestModel
             {
                 RealName = "张三",
-                IDCard = "110101198001201232",
-                CardNo = "1234568987645212321",
+                IDCard = "11010519491231002X",
+                CardNo = "6228888888888888888",
                 Mobile = "188****8888",
                 Captcha = "12345",
                 Ref = "1234567890",
@@ -127,8 +127,8 @@ namespace Aop.Api.Example
             BankCardFourVerifyRequestModel model = new BankCardFourVerifyRequestModel
             {
                 RealName = "张三",
-                IDCard = "110101198001201232",
-                CardNo = "1234568987645212321",
+                IDCard = "11010519491231002X",
+                CardNo = "6228888888888888888",
                 Mobile = "188****8888",
             };
             request.SetBizModel(model);
@@ -173,8 +173,8 @@ namespace Aop.Api.Example
             BankCardThreeVerifyRequestModel model = new BankCardThreeVerifyRequestModel
             {
                 RealName = "张三",
-                IDCard = "110101198001201232",
-                CardNo = "1234568987645212321",
+                IDCard = "11010519491231002X",
+                CardNo = "6228888888888888888",
             };
             request.SetBizModel(model);
 
@@ -359,7 +359,7 @@ namespace Aop.Api.Example
             // 配置请求参数
             GetBankCardInfoRequestModel model = new GetBankCardInfoRequestModel
             {
-                CardNo = "1234568987645212321",
+                CardNo = "6228888888888888888",
                 BankName = "招商银行",
             };
             request.SetBizModel(model);

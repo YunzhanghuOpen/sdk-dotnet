@@ -80,7 +80,7 @@ namespace Aop.Api.Example
                 DealerID = Config.DealerID,
                 EntID = "accumulus_tj",
                 Year = "2023",
-                IDCard = "110101198010021201",
+                IDCard = "11010519491231002X",
             };
             request.SetBizModel(model);
 

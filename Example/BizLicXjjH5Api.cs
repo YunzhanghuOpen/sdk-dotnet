@@ -36,7 +36,7 @@ namespace Aop.Api.Example
                 BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 PhoneNo = "188****8888",
-                IDCard = "110101198010211423",
+                IDCard = "11010519491231002X",
                 RealName = "张三",
                 IDCardAddress = "北京市朝阳区",
                 IDCardAgency = "北京市朝阳区派出所",
@@ -139,7 +139,7 @@ namespace Aop.Api.Example
                 BrokerID = Config.BrokerID,
                 DealerUserID = "123456",
                 RealName = "张三",
-                IDCard = "110101198010211242",
+                IDCard = "11010519491231002X",
                 OpenID = "AIjdiahekrSDHOjkdi",
             };
             request.SetBizModel(model);
