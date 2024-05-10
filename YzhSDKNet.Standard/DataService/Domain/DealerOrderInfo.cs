@@ -92,6 +92,12 @@ namespace Aop.Api.Domain
       public string StatusDetailMessage { get; set; }
 
       /// <summary>
+      /// 订单状态补充信息
+      /// </summary>
+      [JsonProperty("supplemental_detail_message")]
+      public string SupplementalDetailMessage { get; set; }
+
+      /// <summary>
       /// 短周期授信账单号
       /// </summary>
       [JsonProperty("statement_id")]

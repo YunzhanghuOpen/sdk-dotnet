@@ -11,8 +11,13 @@ namespace Aop.Api.Example.Config
         public static YzhConfig GetConfig()
         {
             YzhConfig config = new YzhConfig();
-            // 基础接口地址
-            config.ServerUrl = "";
+            // 请求域名
+            // 生产环境请求域名
+            config.ServerUrl = "https://api-service.yunzhanghu.com";
+            // 沙箱环境请求域名
+            // config.ServerUrl = "https://api-service.yunzhanghu.com/sandbox";
+            // 个体工商户注册域名
+            // config.ServerUrl = "https://api-aic.yunzhanghu.com";
             // 平台企业 ID
             config.DealerID = "";
             // 综合服务主体 ID

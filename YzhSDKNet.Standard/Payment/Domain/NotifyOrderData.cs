@@ -80,6 +80,12 @@ namespace Aop.Api.Domain
       public string StatusDetailMessage { get; set; }
 
       /// <summary>
+      /// 订单状态补充信息
+      /// </summary>
+      [JsonProperty("supplemental_detail_message")]
+      public string SupplementalDetailMessage { get; set; }
+
+      /// <summary>
       /// 综合服务主体支付金额
       /// </summary>
       [JsonProperty("broker_amount")]

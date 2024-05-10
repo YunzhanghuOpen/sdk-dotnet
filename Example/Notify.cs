@@ -134,6 +134,62 @@ namespace Aop.Api.Example
         }
 
         /// <summary>
+        /// 个体工商户注册/注销结果回调（云账户共享大额 H5）
+        /// </summary>
+        public static void NotifyGxV2H5Aic()
+        {
+            // 实例化验签解密对应的 request 类
+            YzhCallbackRequest<NotifyGxV2H5AicRequestModel> request = new YzhCallbackRequest<NotifyGxV2H5AicRequestModel>()
+            {
+                Data = "testData",
+                Mess = "testMess",
+                Timestamp = "testTimestamp",
+                Sign = "testSign",
+                SignType = "testSignType",
+            };
+
+            // 发起验签解密
+            try
+            {
+                NotifyGxV2H5AicRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            } 
+        }
+
+        /// <summary>
+        /// 个体工商户注册/注销结果回调（云账户共享大额 H5+API）
+        /// </summary>
+        public static void NotifyGxV2H5APIAic()
+        {
+            // 实例化验签解密对应的 request 类
+            YzhCallbackRequest<NotifyGxV2H5APIAicRequestModel> request = new YzhCallbackRequest<NotifyGxV2H5APIAicRequestModel>()
+            {
+                Data = "testData",
+                Mess = "testMess",
+                Timestamp = "testTimestamp",
+                Sign = "testSign",
+                SignType = "testSignType",
+            };
+
+            // 发起验签解密
+            try
+            {
+                NotifyGxV2H5APIAicRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            } 
+        }
+
+        /// <summary>
         /// H5 签约回调
         /// </summary>
         public static void NotifyH5UserSign()
