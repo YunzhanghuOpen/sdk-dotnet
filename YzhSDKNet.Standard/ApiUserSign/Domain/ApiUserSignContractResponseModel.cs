@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
     /// <summary>
-    /// 获取协议预览 URL 返回
+    /// 获取协议预览 URL 返回 V2
     /// </summary>
     public class ApiUserSignContractResponseModel : AopObject
     {
@@ -18,5 +18,6 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("title")]
         public string Title { get; set; }
+
     }
 }

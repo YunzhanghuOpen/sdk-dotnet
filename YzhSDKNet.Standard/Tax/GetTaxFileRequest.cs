@@ -1,14 +1,15 @@
+using Newtonsoft.Json;
 using System;
 using Aop.Api.Response;
 using Aop.Api.Util;
 
 namespace Aop.Api.Request
 {
-   /// <summary>
-   /// 下载个人所得税扣缴明细表
-   /// </summary>
-   public class GetTaxFileRequest : IAopRequest<GetTaxFileResponse>
-   {
+    /// <summary>
+    /// 下载个人所得税扣缴明细表
+    /// </summary>
+    public class GetTaxFileRequest : IAopRequest<GetTaxFileResponse>
+    {
         private string mess;
         private string requestID;
         private AopObject bizModel;
@@ -41,7 +42,7 @@ namespace Aop.Api.Request
         }
 
         /// <summary>
-        /// 获取接口请求路由
+        /// 获取接口请求路径
         /// </summary>
         /// <returns>响应接口请求路由</returns>
         public string GetApiPath()
@@ -52,7 +53,7 @@ namespace Aop.Api.Request
         /// <summary>
         /// 获取随机数
         /// </summary>
-        /// <returns>随机数，未设置时使用 GUID 方法自动生成</returns>
+        /// <returns>随机数，未设置时默认生成</returns>
         public string GetMess()
         {
             if (string.IsNullOrEmpty(this.mess))
@@ -75,7 +76,7 @@ namespace Aop.Api.Request
         /// <summary>
         /// 获取请求 ID
         /// </summary>
-        /// <returns>请求 ID，未设置时使用 GUID 方法自动生成</returns>
+        /// <returns>请求 ID，未设置时返回默认</returns>
         public string GetRequestID()
         {
             if (string.IsNullOrEmpty(this.requestID))

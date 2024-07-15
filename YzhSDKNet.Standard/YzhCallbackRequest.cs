@@ -38,5 +38,6 @@ namespace Aop.Api
         /// </summary>
         [JsonProperty("sign_type")]
         public string SignType { get; set; }
+        
     }
 }

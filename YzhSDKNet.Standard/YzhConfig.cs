@@ -48,5 +48,6 @@
         /// 支持 RSA、HMAC，枚举分别为 rsa、sha256，默认为 RSA 签名算法
         /// </summary>
         public string SignType { get; set; } = "rsa";
+        
     }
 }

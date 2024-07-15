@@ -10,5 +10,6 @@ namespace Aop.Api.YzhCustom
     {
         [JsonProperty("data")]
         public T Data { get; set; }
+        
     }
 }

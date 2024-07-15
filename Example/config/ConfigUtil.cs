@@ -32,7 +32,6 @@ namespace Aop.Api.Example.Config
             config.YzhPublicKey = "";
             // 签名算法为 RSA，参数固定为：rsa
             config.SignType = "rsa";
-
             return config;
         }
     }

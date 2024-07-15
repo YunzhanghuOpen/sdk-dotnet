@@ -2,6 +2,7 @@ using System;
 using Aop.Api;
 using Aop.Api.YzhCustom;
 using Aop.Api.Example.Config;
+using Newtonsoft.Json;
 
 namespace Aop.Api.Example
 {
@@ -64,7 +65,6 @@ namespace Aop.Api.Example
                 // 发生异常
                 Console.WriteLine(e);
             }
-
         }
     }
 
@@ -132,6 +132,7 @@ namespace Aop.Api.Example
         /// </summary>
         [JsonProperty("notify_url")]
         public string NotifyURL { get; set; }
+
     }
 
     /// <summary>
@@ -156,5 +157,6 @@ namespace Aop.Api.Example
         /// </summary>
         [JsonProperty("pay")]
         public string Pay { get; set; }
+
     }
 }

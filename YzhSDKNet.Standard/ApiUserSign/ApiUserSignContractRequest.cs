@@ -1,14 +1,15 @@
+using Newtonsoft.Json;
 using System;
 using Aop.Api.Response;
 using Aop.Api.Util;
 
 namespace Aop.Api.Request
 {
-   /// <summary>
-   /// 获取协议预览 URL
-   /// </summary>
-   public class ApiUserSignContractRequest : IAopRequest<ApiUserSignContractResponse>
-   {
+    /// <summary>
+    /// 获取协议预览 URL V2
+    /// </summary>
+    public class ApiUserSignContractRequest : IAopRequest<ApiUserSignContractResponse>
+    {
         private string mess;
         private string requestID;
         private AopObject bizModel;
@@ -41,7 +42,7 @@ namespace Aop.Api.Request
         }
 
         /// <summary>
-        /// 获取接口请求路由
+        /// 获取接口请求路径
         /// </summary>
         /// <returns>响应接口请求路由</returns>
         public string GetApiPath()
@@ -52,14 +53,15 @@ namespace Aop.Api.Request
         /// <summary>
         /// 获取随机数
         /// </summary>
-        /// <returns>随机数，未设置时使用 GUID 方法自动生成</returns>
+        /// <returns>随机数，未设置时默认生成</returns>
         public string GetMess()
         {
             if (string.IsNullOrEmpty(this.mess))
             {
                 return Guid.NewGuid().ToString();
             }
-            return mess;
+
+            return this.mess;
         }
 
         /// <summary>
@@ -72,22 +74,23 @@ namespace Aop.Api.Request
         }
 
         /// <summary>
-        /// 获取请求ID
+        /// 获取请求 ID
         /// </summary>
-        /// <returns>请求 ID，未设置时使用 GUID 方法自动生成</returns>
+        /// <returns>请求 ID，未设置时返回默认</returns>
         public string GetRequestID()
         {
             if (string.IsNullOrEmpty(this.requestID))
             {
                 return Guid.NewGuid().ToString();
             }
+
             return this.requestID;
         }
 
         /// <summary>
-        /// 设置请求ID
+        /// 设置请求 ID
         /// </summary>
-        /// <param name="requestID">请求ID</param>
+        /// <param name="requestID">请求 ID</param>
         public void SetRequestID(string requestID)
         {
             this.requestID = requestID;

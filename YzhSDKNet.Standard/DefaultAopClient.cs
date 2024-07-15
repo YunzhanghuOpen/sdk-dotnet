@@ -98,9 +98,7 @@ namespace Aop.Api
 
             string url = this.config.ServerUrl + request.GetApiPath();
             string method = request.GetMethod();
-
             string body = this.webUtils.DoHttpClient(method, url, parameters);
-
             string srcBody = body;
 
             // 如果数据加密返回，对 data 字段进行解密
@@ -111,7 +109,6 @@ namespace Aop.Api
             }
 
             T response = JsonConvert.DeserializeObject<T>(srcBody);
-
             response.Body = body;
             return response;
         }
@@ -143,9 +140,7 @@ namespace Aop.Api
 
             // 解密数据
             string data = DESEncrypt.Decrypt(request.Data, this.config.TripleDesKey);
-
             T response = JsonConvert.DeserializeObject<T>(data);
-
             return response;
         }
 
