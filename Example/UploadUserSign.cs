@@ -37,7 +37,6 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "11010519491231002X",
                 Phone = "188****8888",
-                IsAbroad = false,
                 NotifyURL = "https://www.example.com"
             };
             request.SetBizModel(model);

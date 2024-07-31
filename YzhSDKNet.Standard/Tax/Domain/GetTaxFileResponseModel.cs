@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
     /// <summary>
-    /// 下载个人所得税扣缴明细表返回
+    /// 下载个人所得税申报明细表返回
     /// </summary>
     public class GetTaxFileResponseModel : AopObject
     {

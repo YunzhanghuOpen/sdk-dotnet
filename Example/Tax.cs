@@ -7,7 +7,7 @@ using Aop.Api.Example.Config;
 namespace Aop.Api.Example
 {
     /// <summary>
-    /// 个人所得税扣缴明细表
+    /// 个人所得税申报明细表
     /// </summary>
     public class Tax
     {
@@ -22,7 +22,7 @@ namespace Aop.Api.Example
         private static readonly DefaultAopClient Client = new DefaultAopClient(Config);
 
         /// <summary>
-        /// 下载个人所得税扣缴明细表
+        /// 下载个人所得税申报明细表
         /// </summary>
         public static void GetTaxFile()
         {

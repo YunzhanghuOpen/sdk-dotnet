@@ -6,9 +6,9 @@ using Aop.Api.Util;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// 查看用户是否在非居民身份证验证名单中
+    /// 重试挂起状态订单
     /// </summary>
-    public class UserWhiteCheckRequest : IAopRequest<UserWhiteCheckResponse>
+    public class RetryOrderRequest : IAopRequest<RetryOrderResponse>
     {
         private string mess;
         private string requestID;
@@ -47,7 +47,7 @@ namespace Aop.Api.Request
         /// <returns>响应接口请求路由</returns>
         public string GetApiPath()
         {
-            return "/api/payment/v1/user/white/check";
+        return "/api/payment/v1/order/retry";
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Aop.Api.Request
                 return Guid.NewGuid().ToString();
             }
 
-            return this.mess;
+            return mess;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Aop.Api.Request
             {
                 return Guid.NewGuid().ToString();
             }
-
+            
             return this.requestID;
         }
 

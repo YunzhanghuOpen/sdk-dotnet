@@ -474,6 +474,98 @@ namespace Aop.Api.Example
         }
 
         /// <summary>
+        /// 重试挂起状态订单
+        /// </summary>
+        public static void RetryOrder()
+        {
+            // 实例化具体 API 对应的 request 类
+            RetryOrderRequest request = new RetryOrderRequest();
+
+            // 配置请求参数
+            RetryOrderRequestModel model = new RetryOrderRequestModel
+            {
+                DealerID = Config.DealerID,
+                OrderID = "202009010016562012987",
+                Ref = "176826728298982",
+                Channel = "bankpay",
+            };
+            request.SetBizModel(model);
+
+            // request-id：请求 ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于问题发现及排查
+            // 如未自定义 request-id，将使用 SDK 中的 GUID 方法自动生成。注意：GUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+            // request.SetRequestID("");
+
+            // 发起请求
+            try
+            {
+                RetryOrderResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 操作成功
+                    RetryOrderResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
+        }
+
+        /// <summary>
+        /// 用户结算金额校验
+        /// </summary>
+        public static void CheckUserAmount()
+        {
+            // 实例化具体 API 对应的 request 类
+            CheckUserAmountRequest request = new CheckUserAmountRequest();
+
+            // 配置请求参数
+            CheckUserAmountRequestModel model = new CheckUserAmountRequestModel
+            {
+                BrokerID = Config.BrokerID,
+                RealName = "张三",
+                IDCard = "11010519491231002X",
+                Amount = "10000.00",
+            };
+            request.SetBizModel(model);
+
+            // request-id：请求 ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于问题发现及排查
+            // 如未自定义 request-id，将使用 SDK 中的 GUID 方法自动生成。注意：GUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+            // request.SetRequestID("");
+
+            // 发起请求
+            try
+            {
+                CheckUserAmountResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 操作成功
+                    CheckUserAmountResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
+        }
+
+        /// <summary>
         /// 查询批次订单信息
         /// </summary>
         public static void QueryBatchOrder()

@@ -73,7 +73,7 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 - [实时支付](Example/Payment.cs)
 - [对账文件获取](Example/DataService.cs)
 - [发票开具](Example/Invoice.cs)
-- [个人所得税扣缴明细表](Example/Tax.cs)
+- [个人所得税申报明细表](Example/Tax.cs)
 
 
 

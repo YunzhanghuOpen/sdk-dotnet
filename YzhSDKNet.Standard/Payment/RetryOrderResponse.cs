@@ -4,15 +4,15 @@ using Aop.Api.Domain;
 namespace Aop.Api.Response
 {
     /// <summary>
-    /// 下载个人所得税申报明细表
+    /// 重试挂起状态订单
     /// </summary>
-    public class GetTaxFileResponse : AopResponse
+    public class RetryOrderResponse : AopResponse
     {
         /// <summary>
-        /// 下载个人所得税申报明细表
+        /// 重试挂起状态订单
         /// </summary>
         [JsonProperty("data")]
-        public GetTaxFileResponseModel Data { get; set; }
+        public RetryOrderResponseModel Data { get; set; }
         
     }
 }

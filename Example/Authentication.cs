@@ -251,7 +251,7 @@ namespace Aop.Api.Example
         }
 
         /// <summary>
-        /// 上传免验证用户名单信息
+        /// 上传非居民身份证验证名单信息
         /// </summary>
         public static void UserExemptedInfo()
         {
@@ -305,7 +305,7 @@ namespace Aop.Api.Example
         }
 
         /// <summary>
-        /// 查看免验证用户名单是否存在
+        /// 查看用户是否在非居民身份证验证名单中
         /// </summary>
         public static void UserWhiteCheck()
         {

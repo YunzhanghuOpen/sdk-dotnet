@@ -6,7 +6,7 @@ using Aop.Api.Util;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// 上传免验证用户名单信息
+    /// 上传非居民身份证验证名单信息
     /// </summary>
     public class UserExemptedInfoRequest : IAopRequest<UserExemptedInfoResponse>
     {

@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
     /// <summary>
-    /// 上传免验证用户名单信息请求
+    /// 上传非居民身份证验证名单信息请求
     /// </summary>
     public class UserExemptedInfoRequestModel : AopObject
     {

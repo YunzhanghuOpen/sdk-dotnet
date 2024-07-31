@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
     /// <summary>
-    /// 查看免验证用户名单是否存在请求
+    /// 查看用户是否在非居民身份证验证名单中请求
     /// </summary>
     public class UserWhiteCheckRequestModel : AopObject
     {
