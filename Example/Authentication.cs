@@ -82,7 +82,7 @@ namespace Aop.Api.Example
                 IDCard = "11010519491231002X",
                 CardNo = "6228888888888888888",
                 Mobile = "188****8888",
-                Captcha = "12345",
+                Captcha = "123456",
                 Ref = "1234567890",
             };
             request.SetBizModel(model);

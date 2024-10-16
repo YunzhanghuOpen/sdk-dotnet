@@ -105,7 +105,7 @@ namespace Aop.Api
             if (bizModel.IsNeedEncrypt())
             {
                 srcBody = this.Parse(body, this.config.TripleDesKey);
-                body = body + "\n" + srcBody;
+                body = srcBody;
             }
 
             T response = JsonConvert.DeserializeObject<T>(srcBody);
