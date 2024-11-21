@@ -6,7 +6,7 @@ using Aop.Api.Util;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// 发送发票扫描件压缩包下载链接邮件
+    /// 发送发票开具成功通知邮件
     /// </summary>
     public class SendReminderEmailRequest : IAopRequest<SendReminderEmailResponse>
     {

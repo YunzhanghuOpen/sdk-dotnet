@@ -55,5 +55,17 @@ namespace Aop.Api.Domain
         [JsonProperty("remark")]
         public string Remark { get; set; }
 
+        /// <summary>
+        /// 发票接收邮箱
+        /// </summary>
+        [JsonProperty("receive_emails")]
+        public string[] ReceiveEmails { get; set; }
+
+        /// <summary>
+        /// 发票介质
+        /// </summary>
+        [JsonProperty("invoice_media")]
+        public string InvoiceMedia { get; set; }
+
     }
 }

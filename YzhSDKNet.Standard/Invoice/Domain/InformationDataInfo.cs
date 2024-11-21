@@ -55,5 +55,11 @@ namespace Aop.Api.Domain
         [JsonProperty("invoiced_date")]
         public string InvoicedDate { get; set; }
 
+        /// <summary>
+        /// 发票状态
+        /// </summary>
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
     }
 }

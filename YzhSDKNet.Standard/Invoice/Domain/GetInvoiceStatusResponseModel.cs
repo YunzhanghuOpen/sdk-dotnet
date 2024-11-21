@@ -91,5 +91,17 @@ namespace Aop.Api.Domain
         [JsonProperty("waybill_number")]
         public string[] WaybillNumber { get; set; }
 
+        /// <summary>
+        /// 驳回原因
+        /// </summary>
+        [JsonProperty("reject_reason")]
+        public string RejectReason { get; set; }
+
+        /// <summary>
+        /// 发票介质
+        /// </summary>
+        [JsonProperty("invoice_media")]
+        public string InvoiceMedia { get; set; }
+
     }
 }

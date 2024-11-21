@@ -129,6 +129,8 @@ namespace Aop.Api.Example
                 BankNameAccount = "交通银行北京东大桥支行 12343456654321",
                 GoodsServicesName = "信息技术服务*信息技术服务费",
                 Remark = "测试备注内容",
+                ReceiveEmails = new string[] { "username1@example.com" },
+                InvoiceMedia = "1",
             };
             request.SetBizModel(model);
 
@@ -293,7 +295,7 @@ namespace Aop.Api.Example
         }
 
         /// <summary>
-        /// 发送发票扫描件压缩包下载链接邮件
+        /// 发送发票开具成功通知邮件
         /// </summary>
         public static void SendReminderEmail()
         {
