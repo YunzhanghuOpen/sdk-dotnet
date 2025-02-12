@@ -14,7 +14,7 @@
 
 使用云账户 SDK for .Net 前，您需先获取 dealer_id、broker_id、3DES Key、App Key、云账户公钥。   
 获取方式：使用开户邮件中的账号登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择“业务中心 > 业务管理 > 对接信息”，查看并获取以上配置信息。  
-![获取配置信息](https://yos.yunzhanghu.com/getobject/duijiexinxi-3.png?isAttachment=false&fileID=4d073f5df6ccd7f16db1f3f21016dec959381154&signature=9pXBRSdwjXtnLesLnv4ASa7Hxmhu46PaBJXb%2BQxVvpg%3D)
+![获取配置信息](https://yos.yunzhanghu.com/getobject/2025-02-10-duijiexinxi.png?isAttachment=false&fileID=aed58af41aedcc178a160094cf57bea52b5ead65&signature=FGeLvvOykgSldgmDzR%2F%2FxLDH%2FDL049Bz5OWR8XnyohE%3D)
 
 #### 2、生成密钥
 
@@ -38,17 +38,17 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 #### 3、配置密钥
 
 登录【[云账户综合服务平台](https://service.yunzhanghu.com)】，选择“业务中心 > 业务管理 > 对接信息”，单击页面右上角的“编辑”，配置平台企业公钥。
-![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/duijiexinxi-4.png?isAttachment=false&fileID=6f4c1927c490566e68cfb608cc951c2dbb14132d&signature=KVHB%2B6cIkAkHxSKNpBsrKy%2FQU%2FRFDnE4G6dDvw%2BROHU%3D)
+![配置平台企业公钥信息](https://yos.yunzhanghu.com/getobject/2025-02-11-dealerpublickey.png?isAttachment=false&fileID=6359c3b70c1a93aad5d230c76095a8baa61f4627&signature=pDmxtJYTn9Rghn1POO3XAWHXo1wIBenFXAu9ABEyGbk%3D)
 
 ### 安装 .Net SDK
-- 方式一：通过NuGet程序包管理器安装（推荐）
+- 方式一：通过 NuGet 程序包管理器安装（推荐）
 
-以Visual Studio 2022为例  
-① 在解决方案资源管理器面板中右键“项目”，选择“管理NuGet包”  
-② 在“NuGet包管理器”窗口中，默认选择“nuget.org”作为包源  
-③ 在“浏览”选项卡中，搜索YzhSDKNet.Standard，在搜索结果列表中选择YzhSDKNet.Standard，然后点击“安装”
+以 Visual Studio 2022 为例  
+① 在解决方案资源管理器面板中右键“项目”，选择“管理 NuGet 包”  
+② 在“NuGet 包管理器”窗口中，默认选择“nuget.org”作为包源  
+③ 在“浏览”选项卡中，搜索 YzhSDKNet.Standard，在搜索结果列表中选择 YzhSDKNet.Standard，然后点击“安装”
 
-- 方式二：通过.NET CLI工具来安装
+- 方式二：通过 .NET CLI 工具来安装
 
 执行命令： 
 > dotnet add package YzhSDKNet.Standard
@@ -68,8 +68,6 @@ OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 - 个体工商户注册
    - [云账户新经济 H5](Example/BizLicXjjH5.cs)
    - [云账户新经济 H5+API](Example/BizLicXjjH5Api.cs) 
-   - [云账户共享大额 H5](Example/BizLicGxV2H5.cs)
-   - [云账户共享大额 H5+API](Example/BizLicGxV2H5Api.cs) 
 - [实时支付](Example/Payment.cs)
 - [对账文件获取](Example/DataService.cs)
 - [发票开具](Example/Invoice.cs)
