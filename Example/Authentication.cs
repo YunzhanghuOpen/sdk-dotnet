@@ -268,6 +268,7 @@ namespace Aop.Api.Example
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
                 UserImages = new string[] { "...." },
+                ImageURLs = new string[] { "https://www.example.com/image01.png" },
                 Country = "NOR",
                 Birthday = "20010809",
                 Gender = "男",

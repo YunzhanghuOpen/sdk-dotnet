@@ -107,7 +107,7 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "11010519491231002X",
                 CardNo = "6228888888888888888",
-                PhoneNo = "",
+                PhoneNo = "188****8888",
                 Pay = "100.25",
                 PayRemark = "测试备注",
                 NotifyURL = "https://www.example.com"
