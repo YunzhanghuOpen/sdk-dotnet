@@ -68,13 +68,13 @@ namespace Aop.Api.Domain
         public string ReexAmount { get; set; }
 
         /// <summary>
-        /// 加成服务费金额
+        /// 实收综合服务主体加成服务费金额
         /// </summary>
         [JsonProperty("fee_amount")]
         public string FeeAmount { get; set; }
 
         /// <summary>
-        /// 加成服务费抵扣金额
+        /// 实收加成服务费抵扣金额
         /// </summary>
         [JsonProperty("deduct_rebate_fee_amount")]
         public string DeductRebateFeeAmount { get; set; }

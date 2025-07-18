@@ -62,10 +62,16 @@ namespace Aop.Api.Domain
         public string BrokerAmount { get; set; }
         
         /// <summary>
-        /// 综合服务主体加成服务费
+        /// 应收综合服务主体加成服务费金额
         /// </summary>
         [JsonProperty("broker_fee")]
         public string BrokerFee { get; set; }
+        
+        /// <summary>
+        /// 实收综合服务主体加成服务费金额
+        /// </summary>
+        [JsonProperty("received_broker_fee")]
+        public string ReceivedBrokerFee { get; set; }
         
         /// <summary>
         /// 支付路径流水号
