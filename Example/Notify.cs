@@ -272,5 +272,34 @@ namespace Aop.Api.Example
                 Console.WriteLine(e);
             }
         }
+
+        /// <summary>
+        /// 收集手机号码结果回调通知
+        /// </summary>
+        public static void NotifyUserCollectPhone()
+        {
+            // 实例化验签解密对应的 request 类
+            YzhCallbackRequest<NotifyUserCollectPhoneRequestModel> request = new YzhCallbackRequest<NotifyUserCollectPhoneRequestModel>()
+            {
+                Data = "testData",
+                Mess = "testMess",
+                Timestamp = "testTimestamp",
+                Sign = "testSign",
+                SignType = "testSignType",
+            };
+
+            // 发起验签解密
+            try
+            {
+                NotifyUserCollectPhoneRequestModel res = Client.NotifyDecoder(request);
+                string json = JsonConvert.SerializeObject(res);
+                Console.WriteLine(json);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
+        }
     }
 }

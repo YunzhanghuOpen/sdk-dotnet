@@ -18,6 +18,8 @@ namespace Aop.Api.Example.Config
             // config.ServerUrl = "https://api-service.yunzhanghu.com/sandbox";
             // 个体工商户注册域名
             // config.ServerUrl = "https://api-aic.yunzhanghu.com";
+            // 用户信息收集
+            // config.ServerUrl = "https://api-user.yunzhanghu.com";
             // 平台企业 ID
             config.DealerID = "";
             // 综合服务主体 ID

@@ -37,6 +37,7 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "11010519491231002X",
                 CertificateType = 0,
+                CollectPhoneNo = 0,
             };
             request.SetBizModel(model);
 
