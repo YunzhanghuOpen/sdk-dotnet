@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
     /// <summary>
-    /// 预申请签约请求
+    /// 订单税费试算请求
     /// </summary>
-    public class H5UserPresignRequestModel : AopObject
+    public class CalcTaxRequestModel : AopObject
     {
         /// <summary>
         /// 平台企业 ID
@@ -26,22 +26,16 @@ namespace Aop.Api.Domain
         public string RealName { get; set; }
         
         /// <summary>
-        /// 证件号码
+        /// 证件号
         /// </summary>
         [JsonProperty("id_card")]
         public string IDCard { get; set; }
         
         /// <summary>
-        /// 证件类型 0：身份证 2：港澳居民来往内地通行证 3：护照 5：台湾居民来往大陆通行证 9：港澳居民居住证 10：台湾居民居住证 11：外国人永久居留身份证 12：外国人工作许可证
+        /// 订单金额
         /// </summary>
-        [JsonProperty("certificate_type")]
-        public int CertificateType { get; set; }
-        
-        /// <summary>
-        /// 是否收集手机号码 0：不收集（默认） 1：收集手机号码
-        /// </summary>
-        [JsonProperty("collect_phone_no")]
-        public int CollectPhoneNo { get; set; }
+        [JsonProperty("pay")]
+        public string Pay { get; set; }
         
     }
 }

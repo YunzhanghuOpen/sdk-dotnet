@@ -301,5 +301,35 @@ namespace Aop.Api.Example
                 Console.WriteLine(e);
             }
         }
+
+        /// <summary>
+        /// 劳务模式订单支付状态回调通知
+        /// </summary>
+        public static void NotifyOrderLxlw()
+        {
+            // 实例化验签解密对应的 request 类
+            YzhCallbackRequest<NotifyOrderLxlwRequestModel> request = new YzhCallbackRequest<NotifyOrderLxlwRequestModel>()
+            {
+                Data = "testData",
+                Mess = "testMess",
+                Timestamp = "testTimestamp",
+                Sign = "testSign",
+                SignType = "testSignType",
+            };
+
+            // 发起验签解密
+            try
+            {
+                NotifyOrderLxlwRequestModel res = Client.NotifyDecoder(request);
+                NotifyOrderLxlwData data = res.Data;
+                string json = JsonConvert.SerializeObject(data);
+                Console.WriteLine(json);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
+        }
     }
 }
