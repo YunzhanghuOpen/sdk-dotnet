@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
     /// <summary>
-    /// 订单税费试算请求
+    /// 连续劳务单笔结算税费测算-H5 请求
     /// </summary>
-    public class CalcTaxRequestModel : AopObject
+    public class CalculationH5UrlRequestModel : AopObject
     {
         /// <summary>
         /// 平台企业 ID
@@ -32,16 +32,10 @@ namespace Aop.Api.Domain
         public string IDCard { get; set; }
         
         /// <summary>
-        /// 测算金额
+        /// 主题颜色
         /// </summary>
-        [JsonProperty("pay")]
-        public string Pay { get; set; }
-        
-        /// <summary>
-        /// 测算类型
-        /// </summary>
-        [JsonProperty("tax_type")]
-        public string TaxType { get; set; }
+        [JsonProperty("color")]
+        public string Color { get; set; }
         
     }
 }

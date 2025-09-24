@@ -229,5 +229,41 @@ namespace Aop.Api.Domain
         [JsonProperty("tax_detail")]
         public TaxDetail TaxDetail { get; set; }
         
+        /// <summary>
+        /// 实缴税费总额
+        /// </summary>
+        [JsonProperty("received_tax_amount")]
+        public string ReceivedTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 互联网平台名称
+        /// </summary>
+        [JsonProperty("dealer_platform_name")]
+        public string DealerPlatformName { get; set; }
+        
+        /// <summary>
+        /// 用户名称/昵称
+        /// </summary>
+        [JsonProperty("dealer_user_nickname")]
+        public string DealerUserNickname { get; set; }
+        
+        /// <summary>
+        /// 用户唯一标识码
+        /// </summary>
+        [JsonProperty("dealer_user_id")]
+        public string DealerUserID { get; set; }
+        
+        /// <summary>
+        /// 用户实收金额（追缴前）
+        /// </summary>
+        [JsonProperty("user_real_excluding_vat_amount")]
+        public string UserRealExcludingVatAmount { get; set; }
+        
+        /// <summary>
+        /// 已追缴增附税（本笔订单）
+        /// </summary>
+        [JsonProperty("user_recover_tax_amount")]
+        public string UserRecoverTaxAmount { get; set; }
+        
     }
 }

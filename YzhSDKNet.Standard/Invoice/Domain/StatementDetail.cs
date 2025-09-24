@@ -108,6 +108,12 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("project_name")]
         public string ProjectName { get; set; }
+
+        /// <summary>
+        /// 实纳税费金额
+        /// </summary>
+        [JsonProperty("received_tax_amount")]
+        public string ReceivedTaxAmount { get; set; }
         
     }
 }

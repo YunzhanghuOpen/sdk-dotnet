@@ -42,6 +42,9 @@ namespace Aop.Api.Example
                 Pay = "100.25",
                 PayRemark = "测试备注",
                 NotifyURL = "https://www.example.com",
+                DealerPlatformName = "互联网平台名称test",
+                DealerUserNickname = "usernickname",
+                DealerUserID = "userId1234567890",
             };
             request.SetBizModel(model);
 
@@ -94,6 +97,9 @@ namespace Aop.Api.Example
                 Pay = "100.25",
                 PayRemark = "测试备注",
                 NotifyURL = "https://www.example.com",
+                DealerPlatformName = "互联网平台名称test",
+                DealerUserNickname = "usernickname",
+                DealerUserID = "userId1234567890",
             };
             request.SetBizModel(model);
 
@@ -147,6 +153,9 @@ namespace Aop.Api.Example
                 Pay = "100.25",
                 PayRemark = "测试备注",
                 NotifyURL = "https://www.example.com",
+                DealerPlatformName = "互联网平台名称test",
+                DealerUserNickname = "usernickname",
+                DealerUserID = "userId1234567890",
             };
             request.SetBizModel(model);
 
@@ -207,6 +216,9 @@ namespace Aop.Api.Example
                     Pay = "3.00",
                     PayRemark = "测试备注",
                     NotifyURL = "https://www.example.com",
+                    DealerPlatformName = "互联网平台名称test",
+                    DealerUserNickname = "usernickname",
+                    DealerUserID = "userId1234567890",
                     }, new BatchOrderInfo
                     {
                     OrderID = "test202304180012",
@@ -217,6 +229,9 @@ namespace Aop.Api.Example
                     Pay = "2.00",
                     PayRemark = "测试备注",
                     NotifyURL = "https://www.example.com",
+                    DealerPlatformName = "互联网平台名称test",
+                    DealerUserNickname = "usernickname",
+                    DealerUserID = "userId1234567890",
                     }, 
                 },
             };

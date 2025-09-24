@@ -157,5 +157,23 @@ namespace Aop.Api.Domain
         [JsonProperty("pay_ref")]
         public string PayRef { get; set; }
         
+        /// <summary>
+        /// 预扣税费总额
+        /// </summary>
+        [JsonProperty("tax_amount")]
+        public string TaxAmount { get; set; }
+        
+        /// <summary>
+        /// 实缴税费总额
+        /// </summary>
+        [JsonProperty("received_tax_amount")]
+        public string ReceivedTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 缴税明细
+        /// </summary>
+        [JsonProperty("tax_detail")]
+        public OrderTaxDetail TaxDetail { get; set; }
+        
     }
 }
