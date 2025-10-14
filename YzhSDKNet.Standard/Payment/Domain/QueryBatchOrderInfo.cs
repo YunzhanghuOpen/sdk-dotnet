@@ -217,5 +217,29 @@ namespace Aop.Api.Domain
         [JsonProperty("deduct_tax")]
         public string DeductTax { get; set; }
         
+        /// <summary>
+        /// 实缴税费总额
+        /// </summary>
+        [JsonProperty("received_tax_amount")]
+        public string ReceivedTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 用户实收金额
+        /// </summary>
+        [JsonProperty("user_real_amount")]
+        public string UserRealAmount { get; set; }
+        
+        /// <summary>
+        /// 预扣税费总额
+        /// </summary>
+        [JsonProperty("tax")]
+        public string Tax { get; set; }
+        
+        /// <summary>
+        /// 缴税明细
+        /// </summary>
+        [JsonProperty("tax_detail")]
+        public TaxDetail TaxDetail { get; set; }
+        
     }
 }

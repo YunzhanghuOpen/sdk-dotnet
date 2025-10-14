@@ -206,7 +206,7 @@ namespace Aop.Api.Domain
         public string SysAmount { get; set; }
         
         /// <summary>
-        /// 税费，该字段已废弃
+        /// 预扣税费总额
         /// </summary>
         [JsonProperty("tax")]
         public string Tax { get; set; }
@@ -264,6 +264,18 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("user_recover_tax_amount")]
         public string UserRecoverTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 预扣个税税率
+        /// </summary>
+        [JsonProperty("personal_tax_rate")]
+        public string PersonalTaxRate { get; set; }
+        
+        /// <summary>
+        /// 预扣个税速算扣除数
+        /// </summary>
+        [JsonProperty("deduct_tax")]
+        public string DeductTax { get; set; }
         
     }
 }

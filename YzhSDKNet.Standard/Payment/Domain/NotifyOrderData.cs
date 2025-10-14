@@ -247,5 +247,17 @@ namespace Aop.Api.Domain
         [JsonProperty("user_recover_tax_amount")]
         public string UserRecoverTaxAmount { get; set; }
         
+        /// <summary>
+        /// 预扣个税税率
+        /// </summary>
+        [JsonProperty("personal_tax_rate")]
+        public string PersonalTaxRate { get; set; }
+        
+        /// <summary>
+        /// 预扣个税速算扣除数
+        /// </summary>
+        [JsonProperty("deduct_tax")]
+        public string DeductTax { get; set; }
+        
     }
 }

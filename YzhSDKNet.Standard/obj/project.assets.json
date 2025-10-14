@@ -256,13 +256,13 @@
     "/Users/yzh711/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.19",
     "restore": {
-      "projectUniqueName": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/dotnet-github/sdk-dotnet/YzhSDKNet.Standard/YzhSDKNet.Standard.csproj",
+      "projectUniqueName": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/sdk-dotnet/YzhSDKNet.Standard/YzhSDKNet.Standard.csproj",
       "projectName": "YzhSDKNet.Standard",
-      "projectPath": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/dotnet-github/sdk-dotnet/YzhSDKNet.Standard/YzhSDKNet.Standard.csproj",
+      "projectPath": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/sdk-dotnet/YzhSDKNet.Standard/YzhSDKNet.Standard.csproj",
       "packagesPath": "/Users/yzh711/.nuget/packages/",
-      "outputPath": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/dotnet-github/sdk-dotnet/YzhSDKNet.Standard/obj/",
+      "outputPath": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/sdk-dotnet/YzhSDKNet.Standard/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/yzh711/.nuget/NuGet/NuGet.Config"

@@ -115,17 +115,5 @@ namespace Aop.Api.Domain
         [JsonProperty("dealer_received_additional_tax")]
         public string DealerReceivedAdditionalTax { get; set; }
         
-        /// <summary>
-        /// 预扣个税税率
-        /// </summary>
-        [JsonProperty("personal_tax_rate")]
-        public string PersonalTaxRate { get; set; }
-        
-        /// <summary>
-        /// 预扣个税速算扣除数
-        /// </summary>
-        [JsonProperty("deduct_tax")]
-        public string DeductTax { get; set; }
-        
     }
 }
