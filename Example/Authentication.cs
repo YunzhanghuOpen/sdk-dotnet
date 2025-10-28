@@ -274,6 +274,7 @@ namespace Aop.Api.Example
                 Gender = "男",
                 NotifyURL = "https://www.example.com",
                 Ref = "1234567890",
+                ResidentType = "1",
             };
             request.SetBizModel(model);
 

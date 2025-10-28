@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ruXQ6IsK+kdP3Bx7mG47c2z/VuN8m+Rddjm7CJ8MD5vbjRGa6fZD5hSBY4F5bN9dkW/pHJ/QXlbn7VvyvMApCQ==",
+  "dgSpecHash": "zfLKinux79cLxonqdW3iTg3sJGYc/Cpoxf1j47z5yQAbLrjyrUycPMsO0U+TLuF4T+JfISVe5dTWfGDxTabwxQ==",
   "success": true,
-  "projectFilePath": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/dotnet-github/sdk-dotnet/YzhSDKNet.Standard/YzhSDKNet.Standard.csproj",
+  "projectFilePath": "/Users/yzh711/Documents/vscodeworkspace/dotnet-sdk/sdk-dotnet/YzhSDKNet.Standard/YzhSDKNet.Standard.csproj",
   "expectedPackageFiles": [
     "/Users/yzh711/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/yzh711/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",

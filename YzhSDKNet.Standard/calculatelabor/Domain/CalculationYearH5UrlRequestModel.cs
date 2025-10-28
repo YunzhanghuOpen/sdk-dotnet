@@ -25,5 +25,17 @@ namespace Aop.Api.Domain
         [JsonProperty("color")]
         public string Color { get; set; }
         
+        /// <summary>
+        /// 是否隐藏导航栏 0：展示导航栏（默认） 1：隐藏导航栏
+        /// </summary>
+        [JsonProperty("navbar_hide")]
+        public int NavbarHide { get; set; }
+
+        /// <summary>
+        /// 页面标题
+        /// </summary>
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
     }
 }

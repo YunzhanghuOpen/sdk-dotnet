@@ -78,13 +78,18 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("ref")]
         public string Ref { get; set; }
-        
+
         /// <summary>
         /// 证件照片 URL 地址
         /// </summary>
         [JsonProperty("image_urls")]
         public string[] ImageURLs { get; set; }
-        
+
+        /// <summary>
+        /// 外籍人员类型
+        /// </summary>
+        [JsonProperty("resident_type")]
+        public string ResidentType { get; set; }
 
     }
 }

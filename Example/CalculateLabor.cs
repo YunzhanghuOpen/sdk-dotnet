@@ -139,6 +139,8 @@ namespace Aop.Api.Example
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
                 Color = "#FF3D3D",
+                NavbarHide = 0,
+                Title = "云账户",
             };
             request.SetBizModel(model);
 
@@ -186,6 +188,8 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "11010519491231002X",
                 Color = "#FF3D3D",
+                NavbarHide = 0,
+                Title = "云账户",
             };
             request.SetBizModel(model);
 
