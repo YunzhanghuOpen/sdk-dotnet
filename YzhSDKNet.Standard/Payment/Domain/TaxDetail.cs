@@ -115,5 +115,23 @@ namespace Aop.Api.Domain
         [JsonProperty("dealer_received_additional_tax")]
         public string DealerReceivedAdditionalTax { get; set; }
         
+        /// <summary>
+        /// 预扣城建附加税
+        /// </summary>
+        [JsonProperty("additional_urban_tax")]
+        public string AdditionalUrbanTax { get; set; }
+        
+        /// <summary>
+        /// 预扣教育附加税
+        /// </summary>
+        [JsonProperty("additional_tuition_tax")]
+        public string AdditionalTuitionTax { get; set; }
+        
+        /// <summary>
+        /// 预扣地方教育附加税
+        /// </summary>
+        [JsonProperty("additional_local_tuition_tax")]
+        public string AdditionalLocalTuitionTax { get; set; }
+        
     }
 }
