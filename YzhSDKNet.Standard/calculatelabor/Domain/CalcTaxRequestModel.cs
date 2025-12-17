@@ -43,5 +43,11 @@ namespace Aop.Api.Domain
         [JsonProperty("tax_type")]
         public string TaxType { get; set; }
         
+        /// <summary>
+        /// 税前订单金额返回值类型
+        /// </summary>
+        [JsonProperty("before_tax_amount_type")]
+        public string BeforeTaxAmountType { get; set; }
+
     }
 }

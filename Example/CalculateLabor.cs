@@ -93,7 +93,8 @@ namespace Aop.Api.Example
                 RealName = "张三",
                 IDCard = "11010519491231002X",
                 Pay = "99",
-                TaxType = "before_tax"
+                TaxType = "before_tax",
+                BeforeTaxAmountType = "max"
             };
             request.SetBizModel(model);
 

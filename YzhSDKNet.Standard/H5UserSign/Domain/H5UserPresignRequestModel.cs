@@ -43,5 +43,11 @@ namespace Aop.Api.Domain
         [JsonProperty("collect_phone_no")]
         public int CollectPhoneNo { get; set; }
         
+        /// <summary>
+        /// 签约页面打开方式 1：微信小程序打开签约页面
+        /// </summary>
+        [JsonProperty("page_open_way")]
+        public int PageOpenWay { get; set; }
+        
     }
 }
