@@ -140,7 +140,7 @@ namespace Aop.Api.Domain
         public string BrokerDeductFee { get; set; }
         
         /// <summary>
-        /// 应收用户加成服务费金额
+        /// 应收劳动者加成服务费金额
         /// </summary>
         [JsonProperty("user_fee")]
         public string UserFee { get; set; }
@@ -164,7 +164,7 @@ namespace Aop.Api.Domain
         public string ReceivedBrokerDeductFee { get; set; }
         
         /// <summary>
-        /// 实收用户加成服务费金额
+        /// 实收劳动者加成服务费金额
         /// </summary>
         [JsonProperty("received_user_fee")]
         public string ReceivedUserFee { get; set; }
@@ -188,7 +188,7 @@ namespace Aop.Api.Domain
         public string ProjectID { get; set; }
         
         /// <summary>
-        /// 用户实收金额
+        /// 劳动者实收金额
         /// </summary>
         [JsonProperty("user_real_amount")]
         public string UserRealAmount { get; set; }
@@ -206,13 +206,13 @@ namespace Aop.Api.Domain
         public string DealerPlatformName { get; set; }
         
         /// <summary>
-        /// 用户名称/昵称
+        /// 劳动者名称/昵称
         /// </summary>
         [JsonProperty("dealer_user_nickname")]
         public string DealerUserNickname { get; set; }
         
         /// <summary>
-        /// 用户唯一标识码
+        /// 劳动者唯一标识码
         /// </summary>
         [JsonProperty("dealer_user_id")]
         public string DealerUserID { get; set; }
@@ -230,13 +230,13 @@ namespace Aop.Api.Domain
         public string ReceivedTaxAmount { get; set; }
         
         /// <summary>
-        /// 用户实收金额（追缴前）
+        /// 劳动者应收金额（追缴退回前）
         /// </summary>
         [JsonProperty("user_real_excluding_vat_amount")]
         public string UserRealExcludingVatAmount { get; set; }
         
         /// <summary>
-        /// 已追缴增附税（本笔订单）
+        /// 追缴增附税
         /// </summary>
         [JsonProperty("user_recover_tax_amount")]
         public string UserRecoverTaxAmount { get; set; }
@@ -252,6 +252,12 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("deduct_tax")]
         public string DeductTax { get; set; }
+        
+        /// <summary>
+        /// 追缴个税
+        /// </summary>
+        [JsonProperty("user_recover_personal_tax_amount")]
+        public string UserRecoverPersonalTaxAmount { get; set; }
         
     }
 }

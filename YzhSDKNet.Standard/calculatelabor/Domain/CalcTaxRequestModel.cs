@@ -48,6 +48,18 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("before_tax_amount_type")]
         public string BeforeTaxAmountType { get; set; }
-
+        
+        /// <summary>
+        /// 将追缴税费纳入测算
+        /// </summary>
+        [JsonProperty("include_recovery_amount")]
+        public int IncludeRecoveryAmount { get; set; }
+        
+        /// <summary>
+        /// 将劳动者服务费纳入测算
+        /// </summary>
+        [JsonProperty("include_user_service_fee")]
+        public int IncludeUserServiceFee { get; set; }
+        
     }
 }

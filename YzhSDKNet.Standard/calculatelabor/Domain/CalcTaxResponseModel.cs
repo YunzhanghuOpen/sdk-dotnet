@@ -20,7 +20,7 @@ namespace Aop.Api.Domain
         public string Tax { get; set; }
         
         /// <summary>
-        /// 税后结算金额
+        /// 劳动者预估到手金额
         /// </summary>
         [JsonProperty("after_tax_amount")]
         public string AfterTaxAmount { get; set; }
@@ -38,7 +38,7 @@ namespace Aop.Api.Domain
         public string BeforeTaxAmount { get; set; }
         
         /// <summary>
-        /// 用户税费总额
+        /// 劳动者税费总额
         /// </summary>
         [JsonProperty("user_tax")]
         public string UserTax { get; set; }
@@ -56,7 +56,7 @@ namespace Aop.Api.Domain
         public string BrokerTax { get; set; }
         
         /// <summary>
-        /// 用户服务费
+        /// 劳动者服务费
         /// </summary>
         [JsonProperty("user_fee")]
         public string UserFee { get; set; }
@@ -86,19 +86,19 @@ namespace Aop.Api.Domain
         public string StatusDetailMessage { get; set; }
         
         /// <summary>
-        /// 用户实收金额（未扣除追缴的增附税）
+        /// 劳动者预估应收金额（追缴退回前）
         /// </summary>
         [JsonProperty("user_real_excluding_vat_amount")]
         public string UserRealExcludingVatAmount { get; set; }
         
         /// <summary>
-        /// 用户还未缴清的增附税
+        /// 劳动者还未缴清的增附税
         /// </summary>
         [JsonProperty("user_remaining_repayment_amount")]
         public string UserRemainingRepaymentAmount { get; set; }
         
         /// <summary>
-        /// 已追缴增附税（本笔订单）
+        /// 追缴增附税
         /// </summary>
         [JsonProperty("user_recover_tax_amount")]
         public string UserRecoverTaxAmount { get; set; }
@@ -108,6 +108,36 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("user_total_recover_tax_amount")]
         public string UserTotalRecoverTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 劳动者还未缴清的个税
+        /// </summary>
+        [JsonProperty("user_remaining_repayment_personal_amount")]
+        public string UserRemainingRepaymentPersonalAmount { get; set; }
+        
+        /// <summary>
+        /// 追缴个税
+        /// </summary>
+        [JsonProperty("user_recover_personal_tax_amount")]
+        public string UserRecoverPersonalTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 待追缴个税总金额
+        /// </summary>
+        [JsonProperty("user_total_recover_personal_tax_amount")]
+        public string UserTotalRecoverPersonalTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 退回增附税
+        /// </summary>
+        [JsonProperty("user_refund_tax_amount")]
+        public string UserRefundTaxAmount { get; set; }
+        
+        /// <summary>
+        /// 退回个税
+        /// </summary>
+        [JsonProperty("user_refund_personal_tax_amount")]
+        public string UserRefundPersonalTaxAmount { get; set; }
         
     }
 }

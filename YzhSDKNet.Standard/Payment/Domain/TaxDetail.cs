@@ -44,7 +44,7 @@ namespace Aop.Api.Domain
         public string ReceivedAdditionalTax { get; set; }
         
         /// <summary>
-        /// 用户预扣个税
+        /// 劳动者预扣个税
         /// </summary>
         [JsonProperty("user_personal_tax")]
         public string UserPersonalTax { get; set; }
@@ -56,7 +56,7 @@ namespace Aop.Api.Domain
         public string DealerPersonalTax { get; set; }
         
         /// <summary>
-        /// 用户预扣增值税
+        /// 劳动者预扣增值税
         /// </summary>
         [JsonProperty("user_value_added_tax")]
         public string UserValueAddedTax { get; set; }
@@ -68,7 +68,7 @@ namespace Aop.Api.Domain
         public string DealerValueAddedTax { get; set; }
         
         /// <summary>
-        /// 用户预扣附加税费
+        /// 劳动者预扣附加税费
         /// </summary>
         [JsonProperty("user_additional_tax")]
         public string UserAdditionalTax { get; set; }
@@ -80,7 +80,7 @@ namespace Aop.Api.Domain
         public string DealerAdditionalTax { get; set; }
         
         /// <summary>
-        /// 用户实缴个税
+        /// 劳动者实缴个税
         /// </summary>
         [JsonProperty("user_received_personal_tax")]
         public string UserReceivedPersonalTax { get; set; }
@@ -92,7 +92,7 @@ namespace Aop.Api.Domain
         public string DealerReceivedPersonalTax { get; set; }
         
         /// <summary>
-        /// 用户实缴增值税
+        /// 劳动者实缴增值税
         /// </summary>
         [JsonProperty("user_received_value_added_tax")]
         public string UserReceivedValueAddedTax { get; set; }
@@ -104,7 +104,7 @@ namespace Aop.Api.Domain
         public string DealerReceivedValueAddedTax { get; set; }
         
         /// <summary>
-        /// 用户实缴附加税费
+        /// 劳动者实缴附加税费
         /// </summary>
         [JsonProperty("user_received_additional_tax")]
         public string UserReceivedAdditionalTax { get; set; }
