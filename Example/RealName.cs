@@ -40,7 +40,7 @@ namespace Aop.Api.Example
                 RealnameTime = "2025-09-09 19:19:19",
                 RealnameType = 1,
                 RealnameTraceID = "1413536187796566016",
-                RealnamePlatform = "xxxxxxx公司",
+                RealnamePlatform = "xxxxxxxx公司",
                 FaceImageCollectType = 1,
                 FaceImage = "https://www.example.com/file_name.png",
                 FaceVerifyScore = "89.12",

@@ -19,5 +19,17 @@ namespace Aop.Api.Domain
         [JsonProperty("dealer_id")]
         public string DealerID { get; set; }
 
+        /// <summary>
+        /// 查询开始日期
+        /// </summary>
+        [JsonProperty("start_date")]
+        public string StartDate { get; set; }
+
+        /// <summary>
+        /// 查询结束日期
+        /// </summary>
+        [JsonProperty("end_date")]
+        public string EndDate { get; set; }
+
     }
 }

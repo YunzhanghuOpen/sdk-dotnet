@@ -79,6 +79,8 @@ namespace Aop.Api.Example
             {
                 DealerID = Config.DealerID,
                 BrokerID = Config.BrokerID,
+                StartDate ="2026-01-01",
+                EndDate = "2026-01-26",
             };
             request.SetBizModel(model);
 
@@ -131,6 +133,8 @@ namespace Aop.Api.Example
                 Remark = "测试备注内容",
                 ReceiveEmails = new string[] { "username1@example.com" },
                 InvoiceMedia = "1",
+                StartDate = "2026-01-01",
+                EndDate = "2026-01-26",
             };
             request.SetBizModel(model);
 

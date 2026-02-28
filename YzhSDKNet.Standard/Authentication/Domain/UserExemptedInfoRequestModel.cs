@@ -91,5 +91,11 @@ namespace Aop.Api.Domain
         [JsonProperty("resident_type")]
         public string ResidentType { get; set; }
 
+        /// <summary>
+        /// 港澳台通行证号码
+        /// </summary>
+        [JsonProperty("permit_card")]
+        public string PermitCard { get; set; }
+
     }
 }

@@ -275,6 +275,7 @@ namespace Aop.Api.Example
                 NotifyURL = "https://www.example.com",
                 Ref = "1234567890",
                 ResidentType = "1",
+                PermitCard = "H12345678",
             };
             request.SetBizModel(model);
 

@@ -158,5 +158,53 @@ namespace Aop.Api.Example
                 Console.WriteLine(e);
             }
         }
+
+        /// <summary>
+        /// 查询税费退补涉及劳动者
+        /// </summary>
+        public static void GetRefundTaxLaborInfo()
+        {
+            // 实例化具体 API 对应的 request 类
+            GetRefundTaxLaborInfoRequest request = new GetRefundTaxLaborInfoRequest();
+
+            // 配置请求参数
+            GetRefundTaxLaborInfoRequestModel model = new GetRefundTaxLaborInfoRequestModel
+            {
+                BrokerID = Config.BrokerID,
+                DealerID = Config.DealerID,
+                TaxMonth = "2025-10",
+                BatchID = "10313232135454132",
+                Offset = 0,
+                Length = 500,
+            };
+            request.SetBizModel(model);
+
+            // request-id：请求 ID，请求的唯一标识
+            // 建议平台企业自定义 request-id，并记录在日志中。如遇异常请求，便于问题发现及排查
+            // 如未自定义 request-id，将使用 SDK 中的 GUID 方法自动生成。注意：GUID 方法生成的 request-id 不能保证全局唯一，推荐自定义 request-id
+            // request.SetRequestID("");
+
+            // 发起请求
+            try
+            {
+                GetRefundTaxLaborInfoResponse res = Client.Execute(request);
+                Console.WriteLine(res.Body);
+                if (res.IsSuccess)
+                {
+                    // 操作成功
+                    GetRefundTaxLaborInfoResponseModel data = res.Data;
+                }
+                else
+                {
+                    // 失败返回
+                    Console.WriteLine("失败返回");
+                }
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
+        }
     }
 }
