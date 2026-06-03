@@ -175,5 +175,11 @@ namespace Aop.Api.Domain
         [JsonProperty("tax_detail")]
         public OrderTaxDetail TaxDetail { get; set; }
         
+        /// <summary>
+        /// 平台企业用户 ID
+        /// </summary>
+        [JsonProperty("user_id")]
+        public string UserID { get; set; }
+        
     }
 }

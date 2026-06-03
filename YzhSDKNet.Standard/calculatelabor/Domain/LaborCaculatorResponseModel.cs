@@ -17,7 +17,7 @@ namespace Aop.Api.Domain
         /// 月度税务信息列表
         /// </summary>
         [JsonProperty("month_tax_list")]
-        public MontTax[] MonthTaxList { get; set; }
+        public MonthTax[] MonthTaxList { get; set; }
         
     }
 }

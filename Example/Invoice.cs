@@ -132,7 +132,7 @@ namespace Aop.Api.Example
                 GoodsServicesName = "信息技术服务*信息技术服务费",
                 Remark = "测试备注内容",
                 ReceiveEmails = new string[] { "username1@example.com" },
-                InvoiceMedia = "1",
+                InvoiceMedia = "3",
                 StartDate = "2026-01-01",
                 EndDate = "2026-01-26",
             };

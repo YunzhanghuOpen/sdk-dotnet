@@ -159,7 +159,7 @@ namespace Aop.Api.Example
         }
 
         /// <summary>
-        /// 用户解约（测试账号专用）
+        /// 用户解约
         /// </summary>
         public static void ApiUserSignRelease()
         {

@@ -6,9 +6,9 @@ using Aop.Api.Util;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// 用户解约
+    /// 申请人脸识别实名核验
     /// </summary>
-    public class ApiUserSignReleaseRequest : IAopRequest<ApiUserSignReleaseResponse>
+    public class ApplyFaceAuthRequest : IAopRequest<ApplyFaceAuthResponse>
     {
         private string mess;
         private string requestID;
@@ -47,7 +47,7 @@ namespace Aop.Api.Request
         /// <returns>响应接口请求路由</returns>
         public string GetApiPath()
         {
-            return "/api/sign/v1/user/release";
+        return "/api/user/v1/face/auth";
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Aop.Api.Request
                 return Guid.NewGuid().ToString();
             }
 
-            return this.mess;
+            return mess;
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Aop.Api.Request
             {
                 return Guid.NewGuid().ToString();
             }
-
+            
             return this.requestID;
         }
 

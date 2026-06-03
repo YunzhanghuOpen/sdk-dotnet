@@ -5,7 +5,7 @@ namespace Aop.Api.Domain
     /// <summary>
     /// 月度税务信息
     /// </summary>
-    public class MontTax : AopObject
+    public class MonthTax : AopObject
     {
         /// <summary>
         /// 月份

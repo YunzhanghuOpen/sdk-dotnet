@@ -365,7 +365,7 @@ namespace Aop.Api.Example
         /// <summary>
         /// 连续劳务税费退补完成通知
         /// </summary>
-        public static void NotifyV()
+        public static void NotifyRefundTaxDone()
         {
             // 实例化验签解密对应的 request 类
             YzhCallbackRequest<NotifyRefundTaxDoneRequestModel> request = new YzhCallbackRequest<NotifyRefundTaxDoneRequestModel>()
@@ -384,6 +384,34 @@ namespace Aop.Api.Example
                 RefundTaxData data = res.Data;
                 string json = JsonConvert.SerializeObject(data);
                 Console.WriteLine(json);
+            }
+            catch (Exception e)
+            {
+                // 发生异常
+                Console.WriteLine(e);
+            }
+        }
+
+        /// <summary>
+        /// 人脸识别实名核验结果回调通知
+        /// </summary>
+        public static void NotifyFaceAuth()
+        {
+            // 实例化验签解密对应的 request 类
+            YzhCallbackRequest<NotifyFaceAuthRequestModel> request = new YzhCallbackRequest<NotifyFaceAuthRequestModel>()
+            {
+                Data = "testData",
+                Mess = "testMess",
+                Timestamp = "testTimestamp",
+                Sign = "testSign",
+                SignType = "testSignType",
+            };
+
+            // 发起验签解密
+            try
+            {
+                NotifyFaceAuthRequestModel res = Client.NotifyDecoder(request);
+                Console.WriteLine(res);
             }
             catch (Exception e)
             {

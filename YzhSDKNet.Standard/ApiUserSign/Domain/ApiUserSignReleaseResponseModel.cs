@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace Aop.Api.Domain
 {
     /// <summary>
-    /// 用户解约（测试账号专用接口）返回
+    /// 用户解约返回
     /// </summary>
     public class ApiUserSignReleaseResponseModel : AopObject
     {
@@ -12,6 +12,6 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("status")]
         public string Status { get; set; }
-
+        
     }
 }

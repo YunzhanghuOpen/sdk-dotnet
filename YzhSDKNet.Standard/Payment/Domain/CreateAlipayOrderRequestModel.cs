@@ -97,5 +97,11 @@ namespace Aop.Api.Domain
         [JsonProperty("dealer_user_id")]
         public string DealerUserID { get; set; }
         
+        /// <summary>
+        /// 支付宝转账备注
+        /// </summary>
+        [JsonProperty("order_title")]
+        public string OrderTitle { get; set; }
+        
     }
 }

@@ -259,5 +259,11 @@ namespace Aop.Api.Domain
         [JsonProperty("user_recover_personal_tax_amount")]
         public string UserRecoverPersonalTaxAmount { get; set; }
         
+        /// <summary>
+        /// 支付宝转账备注
+        /// </summary>
+        [JsonProperty("order_title")]
+        public string OrderTitle { get; set; }
+        
     }
 }

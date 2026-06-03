@@ -21,11 +21,11 @@
 - 方式一：使用 OpenSSL 生成 RSA 公私钥
 
 ```
-① ⽣成私钥 private_key.pem
+① 生成私钥 private_key.pem
 
-OpenSSL-> genrsa -out private_key.pem 2048   // 建议密钥⻓度⾄少为 2048 位
+OpenSSL-> genrsa -out private_key.pem 2048   // 建议密钥长度至少为 2048 位
 
-② ⽣成公钥 pubkey.pem
+② 生成公钥 pubkey.pem
 
 OpenSSL-> rsa -in private_key.pem -pubout -out pubkey.pem
 

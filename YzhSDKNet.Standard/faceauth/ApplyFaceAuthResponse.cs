@@ -4,15 +4,15 @@ using Aop.Api.Domain;
 namespace Aop.Api.Response
 {
     /// <summary>
-    /// 用户解约
+    /// 申请人脸识别实名核验
     /// </summary>
-    public class ApiUserSignReleaseResponse : AopResponse
+    public class ApplyFaceAuthResponse : AopResponse
     {
         /// <summary>
-        /// 用户解约
+        /// 申请人脸识别实名核验
         /// </summary>
         [JsonProperty("data")]
-        public ApiUserSignReleaseResponseModel Data { get; set; }
+        public ApplyFaceAuthResponseModel Data { get; set; }
         
     }
 }

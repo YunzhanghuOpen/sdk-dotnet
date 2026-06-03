@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
@@ -100,6 +100,7 @@ namespace Aop.Api.Example
                 DealerPlatformName = "互联网平台名称test",
                 DealerUserNickname = "usernickname",
                 DealerUserID = "userId1234567890",
+                OrderTitle = "支付宝转账备注",
             };
             request.SetBizModel(model);
 

@@ -4,15 +4,15 @@ using Aop.Api.Domain;
 namespace Aop.Api.Response
 {
     /// <summary>
-    /// 用户解约
+    /// 申请解约
     /// </summary>
-    public class ApiUserSignReleaseResponse : AopResponse
+    public class H5UserReleaseApplyResponse : AopResponse
     {
         /// <summary>
-        /// 用户解约
+        /// 申请解约
         /// </summary>
         [JsonProperty("data")]
-        public ApiUserSignReleaseResponseModel Data { get; set; }
+        public H5UserReleaseApplyResponseModel Data { get; set; }
         
     }
 }
