@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Aop.Api.Domain;
 using Aop.Api.Request;
 using Aop.Api.Response;
@@ -275,6 +275,7 @@ namespace Aop.Api.Example
                 NotifyURL = "https://www.example.com",
                 Ref = "1234567890",
                 ResidentType = "1",
+                ExpiryDate = "2028-08-08",
                 PermitCard = "H12345678",
             };
             request.SetBizModel(model);

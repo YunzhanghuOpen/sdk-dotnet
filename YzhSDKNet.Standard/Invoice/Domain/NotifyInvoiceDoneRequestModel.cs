@@ -53,7 +53,7 @@ namespace Aop.Api.Domain
         /// 发票类型
         /// </summary>
         [JsonProperty("invoice_type")]
-        public string InvoiceType { get; set; }
+        public int InvoiceType { get; set; }
 
         /// <summary>
         /// 购方名称

@@ -8,7 +8,7 @@ namespace Aop.Api.Example
     public class CustomerLinkExample
     {
         /// <summary>
-        /// 专属客服链接管理
+        /// 专属服务链接管理
         /// </summary>
         public static void GetCustomerLinkUrl()
         {

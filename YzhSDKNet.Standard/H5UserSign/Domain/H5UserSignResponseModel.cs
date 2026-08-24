@@ -13,5 +13,11 @@ namespace Aop.Api.Domain
         [JsonProperty("url")]
         public string URL { get; set; }
 
+        /// <summary>
+        /// 微信签约小程序码 URL
+        /// </summary>
+        [JsonProperty("wx_mp_code_url")]
+        public string WxMpCodeURL { get; set; }
+
     }
 }

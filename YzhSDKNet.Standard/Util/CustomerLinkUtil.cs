@@ -7,12 +7,12 @@ namespace Aop.Api.Util
     {
 
         /// <summary>
-        /// 专属客服链接管理
+        /// 专属服务链接管理
         /// </summary>
         /// <param name="config">密钥信息</param>
-        /// <param name="baseUrl">客服链接基础地址</param>
+        /// <param name="baseUrl">专属服务链接基础地址</param>
         /// <param name="memberId">用户 ID</param>
-        /// <returns>客服链接</returns>
+        /// <returns>专属服务链接</returns>
         public static string getCustomerLink(YzhConfig config, string baseUrl, string memberId)
         {
             return GetLinkUrl(config, baseUrl, memberId);

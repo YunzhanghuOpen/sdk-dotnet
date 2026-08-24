@@ -60,7 +60,13 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("user_fee")]
         public string UserFee { get; set; }
-        
+
+        /// <summary>
+        /// 是否使用基本减除费用
+        /// </summary>
+        [JsonProperty("basic_deducted")]
+        public string BasicDeducted { get; set; }
+
         /// <summary>
         /// 结果
         /// </summary>

@@ -92,6 +92,12 @@ namespace Aop.Api.Domain
         public string ResidentType { get; set; }
 
         /// <summary>
+        /// 证件有效期
+        /// </summary>
+        [JsonProperty("expiry_date")]
+        public string ExpiryDate { get; set; }
+
+        /// <summary>
         /// 港澳台通行证号码
         /// </summary>
         [JsonProperty("permit_card")]

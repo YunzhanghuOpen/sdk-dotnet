@@ -37,5 +37,29 @@ namespace Aop.Api.Domain
         [JsonProperty("phone")]
         public string Phone { get; set; }
 
+        /// <summary>
+        /// 签约状态 0：未签约 1：已签约 2：已解约
+        /// </summary>
+        [JsonProperty("status")]
+        public int Status { get; set; }
+
+        /// <summary>
+        /// 签约事件类型
+        /// </summary>
+        [JsonProperty("event_type")]
+        public string EventType { get; set; }
+
+        /// <summary>
+        /// 签约事件状态
+        /// </summary>
+        [JsonProperty("event_status")]
+        public string EventStatus { get; set; }
+
+        /// <summary>
+        /// 签约事件状态详情
+        /// </summary>
+        [JsonProperty("event_status_detail")]
+        public string EventStatusDetail { get; set; }
+
     }
 }

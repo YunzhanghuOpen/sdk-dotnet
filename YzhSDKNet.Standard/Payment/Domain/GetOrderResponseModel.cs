@@ -12,7 +12,13 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("order_id")]
         public string OrderID { get; set; }
-        
+
+        /// <summary>
+        /// 退回类型
+        /// </summary>
+        [JsonProperty("refund_origin")]
+        public string RefundOrigin { get; set; }
+
         /// <summary>
         /// 订单金额
         /// </summary>
@@ -264,25 +270,43 @@ namespace Aop.Api.Domain
         /// </summary>
         [JsonProperty("user_recover_tax_amount")]
         public string UserRecoverTaxAmount { get; set; }
-        
+
+        /// <summary>
+        /// 劳动者还未缴清的个税
+        /// </summary>
+        [JsonProperty("user_remaining_repayment_personal_amount")]
+        public string UserRemainingRepaymentPersonalAmount { get; set; }
+
         /// <summary>
         /// 预扣个税税率
         /// </summary>
         [JsonProperty("personal_tax_rate")]
         public string PersonalTaxRate { get; set; }
-        
+
         /// <summary>
         /// 预扣个税速算扣除数
         /// </summary>
         [JsonProperty("deduct_tax")]
         public string DeductTax { get; set; }
-        
+
+        /// <summary>
+        /// 是否使用基本减除费用
+        /// </summary>
+        [JsonProperty("basic_deducted")]
+        public string BasicDeducted { get; set; }
+
         /// <summary>
         /// 追缴个税
         /// </summary>
         [JsonProperty("user_recover_personal_tax_amount")]
         public string UserRecoverPersonalTaxAmount { get; set; }
-        
+
+        /// <summary>
+        /// 待追缴个税总金额
+        /// </summary>
+        [JsonProperty("user_total_recover_personal_tax_amount")]
+        public string UserTotalRecoverPersonalTaxAmount { get; set; }
+
         /// <summary>
         /// 支付宝转账备注
         /// </summary>
